@@ -1,0 +1,6 @@
+# OMOC-MVU: evidence should be generated, not versioned
+evidence/_acceptance/
+evidence/_diag/
+*.tgz
+*.tar.gz
+*.zip
