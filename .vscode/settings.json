@@ -1,0 +1,11 @@
+{
+  "audioCues.enabled": "on",
+  "terminal.integrated.bellDuration": 1500,
+  "accessibility.signals.taskCompleted": {
+    "sound": "on"
+  },
+  "accessibility.signals.terminalBell": {
+    "sound": "on"
+  },
+  "terminal.integrated.enableVisualBell": true
+}
