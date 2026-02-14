@@ -1,0 +1,30 @@
+name: doc-validate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  doc-validate:
+    name: doc-validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: List docs
+        run: |
+          echo "Listing docs/ (if present)"
+          if [ -d docs ]; then
+            ls -la docs || true
+          else
+            echo "No docs/ directory present"
+          fi
+
+      - name: Lightweight markdown check (placeholder)
+        run: |
+          echo "Running lightweight markdown placeholder check"
+          if [ -d docs ]; then
+            find docs -type f -name "*.md" -print0 | xargs -0 -n1 echo "checked:" || true
+          fi
+          echo "PASS"

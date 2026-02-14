@@ -1,0 +1,16 @@
+name: omoc-gate
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+jobs:
+  omoc-gate:
+    name: omoc-gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Run local acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/accept/step04_local_accept.sh

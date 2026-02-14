@@ -1,0 +1,9 @@
+total 32
+drwxr-xr-x 3 vscode vscode 4096 Feb 14 12:04 .
+drwxr-xr-x 1 vscode vscode 4096 Feb 14 07:03 ..
+-rw-r--r-- 1 vscode vscode  707 Feb 14 12:04 bun.lock
+-rw-r--r-- 1 vscode vscode   45 Feb 13 13:10 .gitignore
+drwxr-xr-x 4 vscode vscode 4096 Feb 14 12:04 node_modules
+-rw-r--r-- 1 vscode vscode 1732 Feb 14 01:07 oh-my-opencode.json
+-rw------- 1 vscode vscode   92 Feb 14 04:55 opencode.json
+-rw-r--r-- 1 vscode vscode   62 Feb 14 12:04 package.json

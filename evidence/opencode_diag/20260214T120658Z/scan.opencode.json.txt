@@ -1,0 +1,7 @@
+FILE=/home/vscode/.config/opencode/opencode.json
+----- first 120 lines -----
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "github-copilot/gpt-5-mini",
+}
+----- key scans -----

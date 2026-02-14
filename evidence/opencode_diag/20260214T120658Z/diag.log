@@ -1,0 +1,9 @@
+[12:06:58] == OpenCode/Oh-My-OpenCode 設置健檢開始 ==
+[12:06:58] OUT=evidence/opencode_diag/20260214T120658Z
+[12:06:59] == 檢查 opencode binary / version / help ==
+[12:07:03] == 掃描 OpenCode 全域 config 常見位置 ==
+[12:07:04] == 檢查 config 內容疑似炸點（不解析，只做風險掃描） ==
+[12:07:04] == 掃描 oh-my-opencode 設定檔位置 ==
+[12:07:05] == opencode run 最短試跑（用來抓 ConfigInvalidError / schema 問題） ==
+[12:07:09] == 初步判讀規則（僅提示，不自作主張修） ==
+[12:07:09] == 健檢完成。請把 evidence/opencode_diag/20260214T120658Z 打包回傳最小跡證（下節列出） ==

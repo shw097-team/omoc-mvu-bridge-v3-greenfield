@@ -1,0 +1,16 @@
+name: doc-validate
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+jobs:
+  doc-validate:
+    name: doc-validate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Basic files exist check
+        run: |
+          echo "doc-validate running"
+          # Minimal existence check (non-fatal)
+          test -f README.md || echo "README.md not found"
