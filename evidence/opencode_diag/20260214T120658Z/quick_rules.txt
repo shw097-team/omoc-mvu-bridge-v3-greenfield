@@ -1,0 +1,4 @@
+如果 opencode.run.smoketest.txt 出現 'Configuration is invalid' / 'Unrecognized keys'：幾乎可確定是 config schema 被改壞。
+如果 config 檔內掃到 "language" 或 "multi_agent"：高度可疑（近期 issue 反覆出現）。
+如果 GH_TOKEN=UNSET：很多需要 GitHub API/PR 的流程會失敗，但這不等於 config 壞。
+如果 OPENCODE_PORT=SET：桌面/本地 server 可能因 port 衝突異常（官方 troubleshooting 有提）。

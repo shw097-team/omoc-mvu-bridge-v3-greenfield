@@ -1,0 +1,16 @@
+168 |         return wa();
+169 |       });
+170 |     }
+171 |     function za(a) {
+172 |       for (;0 < a.length; )
+173 |         a.shift()(h);
+                      ^
+RuntimeError: access to a null reference (evaluating 'a6.shift()(h2)')
+      at za (../../node_modules/.bun/@opentui+core@0.1.79+8e67d58793ed4a15/node_modules/@opentui/core/index-zrvzvh6r.js:173:17)
+      at a6 (../../node_modules/.bun/@opentui+core@0.1.79+8e67d58793ed4a15/node_modules/@opentui/core/index-zrvzvh6r.js:1325:11)
+      at Mb (../../node_modules/.bun/@opentui+core@0.1.79+8e67d58793ed4a15/node_modules/@opentui/core/index-zrvzvh6r.js:1347:18)
+      at Lb (../../node_modules/.bun/@opentui+core@0.1.79+8e67d58793ed4a15/node_modules/@opentui/core/index-zrvzvh6r.js:1319:13)
+      at a6 (../../node_modules/.bun/@opentui+core@0.1.79+8e67d58793ed4a15/node_modules/@opentui/core/index-zrvzvh6r.js:1265:90)
+      at b2 (../../node_modules/.bun/@opentui+core@0.1.79+8e67d58793ed4a15/node_modules/@opentui/core/index-zrvzvh6r.js:1268:9)
+
+Bun v1.3.9 (Linux x64)

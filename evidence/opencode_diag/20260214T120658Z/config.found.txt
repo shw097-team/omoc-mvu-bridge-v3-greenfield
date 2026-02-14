@@ -1,0 +1,2 @@
+FOUND /home/vscode/.config/opencode/opencode.json
+-rw------- 1 vscode vscode 92 Feb 14 04:55 /home/vscode/.config/opencode/opencode.json

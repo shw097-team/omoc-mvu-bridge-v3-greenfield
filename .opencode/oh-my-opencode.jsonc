@@ -1,0 +1,4 @@
+{
+  // CP3 project profile for Oh-My-OpenCode (minimal & safe)
+  "notes": "CP3: use oh-my-opencode orchestration; keep minimal to avoid drift."
+}

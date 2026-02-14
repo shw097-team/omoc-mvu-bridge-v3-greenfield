@@ -1,0 +1,1 @@
+-rw-r--r-- 1 vscode vscode 92 Feb 14 12:33 /home/vscode/.config/opencode/opencode.json

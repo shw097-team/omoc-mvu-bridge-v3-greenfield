@@ -1,0 +1,2 @@
+FOUND /home/vscode/.config/opencode/oh-my-opencode.json
+-rw-r--r-- 1 vscode vscode 1732 Feb 14 01:07 /home/vscode/.config/opencode/oh-my-opencode.json

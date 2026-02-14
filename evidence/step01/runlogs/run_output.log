@@ -1,0 +1,8 @@
+開始 CP3 acceptance：TS=20260214T115939Z
+[info] repo=shw097-team/omoc-mvu-bridge-v3-greenfield default_branch=main
+[warn] remote branch cp3/doc-validate exists, will create unique branch
+From https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield
+ * branch            main       -> FETCH_HEAD
+Switched to a new branch 'cp3/doc-validate-20260214T115939Z'
+branch 'cp3/doc-validate-20260214T115939Z' set up to track 'origin/main'.
+fatal: pathspec '.github/workflows/doc-validate.yml' did not match any files

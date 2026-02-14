@@ -1,0 +1,4 @@
+[0m
+> build · gpt-5-mini
+[0m
+OK
