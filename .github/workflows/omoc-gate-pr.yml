@@ -1,19 +1,8 @@
 name: omoc-gate
-on:
-  pull_request: {}
-  merge_group: {}
-
+on: [pull_request, merge_group]
 jobs:
   omoc-gate:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Run acceptance script
-        run: |
-          if [ -f ./scripts/accept/cp3_accept.sh ]; then
-            chmod +x ./scripts/accept/cp3_accept.sh
-            ./scripts/accept/cp3_accept.sh
-          else
-            echo "ERROR: ./scripts/accept/cp3_accept.sh not found"
-            exit 2
-          fi
+      - run: bash scripts/accept/cp3_accept.sh
