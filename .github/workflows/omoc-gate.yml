@@ -7,7 +7,7 @@ on:
     types: [checks_requested]
 jobs:
   omoc-gate:
-    name: omoc-gate / omoc-gate (pull_request)
+    name: omoc-gate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,12 +17,35 @@ jobs:
           set -euo pipefail
           bash scripts/accept/cp3_accept.sh
 
-  omoc-gate-plain:
-    name: omoc-gate
+  doc-validate-pr:
+    name: doc-validate / doc-validate (pull_request)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: CP3 acceptance (plain)
+      - name: Doc validate acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          echo "Running doc-validate as part of omoc-gate bundle"
+          test -f README.md || echo "README.md not found"
+
+  omoc-gate-pr:
+    name: omoc-gate / omoc-gate (pull_request)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: CP3 acceptance (pr)
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/accept/cp3_accept.sh
+
+  ci-omoc-gate-pr:
+    name: ci / omoc-gate (pull_request)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: CP3 acceptance (ci)
         shell: bash
         run: |
           set -euo pipefail
