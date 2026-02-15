@@ -1,0 +1,24 @@
+name: ci
+
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Report status
+        run: echo "ci completed"
+

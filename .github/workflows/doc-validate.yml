@@ -1,0 +1,20 @@
+name: doc-validate
+
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches:
+      - main
+
+jobs:
+  docs:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Validate docs
+        run: |
+          echo "Checking documentation..."
+          # 若有 linter 加入這裡
+
