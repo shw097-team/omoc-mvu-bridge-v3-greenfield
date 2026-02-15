@@ -16,3 +16,16 @@ jobs:
           echo "doc-validate running"
           # Minimal existence check (non-fatal)
           test -f README.md || echo "README.md not found"
+  shim-omoc-gate-extra:
+    name: ci / omoc-gate (pull_request)
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ensure acceptance scripts present
+        run: |
+          set -euo pipefail
+          test -d scripts/accept || (echo "scripts/accept missing" && exit 1)
+      - name: Run cp3 acceptance shim
+        shell: bash
+        run: |
+          echo "Running cp3_accept.sh as shim"
+          bash scripts/accept/cp3_accept.sh

@@ -4,3 +4,4 @@ evidence/_diag/
 *.tgz
 *.tar.gz
 *.zip
+fine_grained_tokens.txt

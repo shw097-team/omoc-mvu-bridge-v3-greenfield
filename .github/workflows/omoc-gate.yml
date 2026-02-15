@@ -7,11 +7,22 @@ on:
     types: [checks_requested]
 jobs:
   omoc-gate:
-    name: omoc-gate
+    name: omoc-gate / omoc-gate (pull_request)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - name: CP3 acceptance
+        shell: bash
+        run: |
+          set -euo pipefail
+          bash scripts/accept/cp3_accept.sh
+
+  omoc-gate-plain:
+    name: omoc-gate
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: CP3 acceptance (plain)
         shell: bash
         run: |
           set -euo pipefail
