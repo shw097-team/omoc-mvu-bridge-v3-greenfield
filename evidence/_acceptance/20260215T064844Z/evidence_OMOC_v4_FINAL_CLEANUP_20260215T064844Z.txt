@@ -1,0 +1,10 @@
+EVIDENCE for OMOC cleanup - 2026-02-15T06:48:44Z
+
+This file will be appended with command outputs and 'gh pr checks' results.
+
+---
+GH PR CHECKS (pull request #5)
+20260215T065202Z
+{"name":"v","state":"SUCCESS"}
+{"name":"v","state":"SUCCESS"}
+{"name":"v","state":"SUCCESS"}
