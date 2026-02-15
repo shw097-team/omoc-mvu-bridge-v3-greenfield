@@ -1,7 +1,8 @@
-name: doc-validate
+name: omoc-gate
 on: [pull_request, merge_group]
 jobs:
-  doc-validate:
+  acceptance:
+    name: OMOC Acceptance
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
