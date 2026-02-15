@@ -1,0 +1,21 @@
+Timestamp: 20260215T063851Z (UTC)
+Action: Ultimate 4/4 physical alignment run
+
+--- PR checks final JSON ---
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177328/job/63656499659","name":"omoc-gate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177316/job/63656499664","name":"omoc-gate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177317/job/63656499652","name":"doc-validate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177337/job/63656499665","name":"omoc-gate","state":"SUCCESS"}
+
+--- Ruleset API JSON ---
+{"_links":{"html":{"href":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/rules/12793412"},"self":{"href":"https://api.github.com/repos/shw097-team/omoc-mvu-bridge-v3-greenfield/rulesets/12793412"}},"bypass_actors":[],"conditions":{"ref_name":{"exclude":[],"include":["refs/heads/main"]}},"created_at":"2026-02-13T17:24:58.419Z","current_user_can_bypass":"never","enforcement":"active","id":12793412,"name":"main","node_id":"RRS_lACqUmVwb3NpdG9yec5E-eWRzgDDNkQ","rules":[{"type":"deletion"},{"type":"non_fast_forward"},{"parameters":{"do_not_enforce_on_create":false,"required_status_checks":[{"context":"omoc-gate","integration_id":15368},{"context":"doc-validate / doc-validate (pull_request)","integration_id":15368},{"context":"omoc-gate / omoc-gate (pull_request)","integration_id":15368},{"context":"ci / omoc-gate (pull_request)","integration_id":15368}],"strict_required_status_checks_policy":false},"type":"required_status_checks"},{"parameters":{"check_response_timeout_minutes":60,"grouping_strategy":"ALLGREEN","max_entries_to_build":5,"max_entries_to_merge":5,"merge_method":"MERGE","min_entries_to_merge":1,"min_entries_to_merge_wait_minutes":5},"type":"merge_queue"}],"source":"shw097-team/omoc-mvu-bridge-v3-greenfield","source_type":"Repository","target":"branch","updated_at":"2026-02-14T16:35:46.262Z"}
+
+--- PR view final ---
+{"autoMergeRequest":{"authorEmail":null,"commitBody":null,"commitHeadline":null,"enabledAt":"2026-02-15T06:38:30Z","enabledBy":{"id":"U_kgDODRVG6g","is_bot":false,"login":"shw097","name":""},"mergeMethod":"MERGE"},"mergeStateStatus":"BLOCKED","number":5,"url":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/5"}
+
+--- merge attempt output ---
+! The merge strategy for main is set by the merge queue
+
+Notes:
+- All 4 required checks reported SUCCESS in the final extraction.
+- Merge queue still controls merge strategy; auto-merge request is present but mergeStateStatus is BLOCKED until queue processes it.

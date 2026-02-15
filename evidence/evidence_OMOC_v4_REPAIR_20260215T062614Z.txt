@@ -1,0 +1,70 @@
+Timestamp: ${timestamp} (UTC)
+Purpose: Merged evidence for OMOC v4 repair run
+
+--- files included ---
+- scripts/accept/cp3_accept.sh
+- .github/workflows/omoc-gate.yml
+- .github/workflows/doc-validate.yml
+- artifacts/logs/git_push.out
+- artifacts/logs/recovery_run.log
+- artifacts/logs/gh_pr_checks_5_poll_after_script.txt
+- artifacts/logs/gh_pr_checks_5_watch_after_script.txt
+- artifacts/logs/gh_pr_checks_5_json_after_script.txt
+- artifacts/logs/gh_pr_merge_after_script.out
+- artifacts/logs/gh_pr_view_5.json
+- patches/remove_ci_omoc_gate.patch
+- patches/shim_job_add_docvalidate.yml.patch
+- previous evidence files
+
+--- BEGIN: scripts/accept/cp3_accept.sh ---
+$(sed -n '1,200p' scripts/accept/cp3_accept.sh 2>/dev/null || true)
+--- END: scripts/accept/cp3_accept.sh ---
+
+--- BEGIN: .github/workflows/omoc-gate.yml ---
+$(sed -n '1,400p' .github/workflows/omoc-gate.yml 2>/dev/null || true)
+--- END: .github/workflows/omoc-gate.yml ---
+
+--- BEGIN: .github/workflows/doc-validate.yml ---
+$(sed -n '1,400p' .github/workflows/doc-validate.yml 2>/dev/null || true)
+--- END: .github/workflows/doc-validate.yml ---
+
+--- BEGIN: artifacts/logs/git_push.out ---
+$(sed -n '1,200p' artifacts/logs/git_push.out 2>/dev/null || true)
+--- END: artifacts/logs/git_push.out ---
+
+--- BEGIN: artifacts/logs/recovery_run.log ---
+$(sed -n '1,200p' artifacts/logs/recovery_run.log 2>/dev/null || true)
+--- END: artifacts/logs/recovery_run.log ---
+
+--- BEGIN: artifacts/logs/gh_pr_checks_5_poll_after_script.txt ---
+$(sed -n '1,400p' artifacts/logs/gh_pr_checks_5_poll_after_script.txt 2>/dev/null || true)
+--- END: artifacts/logs/gh_pr_checks_5_poll_after_script.txt ---
+
+--- BEGIN: artifacts/logs/gh_pr_checks_5_watch_after_script.txt ---
+$(sed -n '1,400p' artifacts/logs/gh_pr_checks_5_watch_after_script.txt 2>/dev/null || true)
+--- END: artifacts/logs/gh_pr_checks_5_watch_after_script.txt ---
+
+--- BEGIN: artifacts/logs/gh_pr_checks_5_json_after_script.txt ---
+$(sed -n '1,400p' artifacts/logs/gh_pr_checks_5_json_after_script.txt 2>/dev/null || true)
+--- END: artifacts/logs/gh_pr_checks_5_json_after_script.txt ---
+
+--- BEGIN: artifacts/logs/gh_pr_merge_after_script.out ---
+$(sed -n '1,200p' artifacts/logs/gh_pr_merge_after_script.out 2>/dev/null || true)
+--- END: artifacts/logs/gh_pr_merge_after_script.out ---
+
+--- BEGIN: artifacts/logs/gh_pr_view_5.json ---
+$(sed -n '1,200p' artifacts/logs/gh_pr_view_5.json 2>/dev/null || true)
+--- END: artifacts/logs/gh_pr_view_5.json ---
+
+--- BEGIN: patches/remove_ci_omoc_gate.patch ---
+$(sed -n '1,200p' patches/remove_ci_omoc_gate.patch 2>/dev/null || true)
+--- END: patches/remove_ci_omoc_gate.patch ---
+
+--- BEGIN: patches/shim_job_add_docvalidate.yml.patch ---
+$(sed -n '1,400p' patches/shim_job_add_docvalidate.yml.patch 2>/dev/null || true)
+--- END: patches/shim_job_add_docvalidate.yml.patch ---
+
+--- BEGIN: previous evidence files (listing) ---
+$(ls -1 evidence 2>/dev/null || true)
+--- END: previous evidence files ---
+

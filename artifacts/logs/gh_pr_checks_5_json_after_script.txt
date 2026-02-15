@@ -1,0 +1,7 @@
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941724/job/63655884690","name":"omoc-gate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884717","name":"doc-validate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884721","name":"omoc-gate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884705","name":"ci / omoc-gate (pull_request)","state":"FAILURE"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884730","name":"doc-validate / doc-validate (pull_request)","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884718","name":"omoc-gate / omoc-gate (pull_request)","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884743","name":"ci / omoc-gate (pull_request)","state":"SUCCESS"}

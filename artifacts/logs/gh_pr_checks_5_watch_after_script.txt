@@ -1,0 +1,23 @@
+Refreshing checks status every 10 seconds. Press Ctrl+C to quit.
+
+doc-validate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884717	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884721	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941724/job/63655884690	
+ci / omoc-gate (pull_request)	pending	0	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884705	
+doc-validate / doc-validate (pull_request)	pending	0	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884730	
+ci / omoc-gate (pull_request)	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884743	
+omoc-gate / omoc-gate (pull_request)	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884718	
+ci / omoc-gate (pull_request)	fail	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884705	
+ci / omoc-gate (pull_request)	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884743	
+doc-validate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884717	
+doc-validate / doc-validate (pull_request)	pass	5s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884730	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884721	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941724/job/63655884690	
+omoc-gate / omoc-gate (pull_request)	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884718	
+ci / omoc-gate (pull_request)	fail	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884705	
+ci / omoc-gate (pull_request)	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884743	
+doc-validate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941726/job/63655884717	
+doc-validate / doc-validate (pull_request)	pass	5s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884730	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884721	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941724/job/63655884690	
+omoc-gate / omoc-gate (pull_request)	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030941715/job/63655884718	

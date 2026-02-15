@@ -1,0 +1,11 @@
+Timestamp: 20260215T063155Z (UTC)
+Action: Decoupled workflows alignment and ruleset comparison
+
+--- Ruleset detail ---
+{"_links":{"html":{"href":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/rules/12793412"},"self":{"href":"https://api.github.com/repos/shw097-team/omoc-mvu-bridge-v3-greenfield/rulesets/12793412"}},"bypass_actors":[],"conditions":{"ref_name":{"exclude":[],"include":["refs/heads/main"]}},"created_at":"2026-02-13T17:24:58.419Z","current_user_can_bypass":"never","enforcement":"active","id":12793412,"name":"main","node_id":"RRS_lACqUmVwb3NpdG9yec5E-eWRzgDDNkQ","rules":[{"type":"deletion"},{"type":"non_fast_forward"},{"parameters":{"do_not_enforce_on_create":false,"required_status_checks":[{"context":"omoc-gate","integration_id":15368},{"context":"doc-validate / doc-validate (pull_request)","integration_id":15368},{"context":"omoc-gate / omoc-gate (pull_request)","integration_id":15368},{"context":"ci / omoc-gate (pull_request)","integration_id":15368}],"strict_required_status_checks_policy":false},"type":"required_status_checks"},{"parameters":{"check_response_timeout_minutes":60,"grouping_strategy":"ALLGREEN","max_entries_to_build":5,"max_entries_to_merge":5,"merge_method":"MERGE","min_entries_to_merge":1,"min_entries_to_merge_wait_minutes":5},"type":"merge_queue"}],"source":"shw097-team/omoc-mvu-bridge-v3-greenfield","source_type":"Repository","target":"branch","updated_at":"2026-02-14T16:35:46.262Z"}
+
+--- PR #5 checks (current) ---
+no checks reported on the 'fix/align-4-checks-20260215T054924Z' branch
+
+--- Note ---
+- After decoupling, checks on the branch may not be triggered until workflows run on the PR branch or PR is updated.

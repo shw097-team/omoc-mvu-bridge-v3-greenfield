@@ -1,0 +1,4 @@
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177328/job/63656499659","name":"omoc-gate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177316/job/63656499664","name":"omoc-gate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177317/job/63656499652","name":"doc-validate","state":"SUCCESS"}
+{"link":"https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22031177337/job/63656499665","name":"omoc-gate","state":"SUCCESS"}

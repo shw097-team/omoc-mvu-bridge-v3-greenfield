@@ -1,0 +1,40 @@
+Timestamp: 2026-02-15T05:50:00Z UTC
+Run: Swarm finalization - align workflows and enable auto-merge
+
+RESULT SUMMARY
+- PR created: https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/5
+- PR number: 5
+- Branch: fix/align-4-checks-20260215T054924Z
+- Auto-merge request: enabled (enabledAt: 2026-02-15T06:05:35Z, enabledBy: shw097)
+- Merge state: BLOCKED (merge queue controls merge strategy)
+
+PR CHECKS (observed)
+- ci / omoc-gate (pull_request): PASS
+- doc-validate: PASS
+- doc-validate / doc-validate (pull_request): PASS
+- omoc-gate: PASS
+- omoc-gate / omoc-gate (pull_request): PASS
+- Note: one ci / omoc-gate job had an initial failure then later passed in the watch session
+
+MERGE ATTEMPT
+- gh pr merge attempted; GitHub rejected direct merge because repository uses merge queue (merge strategy set by merge queue). The PR has an auto-merge request recorded but final merge is controlled by the repository's merge queue.
+
+ARTIFACTS & LOGS (saved in workspace)
+- artifacts/logs/gh_pr_checks_5_watch.txt (PR checks watch output)
+- artifacts/logs/gh_pr_checks_5_json.txt (PR checks JSON extract)
+- artifacts/logs/gh_pr_merge_final.out (merge attempt output)
+- artifacts/logs/gh_pr_view_5.json (PR view with autoMergeRequest & mergeStateStatus)
+- artifacts/logs/git_push.out (push output)
+- artifacts/logs/recovery_run.log (recovery run log)
+- artifacts/logs/gh_pr_create.err (gh pr create stderr)
+- patches/remove_ci_omoc_gate.patch
+- patches/shim_job_add_docvalidate.yml.patch
+- .github/workflows/omoc-gate.yml (final workspace content)
+- .github/workflows/doc-validate.yml (final workspace content)
+
+NOTES / NEXT ACTIONS
+1) The repo's merge queue controls the final merge; to complete the merge, monitor the merge queue or allow the auto-merge request to be processed by the queue. Oracle can continue monitoring and report when merged.
+2) If you want immediate merge bypassing merge queue, repository settings must be changed (not recommended) or an admin must process the merge queue entries.
+3) All evidence has been collected and saved in the artifact paths above; rerun Oracle monitoring if you want live follow-up until the PR is merged.
+
+End of evidence file.

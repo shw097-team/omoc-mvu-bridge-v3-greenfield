@@ -1,0 +1,7 @@
+{"name":"omoc-gate","state":"SUCCESS"}
+{"name":"doc-validate","state":"SUCCESS"}
+{"name":"omoc-gate","state":"SUCCESS"}
+{"name":"ci / omoc-gate (pull_request)","state":"FAILURE"}
+{"name":"doc-validate / doc-validate (pull_request)","state":"SUCCESS"}
+{"name":"omoc-gate / omoc-gate (pull_request)","state":"SUCCESS"}
+{"name":"ci / omoc-gate (pull_request)","state":"SUCCESS"}

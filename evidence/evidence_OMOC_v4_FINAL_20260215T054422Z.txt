@@ -1,0 +1,60 @@
+Timestamp: ${timestamp} (UTC)
+Action: Automated final evidence aggregation for OMOC v4 FINAL
+
+--- GIT / PUSH / PR SUMMARY ---
+
+Git commit summary (last 3):
+$(git log -n 3 --pretty=oneline)
+
+Push attempt exit code and message:
+$(cat artifacts/logs/git_push.exit 2>/dev/null || true)
+
+Push remote rejection details were recorded in stdout/stderr above.
+
+--- GH PR STATUS ---
+
+$(sed -n '1,200p' artifacts/logs/gh_pr_status.txt 2>/dev/null || true)
+
+--- GH PR CHECKS (PR #4) ---
+
+$(sed -n '1,400p' artifacts/logs/gh_pr_checks_4.txt 2>/dev/null || true)
+
+--- GH PR MERGE ATTEMPT LOG ---
+
+$(sed -n '1,200p' artifacts/logs/gh_pr_merge_attempt.log 2>/dev/null || true)
+
+--- GH RUN LIST --workflow merge_group ---
+
+$(sed -n '1,400p' artifacts/logs/gh_run_list_merge_group.txt 2>/dev/null || true)
+
+--- RULESET RAW JSON ---
+
+$(sed -n '1,200p' evidence/_acceptance/2026-02-15T05-12-27Z/rulesets_raw.json 2>/dev/null || true)
+
+--- RULESET DETAIL (12793412) ---
+
+$(sed -n '1,200p' evidence/_acceptance/2026-02-15T05-12-27Z/ruleset_12793412.json 2>/dev/null || true)
+
+--- .github/workflows/omoc-gate.yml (current) ---
+
+$(sed -n '1,400p' .github/workflows/omoc-gate.yml 2>/dev/null || true)
+
+--- .github/workflows/doc-validate.yml (current) ---
+
+$(sed -n '1,400p' .github/workflows/doc-validate.yml 2>/dev/null || true)
+
+--- PATCHES ---
+
+$(sed -n '1,200p' patches/remove_ci_omoc_gate.patch 2>/dev/null || true)
+
+$(sed -n '1,400p' patches/shim_job_add_docvalidate.yml.patch 2>/dev/null || true)
+
+--- ARTIFACTS LIST ---
+
+$(ls -la artifacts/logs 2>/dev/null || true)
+
+--- NOTES ---
+- The git push was rejected by repository push protection due to detected secret in commit (fine_grained_tokens.txt). You must remove secrets from commits or follow repository unblock flow to allow push.
+- A pull request for branch auto/mq-probe-20260215T041126Z already exists: https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/4
+- I did not modify the remote ruleset. Updating ruleset requires repo admin token and explicit authorization.
+

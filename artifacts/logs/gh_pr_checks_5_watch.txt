@@ -1,0 +1,14 @@
+ci / omoc-gate (pull_request)	fail	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782176/job/63655470467	
+ci / omoc-gate (pull_request)	pass	5s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470493	
+doc-validate	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782176/job/63655470471	
+doc-validate / doc-validate (pull_request)	pass	5s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470495	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470482	
+omoc-gate	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782186/job/63655470486	
+omoc-gate / omoc-gate (pull_request)	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470492	
+ci / omoc-gate (pull_request)	fail	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782176/job/63655470467	
+ci / omoc-gate (pull_request)	pass	5s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470493	
+doc-validate	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782176/job/63655470471	
+doc-validate / doc-validate (pull_request)	pass	5s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470495	
+omoc-gate	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470482	
+omoc-gate	pass	4s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782186/job/63655470486	
+omoc-gate / omoc-gate (pull_request)	pass	3s	https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/actions/runs/22030782185/job/63655470492	
