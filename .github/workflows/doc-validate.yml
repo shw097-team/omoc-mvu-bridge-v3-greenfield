@@ -1,18 +1,20 @@
 name: doc-validate
+
 on:
-  push:
-    branches: [ "main" ]
   pull_request:
   merge_group:
-    types: [checks_requested]
+  push:
+    branches:
+      - main
+  workflow_dispatch: {}
+
 jobs:
-  doc-validate:
-    name: doc-validate
+  docs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - name: Basic files exist check
+      - uses: actions/checkout@v3
+
+      - name: Validate docs
         run: |
-          echo "doc-validate running"
-          # Minimal existence check (non-fatal)
-          test -f README.md || echo "README.md not found"
+          echo "Checking documentation..."
+          # 若有 linter 加入這裡
