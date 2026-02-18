@@ -8,5 +8,8 @@
   },
   "peerDependencies": {
     "typescript": "^5"
+  },
+  "scripts": {
+    "test": "echo \"No tests configured yet. Passing for CI.\" && exit 0"
   }
 }
