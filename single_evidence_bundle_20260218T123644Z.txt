@@ -1,0 +1,19 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-002
+PHASE_STAGE: Phase-L/L0
+STATUS: PASS
+-------------------------------------------
+FILE: evidence/_acceptance/20260218T123644Z/log/L0-env.log
+==> WP-002 L0 Environment Scan Start
+[SYSTEM_INFO]
+Linux d4d6ac92a1d2 6.6.87.2-microsoft-standard-WSL2 #1 SMP PREEMPT_DYNAMIC Thu Jun  5 18:30:46 UTC 2025 x86_64 x86_64 x86_64 GNU/Linux
+
+[TOOL_VERSIONS]
+GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)
+Python 3.12.12
+jq-1.7
+git version 2.52.0
+v20.20.0
+10.8.2
+-------------------------------------------
+END OF BUNDLE

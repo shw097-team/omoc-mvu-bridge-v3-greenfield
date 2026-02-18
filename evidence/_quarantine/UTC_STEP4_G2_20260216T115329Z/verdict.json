@@ -1,0 +1,11 @@
+{
+  "step": "G2",
+  "verdict": "PASS",
+  "utc": "20260213T130233Z",
+  "reason": "OpenCode installed and verified via --version/--help (non-interactive).",
+  "evidence": {
+    "bundle": "evidence/_acceptance/UTC_STEP4_G2/evidence_bundle.tgz",
+    "index": "evidence/_acceptance/UTC_STEP4_G2/evidence_index.md",
+    "logs_dir": "evidence/_acceptance/UTC_STEP4_G2/logs"
+  }
+}

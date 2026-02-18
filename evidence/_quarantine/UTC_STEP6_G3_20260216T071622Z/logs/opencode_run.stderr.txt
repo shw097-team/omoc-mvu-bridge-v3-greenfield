@@ -1,0 +1,17 @@
+[0m
+
+
+> build · big-pickle[0m[0m✱ [0mGlob "**/*"[90m 31 matches[0m
+[0m→ [0mRead evidence/_acceptance/UTC_STEP6_G3/verdict.json
+[0m→ [0mRead evidence/_acceptance/UTC_STEP6_G3/evidence_index.md
+[0m✱ [0mGlob "README*"[90m 0 matches[0m
+[0m✱ [0mGlob ".github/**/*"[90m 0 matches[0m
+[0m→ [0mRead .devcontainer/devcontainer.json
+[0m[ ] 建立 scripts/acceptance_local.sh
+[ ] 建立 .github/workflows/omoc-gate.yml
+[ ] 建立 README.md
+[ ] 執行 acceptance_local.sh 並驗證通過[0m
+
+
+
+[0m# [0mTodos[0m$ [0mmkdir -p scripts

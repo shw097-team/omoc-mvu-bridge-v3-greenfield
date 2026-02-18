@@ -1,0 +1,24 @@
+name: ci
+on:
+  pull_request:
+  merge_group:
+  push:
+    branches: [ main ]
+jobs:
+  ci-logic:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+      - run: npm install
+      - run: npm test
+  ci: # SSOT 要求與 Workflow 同名的 Wrapper
+    needs: [ci-logic]
+    if: always()
+    runs-on: ubuntu-latest
+    steps:
+      - name: Always-Report Wrapper
+        run: |
+          if [[ "${{ needs.ci-logic.result }}" == "success" || "${{ needs.ci-logic.result }}" == "skipped" ]]; then exit 0; else exit 1; fi

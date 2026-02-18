@@ -4,3 +4,5 @@ evidence/_diag/
 *.tgz
 *.tar.gz
 *.zip
+
+node_modules/

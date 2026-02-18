@@ -1,0 +1,14 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-008
+PHASE_STAGE: Phase-L/L6
+STATUS: PASS
+-------------------------------------------
+[EVIDENCE_TRIPLET_CHECK]
+-rw-r--r-- 1 vscode vscode 170 Feb 18 12:50 checks_manifest.json
+-rw-r--r-- 1 vscode vscode 613 Feb 18 12:50 evidence_index.md
+-rw-r--r-- 1 vscode vscode 147 Feb 18 12:50 verdict.json
+
+[BUNDLE_CHECK]
+-rw-r--r-- 1 vscode vscode 4190 Feb 18 12:50 evidence_bundle.tgz
+-------------------------------------------
+END OF BUNDLE

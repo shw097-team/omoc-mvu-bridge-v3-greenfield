@@ -1,0 +1,23 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-010
+PHASE_STAGE: Phase-G/G1
+STATUS: PASS
+-------------------------------------------
+FILE: evidence/_acceptance/20260218T123644Z/log/ci-checks-audit.log
+[RULESET_DETAILED_RULES]
+{"parameters":{"do_not_enforce_on_create":false,"required_status_checks":[{"context":"omoc-gate","integration_id":15368},{"context":"doc-validate / doc-validate (pull_request)","integration_id":15368},{"context":"omoc-gate / omoc-gate (pull_request)","integration_id":15368},{"context":"ci / omoc-gate (pull_request)","integration_id":15368}],"strict_required_status_checks_policy":false},"type":"required_status_checks"}
+
+[MANIFEST_ALIGNMENT_CHECK]
+{
+  "wp_001": "PASS",
+  "wp_002": "PASS",
+  "wp_003": "PASS",
+  "wp_004": "PASS",
+  "wp_005": "PASS",
+  "wp_006": "PASS",
+  "wp_007": "PASS",
+  "wp_008": "PASS"
+  "wp_009": "IN_PROGRESS"
+}
+-------------------------------------------
+END OF BUNDLE
