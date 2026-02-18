@@ -1,0 +1,53 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-007
+PHASE_STAGE: Phase-L/L5
+STATUS: PASS
+-------------------------------------------
+[GIT_STATUS_BEFORE_COMMIT]
+ M .devcontainer/devcontainer.json
+ M scripts/accept/step03_local_accept.sh
+ M scripts/acceptance_local.sh
+?? .opencode/skills/
+?? .worktree_phase0_20260216T174456Z/
+?? bun.lock
+?? bundle_audit.json
+?? checks_manifest.json
+?? comment-checker
+?? docs/
+?? evidence/_backup/
+?? evidence/_quarantine/
+?? evidence/upload/
+?? evidence_bundle.sha256
+?? evidence_bundle.size
+?? evidence_index.md
+?? index.ts
+?? node_modules/
+?? oh-my-opencode
+?? omo
+?? opencode
+?? package.json
+?? scripts/accept/quarantine_placeholders.sh
+?? scripts/lsp/
+?? scripts/omoc_extract_skills.sh
+?? scripts/pack/
+?? single_evidence_bundle_20260218T123644Z.txt
+?? single_evidence_bundle_WP003_20260218T123644Z.txt
+?? single_evidence_bundle_WP004_20260218T123644Z.txt
+?? single_evidence_bundle_WP005_20260218T123644Z.txt
+?? single_evidence_bundle_WP006_20260218T123644Z.txt
+?? single_evidence_bundle_WP007_20260218T123644Z.txt
+?? tar-members.txt
+?? test_colon.md
+?? test_empty.md
+?? test_no_fm.md
+?? test_spaces.md
+?? tsconfig.json
+?? verdict.json
+
+[SKILLS_TREE]
+.opencode/skills:
+index.md
+OMOC_SKILLS_PACK.md
+skills_index.txt
+-------------------------------------------
+END OF BUNDLE

@@ -1,0 +1,14 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-012
+PHASE_STAGE: Phase-G/G3
+STATUS: PASS
+-------------------------------------------
+FILE: evidence/_acceptance/20260218T123644Z/log/ci-trigger-audit.log
+[WORKFLOW_INVENTORY]
+.github/workflows/ci.yml:  merge_group:
+.github/workflows/doc-validate.yml:  merge_group:
+.github/workflows/omoc-gate.yml:  merge_group:
+
+[REMOTE_MQ_PROBE]
+-------------------------------------------
+END OF BUNDLE

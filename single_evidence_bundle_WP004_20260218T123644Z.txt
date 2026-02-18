@@ -1,0 +1,13 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-004
+STATUS: PASS
+-------------------------------------------
+[GH_CLI_VERSION]
+gh version 2.86.0 (2026-01-21)
+
+[AUTH_STATUS_REDACTED]
+github.com
+  ✓ Logged in to github.com account shw097 (/home/vscode/.config/gh/hosts.yml)
+  - Active account: true
+  - Git operations protocol: https
+  - Token: github_pat_11BUKUN2Q0iIDdvQZjuLgL_***********************************************************

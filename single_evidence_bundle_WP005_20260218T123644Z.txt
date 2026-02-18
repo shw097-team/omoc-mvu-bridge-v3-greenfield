@@ -1,0 +1,15 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-005
+PHASE_STAGE: Phase-L/L3
+STATUS: PASS
+-------------------------------------------
+FILE: evidence/_acceptance/20260218T123644Z/log/run.log
+--- OMOC LOCAL ACCEPTANCE RUN ---
+Target: Phase-L/L3
+Check 1: SSOT Path Presence... OK
+Check 2: Toolchain Base... OK
+Check 3: Auth Isolation... OK
+
+EXIT_CODE: 0
+-------------------------------------------
+END OF BUNDLE

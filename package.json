@@ -1,0 +1,12 @@
+{
+  "name": "omoc-mvu-bridge-v3-greenfield",
+  "module": "index.ts",
+  "type": "module",
+  "private": true,
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5"
+  }
+}

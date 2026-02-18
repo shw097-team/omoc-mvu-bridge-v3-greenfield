@@ -1,0 +1,11 @@
+verdict.json
+checks_manifest.json
+evidence_index.md
+bundle_audit.json
+evidence/_acceptance/20260216T143957Z/
+evidence/_acceptance/20260216T143957Z/log/
+evidence/_acceptance/20260216T143957Z/log/validator.stdout
+evidence/_acceptance/20260216T143957Z/log/fetch.log
+evidence/_acceptance/20260216T143957Z/log/validator.stderr.excerpt
+evidence/_acceptance/20260216T143957Z/log/validator.stderr
+evidence/_acceptance/20260216T143957Z/log/pack.log

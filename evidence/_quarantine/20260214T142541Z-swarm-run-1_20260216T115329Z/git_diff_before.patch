@@ -1,0 +1,14 @@
+diff --git a/.devcontainer/devcontainer.json b/.devcontainer/devcontainer.json
+index 2697c0b..993490b 100755
+--- a/.devcontainer/devcontainer.json
++++ b/.devcontainer/devcontainer.json
+@@ -9,4 +9,8 @@
+       ]
+     }
+   }
+-}
++  ,
++  "features": {
++    "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
++  }
++}

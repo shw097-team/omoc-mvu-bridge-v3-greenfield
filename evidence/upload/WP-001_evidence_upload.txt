@@ -1,0 +1,25 @@
+# WP-001 step: opencode verification and step03 execution
+Generated output files:
+total 0
+drwxr-xr-x 1 vscode vscode 512 Feb 18  2026 .
+drwxr-xr-x 1 vscode vscode 512 Feb 18 07:57 ..
+drwxr-xr-x 1 vscode vscode 512 Feb 18 07:57 artifacts
+-rw-r--r-- 1 vscode vscode 395 Feb 18 07:57 checks_manifest.json
+drwxr-xr-x 1 vscode vscode 512 Feb 18 07:57 logs
+-rw-r--r-- 1 vscode vscode  35 Feb 18 07:57 rc.txt
+-rw-r--r-- 1 vscode vscode   0 Feb 18 07:57 stderr.txt
+-rw-r--r-- 1 vscode vscode  12 Feb 18 07:57 stdout.txt
+-rw-r--r-- 1 vscode vscode  24 Feb 18  2026 step03_summary.txt
+-rw-r--r-- 1 vscode vscode  98 Feb 18 07:57 verdict.json
+Contents of checks_manifest.json:
+{
+  "step_id":"step-03",
+  "acc_dir":"evidence/_acceptance/20260218T075757Z/wp001/step-03",
+  "checks":[
+    {"id":"devcontainer.json_valid","result":"PASS","evidence":"artifacts/devcontainer_json_validate.txt"},
+    {"id":"docker.ps_works","result":"PASS","evidence":"artifacts/accept_probe.txt"},
+    {"id":"opencode.present","result":"FAIL","evidence":"artifacts/opencode_version.txt"}
+  ]
+}
+Contents of verdict.json:
+{"step_id":"step-03","verdict":"FAIL_CLOSED","rule":"Missing/Unverified evidence => FAIL_CLOSED"}
