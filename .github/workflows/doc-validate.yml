@@ -1,20 +1,21 @@
 name: doc-validate
+
 on:
   pull_request:
   merge_group:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch: {}
+
 jobs:
-  doc-validate-logic:
+  doc_validate:
+    name: doc-validate
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - run: echo "Documentation valid."
-  doc-validate:
-    needs: [doc-validate-logic]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Always-Report
+      - uses: actions/checkout@v3
+
+      - name: Validate docs
         run: |
-          if [[ "${{ needs.doc-validate-logic.result }}" == "success" || "${{ needs.doc-validate-logic.result }}" == "skipped" ]]; then exit 0; else exit 1; fi
+          echo "Checking documentation..."
+          # 若有 linter 加入這裡

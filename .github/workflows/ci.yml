@@ -1,24 +1,25 @@
 name: ci
+
 on:
   pull_request:
   merge_group:
   push:
-    branches: [ main ]
+    branches:
+      - main
+  workflow_dispatch: {}
+
 jobs:
-  ci-logic:
+  build-test:
+    name: ci
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-      - run: npm install
-      - run: npm test || echo "Bypass missing test" && exit 0
-  ci:
-    needs: [ci-logic]
-    if: always()
-    runs-on: ubuntu-latest
-    steps:
-      - name: Always-Report
-        run: |
-          if [[ "${{ needs.ci-logic.result }}" == "success" || "${{ needs.ci-logic.result }}" == "skipped" ]]; then exit 0; else exit 1; fi
+      - uses: actions/checkout@v3
+
+      - name: Install deps
+        run: npm install
+
+      - name: Run tests
+        run: npm test
+
+      - name: Report status
+        run: echo "ci completed"
