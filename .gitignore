@@ -6,3 +6,6 @@ evidence/_diag/
 *.zip
 
 node_modules/
+evidence/_quarantine/
+audit_intake_*/
+*.bak
