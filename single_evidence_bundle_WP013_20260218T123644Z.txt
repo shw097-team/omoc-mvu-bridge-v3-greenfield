@@ -1,0 +1,16 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-013
+PHASE_STAGE: Phase-G/G4
+STATUS: PASS
+-------------------------------------------
+[GITHUB_MQ_RULE_DETAIL]
+{"parameters":{"check_response_timeout_minutes":60,"grouping_strategy":"ALLGREEN","max_entries_to_build":5,"max_entries_to_merge":5,"merge_method":"MERGE","min_entries_to_merge":1,"min_entries_to_merge_wait_minutes":5},"type":"merge_queue"}
+
+[REQUIRED_CHECKS_FOR_MQ]
+{"context":"omoc-gate","integration_id":15368}
+{"context":"doc-validate / doc-validate (pull_request)","integration_id":15368}
+{"context":"omoc-gate / omoc-gate (pull_request)","integration_id":15368}
+{"context":"ci / omoc-gate (pull_request)","integration_id":15368}
+VERDICT: MQ_ENABLED (Ruleset ID: 12793412)
+-------------------------------------------
+END OF BUNDLE

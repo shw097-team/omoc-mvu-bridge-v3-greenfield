@@ -1,0 +1,11 @@
+--- OMOC EVIDENCE BUNDLE (20260218T123644Z) ---
+WP_ID: WP-014
+PHASE_STAGE: Phase-G/G5 (Closure)
+STATUS: PASS
+-------------------------------------------
+--- OMOC DRIFT GUARD REPORT ---
+Check Date: Wed Feb 18 01:38:46 PM UTC 2026
+[PASS] Workflow file count aligned.
+[INFO] Probing Remote Ruleset 12793412...
+[PASS] Ruleset is ACTIVE.
+-------------------------------------------

@@ -1,0 +1,17 @@
+{
+  "runs": [
+{
+  "docker_ps": "PASS",
+  "wf_doc_validate": "PRESENT",
+  "wf_omoc_gate": "PRESENT",
+  "accept_verdict": "PASS"
+}
+,
+{
+  "docker_ps": "PASS",
+  "wf_doc_validate": "PRESENT",
+  "wf_omoc_gate": "PRESENT",
+  "accept_verdict": "PASS"
+}
+  ]
+}

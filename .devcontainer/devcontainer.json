@@ -1,16 +1,28 @@
 {
-  "name": "omoc-mvu-bridge-v3-greenfield",
-  "image": "mcr.microsoft.com/devcontainers/base:ubuntu-24.04",
-  "remoteUser": "vscode",
+  "name": "OMOC-Bridge-V3-Greenfield (Solidified)",
+  "image": "mcr.microsoft.com/devcontainers/base:ubuntu",
+  "features": {
+    // 1. 100% 微軟官方維護的 Python 3.12 核心，絕不翻車
+    "ghcr.io/devcontainers/features/python:1": {
+      "version": "3.12"
+    },
+    // 2. 100% 微軟官方維護的 Node.js 20 核心，解決 OMO 底層依賴
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "20"
+    }
+  },
   "customizations": {
     "vscode": {
+      "settings": {
+        "terminal.integrated.defaultProfile.linux": "bash"
+      },
       "extensions": [
-        "ms-vscode-remote.remote-containers"
+        "ms-python.python",
+        "ms-vscode.vscode-typescript-next"
       ]
     }
-  }
-  ,
-  "features": {
-    "ghcr.io/devcontainers/features/docker-outside-of-docker": {}
-  }
+  },
+  // 3. 延遲注入 (Late Injection): 將剛才成功的物理修復指令轉為自動化背景執行
+  "postCreateCommand": "npm install -g bun && bun add -g oh-my-opencode && curl -fsSL https://opencode.ai/install | bash && echo 'export PATH=\"$HOME/.opencode/bin:$HOME/.bun/bin:$PATH\"' >> ~/.bashrc",
+  "remoteUser": "vscode"
 }

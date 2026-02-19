@@ -1,0 +1,12 @@
+{
+  "step": "G1",
+  "verdict": "PASS",
+  "utc": "20260213T125945Z",
+  "reason": "Dev container reopened successfully; container identity captured; evidence bundle generated.",
+  "evidence": {
+    "container_identity": "evidence/_acceptance/UTC_STEP2_G1/logs/container_identity.txt",
+    "devcontainer_json": "evidence/_acceptance/UTC_STEP2_G1/logs/devcontainer.json",
+    "bundle": "evidence/_acceptance/UTC_STEP2_G1/evidence_bundle.tgz",
+    "index": "evidence/_acceptance/UTC_STEP2_G1/evidence_index.md"
+  }
+}

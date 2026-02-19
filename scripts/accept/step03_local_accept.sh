@@ -1,12 +1,14 @@
 #!/usr/bin/env bash
 set -u
-ACC_DIR="${ACC_DIR:?ACC_DIR is required}"
+# Allow running standalone: provide a safe default ACC_DIR when not supplied
+ACC_DIR="${ACC_DIR:-evidence/_acceptance/UNVERIFIED/step-03}"
 LOG_DIR="${ACC_DIR}/logs"
 ART_DIR="${ACC_DIR}/artifacts"
-mkdir -p "$LOG_DIR" "$ART_DIR"
+mkdir -p "$LOG_DIR" "$ART_DIR" || true
 
 have(){ command -v "$1" >/dev/null 2>&1; }
-tmo(){ local s="$1"; shift; timeout --preserve-status "${s}s" "$@"; }
+# tmo: run a command with a timeout if the 'timeout' utility is present
+tmo(){ local s="$1"; shift; if have timeout; then timeout --preserve-status "${s}s" "$@"; else "$@"; fi }
 
 # Probe
 {
