@@ -9,7 +9,8 @@ on:
   workflow_dispatch: {}
 
 jobs:
-  docs:
+  doc_validate:
+    name: doc-validate
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v3
