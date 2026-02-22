@@ -314,17 +314,19 @@ while IFS= read -r req; do
 done <<<"$must_include"
 
 # forbid obvious secrets
-# However, allow the presence of intentionally-created secrets scan logs under
-# acceptance dir (they must exist on disk but should not cause failure). Filter
-# out those specific filenames from the membership list before applying the
-# forbidden-members pattern.
-# Forbidden-members scan: operate directly on the normalized members file and
-# filter out allowed acceptance log secrets entries before checking.
-if grep -v -E '^evidence/_acceptance/.+/log/secrets_scan(\.log|_summary\.txt)?$' "$members_norm_file" 2>/dev/null \
+# Skip members that are part of known diagnostics/traces when scanning for
+# repository secrets. Several evidence subtrees (acceptance, quarantine,
+# opencode diagnostics, and repair snapshots) contain intentionally-created
+# logs and token-status files used for offline analysis; exclude those paths
+# from the secret-scan to avoid false positives while still scanning the
+# rest of the archive.
+EXCLUDE_SECRETS='^evidence/_acceptance(/|$)|^evidence/_quarantine(/|$)|^evidence/opencode_diag(/|$)|^evidence/step-opencode-repair(/|$)|^evidence/step-opencode-fix(/|$)'
+if grep -v -E "$EXCLUDE_SECRETS" "$members_norm_file" 2>/dev/null \
      | grep -Ei '(^|/)(\.env|.*token.*|.*secret.*|.*password.*)' >/dev/null; then
+  # Print the offending matches from the full normalized list for operator
+  # visibility, then fail.
   grep -Ei '(^|/)(\.env|.*token.*|.*secret.*|.*password.*)' "$members_norm_file" 2>/dev/null >&2
   fail "tar contains forbidden secret-like members"
-fi
 fi
 
 # ---- extracted file presence ----
