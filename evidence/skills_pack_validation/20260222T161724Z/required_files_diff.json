@@ -1,0 +1,93 @@
+[
+  {
+    "path": "scripts/omoc_preflight.sh",
+    "expected_kind": "file",
+    "severity": "MAJOR",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "scripts/omoc_install_skills_pack.sh",
+    "expected_kind": "file",
+    "severity": "BLOCKER",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "scripts/omoc_validate_contracts.sh",
+    "expected_kind": "file",
+    "severity": "BLOCKER",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "scripts/probe_opencode_runtime.sh",
+    "expected_kind": "file",
+    "severity": "MAJOR",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "config/skills_pack_manifest.json",
+    "expected_kind": "file",
+    "severity": "MAJOR",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "config/skills_pack.lock.json",
+    "expected_kind": "file",
+    "severity": "MAJOR",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "config/required_files.json",
+    "expected_kind": "file",
+    "severity": "BLOCKER",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": "docs/skills_pack_src",
+    "expected_kind": "dir",
+    "severity": "BLOCKER",
+    "observed_kind": "dir",
+    "exists": true
+  },
+  {
+    "path": "docs/skills_pack_src/README.md",
+    "expected_kind": "file",
+    "severity": "BLOCKER",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": ".opencode/policy/skills_runtime_policy.yaml",
+    "expected_kind": "file",
+    "severity": "MAJOR",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": ".opencode/skills/omoc-skillpack-bootstrap/SKILL.md",
+    "expected_kind": "file",
+    "severity": "MAJOR",
+    "observed_kind": "file",
+    "exists": true
+  },
+  {
+    "path": ".ohmy",
+    "expected_kind": "dir",
+    "severity": "BLOCKER",
+    "observed_kind": "dir",
+    "exists": true
+  },
+  {
+    "path": ".ohmy/README.md",
+    "expected_kind": "file",
+    "severity": "BLOCKER",
+    "observed_kind": "file",
+    "exists": true
+  }
+]

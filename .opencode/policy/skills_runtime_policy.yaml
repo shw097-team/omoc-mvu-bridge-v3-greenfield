@@ -1,0 +1,4 @@
+---
+# Minimal runtime policy placeholder for RIP-C validation
+version: 1
+rules: []

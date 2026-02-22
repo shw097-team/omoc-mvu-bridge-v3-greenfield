@@ -1,4 +1,5 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "github-copilot/gpt-5-mini"
+  "model":"github-copilot/gpt-5-mini",
+  "plugin":["oh-my-opencode"]
 }
