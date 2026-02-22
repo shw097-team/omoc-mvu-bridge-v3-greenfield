@@ -223,6 +223,41 @@ fi
 # member lists or shells with strict I/O behaviour.
 ADIR_STRIP=${ADIR%/}
 
+# helper: write extended debug trace showing normalization pipeline, file
+# stats and grep snippets to aid offline debugging when a membership check
+# fails. Accepts an optional argument: a pattern (req_norm) to highlight.
+debug_dump_norm_trace(){
+  if [[ "${OMOC_DEBUG:-0}" != "1" || -z "${ADIR:-}" ]]; then
+    return 0
+  fi
+  out="$ADIR/log/validator_norm_trace.txt"
+  {
+    echo "=== validator_norm_trace: $(date -u +%FT%TZ)"
+    echo "ENV: LANG=${LANG:-} LC_ALL=${LC_ALL:-} OMOC_DEBUG=${OMOC_DEBUG:-}"
+    echo "TS=${TS:-} ADIR=${ADIR:-}"
+    echo "--- file stats ---"
+    ls -la -- "$members_raw_file" "$members_norm_file" "$ADIR/log" 2>/dev/null || true
+    echo "--- validator_tmp_norm.cmd (if present) ---"
+    if [[ -f "$ADIR/log/validator_tmp_norm.cmd" ]]; then
+      sed -n '1,200p' "$ADIR/log/validator_tmp_norm.cmd" || true
+    fi
+    echo "--- members_norm head (200) ---"; sed -n '1,200p' "$members_norm_file" 2>/dev/null || true
+    echo "--- members_norm tail (200) ---"; tail -n 200 "$members_norm_file" 2>/dev/null || true
+    echo "--- members_raw head (200) ---"; sed -n '1,200p' "$members_raw_file" 2>/dev/null || true
+    echo "--- grep -nF TS in normalized ---"; grep -nF -- "${TS}" "$members_norm_file" 2>/dev/null || true
+    echo "--- grep -nF TS in raw ---"; grep -nF -- "${TS}" "$members_raw_file" 2>/dev/null || true
+    if [[ -n "${1:-}" ]]; then
+      echo "--- grep -nF ${1} in normalized ---"; grep -nF -- "${1}" "$members_norm_file" 2>/dev/null || true
+      echo "--- grep -nF ${1} in raw ---"; grep -nF -- "${1}" "$members_raw_file" 2>/dev/null || true
+      # For each matching raw line show its text and a byte-level dump.
+      grep -nF -- "${1}" "$members_raw_file" 2>/dev/null | sed -n '1,200p' | while IFS=":" read -r ln txt; do
+        echo "--- raw line ${ln}: ${txt}";
+        printf "%s" "${txt}" | od -An -tx1 -v || true
+      done
+    fi
+  } >"$out" 2>&1 || true
+}
+
 # Debugging helpers: when OMOC_DEBUG=1, dump raw members and ADIR vars to acceptance log dir
 if [[ "${OMOC_DEBUG:-0}" == "1" ]]; then
   mkdir -p "$ADIR/log" 2>/dev/null || true
@@ -287,8 +322,11 @@ while IFS= read -r req; do
     # required prefix string.
     # For prefix requirements, require the normalized member list to contain
     # the prefix followed by a slash to avoid accidental substring matches.
-    if ! grep -F -q -- "$req_norm/" "$members_norm_file" 2>/dev/null; then
-      if grep -F -q -- "$req_norm/" "$members_raw_file" 2>/dev/null; then
+      if ! grep -F -q -- "$req_norm/" "$members_norm_file" 2>/dev/null; then
+        # when a prefix is missing, write an extended trace to help diagnose
+        # why normalization removed or transformed the expected entry.
+        debug_dump_norm_trace "$req_norm"
+        if grep -F -q -- "$req_norm/" "$members_raw_file" 2>/dev/null; then
         if [[ "${OMOC_DEBUG:-0}" == "1" ]]; then
           echo "DEBUG: prefix '$req_norm/' missing from normalized list but present in raw members; appending synthetic prefix entry" >>"$ADIR/log/validator_debug.txt" 2>/dev/null || true
           grep -nF -- "$req_norm/" "$members_raw_file" | sed -n '1,200p' >>"$ADIR/log/validator_debug.txt" 2>/dev/null || true
