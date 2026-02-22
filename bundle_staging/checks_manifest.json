@@ -1,0 +1,6 @@
+{
+  "required_check_name_contract": {
+    "canonical": "omoc_validate_contracts",
+    "expected": "omoc_validate_contracts"
+  }
+}

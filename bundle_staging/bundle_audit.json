@@ -1,0 +1,15 @@
+{
+  "schema_version": "1.0",
+  "result": "PASS",
+  "must_include": [
+    "evidence/_acceptance/20260221T140922Z/",
+    "evidence/_acceptance/20260221T140922Z/upload/WP-008_evidence_upload.txt",
+    "evidence/_acceptance/LATEST.S1.path.txt",
+    ".opencode/opencode.jsonc",
+    ".opencode/policy/omoc_policy.json",
+    ".ohmy/opencode.profiles.json",
+    "scripts/omoc_extract_skills.sh",
+    "scripts/omoc_validate_contracts.sh",
+    "evidence_bundle.tgz"
+  ]
+}
