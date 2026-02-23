@@ -30,13 +30,12 @@ else
   fi
 fi
 
-# If hash mismatch or missing, fail-closed: write BLOCK decisions and exit non-zero
+# If hash mismatch or missing, fail-closed per RIPB-REQ-005: write BLOCK decisions, emit TT, and exit 42
 if [ "${HASH_OK}" -ne 1 ]; then
-  echo "Fail-closed: HASH mismatch or missing; writing BLOCK decisions and exiting" >&2
-  # write decision records marking BLOCK with reason HASH_MISMATCH (shell-safe, deterministic)
+  echo "Fail-closed: HASH mismatch or missing; writing BLOCK decisions, emitting TT, and exiting 42" >&2
   : > "$DEC"
+  # write BLOCK decisions for each endpoint
   while read -r line; do
-    # extract endpoint_ref and url using simple json parsing (assumes standard format)
     endpoint_ref=$(echo "$line" | sed -n "s/.*\"endpoint_ref\"\s*:\s*\"\([^\"]*\)\".*/\1/p")
     url=$(echo "$line" | sed -n "s/.*\"url\"\s*:\s*\"\([^\"]*\)\".*/\1/p")
     out="{\"endpoint_ref\": \"${endpoint_ref}\", \"url\": \"${url}\", \"decision\": \"BLOCK\", \"reason\": \"HASH_MISMATCH\"}"
@@ -44,7 +43,24 @@ if [ "${HASH_OK}" -ne 1 ]; then
     echo "$out" >> "$DEC"
   done < <(jq -c '.endpoints[]' config/mcp_endpoints.json 2>/dev/null || python3 -c "import json,sys
 print('\n'.join([json.dumps(e) for e in json.load(open('config/mcp_endpoints.json')).get('endpoints',[]) ]))")
-  exit 2
+
+  # Emit TT snippet required by RIPB-REQ-005
+  TT_FILE="$OUTDIR/TT-RIPB-ENDPOINTS-DISCOVER-001.json"
+  cat > "$TT_FILE" <<TTJSON
+{
+  "id": "TT-RIPB-ENDPOINTS-DISCOVER-001",
+  "title": "Endpoints hash mismatch or missing",
+  "close_criteria": "Update config/mcp_endpoints.hash to match config/mcp_endpoints.json or restore audited endpoints",
+  "test_probe": "Run scripts/mcp_allowlist_enforce.sh with OMOC_TS=<TS> and observe exit code 42; verify decision=BLOCK",
+  "evidence_expected": ["evidence/_drift_guard/<TS>/allowlist_enforce.log","evidence/_drift_guard/<TS>/allowlist_decisions.jsonl"]
+}
+TTJSON
+
+  # also write a concise TT line into DEC for machine-readability
+  echo "{\"tt\": [\"TT-RIPB-ENDPOINTS-DISCOVER-001\"]}" >> "$DEC"
+
+  # enforce fail-closed exit code per RIPB-REQ-005
+  exit 42
 fi
 
 echo "Preparing decisions file: $DEC"

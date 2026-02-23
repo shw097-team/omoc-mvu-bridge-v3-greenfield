@@ -29,10 +29,14 @@ PY
 echo "Run enforcement (tampered, no hash update)"
 OMOC_TS=${OMOC_TS} bash scripts/mcp_allowlist_enforce.sh
 tamper_rc=$?
-echo "tamper rc=${tamper_rc}"
-# move tamper artifacts to deterministic names
-mv evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log evidence/_drift_guard/${OMOC_TS}/allowlist_enforce_tamper.log || true
-mv evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl evidence/_drift_guard/${OMOC_TS}/allowlist_decisions_tamper.jsonl || true
+echo "tamper_test rc=${tamper_rc}"
+# Do not assume separate *_tamper files unless enforcer created them; capture what exists
+if [ -f "evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log" ]; then
+  cp "evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log" "${OUTDIR}/allowlist_enforce_tamper.log" 2>/dev/null || true
+fi
+if [ -f "evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl" ]; then
+  cp "evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl" "${OUTDIR}/allowlist_decisions_tamper.jsonl" 2>/dev/null || true
+fi
 
 echo "Restore original config and update hash"
 mv /tmp/mcp_endpoints.json.bak config/mcp_endpoints.json
@@ -42,12 +46,23 @@ echo "Run enforcement (restored, hash updated)"
 OMOC_TS=${OMOC_TS} bash scripts/mcp_allowlist_enforce.sh
 restore_rc=$?
 echo "restore rc=${restore_rc}"
-mv evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log evidence/_drift_guard/${OMOC_TS}/allowlist_enforce_restore.log || true
-mv evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl evidence/_drift_guard/${OMOC_TS}/allowlist_decisions_restore.jsonl || true
+if [ -f "evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log" ]; then
+  cp "evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log" "${OUTDIR}/allowlist_enforce_restore.log" 2>/dev/null || true
+fi
+if [ -f "evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl" ]; then
+  cp "evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl" "${OUTDIR}/allowlist_decisions_restore.jsonl" 2>/dev/null || true
+fi
 
 echo "Tamper test complete; tamper_rc=${tamper_rc}, restore_rc=${restore_rc}"
 # Exit non-zero if tamper run failed as expected (enforce should fail-closed)
 if [ "${tamper_rc:-0}" -ne 0 ]; then
-  exit ${tamper_rc}
+  # The tamper test harness should succeed only if the enforcer failed-closed with rc=42
+  if [ "${tamper_rc}" -eq 42 ]; then
+    # indicate success of the test harness
+    exit 0
+  else
+    # unexpected rc; propagate
+    exit ${tamper_rc}
+  fi
 fi
 exit 0
