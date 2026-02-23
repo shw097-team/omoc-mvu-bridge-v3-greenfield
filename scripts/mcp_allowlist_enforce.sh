@@ -13,12 +13,13 @@ if [ ! -f config/mcp_endpoints.json ]; then
   exit 2
 fi
 
+expected=""
+actual=""
 if [ ! -f config/mcp_endpoints.hash ]; then
   echo "MISSING: config/mcp_endpoints.hash" >&2
-  # No endpoints.hash present — will continue but treat as HASH_OK=0 so enforcement defaults to conservative behaviour
   HASH_OK=0
 else
-  expected=$(cut -d' ' -f1 config/mcp_endpoints.hash)
+  expected=$(cut -d' ' -f1 config/mcp_endpoints.hash || true)
   actual=$(sha256sum -b config/mcp_endpoints.json | awk '{print $1}')
   if [ "${expected}" != "${actual}" ]; then
     echo "HASH_MISMATCH expected=${expected} actual=${actual}" >&2
@@ -27,6 +28,23 @@ else
     echo "HASH_OK" >&2
     HASH_OK=1
   fi
+fi
+
+# If hash mismatch or missing, fail-closed: write BLOCK decisions and exit non-zero
+if [ "${HASH_OK}" -ne 1 ]; then
+  echo "Fail-closed: HASH mismatch or missing; writing BLOCK decisions and exiting" >&2
+  # write decision records marking BLOCK with reason HASH_MISMATCH (shell-safe, deterministic)
+  : > "$DEC"
+  while read -r line; do
+    # extract endpoint_ref and url using simple json parsing (assumes standard format)
+    endpoint_ref=$(echo "$line" | sed -n "s/.*\"endpoint_ref\"\s*:\s*\"\([^\"]*\)\".*/\1/p")
+    url=$(echo "$line" | sed -n "s/.*\"url\"\s*:\s*\"\([^\"]*\)\".*/\1/p")
+    out="{\"endpoint_ref\": \"${endpoint_ref}\", \"url\": \"${url}\", \"decision\": \"BLOCK\", \"reason\": \"HASH_MISMATCH\"}"
+    echo "$out"
+    echo "$out" >> "$DEC"
+  done < <(jq -c '.endpoints[]' config/mcp_endpoints.json 2>/dev/null || python3 -c "import json,sys
+print('\n'.join([json.dumps(e) for e in json.load(open('config/mcp_endpoints.json')).get('endpoints',[]) ]))")
+  exit 2
 fi
 
 echo "Preparing decisions file: $DEC"
