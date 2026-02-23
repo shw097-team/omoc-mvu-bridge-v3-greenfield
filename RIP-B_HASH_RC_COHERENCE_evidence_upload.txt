@@ -1,0 +1,69 @@
+tool_path: opencode (TUI)
+git_head: 7f0788a4ec8522bbe970663e4b4ffd03f87de75e
+OMOC_TS: 20260223T025159Z
+
+--- raw run summary (trimmed) ---
+RUN START: 2026-02-23T03:07:07Z
+git_head: 7f0788a4ec8522bbe970663e4b4ffd03f87de75e
+--- git status ---
+ D RIP-A_LAND_evidence_upload.txt
+ D RIP-C_RUNTIME_PRECEDENCE_TEST_evidence_upload.txt
+ D RIP-C_RUNTIME_PROBE_evidence_upload.txt
+ D RIP-C_evidence_upload.txt
+?? RIP-B_HASH_RC_HYGIENE_evidence_upload.txt
+?? evidence/_drift_guard/
+--- grep markers in enforce script ---
+13:  exit 2
+20:  HASH_OK=0
+25:    echo "HASH_MISMATCH expected=${expected} actual=${actual}" >&2
+26:    HASH_OK=0
+28:    echo "HASH_OK" >&2
+29:    HASH_OK=1
+34:if [ "${HASH_OK}" -ne 1 ]; then
+35:  echo "Fail-closed: HASH mismatch or missing; writing BLOCK decisions and exiting" >&2
+36:  # write decision records marking BLOCK with reason HASH_MISMATCH (shell-safe, deterministic)
+42:    out="{\"endpoint_ref\": \"${endpoint_ref}\", \"url\": \"${url}\", \"decision\": \"BLOCK\", \"reason\": \"HASH_MISMATCH\"}"
+47:  exit 2
+--- grep markers in tamper script ---
+2:set -euo pipefail
+32:echo "tamper rc=${tamper_rc}"
+--- baseline run (OMOC_TS=20260223T025159Z) ---
+baseline rc=0
+--- tamper test run (OMOC_TS=20260223T025159Z) ---
+Starting tamper test at 2026-02-23T03:07:09Z
+Tampering config/mcp_endpoints.json
+tampered
+Run enforcement (tampered, no hash update)
+tamper_test rc=0
+--- drift dir contents after tamper ---
+total 0
+drwxr-xr-x 1 vscode vscode 512 Feb 23 03:07 .
+drwxr-xr-x 1 vscode vscode 512 Feb 23 03:07 ..
+-rw-r--r-- 1 vscode vscode 134 Feb 23 03:07 allowlist_decisions.jsonl
+-rw-r--r-- 1 vscode vscode 422 Feb 23 03:07 allowlist_enforce.log
+--- tamper log excerpt ---
+tail: cannot open 'evidence/_drift_guard/20260223T025159Z/allowlist_enforce_tamper.log' for reading: No such file or directory
+--- tamper decisions ---
+sed: can't read evidence/_drift_guard/20260223T025159Z/allowlist_decisions_tamper.jsonl: No such file or directory
+--- restore baseline run (OMOC_TS=20260223T025159Z) ---
+restore rc=0
+--- restore log excerpt ---
+tail: cannot open 'evidence/_drift_guard/20260223T025159Z/allowlist_enforce_restore.log' for reading: No such file or directory
+--- restore decisions ---
+sed: can't read evidence/_drift_guard/20260223T025159Z/allowlist_decisions_restore.jsonl: No such file or directory
+
+--- list drift dir ---
+total 0
+drwxr-xr-x 1 vscode vscode 512 Feb 23 03:07 .
+drwxr-xr-x 1 vscode vscode 512 Feb 23 03:07 ..
+-rw-r--r-- 1 vscode vscode 134 Feb 23 03:07 allowlist_decisions.jsonl
+-rw-r--r-- 1 vscode vscode 422 Feb 23 03:07 allowlist_enforce.log
+
+--- sha256 of changed files ---
+2cba69744dd5e152bd3ab9054ee828a663d9bb828049cbb756407923d5fcd523  config/mcp_endpoints.json
+e10796dc8e628e314de84cf8d24474421d02a6fbda520e16add521a8ed3eff60  config/mcp_endpoints.hash
+024ab30061f9d1c8c2fc4049ede5ee8b25bddf8db11231d774e97aead9e0cbf7  allowlist.lock.json
+1fc158adca32d3b9ed57187ad9d952e304d938e0ce571d35ba277b6eabdd50bd  scripts/mcp_allowlist_enforce.sh
+5ff35c722eb81792b86555fe8bf3585aeb7371d9bd30d6f07def0f79baad84d8  scripts/mcp_allowlist_tamper_test.sh
+--- appended sha256 ---
+39d61813a326996be6003a8cf50c34406dd9a98da5fc117b9090a8f5417769c9
