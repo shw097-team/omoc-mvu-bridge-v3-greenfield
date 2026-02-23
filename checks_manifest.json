@@ -1,6 +1,10 @@
 {
-  "required_check_name_contract": {
-    "canonical": "omoc_validate_contracts",
-    "expected": "omoc_validate_contracts"
+  "required_contexts_contract":{
+    "expected_source_order":["rulesets","branch_protection"],
+    "expected_file":"evidence/_acceptance/20260223T013101Z/ercc_observed/expected.json",
+    "observed_file":"evidence/_acceptance/20260223T013101Z/ercc_observed/observed.json",
+    "diff":{"missing":[],"extra":[]},
+    "verdict":"TEMP_CLOSED",
+    "tt":["TT-RIPA-003"]
   }
 }
