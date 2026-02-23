@@ -1,25 +1,68 @@
 ## git_head
-$(git rev-parse HEAD 2>/dev/null || echo "no-git")
+d34dac981a53fb42bdb11a50a8611c8716b9d194
 
 ## OMOC_TS
 20260222T161724Z
 
 ## preflight_artifacts
-$(ls -1 evidence/preflight/20260222T161724Z 2>/dev/null || true)
+preflight.json
 
 ## skills_pack_validation_artifacts
-$(ls -1 evidence/skills_pack_validation/20260222T161724Z 2>/dev/null || true)
+contract_snapshot.json
+rc.txt
+report.json
+report.md
+required_canonical.json
+required_files_diff.json
+secrets_hits.txt
 
 ## report_json_head
-$(head -n 80 evidence/skills_pack_validation/20260222T161724Z/report.json 2>/dev/null || true)
+{
+  "ts": "20260222T161724Z",
+  "overall_verdict": "PASS",
+  "contract_snapshot": {
+    "contract_version": "2.0.0",
+    "ssot_locators": [
+      "/mnt/data/OMOC_RIP-C_v1.0.0.md#(ANCHOR:OMOC-RIP-C-O-GATES-DOD)",
+      "/mnt/data/OMOC_RIP-C_v1.0.0_審查報告.md#F-G-001",
+      "/mnt/data/OMOC_WP-007+RB+WI_v4.0.1-r2.md#(L5 verify-files)"
+    ],
+    "observed_contract_sha256": "21e61c12d45311afa9a17eb64dab577b08bbd9e504cad63555c1e9db370989b0",
+    "observed_required_canonical": [
+      { "kind": "file", "path": "scripts/omoc_preflight.sh", "severity": "MAJOR", "ssot_locator": "/mnt/data/OMOC_RIP-C_v1.0.0_審查報告.md#F-A-002" },
+      { "kind": "file", "path": "scripts/omoc_install_skills_pack.sh", "severity": "BLOCKER", "ssot_locator": "/mnt/data/OMOC_RIP-C_v1.0.0.md#(ANCHOR:OMOC-RIP-C-C-DIATAXIS)" }
+    ]
+  }
+}
 
 ## report_md_head
-$(head -n 120 evidence/skills_pack_validation/20260222T161724Z/report.md 2>/dev/null || true)
+OMOC RIP-C Validation Report
+TS: 20260222T161724Z
+Overall verdict: PASS
+Contract SHA256: 21e61c12d45311afa9a17eb64dab577b08bbd9e504cad63555c1e9db370989b0
+
+Required files diff:
+- scripts/omoc_preflight.sh: expected=file observed=file exists=true severity=MAJOR
+- scripts/omoc_install_skills_pack.sh: expected=file observed=file exists=true severity=BLOCKER
+- scripts/omoc_validate_contracts.sh: expected=file observed=file exists=true severity=BLOCKER
+- scripts/probe_opencode_runtime.sh: expected=file observed=file exists=true severity=MAJOR
+- config/skills_pack_manifest.json: expected=file observed=file exists=true severity=MAJOR
+- config/skills_pack.lock.json: expected=file observed=file exists=true severity=MAJOR
+- config/required_files.json: expected=file observed=file exists=true severity=BLOCKER
+- docs/skills_pack_src: expected=dir observed=dir exists=true severity=BLOCKER
+- docs/skills_pack_src/README.md: expected=file observed=file exists=true severity=BLOCKER
+- .opencode/policy/skills_runtime_policy.yaml: expected=file observed=file exists=true severity=MAJOR
+- .opencode/skills/omoc-skillpack-bootstrap/SKILL.md: expected=file observed=file exists=true severity=MAJOR
+- .ohmy: expected=dir observed=dir exists=true severity=BLOCKER
+- .ohmy/README.md: expected=file observed=file exists=true severity=BLOCKER
+
+Secrets scan: contents of evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt
+(no hits)
 
 ## sha256_reports
-$(sha256sum evidence/skills_pack_validation/20260222T161724Z/report.json 2>/dev/null || true)
-$(sha256sum evidence/skills_pack_validation/20260222T161724Z/report.md 2>/dev/null || true)
-$(sha256sum evidence/skills_pack_validation/20260222T161724Z/required_files_diff.json 2>/dev/null || true)
-$(sha256sum evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt 2>/dev/null || true)
-$(sha256sum evidence/skills_pack_validation/20260222T161724Z/contract_snapshot.json 2>/dev/null || true)
-$(sha256sum evidence/skills_pack_validation/20260222T161724Z/rc.txt 2>/dev/null || true)
+753575942600e0c745fb6d9b3963b88cd81fa11e7d5bd1ae5a3175ac091b2b2f  evidence/skills_pack_validation/20260222T161724Z/report.json
+d8f0b7196a1ca70be0441590f97cbcc99afd437b1ed03db00c467e9a0f4faacd  evidence/skills_pack_validation/20260222T161724Z/report.md
+51a82c6e9897fb781056227ced2e9a925989ad93f1fdd5fa29bf6b273f083875  evidence/skills_pack_validation/20260222T161724Z/required_files_diff.json
+e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855  evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt
+005122e4c888650b6ea22c7333fcd115e8ef8c722e1a737dc99f6ffed044da22  evidence/skills_pack_validation/20260222T161724Z/contract_snapshot.json
+9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa  evidence/skills_pack_validation/20260222T161724Z/rc.txt

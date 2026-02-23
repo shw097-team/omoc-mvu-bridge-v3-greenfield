@@ -1,0 +1,85 @@
+## git_head
+d34dac981a53fb42bdb11a50a8611c8716b9d194
+
+## OMOC_TS
+20260222T165850Z
+
+## runtime_probe_artifacts
+total 112
+-rw-r--r-- 1 vscode vscode    70 Feb 22 16:58 baseline_probe.stdout.txt
+-rw-r--r-- 1 vscode vscode     6 Feb 22 17:03 bunx_version.txt
+-rw-r--r-- 1 vscode vscode   152 Feb 22 17:05 git_status_after_round1.txt
+-rw-r--r-- 1 vscode vscode  2269 Feb 22 17:03 native_opencode_help.json
+-rw-r--r-- 1 vscode vscode     0 Feb 22 17:03 native_opencode.stdout.json
+-rw-r--r-- 1 vscode vscode  2269 Feb 22 17:03 native_opencode.stdout.txt
+-rw-r--r-- 1 vscode vscode    92 Feb 22 17:05 ohmy_install.stdout.txt
+-rw-r--r-- 1 vscode vscode 81151 Feb 22 17:08 ohmy_opencode.stdout.txt
+-rw-r--r-- 1 vscode vscode     6 Feb 22 17:06 ohmy_opencode_version.txt
+-rw-r--r-- 1 vscode vscode    62 Feb 22 17:03 ohmy_probe_check.txt
+-rw-r--r-- 1 vscode vscode    41 Feb 22 17:05 repo_git_head.txt
+-rw-r--r-- 1 vscode vscode   826 Feb 22 17:10 runtime_precedence_test.json
+-rw-r--r-- 1 vscode vscode   580 Feb 22 17:11 runtime_probe.json
+-rw-r--r-- 1 vscode vscode   524 Feb 22 17:10 sha256_all.txt
+-rw-r--r-- 1 vscode vscode   524 Feb 22 17:11 sha256_final.txt
+-rw-r--r-- 1 vscode vscode   390 Feb 22 17:04 sha256sums.txt
+-rw-r--r-- 1 vscode vscode  6261 Feb 22 17:03 top_level_ls.txt
+
+## runtime_probe_json_head
+{
+  "schema_version": "omoc.runtime_probe.v1",
+  "generated_at": "2026-02-23T00:58:56+08:00",
+  "timezone": "Asia/Taipei",
+  "paths_observed": [
+    {
+      "path": ".opencode/skills",
+      "exists": true
+    },
+    {
+      "path": ".ohmy/skills",
+      "exists": false
+    },
+    {
+      "path": "docs/skills_pack_src",
+      "exists": true
+    }
+  ],
+  "precedence_note": "driftable: actual precedence must be verified in target runtime; treat as NEEDS-TEST if not executed in the real opencode runtime",
+  "last_verified_at": "2026-02-22T16:58:50Z",
+  "drift_action": "KEEP"
+}
+
+## runtime_precedence_test_json_head
+{
+  "schema_version": "omoc.runtime_precedence_test.v1",
+  "generated_at": "2026-02-22T16:58:50Z",
+  "repo_git_head": "d34dac981a53fb42bdb11a50a8611c8716b9d194",
+  "native": {
+    "observed_paths": [
+      ".opencode/skills",
+      ".ohmy/skills",
+      "docs/skills_pack_src"
+    ],
+    "stdout_sha256": "23bf701dd2eab2087310d4f12c2c8c6b7d27d2451894507fb3250e2d31fb56e4"
+  },
+  "ohmy": {
+    "observed_paths": [
+      ".opencode/skills",
+      ".ohmy/skills",
+      "docs/skills_pack_src"
+    ],
+    "stdout_sha256": "ae1e4859cd81f218469567133353d767b5e3a2f7622c3129047df70f24f700c8"
+  },
+  "conclusion": {
+    "same_or_diff": "same",
+    "notes": "Native opencode and oh-my-opencode observed the same skill-related paths in this repository.",
+    "drift_action": "KEEP",
+    "last_verified_at": "2026-02-22T16:58:50Z"
+  }
+}
+
+## sha256_runtime_probe_and_test
+2866fe9fe4ae268751acdb19b195380f349130df316e3c4fba635a330f6997a6  evidence/runtime_probe/20260222T165850Z/runtime_probe.json
+7e35b743be7ac19ebfe3347a4b32a07369309282e04725becc7ae6cd76d2f899  evidence/runtime_probe/20260222T165850Z/runtime_precedence_test.json
+23bf701dd2eab2087310d4f12c2c8c6b7d27d2451894507fb3250e2d31fb56e4  evidence/runtime_probe/20260222T165850Z/native_opencode.stdout.txt
+ae1e4859cd81f218469567133353d767b5e3a2f7622c3129047df70f24f700c8  evidence/runtime_probe/20260222T165850Z/ohmy_opencode.stdout.txt
+

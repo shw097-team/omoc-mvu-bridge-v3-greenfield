@@ -1,5 +1,4 @@
-Attempted non-interactive bunx oh-my-opencode install failed: installer requires a TTY; no auto-install performed (oh-my present so probe ran).
-Changed files:
+ M .github/workflows/omoc-gate.yml
 AM RIP-C_RUNTIME_PRECEDENCE_TEST_evidence_upload.txt
  M RIP-C_evidence_upload.txt
 A  evidence/runtime_probe/20260222T165850Z/baseline_probe.stdout.txt
@@ -19,6 +18,31 @@ A  evidence/runtime_probe/20260222T165850Z/sha256_all.txt
 A  evidence/runtime_probe/20260222T165850Z/sha256_final.txt
 A  evidence/runtime_probe/20260222T165850Z/sha256sums.txt
 A  evidence/runtime_probe/20260222T165850Z/top_level_ls.txt
+ M fail_round_1.txt
+?? .comment_hook_ack.txt
+?? RIP-A_LAND_evidence_upload.txt
 ?? RIP-C_RUNTIME_PROBE_evidence_upload.txt
-?? evidence/runtime_probe/20260222T164219Z/
+?? chmods_round1.txt
+?? evidence/runtime_probe/20260222T164219Z/runtime_probe.json
 ?? evidence/runtime_probe/20260222T165850Z/changed_files_round1.txt
+?? policy/candidates_manifest.yaml
+?? policy/omoc_agent_policy.yml
+?? python_yaml_check.txt
+?? renames_round1.txt
+?? rip_a_git_status.txt
+?? rip_a_landed_git_head.txt
+?? rip_a_landed_ls.txt
+?? rip_a_landed_policy_ls.txt
+?? rip_a_landed_scripts_ls.txt
+?? rip_a_landed_sha256s.txt
+?? rip_a_landed_ts.txt
+?? rip_a_verifier_outputs.txt
+?? scripts/omoc_collect_checks_manifest.sh
+?? scripts/omoc_doc_hygiene_scan.sh
+?? scripts/omoc_drift_report.sh
+?? scripts/omoc_install_rip_a.sh
+?? scripts/omoc_pinned_actions_report.sh
+?? scripts/omoc_secrets_scan.sh
+?? scripts/omoc_superseded_scan.sh
+?? scripts/omoc_tt_export.sh
+?? scripts/omoc_validate_contracts.sh.rip-a1

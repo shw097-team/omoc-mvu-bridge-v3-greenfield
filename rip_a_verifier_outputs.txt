@@ -1,0 +1,48 @@
+
+--- BASH -n scripts/omoc_build_wp001_005_upload_txt.sh ---
+OK
+
+--- BASH -n scripts/omoc_collect_checks_manifest.sh ---
+OK
+
+--- BASH -n scripts/omoc_doc_hygiene_scan.sh ---
+OK
+
+--- BASH -n scripts/omoc_drift_check.sh ---
+OK
+
+--- BASH -n scripts/omoc_drift_report.sh ---
+OK
+
+--- BASH -n scripts/omoc_extract_skills.sh ---
+OK
+
+--- BASH -n scripts/omoc_install_rip_a.sh ---
+OK
+
+--- BASH -n scripts/omoc_install_skills_pack.sh ---
+OK
+
+--- BASH -n scripts/omoc_pinned_actions_report.sh ---
+OK
+
+--- BASH -n scripts/omoc_preflight.sh ---
+OK
+
+--- BASH -n scripts/omoc_secrets_scan.sh ---
+OK
+
+--- BASH -n scripts/omoc_sk08_pack.sh ---
+OK
+
+--- BASH -n scripts/omoc_solidify_wp001_005.sh ---
+OK
+
+--- BASH -n scripts/omoc_superseded_scan.sh ---
+OK
+
+--- BASH -n scripts/omoc_tt_export.sh ---
+OK
+
+--- BASH -n scripts/omoc_validate_contracts.sh ---
+OK

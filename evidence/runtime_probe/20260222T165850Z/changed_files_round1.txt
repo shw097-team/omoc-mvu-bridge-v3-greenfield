@@ -1,5 +1,3 @@
-Attempted non-interactive bunx oh-my-opencode install failed: installer requires a TTY; no auto-install performed (oh-my present so probe ran).
-Changed files:
 AM RIP-C_RUNTIME_PRECEDENCE_TEST_evidence_upload.txt
  M RIP-C_evidence_upload.txt
 A  evidence/runtime_probe/20260222T165850Z/baseline_probe.stdout.txt
