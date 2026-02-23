@@ -6,11 +6,11 @@ mkdir -p "$OUTDIR"
 
 echo "Starting tamper test at $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-# Ensure no accidental literal file named $DEC
-if [ -f "\$DEC" ]; then
-  # accidental literal file named "$DEC" may be left by earlier runs; remove to keep evidence path deterministic
-  echo "Removing accidental literal file named $DEC"
-  rm -f "\$DEC"
+# Ensure no accidental literal file named $DEC (safe check; guard against unbound variable)
+DEC_VAR='\$DEC'
+if [ -f "$DEC_VAR" ]; then
+  echo "Removing accidental literal file named $DEC_VAR"
+  rm -f "$DEC_VAR"
 fi
 
 cp config/mcp_endpoints.json /tmp/mcp_endpoints.json.bak
