@@ -3,24 +3,27 @@ set -euo pipefail
 OMOC_TS=${OMOC_TS:-$(date -u +%Y%m%dT%H%M%SZ)}
 OUTDIR="evidence/_drift_guard/${OMOC_TS}"
 mkdir -p "$OUTDIR"
+# Allow overriding the config and hash paths for safe testing (tests may set CONFIG_PATH/HASH_PATH)
+CONFIG_PATH=${CONFIG_PATH:-config/mcp_endpoints.json}
+HASH_PATH=${HASH_PATH:-config/mcp_endpoints.hash}
 LOG="$OUTDIR/allowlist_enforce.log"
 DEC="$OUTDIR/allowlist_decisions.jsonl"
 exec >"$LOG" 2>&1
 echo "mcp_allowlist_enforce.sh start: $(date -u +%Y-%m-%dT%H:%M:%SZ)"
 
-if [ ! -f config/mcp_endpoints.json ]; then
-  echo "MISSING: config/mcp_endpoints.json" >&2
+if [ ! -f "$CONFIG_PATH" ]; then
+  echo "MISSING: $CONFIG_PATH" >&2
   exit 2
 fi
 
 expected=""
 actual=""
-if [ ! -f config/mcp_endpoints.hash ]; then
-  echo "MISSING: config/mcp_endpoints.hash" >&2
+if [ ! -f "$HASH_PATH" ]; then
+  echo "MISSING: $HASH_PATH" >&2
   HASH_OK=0
 else
-  expected=$(cut -d' ' -f1 config/mcp_endpoints.hash || true)
-  actual=$(sha256sum -b config/mcp_endpoints.json | awk '{print $1}')
+  expected=$(cut -d' ' -f1 "$HASH_PATH" || true)
+  actual=$(sha256sum -b "$CONFIG_PATH" | awk '{print $1}')
   if [ "${expected}" != "${actual}" ]; then
     echo "HASH_MISMATCH expected=${expected} actual=${actual}" >&2
     HASH_OK=0
@@ -41,8 +44,8 @@ if [ "${HASH_OK}" -ne 1 ]; then
     out="{\"endpoint_ref\": \"${endpoint_ref}\", \"url\": \"${url}\", \"decision\": \"BLOCK\", \"reason\": \"HASH_MISMATCH\"}"
     echo "$out"
     echo "$out" >> "$DEC"
-  done < <(jq -c '.endpoints[]' config/mcp_endpoints.json 2>/dev/null || python3 -c "import json,sys
-print('\n'.join([json.dumps(e) for e in json.load(open('config/mcp_endpoints.json')).get('endpoints',[]) ]))")
+  done < <(jq -c '.endpoints[]' "$CONFIG_PATH" 2>/dev/null || python3 -c "import json,sys,os
+print('\\n'.join([json.dumps(e) for e in json.load(open(os.environ.get('CONFIG_PATH','config/mcp_endpoints.json'))).get('endpoints',[]) ]))")
 
   # Emit TT snippet required by RIPB-REQ-005
   TT_FILE="$OUTDIR/TT-RIPB-ENDPOINTS-DISCOVER-001.json"
@@ -60,6 +63,8 @@ TTJSON
   echo "{\"tt\": [\"TT-RIPB-ENDPOINTS-DISCOVER-001\"]}" >> "$DEC"
 
   # enforce fail-closed exit code per RIPB-REQ-005
+  # record observed enforcer rc in the drift_guard for this run
+  printf "%s" 42 > "$OUTDIR/allowlist_enforce_rc.txt" 2>/dev/null || true
   exit 42
 fi
 
@@ -69,7 +74,8 @@ echo "Preparing decisions file: $DEC"
 python3 - <<'PY' > "$DEC"
 import json
 
-eps = json.load(open('config/mcp_endpoints.json'))
+import os
+eps = json.load(open(os.environ.get('CONFIG_PATH','config/mcp_endpoints.json')))
 try:
     allow = json.load(open('allowlist.lock.json'))
 except Exception:
@@ -87,4 +93,6 @@ for e in eps.get('endpoints', []):
 PY
 
 echo "Completed allowlist enforcement run"
+# record success rc
+printf "%s" 0 > "$OUTDIR/allowlist_enforce_rc.txt" 2>/dev/null || true
 exit 0
