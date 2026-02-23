@@ -27,7 +27,10 @@ print('tampered')
 PY
 
 echo "Run enforcement (tampered, no hash update)"
-OMOC_TS=${OMOC_TS} bash scripts/mcp_allowlist_enforce.sh || true
+OMOC_TS=${OMOC_TS} bash scripts/mcp_allowlist_enforce.sh
+tamper_rc=$?
+echo "tamper rc=${tamper_rc}"
+# move tamper artifacts to deterministic names
 mv evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log evidence/_drift_guard/${OMOC_TS}/allowlist_enforce_tamper.log || true
 mv evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl evidence/_drift_guard/${OMOC_TS}/allowlist_decisions_tamper.jsonl || true
 
@@ -36,9 +39,15 @@ mv /tmp/mcp_endpoints.json.bak config/mcp_endpoints.json
 sha256sum -b config/mcp_endpoints.json | awk '{print $1" " $2}' > config/mcp_endpoints.hash
 
 echo "Run enforcement (restored, hash updated)"
-OMOC_TS=${OMOC_TS} bash scripts/mcp_allowlist_enforce.sh || true
+OMOC_TS=${OMOC_TS} bash scripts/mcp_allowlist_enforce.sh
+restore_rc=$?
+echo "restore rc=${restore_rc}"
 mv evidence/_drift_guard/${OMOC_TS}/allowlist_enforce.log evidence/_drift_guard/${OMOC_TS}/allowlist_enforce_restore.log || true
 mv evidence/_drift_guard/${OMOC_TS}/allowlist_decisions.jsonl evidence/_drift_guard/${OMOC_TS}/allowlist_decisions_restore.jsonl || true
 
-echo "Tamper test complete"
+echo "Tamper test complete; tamper_rc=${tamper_rc}, restore_rc=${restore_rc}"
+# Exit non-zero if tamper run failed as expected (enforce should fail-closed)
+if [ "${tamper_rc:-0}" -ne 0 ]; then
+  exit ${tamper_rc}
+fi
 exit 0
