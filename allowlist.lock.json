@@ -1,3 +1,8 @@
 {
-  "servers": []
+  "servers": [
+    {
+      "endpoint_ref": "ep-1",
+      "note": "allow ep-1 for RIP-B Step-02 ALLOW path"
+    }
+  ]
 }
