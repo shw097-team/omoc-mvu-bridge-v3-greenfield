@@ -1,15 +1,14 @@
 {
-  "name": "omoc-mvu-bridge-v3-greenfield",
-  "module": "index.ts",
-  "type": "module",
+  "name": "opencode-preflight",
   "private": true,
+  "type": "module",
   "devDependencies": {
-    "@types/bun": "latest"
-  },
-  "peerDependencies": {
-    "typescript": "^5"
+    "ajv": "8.17.1",
+    "ajv-formats": "3.0.1",
+    "jsonc-parser": "3.2.1"
   },
   "scripts": {
-    "test": "echo \"No tests configured yet. Passing for CI.\" && exit 0"
+    "verify": "bash scripts/verify.sh",
+    "preflight:opencode": "bash scripts/preflight-opencode.sh"
   }
 }
