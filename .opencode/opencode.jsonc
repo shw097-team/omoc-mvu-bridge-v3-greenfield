@@ -1,8 +1,55 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "anthropic/claude-3-7-sonnet",
   "theme": "opencode",
-  "plugin": [
-    "oh-my-opencode@3.5.4"
-  ]
+  "autoupdate": false,
+
+  // 重要：鎖死 Kimi，避免 OmO agent model override 被 UI/config.model 覆蓋的已知問題
+  "model": "opencode/kimi-k2.5",
+
+  // 釘版本：npm 顯示 oh-my-opencode 最新 3.8.0（2026-02-23 時點）
+  "plugin": ["oh-my-opencode@3.5.4"],
+
+  // 規則注入（AGENTS.md）
+  "instructions": ["AGENTS.md"],
+
+  // ============ MODE A：deny-by-default，且「完全不詢問」 ============
+  "permission": {
+    "*": "deny",
+
+    // Read-only 能力（不詢問）
+    "read": "allow",
+    "list": "allow",
+    "glob": "allow",
+    "grep": "allow",
+
+    // Todo 可用（依你的 OMOC 工具鏈慣例，保留；也不詢問）
+    "todoread": "allow",
+    "todowrite": "allow",
+
+    // Web 僅 SUPPORT-only：禁用避免外網成為執行相依（OMOC/藍圖與 SubP1 要求）
+    "webfetch": "deny",
+    "websearch": "deny",
+
+    // 禁外部目錄（避免越權掃 host）
+    "external_directory": "deny",
+
+    // Bash 白名單：不詢問；沒列到就直接 deny
+    "bash": {
+      "*": "deny",
+      "git *": "allow",
+      "rg *": "allow",
+      "jq *": "allow",
+      "opencode *": "allow",
+      "bash scripts/*": "allow"
+    },
+
+    // Edit 白名單：不詢問；只允許“工廠線/驗收線”允許改動面
+    "edit": {
+      "*": "deny",
+      ".github/workflows/**": "allow",
+      ".github/actions/**": "allow",
+      "scripts/**": "allow",
+      ".opencode/**": "allow"
+    }
+  }
 }
