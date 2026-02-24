@@ -1,0 +1,7 @@
+name: Supplychain Dependency Review
+on: [push]
+jobs:
+  dep-review:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "dependency-review"

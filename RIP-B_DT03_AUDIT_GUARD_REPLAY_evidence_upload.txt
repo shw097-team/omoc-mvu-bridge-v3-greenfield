@@ -1,0 +1,225 @@
+tool_path: opencode (TUI)
+git_head: 90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+OMOC_TS: 20260223T093000Z
+
+--- git_before.out ---
+90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+
+A  scripts/mcp_audit_guard.sh
+?? RIP-B_DT03_AUDIT_GUARD_evidence_upload.txt
+?? RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_PASS_evidence_upload.txt
+?? evidence/_audit/
+
+--- ls_root.out ---
+total 5388
+drwxrwxrwx 1 root   root       512 Feb 23 07:08 .
+drwxr-xr-x 3 root   root      4096 Feb 18 10:54 ..
+drwxr-xr-x 1 vscode vscode     512 Feb 23 05:07 _acceptance
+-rw-r--r-- 1 vscode vscode     289 Feb 14 16:25 agent.md
+-rw-r--r-- 1 vscode vscode     329 Feb 14 16:25 AGENTS.md
+-rw-r--r-- 1 vscode vscode     121 Feb 23 05:28 allowlist.lock.json
+drwxr-xr-x 1 vscode vscode     512 Feb 19 15:04 audit_intake_20260218T143519Z
+drwxr-xr-x 1 vscode vscode     512 Feb 18 16:45 baseline
+-rw-r--r-- 1 vscode vscode     873 Feb 22 15:48 bundle_audit.json
+-rw-r--r-- 1 vscode vscode    1484 Feb 21 17:32 bundle_audit.json.bak12b
+drwxr-xr-x 1 vscode vscode     512 Feb 21 14:16 bundle_staging
+-rw-r--r-- 1 vscode vscode    1221 Feb 19 14:15 bun.lock
+-rw-r--r-- 1 vscode vscode     373 Feb 23 01:31 checks_manifest.json
+-rw-r--r-- 1 vscode vscode     661 Feb 22 17:31 chmods_round1.txt
+lrwxrwxrwx 1 vscode vscode      30 Feb 19 14:15 comment-checker -> /usr/local/bin/comment-checker
+-rw-r--r-- 1 vscode vscode     262 Feb 22 17:33 .comment_hook_ack.txt
+drwxr-xr-x 1 vscode vscode     512 Feb 23 05:28 config
+-rw-r--r-- 1 vscode vscode     130 Feb 22 15:04 counts_raw.txt
+-rw-r--r-- 1 vscode vscode      71 Feb 22 15:04 debug_counts.txt
+-rw-r--r-- 1 vscode vscode    4259 Feb 22 15:03 debug_env.txt
+-rw-r--r-- 1 vscode vscode    3920 Feb 22 15:04 debug_od.txt
+-rw-r--r-- 1 vscode vscode    2006 Feb 22 15:04 debug_run.txt
+drwxrwxrwx 1 root   root       512 Feb 19 14:15 .devcontainer
+drwxr-xr-x 1 vscode vscode     512 Feb 22 16:07 docs
+drwxrwxrwx 1 root   root       512 Feb 23 07:17 evidence
+-rw-r--r-- 1 vscode vscode   43048 Feb 18 12:56 evidence_bundle_FINAL_20260218T123644Z.tgz
+-rw-r--r-- 1 vscode vscode   14113 Feb 18 13:56 evidence_bundle_GREENFIELD_CLOSED.tgz
+-rw-r--r-- 1 vscode vscode  631441 Feb 18 14:06 evidence_bundle_GREENFIELD_FINAL_20260218T140133Z.tgz
+-rw-r--r-- 1 vscode vscode      65 Feb 19 14:15 evidence_bundle.sha256
+-rw-r--r-- 1 vscode vscode       5 Feb 19 14:15 evidence_bundle.size
+-rw-r--r-- 1 vscode vscode 3271730 Feb 22 15:48 evidence_bundle.tgz
+-rw-r--r-- 1 vscode vscode      61 Feb 21 14:14 evidence_index.md
+drwxr-xr-x 1 vscode vscode     512 Feb 19 06:10 eviden:contentReference[oaicite:17]{index=17}TS}
+-rw-r--r-- 1 vscode vscode    1505 Feb 22 17:12 fail_round_1.txt
+-rw-r--r-- 1 vscode vscode      17 Feb 22 13:29 fail_round_2.txt
+-rw-r--r-- 1 vscode vscode      17 Feb 22 13:30 fail_round_3.txt
+drwxr-xr-x 1 vscode vscode     512 Feb 23 07:18 .git
+drwxr-xr-x 1 vscode vscode     512 Feb 16 17:59 .github
+-rw-r--r-- 1 vscode vscode     242 Feb 23 07:01 .gitignore
+-rw-r--r-- 1 vscode vscode      30 Feb 19 14:15 index.ts
+drwxr-xr-x 1 vscode vscode     512 Feb 22 14:39 log
+drwxr-xr-x 1 vscode vscode     512 Feb 18 08:32 node_modules
+drwxr-xr-x 1 vscode vscode     512 Feb 22 16:23 .ohmy
+lrwxrwxrwx 1 vscode vscode      29 Feb 19 14:15 oh-my-opencode -> /usr/local/bin/oh-my-opencode
+-rwxr-xr-x 1 vscode vscode     128 Feb 19 14:15 omo
+drwxr-xr-x 1 vscode vscode     512 Feb 21 14:03 .opencode
+lrwxrwxrwx 1 vscode vscode      23 Feb 19 14:15 opencode -> /usr/local/bin/opencode
+-rw-r--r-- 1 vscode vscode     310 Feb 19 14:15 package.json
+drwxr-xr-x 1 vscode vscode     512 Feb 22 17:31 policy
+-rw-r--r-- 1 vscode vscode      15 Feb 22 17:34 python_yaml_check.txt
+drwxr-xr-x 1 vscode vscode     512 Feb 22 14:39 rc
+-rw-r--r-- 1 vscode vscode      34 Feb 13 14:56 README.md
+-rw-r--r-- 1 vscode vscode     804 Feb 22 17:31 renames_round1.txt
+-rw-r--r-- 1 vscode vscode    2157 Feb 22 17:35 rip_a_git_status.txt
+-rw-r--r-- 1 vscode vscode      41 Feb 22 17:35 rip_a_landed_git_head.txt
+-rw-r--r-- 1 vscode vscode      77 Feb 22 17:35 rip_a_landed_ls.txt
+-rw-r--r-- 1 vscode vscode     145 Feb 22 17:35 rip_a_landed_policy_ls.txt
+-rw-r--r-- 1 vscode vscode    2097 Feb 22 17:35 rip_a_landed_scripts_ls.txt
+-rw-r--r-- 1 vscode vscode    1864 Feb 22 17:35 rip_a_landed_sha256s.txt
+-rw-r--r-- 1 vscode vscode      17 Feb 22 17:27 rip_a_landed_ts.txt
+-rw-r--r-- 1 vscode vscode     837 Feb 22 17:35 rip_a_verifier_outputs.txt
+-rw-r--r-- 1 vscode vscode    4287 Feb 23 07:08 RIP-B_DT03_AUDIT_GUARD_evidence_upload.txt
+-rw-r--r-- 1 vscode vscode    4731 Feb 23 05:40 RIP-B_REPO_HYGIENE_CLOSEOUT_evidence_upload.txt
+-rw-r--r-- 1 vscode vscode     116 Feb 23 05:40 RIP-B_REPO_HYGIENE_CLOSEOUT_evidence_upload.txt.sha256
+-rw-r--r-- 1 vscode vscode     955 Feb 23 07:02 RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_PASS_evidence_upload.txt
+-rw-r--r-- 1 vscode vscode    1444 Feb 23 05:28 RIP_SETUP_evidence_upload.txt
+drwxr-xr-x 1 vscode vscode     512 Feb 23 07:06 scripts
+-rw-r--r-- 1 vscode vscode     578 Feb 19 14:15 single_evidence_bundle_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     321 Feb 19 14:15 single_evidence_bundle_FINAL_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode    9908 Feb 19 14:15 single_evidence_bundle_WP003_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     448 Feb 19 14:44 single_evidence_bundle_WP004_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     418 Feb 19 14:15 single_evidence_bundle_WP005_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode    1023 Feb 19 14:15 single_evidence_bundle_WP006_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode    1322 Feb 19 14:15 single_evidence_bundle_WP007_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     491 Feb 19 14:15 single_evidence_bundle_WP008_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     817 Feb 19 14:15 single_evidence_bundle_WP009_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     933 Feb 19 14:15 single_evidence_bundle_WP010_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     931 Feb 19 14:15 single_evidence_bundle_WP011_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     447 Feb 19 14:15 single_evidence_bundle_WP012_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     803 Feb 19 14:15 single_evidence_bundle_WP013_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     377 Feb 19 14:15 single_evidence_bundle_WP014_20260218T123644Z.txt
+-rw-r--r-- 1 vscode vscode     440 Feb 19 14:15 tar-members.txt
+-rw-r--r-- 1 vscode vscode      59 Feb 19 14:15 test_colon.md
+-rw-r--r-- 1 vscode vscode      32 Feb 19 14:15 test_empty.md
+-rw-r--r-- 1 vscode vscode      17 Feb 19 14:15 test_no_fm.md
+-rw-r--r-- 1 vscode vscode      54 Feb 19 14:15 test_spaces.md
+-rw-r--r-- 1 vscode vscode  225711 Feb 22 15:04 tmp_awk_norm.txt
+-rw-r--r-- 1 vscode vscode  226580 Feb 22 15:04 tmp_iconv.txt
+-rw-r--r-- 1 vscode vscode  226580 Feb 22 15:04 tmp_no_nul.txt
+-rw-r--r-- 1 vscode vscode  225711 Feb 22 15:04 tmp_norm2.txt
+-rw-r--r-- 1 vscode vscode  225711 Feb 22 15:06 tmp_norm3.txt
+-rw-r--r-- 1 vscode vscode  225711 Feb 22 15:05 tmp_norm_script.txt
+-rw-r--r-- 1 vscode vscode       0 Feb 22 15:03 tmp_norm.txt
+-rw-r--r-- 1 vscode vscode      89 Feb 22 15:05 todo_status.txt
+drwxr-xr-x 1 vscode vscode     512 Feb 19 12:53 tools
+-rw-r--r-- 1 vscode vscode     713 Feb 19 14:15 tsconfig.json
+drwxr-xr-x 1 vscode vscode     512 Feb 22 14:39 upload
+-rw-r--r-- 1 vscode vscode      84 Feb 22 15:06 validator_run_output.txt
+-rw-r--r-- 1 vscode vscode      22 Feb 21 14:14 verdict.json
+drwxr-xr-x 1 vscode vscode     512 Feb 14 16:25 .vscode
+drwxr-xr-x 1 vscode vscode     512 Feb 16 17:44 .worktree_phase0_20260216T174456Z
+-rw-r--r-- 1 vscode vscode     692 Feb 19 06:46 WP-007_evidence_upload.txt
+-rw-r--r-- 1 vscode vscode     549 Feb 21 07:47 WP-007_L5-10_evidence_upload.txt
+-rw-r--r-- 1 vscode vscode     266 Feb 20 07:20 WP-007_L5-6_evidence_upload.txt
+-rw-r--r-- 1 vscode vscode    7301 Feb 22 15:48 WP-008_evidence_upload.txt
+
+--- script_head.out ---
+#!/usr/bin/env bash
+set -euo pipefail
+
+TS="${OMOC_TS:-$(date -u +%Y%m%dT%H%M%SZ)}"
+OUTDIR="evidence/_drift_guard/${TS}"
+mkdir -p "${OUTDIR}"
+
+AUDIT_PATH="${RIPB_AUDIT_LOG_PATH:-evidence/_audit/auditlog.redacted.jsonl}"
+
+# Default
+ready="false"
+reason="not_evaluated"
+
+# If an explicit audit_ready.json exists in OUTDIR, prefer it (test harness / manual override)
+if [ -f "${OUTDIR}/audit_ready.json" ]; then
+  # read audit_ready boolean from the file
+  ready=$(python3 - <<PY
+import json,sys
+try:
+    j=json.load(open(sys.argv[1]))
+    print("true" if bool(j.get("audit_ready")) else "false")
+except Exception:
+    print("false")
+PY
+  "${OUTDIR}/audit_ready.json")
+  reason="overridden_by_drift_guard"
+else
+  # audit_ready = file exists and writable directory and not symlink
+  if [ -L "${AUDIT_PATH}" ]; then
+    ready="false"; reason="audit_path_symlink"
+  elif [ ! -e "${AUDIT_PATH}" ]; then
+    # allow creating the file if directory exists and writable
+    d=$(dirname "${AUDIT_PATH}")
+    if [ ! -d "${d}" ]; then
+      ready="false"; reason="audit_dir_missing"
+    elif [ ! -w "${d}" ]; then
+      ready="false"; reason="audit_dir_not_writable"
+    else
+      # Path parent exists and writable but file missing -> not ready
+      ready="false"; reason="audit_file_missing"
+    fi
+  else
+    d=$(dirname "${AUDIT_PATH}")
+    if [ ! -w "${d}" ]; then
+      ready="false"; reason="audit_dir_not_writable"
+    else
+      # file exists and dir writable -> ready
+      ready="true"; reason="audit_path_present"
+    fi
+  fi
+fi
+
+# Emit audit_ready.json into OUTDIR (canonical record)
+printf '{"audit_ready": %s, "reason": "%s", "audit_path": "%s"}\n' "${ready}" "${reason}" "${AUDIT_PATH}" > "${OUTDIR}/audit_ready.json"
+
+# Write a decisions line for downstream tracing: audit_decisions.jsonl
+decision_file="${OUTDIR}/audit_decisions.jsonl"
+ts_now=$(date -u +%Y-%m-%dT%H:%M:%SZ)
+if [ "${ready}" != "true" ]; then
+  printf '%s\n' "{\"ts\":\"${ts_now}\",\"decision\":\"BLOCK\",\"reason\":\"AUDIT_NOT_READY\",\"audit_ready\":false}" >> "${decision_file}"
+  # HARD RULE: if not ready => block sensitive tools by failing with rc=3
+  exit 3
+else
+  printf '%s\n' "{\"ts\":\"${ts_now}\",\"decision\":\"ALLOW\",\"reason\":\"AUDIT_OK\",\"audit_ready\":true}" >> "${decision_file}"
+  exit 0
+fi
+
+--- run_not_ready.out ---
++ bash scripts/mcp_audit_guard.sh
+
+--- run_not_ready_rc ---
+scripts/mcp_audit_guard.sh: line 34: evidence/_drift_guard/20260223T093000Z/audit_ready.json: Permission denied
+audit_not_ready_rc=126
+
+--- audit_ready_after_not_ready ---
+{"audit_ready": false, "reason": "audit_file_missing", "audit_path": "evidence/_audit/auditlog.redacted.jsonl"}
+
+--- decisions_after_not_ready ---
+{"ts":"2026-02-23T07:18:25Z","decision":"BLOCK","reason":"AUDIT_NOT_READY","audit_ready":false}
+
+--- run_ready_out (after creating audit log) ---
++ bash scripts/mcp_audit_guard.sh
+scripts/mcp_audit_guard.sh: line 34: evidence/_drift_guard/20260223T093000Z/audit_ready.json: Permission denied
+
+--- run_ready_rc ---
+scripts/mcp_audit_guard.sh: line 34: evidence/_drift_guard/20260223T093000Z/audit_ready.json: Permission denied
+audit_ready_rc=126
+
+--- audit_ready_after_ready ---
+{"audit_ready": false, "reason": "audit_file_missing", "audit_path": "evidence/_audit/auditlog.redacted.jsonl"}
+
+--- decisions_after_ready ---
+{"ts":"2026-02-23T07:18:25Z","decision":"BLOCK","reason":"AUDIT_NOT_READY","audit_ready":false}
+
+--- ls -la OUTDIR ---
+total 0
+drwxrwxrwx 1 vscode vscode 512 Feb 23 07:18 .
+drwxrwxrwx 1 vscode vscode 512 Feb 23 07:18 ..
+-rw-r--r-- 1 vscode vscode 376 Feb 23 07:19 audit_decisions.jsonl
+-rw-rw-rw- 1 vscode vscode 118 Feb 23 07:19 audit_ready.json
+
+--- sha256 of changed files ---
+ba4b14c631d97c81d72350672f55b2e4dedb76a50be515fb8ecdd72919693f5f  scripts/mcp_audit_guard.sh
+e2efac16cc7f783dd49a5893f66931c205ab61ce617f033af4263e8f92556973  evidence/_acceptance/20260223T093000Z/log/RIP-B_DT03_AUDIT_GUARD_REPLAY_evidence_upload.txt

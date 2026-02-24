@@ -1,5 +1,11 @@
 #!/usr/bin/env bash
 set +e
+
+# Run legacy root guard early to quarantine stray legacy root files
+if [ -f "scripts/omoc_legacy_root_guard.sh" ]; then
+  # guard is safe to run multiple times and exits 0
+  bash scripts/omoc_legacy_root_guard.sh || true
+fi
 TS="${OMOC_TS:?OMOC_TS missing}"
 ADIR="evidence/_acceptance/${TS}"
 LOG="${ADIR}/log"

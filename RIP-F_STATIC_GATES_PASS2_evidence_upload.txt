@@ -1,0 +1,47 @@
+tool_path: opencode (TUI)
+git_head: 90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+OMOC_TS: 20260223T120000Z
+
+--- ls & stat contract ---
+-rw-r--r-- 1 vscode vscode 28 Feb 23 07:41 config/required_checks_contract.json
+  File: config/required_checks_contract.json
+  Size: 28        	Blocks: 0          IO Block: 512    regular file
+Device: 0,68	Inode: 6192449487697026  Links: 1
+Access: (0644/-rw-r--r--)  Uid: ( 1000/  vscode)   Gid: ( 1000/  vscode)
+Access: 2026-02-23 07:41:52.846860800 +0000
+Modify: 2026-02-23 07:41:52.846860800 +0000
+Change: 2026-02-23 08:02:07.740393000 +0000
+ Birth: -
+CONTRACT_READABLE
+
+--- checkout lines ---
+.github/workflows/omoc-gate-with-allowlist.yml:24:      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+.github/workflows/ci.yml:16:      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+.github/workflows/dispatch_shim.yml:11:        uses: actions/checkout@v3
+.github/workflows/omoc-gate.yml:27:      - uses: actions/checkout@REDACTED_SHA  
+.github/workflows/omoc-gate.yml:48:      - uses: actions/checkout@REDACTED_SHA  
+.github/workflows/doc-validate.yml:16:      - uses: actions/checkout@de0fac2e4500dabe0009e67214ff5f5447ce83dd # v6.0.2
+
+--- contract_guard_rc ---
+scripts/omoc_required_checks_contract_guard.sh: line 41: config/required_checks_contract.json: Permission denied
+contract_guard_rc=126
+
+--- pinning_gate_rc ---
+PASS: pinning gate (no mutable tags found)
+pinning_gate_rc=0
+
+--- workflows_paths_ignore_scan.out ---
+
+--- pinning_hits_scan.out ---
+
+--- ripf_static_gates_pass2_sha256.txt ---
+73c1a48d04ca1d71f0852476a50110dfa9ffeadf0d5e83bcf2d6a5969eb40b6f  config/required_checks_contract.json
+0bdc01bc997b2aea68822cc94419cd87c48cb0d6f7ef7d5acff438f8ca59d765  scripts/omoc_required_checks_contract_guard.sh
+21a74ce7ee828baad398373a29d970a6030a197aee68ef636eeae8ca1d644287  scripts/omoc_pinning_gate.sh
+98f43114b47f5ccc159bf6d9cfac098f8a3a9fc89811b6a9e4614ee46aa711a6  .github/workflows/ci.yml
+3a6ced94558aa64f8c596a36e41fd3610749f58ede93ff1d1279f57c86354776  .github/workflows/omoc-gate-with-allowlist.yml
+be86041450c51794d53ccb8bf841c200ec77f9a3a9d60ade819bd94b1d405b40  .github/workflows/doc-validate.yml
+
+contract_guard_rc=126
+pinning_gate_rc=0
+VERDICT: FAIL_CLOSED

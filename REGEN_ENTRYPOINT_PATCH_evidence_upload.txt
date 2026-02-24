@@ -1,0 +1,113 @@
+tool_path: opencode (TUI)
+
+git_head: cbbb81e383f229b1cf0aacb055798a56821c1153
+OMOC_TS: 20260224T022105Z
+
+RUNLOG BEGIN
+
+1) Command: git rev-parse HEAD
+RC: 0
+Output:
+cbbb81e383f229b1cf0aacb055798a56821c1153
+
+2) Command: ls -la agent.md AGENTS.md opencode.json opencode.jsonc .opencode/opencode.json .opencode/opencode.jsonc
+RC: 0
+Output:
+-rw-r--r-- 1 vscode vscode 329 Feb 24 01:39 AGENTS.md
+-rw-r--r-- 1 vscode vscode 280 Feb 24 01:45 .opencode/opencode.jsonc
+
+3) Command: find evidence -type f -path "*restore.agentmd.txt" -o -path "*restore*agentmd*" | sort
+RC: 0
+Output:
+evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt
+
+4) Command: rg -n "restored agent\.md from AGENTS\.md|restore\.agentmd|restore agent\.md" evidence -S
+RC: 0
+Output:
+evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt:1:restored agent.md from AGENTS.md
+
+5) Command: sed -n '1,120p' evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt
+RC: 0
+Output:
+restored agent.md from AGENTS.md
+
+6) Command: rg -n "restore\.agentmd|restored agent\.md|AGENTS\.md.*agent\.md|agent\.md.*AGENTS\.md" -S . --glob '!.git/**'
+RC: 0
+Output (relevant excerpts):
+./REGEN_SOURCE_AUDIT_FIX_evidence_upload.txt:10:5) Evidence of restoration: evidence/step-opencode-repair/.../runlogs/restore.agentmd.txt contains "restored agent.md from AGENTS.md"
+./REGEN_SOURCE_AUDIT_FIX_evidence_upload.txt:19:- Evidence indicates legacy files (agent.md, AGENTS.md) are present in evidence snapshots and recovery scripts restored agent.md from AGENTS.md (evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt).
+./evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt:1:restored agent.md from AGENTS.md
+
+7) Command: rg -n "cp AGENTS.md|cat AGENTS.md|tee agent.md|> agent.md|AGENTS.md.*agent.md|restore.agentmd|restored agent.md" -S . --hidden --glob '!.git/**'
+RC: 0
+Output (relevant excerpts):
+./debug_env.txt:14:evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt
+./REGEN_SOURCE_AUDIT_FIX_evidence_upload.txt:10:5) Evidence of restoration: evidence/step-opencode-repair/.../runlogs/restore.agentmd.txt contains "restored agent.md from AGENTS.md"
+./.worktree_phase0_20260216T174456Z/evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt:1:restored agent.md from AGENTS.md
+./evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt:1:restored agent.md from AGENTS.md
+
+Background agents invoked:
+- explore task (task_id=bg_aecc36e6, session_id=ses_372840a67ffeKxwlFTmITN0XhZ)
+  Result: located evidence file evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt; no implementation code found in repo performing restore. (duration ~40s)
+- librarian task (task_id=bg_925e06dd, session_id=ses_37283ec18ffe95LvMmU0MczSzQ)
+  Status: still running/timed out in first collection (duration >60s). No external examples collected yet in this run.
+
+RUNLOG END
+
+ROOT CAUSE (observed):
+- The repository contains an evidence runlog entry: evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt with the single line "restored agent.md from AGENTS.md".
+- No repository file, script, workflow, or CI YAML in this workspace appears to perform the copy/restore action (search for common patterns such as "cp AGENTS.md agent.md", "cat AGENTS.md > agent.md", "tee agent.md", or strings referencing "restore.agentmd" returned only evidence logs and audit notes). The code path that performed the restoration is not present in this repository snapshot.
+
+IMPACT: Without the actual entrypoint file in the repository we cannot patch it here. The restore action appears to have been executed by an external repair/acceptance runner (recorded in evidence). Restoring agent.md into repo root is an external process, not a present file we can edit.
+
+PATCH
+
+- git diff --name-only (post-change):
+(no repository code changes applied)
+
+- git diff (minimal):
+(no patch applied; no changes)
+
+RATIONALE: The task requested to patch the entrypoint only after locating a real entrypoint. Search of the codebase did not locate any such entrypoint. Therefore no in-repo patch was possible.
+
+RERUN PROOF
+
+Notes: Step 4 required re-running the entrypoint that previously executed the restoration. Because no entrypoint was identified in the repository, no re-run could be invoked from this workspace. Instead we validated current state:
+
+1) Check for presence of agent.md in repo root (from earlier ls): agent.md is not present in repo root. (ls output only showed AGENTS.md and .opencode/opencode.jsonc)
+
+2) Quarantine search: evidence/_quarantine directory does not yet exist in this workspace (no files were written here by us).
+
+3) Working tree status (snapshot at time of investigation):
+   git status --porcelain=v1 (not run because no modifications were made). The workspace remains unchanged.
+
+Because the restoring entrypoint is absent, the required rerun and verification (that it no longer writes root agent.md and instead writes to quarantine) could not be performed.
+
+PATCH / PROOF SUMMARY:
+- ENTRYPOINT IDENTIFIED: NO
+- PATCH APPLIED: NO
+- RERUN PROOF PERFORMED: NO
+
+VERDICT: FAIL_CLOSED
+
+TT (Troubleshoot) stub - scope=REGEN_ENTRYPOINT
+
+Close criteria:
+1) Locate the authoritative entrypoint that performed the restore recorded in evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt. This may be in an external runner's workspace, a CI job script, or an ops/maintenance repo not present here.
+2) Modify that entrypoint (or the runner wrapper) so it writes restored agent.md into evidence/_quarantine/${OMOC_TS}/agent.md and emits the manifest line: "RESTORE_QUARANTINED agent.md -> evidence/_quarantine/${OMOC_TS}/agent.md". The change must be atomic and not write to repo root.
+3) Replay the patched entrypoint and confirm: (a) no agent.md in repo root, (b) quarantine contains agent.md, (c) evidence runlog updated with manifest line.
+
+Next probe (recommended immediate actions):
+1) Inspect CI/CD job definitions and runner logs for the repair job named step-opencode-repair (timestamp 20260214T123304Z). Look for the job workspace or artifact that contains the command that produced restore.agentmd.txt — the runner's full runlog should include the exact command executed.
+2) Ask the ops/CI team to provide the runner workspace or archived logs for that run. Search those logs for exact invocation (cp, cat, tee, or script path).
+3) Search remote repositories or org-level maintenance repos (ops, infra, acceptance-runner) for scripts referencing AGENTS.md -> agent.md restoration. The librarian/background task (still running) can be resumed to fetch public examples of such scripts.
+4) As a conservative interim mitigation: add defensive guards in any in-repo scripts that manage opencode files (e.g., scripts/install-opencode-config.sh) to avoid writing legacy files into repo root. This repo already contains a change noted in REGEN_SOURCE_AUDIT_FIX_evidence_upload.txt — ensure that change is reviewed and pushed by maintainers if appropriate.
+
+Evidence files referenced (already present):
+- evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt
+- REGEN_SOURCE_AUDIT_FIX_evidence_upload.txt
+
+If you want me to proceed with the next_probe steps, provide one of:
+- access to the external runner logs or CI job artifacts (upload path), OR
+- permission to search and open a specific CI configuration file or external repo (provide URL or credentials), OR
+- instruction to create an in-repo defensive patch (e.g., modify scripts/install-opencode-config.sh) as an interim mitigation. Note: I will NOT commit changes without your explicit request.

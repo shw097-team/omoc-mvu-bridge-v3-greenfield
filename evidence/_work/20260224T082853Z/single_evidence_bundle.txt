@@ -1,0 +1,43 @@
+TS: 20260224T082853Z
+
+PHASE: ACTIONS
+- Created timestamp and runlog: evidence/_work/20260224T082853Z/runlog.txt
+- Snapshot commands: git status, git rev-parse HEAD, ls -la (top-level), opencode --version, which -a npm node corepack, node/npm/corepack versions, pgrep -fa opencode
+- Identified noise candidates and moved into backups/quarantine:
+  * Moved malformed UI dir 'eviden:contentReference[oaicite:17]{index=17}TS}' -> evidence/_quarantine/20260224T082853Z/ui_contamination/
+  * Moved bundle_staging/ -> evidence/_backup/20260224T082853Z/repo_noise/bundle_staging/
+  * Moved node_modules/ -> evidence/_backup/20260224T082853Z/repo_noise/node_modules_root/node_modules/
+  * Moved .worktree_phase0_20260216T174456Z -> evidence/_backup/20260224T082853Z/repo_noise/worktree_phase0/
+  * Moved root-level *.bak.* files into evidence/_backup/20260224T082853Z/repo_noise/bak_files/
+- Updated .gitignore to include node_modules/, bundle_staging/, .opencode_backup_*/, .worktree_phase0_*/, eviden:contentReference*
+- Added scripts to harden devcontainer and safe steps:
+  * scripts/devcontainer_post_create.sh
+  * scripts/install-opencode-config.sh
+  * scripts/omoc_safe_step.sh
+
+PHASE: OUTPUTS (short excerpts)
+- runlog excerpt (first lines):
+  TS=20260224T082853Z
+  --- git status --porcelain=v1 ---
+  (see runlog for full output)
+- Moves performed: see evidence/_backup/20260224T082853Z/ and evidence/_quarantine/20260224T082853Z/
+
+PHASE: ARTIFACTS
+- Modified/added files with sha256 + size:
+  0b0e2bb70901bc78917d6f9b1208662e431bb7ffa200c6140c345650280501be  .devcontainer/devcontainer.json (1096 bytes)
+  0b485bab067453fb421437cb596af313fd89696bc7dbafcd9e3f397541998e8a  scripts/devcontainer_post_create.sh (918 bytes)
+  5278acdf686a177890e2a715723c91178e55137c5a189188a28fa0a8d374c221  scripts/install-opencode-config.sh (468 bytes)
+  a81fbe2b6d0fc28aaf7999cb8458b52c4507b3d2c18bd7a2e0408a67b978b532  scripts/omoc_safe_step.sh (952 bytes)
+  f631d2d086e11e119670057cce5aa4eeb8b5e5a6b01c58d4ad4483efc32d7927  .gitignore (464 bytes)
+
+PHASE: TT (technical tasks / remaining gaps)
+- Devcontainer still references base image and features; we replaced postCreateCommand with a script but the script currently recommends manual pinned install. Follow-up: implement checksum-verified install in scripts/install-opencode-config.sh and integrate automated pinning.
+- Supply-chain exception: if opencode must be bootstrapped via remote installer, record checksum/commit and perform offline verification. Current change leaves manual step as auditable exception.
+- oh-my-opencode runtime drift: recommendation to add repository-level pinning & periodic verification via scripts/omoc_pinning_gate.sh (present) and CI.
+
+PHASE: WEB_EVIDENCE_INDEX
+- opencode docs: https://opencode.ai/docs
+- OWASP guidance for supply-chain: https://owasp.org/www-project-supply-chain-integrity/
+
+FOOTER_INTEGRITY
+- File checksum: placeholder (compute sha256 of this file after creation)
