@@ -1,0 +1,163 @@
+ M .comment_hook_ack.txt
+ M .devcontainer/Dockerfile
+ M .devcontainer/devcontainer.json
+ M .opencode/oh-my-opencode.jsonc
+ T .opencode/opencode.jsonc
+ M .vscode/settings.json
+ M AGENTS.md
+ M WP-002_evidence_upload.txt
+ M WP-002_evidence_upload.txt.sha256
+ M WP-007_evidence_upload.txt
+ M WP-008_evidence_upload.txt
+ M WP-008_evidence_upload.txt.sha256
+ D _acceptance/config_dump.txt
+ D _acceptance/config_dump.txt.bak.2026-02-24T01:45:32Z
+ M bun.lock
+ M bundle_audit.json
+ M checks_manifest.json
+ M evidence/bundle_audit.json
+ M evidence/checks_manifest.json
+ M evidence/evidence_index.md
+ D evidence/opencode_diag/20260214T120658Z/ohmy.preview.oh-my-opencode.json.txt
+ D evidence/opencode_diag/20260214T120658Z/scan.opencode.json.txt
+ M evidence/single_evidence_bundle.txt
+ D evidence/skills_pack_validation/20260222T161724Z/contract_snapshot.json
+ D evidence/skills_pack_validation/20260222T161724Z/rc.txt
+ D evidence/skills_pack_validation/20260222T161724Z/report.json
+ D evidence/skills_pack_validation/20260222T161724Z/report.md
+ D evidence/skills_pack_validation/20260222T161724Z/required_canonical.json
+ D evidence/skills_pack_validation/20260222T161724Z/required_files_diff.json
+ D evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt
+ D evidence/step-opencode-fix/snapshots/oh-my-opencode.json.head.txt
+ D evidence/step-opencode-repair/20260214T123304Z/snapshots/oh-my-opencode.json.head.txt
+ M evidence/verdict.json
+ M evidence_index.md
+ M omo
+ D ops/opencode/opencode.jsonc
+ M package-lock.json
+ M package.json
+ M scripts/acceptance_local.sh
+ M scripts/devcontainer_post_create.sh
+ M scripts/install-opencode-config.sh
+ M scripts/make_wp008_upload.sh
+ M scripts/ohmy-toggle.sh
+M  scripts/omoc-evidence-minset.sh
+ M scripts/omoc-fix-schema-and-rate.sh
+ M scripts/omoc-fix-siliconflow-provider-and-agent.sh
+MM scripts/omoc-opencode-preflight.sh
+ M scripts/omoc-opencode-run-rate-safe.sh
+MM scripts/omoc-opencode-run.sh
+ M scripts/omoc-rate-limit-fix.sh
+M  scripts/omoc_opencode_preflight.sh
+ M scripts/omoc_safe_step.sh
+ M scripts/omoc_validate_contracts.sh
+ M scripts/opencode-gpt5mini
+ M scripts/opencode/fetch-schemas.sh
+ M scripts/run_acceptance_all_ts.sh
+ M scripts/validate-config.mjs
+ M verdict.json
+?? .last_ts
+?? .opencode/commands/
+?? .opencode/oh-my-opencode.jsonc.bak-20260227T064326Z
+?? .opencode/oh-my-opencode.jsonc.bak-20260227T065826Z
+?? .opencode/opencode.jsonc.bak-20260227T044610Z
+?? .opencode/opencode.jsonc.bak-20260227T045142Z
+?? .opencode/opencode.jsonc.bak-20260227T064326Z
+?? .schemas/
+?? .sisyphus/
+?? ACCEPTANCE_SIGN_OFF.txt
+?? COMPLETION_PROMISE.txt
+?? FINAL_ATTESTATION.txt
+?? FINAL_VERIFICATION.txt
+?? WP-001_evidence_upload.txt
+?? WP-001_evidence_upload.txt.sha256
+?? WP-006_evidence_upload.txt
+?? WP-008_evidence_upload_20260225T023000Z.txt
+?? bnsyn-phase-controlled-emergent-dynamics/
+?? bundle_audit.json.bak_for_pack_20260225T035319Z
+?? checks_manifest.json.bak_20260225T033958Z
+?? checks_manifest.json.bak_20260225T033959Z
+?? checks_manifest.json.bak_20260225T034000Z
+?? checks_manifest.json.bak_20260225T034102Z
+?? checks_manifest.json.bak_20260225T034812Z
+?? checks_manifest.json.bak_20260225T034813Z
+?? checks_manifest.json.bak_20260225T034815Z
+?? checks_manifest.json.bak_20260225T040634Z
+?? checks_manifest.json.bak_for_pack_20260225T035319Z
+?? config/secrets_allowlist.txt
+?? "docs/_omoc_inputs/normative/OMOC-MVU Lane-F_\351\251\227\346\224\266 RB+WI.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_MVP Spine_ Walking Skeleton Pack v0_\346\234\200\345\260\217\345\257\246\344\275\234\345\214\205_v2.2.0-r1.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP Spine_Walking Skeleton Pack v0_v2.1.0-r1.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Control Plane Pack_v2.2.0.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Dev RUNBOOK + WI_ v2.1.0-r2.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Execution Pack_v1.2.0.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Factory Pack_v1.2.0.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Governance_Index Pack_v1.2.0.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Ops RUNBOOK + WI_v2.1.0-r2.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_RIP\346\226\271\346\241\210.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Subsystem Delivery Pack_v1.2.0.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_\345\211\215\347\253\257\346\226\207\346\252\224\345\210\260\345\257\246\344\275\234\351\251\227\346\224\266_\345\267\245\347\250\213\346\214\207\345\215\227.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_\345\267\245\347\250\213\346\214\207\345\260\216\347\270\275\350\241\250.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_\347\270\275\346\216\247\346\216\247\345\210\266\345\271\263\351\235\242_v2.1.0-r2.md"
+?? "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_\350\227\215\345\234\226_v1.3.0-r2.md"
+?? docs/omoc_process_policy.md
+?? evidence/WP-008_evidence_upload.txt
+?? evidence/WP-008_rebaseline_evidence_upload.txt
+?? evidence/_preflight/
+?? evidence/evidence_bundle.tgz.bak_20260225T040634Z
+?? evidence/evidence_bundle.tgz.orig
+?? evidence/secrets_scan.json
+?? evidence/skills_pack_validation/20260225T061912Z/
+?? evidence/skills_pack_validation/20260225T164140Z/
+?? evidence/skills_pack_validation/20260227T154908Z/
+?? evidence/skills_pack_validation/20260227T155117Z/
+?? evidence/skills_pack_validation/20260227T160239Z/
+?? evidence/skills_pack_validation/20260227T165111Z/
+?? evidence/skills_pack_validation/20260227T170148Z/
+?? evidence/skills_pack_validation/20260227T170428Z/
+?? evidence/skills_pack_validation/20260227T173716Z/
+?? evidence/skills_pack_validation/20260227T175750Z/
+?? evidence/skills_pack_validation/20260228T040114Z/
+?? evidence_index.md.bak_20260225T033958Z
+?? evidence_index.md.bak_20260225T033959Z
+?? evidence_index.md.bak_20260225T034000Z
+?? evidence_index.md.bak_20260225T034102Z
+?? evidence_index.md.bak_20260225T034812Z
+?? evidence_index.md.bak_20260225T034813Z
+?? evidence_index.md.bak_20260225T034815Z
+?? evidence_index.md.bak_20260225T040634Z
+?? evidence_index.md.bak_for_pack_20260225T035319Z
+?? final_compliance_report.txt
+?? matched_files_inspect.txt
+?? matched_files_inspect.txt.sha256
+?? matched_files_proposed_patches.json
+?? matched_files_proposed_patches.json.sha256
+?? omoc-mvu-sandbox/
+?? omoc_lane_f_integrated_evidence.txt
+?? scripts/delegate_devcontainer_fetch.sh
+?? scripts/omoc-opencode-safe-stop.sh
+?? scripts/omoc/build_single_evidence_bundle.sh
+?? scripts/omoc/doctor_loop.sh
+?? scripts/omoc/step.sh
+?? scripts/omoc/verifier_minset.sh
+?? scripts/omoc_fastpass_run.sh
+?? scripts/omoc_packager_generate_four_artifacts.sh
+?? scripts/wp008_generate.sh
+?? scripts/wp008_remediate.sh
+?? single_evidence_bundle.txt
+?? single_evidence_bundle.txt.bak_20260225T033958Z
+?? single_evidence_bundle.txt.bak_20260225T034000Z
+?? single_evidence_bundle.txt.bak_20260225T034103Z
+?? single_evidence_bundle.txt.bak_20260225T040634Z
+?? single_evidence_bundle.txt.sha256
+?? verdict.json.bak_20260225T033958Z
+?? verdict.json.bak_20260225T033959Z
+?? verdict.json.bak_20260225T034000Z
+?? verdict.json.bak_20260225T034102Z
+?? verdict.json.bak_20260225T034812Z
+?? verdict.json.bak_20260225T034813Z
+?? verdict.json.bak_20260225T034815Z
+?? verdict.json.bak_20260225T040634Z
+?? verdict.json.bak_for_pack_20260225T035319Z
+?? verification_checklist.txt
+?? verifier_output.txt

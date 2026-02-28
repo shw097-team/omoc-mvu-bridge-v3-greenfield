@@ -1,0 +1,20 @@
+  _old_main                                      b617c27 init: repo skeleton (devcontainer + scripts + gitignore)
+  auto/mq-probe-20260215T041126Z                 eb0b8c3 [ahead 1] chore(omoc): align workflow contexts to ruleset (4/4)
+  auto/trigger-merge-group-20260215T023613Z      8f5e65c chore: test merge queue trigger (auto)
+  auto/trigger-merge-group-20260215T024826Z      e960751 [ahead 1] chore(ci): add merge_group trigger to ci_omoc-gate workflow for merge queue compatibility
+  backup-accidental-commit-1616230               1616230 validator: tolerate missing acceptance dir entry by appending prefix when raw members show children; add debug traces
+  backup/omoc-cleanup-20260215T065254Z           5a2bdc9 Merge pull request #3 from shw097-team/cp3/doc-validate-20260214T115939Z
+  chore/cp2s3-enforce-20260213T173029Z           027b3cc chore(cp2): CP2S3 ruleset enforcement test touch
+  cp3-doc-validate-20260214T050539Z              027b3cc chore(cp2): CP2S3 ruleset enforcement test touch
+  cp3-omoc-gate-acceptance                       23389c7 [ahead 2] cp3: make scripts robust to missing gh/jq, produce non-empty fallbacks; allow run_cp3.sh to run without executable bit and print latest evidence path
+  cp3/doc-validate                               847f2b2 cp3: add/update doc-validate workflow (auto)
+  cp3/doc-validate-20260214T061323Z              c768e67 [behind 6] cp1: add ci/omoc-gate + local acceptance triplet
+  cp3/doc-validate-20260214T115939Z              6ec5a99 [gone] chore(cp3): finalize merge_group + cp3 gate + agent rules
+  fix/align-4-checks-20260215T054924Z            cce5bfe [ahead 5] chore(evidence): stage acceptance artifacts and updated skills docs for phase0
+  main                                           27ca940 [ahead 1] chore: ignore generated evidence and backups
+  omoc/governance-closure-20260218T123644Z       65d0379 chore(omoc): 🚨 conflict resolved, wiped ghost workflows, applied agent policy & final seal
+  omoc/phase0-dispatch-20260216T174424Z          5a2bdc9 Merge pull request #3 from shw097-team/cp3/doc-validate-20260214T115939Z
++ omoc/phase0-dispatch-20260216T174456Z          719fb82 chore: retrigger PR workflows
+  omoc/phase0-dispatch-continue-20260216T175044Z 40a833d resolve: merge conflicts in workflows to unblock PR checks
+* rip-a-land-20260223T013101Z                    97f1c84 omoc: prefer SSOT .opencode/opencode.jsonc; add GATE-PATH-SSOT; enforce schemaKind arg
+  wp-007-opencode-setup                          d34dac9 [ahead 4] chore(rip-c): fix acceptance prefix propagation; add missing placeholders and evidence upload summary
