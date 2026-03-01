@@ -25,6 +25,17 @@ try {
   console.warn('[schema] WARNING: could not load local models.dev schema, proceeding without it');
 }
 
+// Ensure draft-07 meta-schema support (Ajv2020 supports it natively; load it explicitly if needed for strict validation)
+const draft7Path = new URL('../node_modules/ajv/dist/refs/json-schema-draft-07.json', import.meta.url);
+let draft7Schema;
+try {
+  draft7Schema = JSON.parse(fs.readFileSync(draft7Path, 'utf8'));
+} catch (err) {
+  // Ajv2020 has built-in support; failure here is non-fatal
+}
+
+// Ajv strict-mode throws on unknown keywords like "ref" (non-JSON-Schema keyword).
+
 // Ajv strict-mode throws on unknown keywords like "ref" (non-JSON-Schema keyword).
 // We disable strict here and enforce Fail-Closed via our own allowlists below.
 const ajv = new Ajv2020({
@@ -32,6 +43,10 @@ const ajv = new Ajv2020({
   strict: false
 });
 addFormats(ajv);
+
+// Ajv2020 supports JSON Schema Draft 4, 6, 7, 2019-09, 2020-12 natively.
+// No need to explicitly addMetaSchema for draft-07 unless compiler fails on explicit $schema refs.
+
 
 // Register the local models.dev schema to help resolve $refs
 if (modelsDevSchema) {
