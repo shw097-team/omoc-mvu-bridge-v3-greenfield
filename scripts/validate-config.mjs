@@ -3,56 +3,74 @@ import { parse } from "jsonc-parser";
 import Ajv2020 from "ajv/dist/2020.js";
 import addFormats from "ajv-formats";
 
+const selftest = process.argv.includes("--selftest");
 const [,, filePath, schemaUrl, schemaKind] = process.argv;
-if (!filePath || !schemaUrl || !schemaKind) {
+
+if (!selftest && (!filePath || !schemaUrl || !schemaKind)) {
   console.error("usage: node validate-config.mjs <file> <schemaUrl> <schemaKind:opencode|ohmy>");
   process.exit(2);
 }
 
-const txt = fs.readFileSync(filePath, "utf8");
-const cfg = parse(txt);
-
-// --- 1) Schema validation (SUPPORT-only): do NOT let upstream schema quirks break Fail-Closed
-const schemaTxt = await (await fetch(schemaUrl)).text();
-const schema = JSON.parse(schemaTxt);
-
-// Register local models.dev schema to resolve external $refs
-const modelsDevPath = new URL('../schemas/models.dev-model-schema.json', import.meta.url);
-let modelsDevSchema;
+// Load draft-07 meta-schema from ajv package
+const draft7Path = new URL("../node_modules/ajv/dist/refs/json-schema-draft-07.json", import.meta.url);
+let draft7MetaSchema;
 try {
-  modelsDevSchema = JSON.parse(fs.readFileSync(modelsDevPath, 'utf8'));
+  draft7MetaSchema = JSON.parse(fs.readFileSync(draft7Path, "utf8"));
 } catch (err) {
-  console.warn('[schema] WARNING: could not load local models.dev schema, proceeding without it');
+  console.warn("[schema] WARNING: could not load draft-07 meta-schema");
+  draft7MetaSchema = null;
 }
 
-// Ensure draft-07 meta-schema support (Ajv2020 supports it natively; load it explicitly if needed for strict validation)
-const draft7Path = new URL('../node_modules/ajv/dist/refs/json-schema-draft-07.json', import.meta.url);
-let draft7Schema;
-try {
-  draft7Schema = JSON.parse(fs.readFileSync(draft7Path, 'utf8'));
-} catch (err) {
-  // Ajv2020 has built-in support; failure here is non-fatal
-}
-
-// Ajv strict-mode throws on unknown keywords like "ref" (non-JSON-Schema keyword).
-
-// Ajv strict-mode throws on unknown keywords like "ref" (non-JSON-Schema keyword).
-// We disable strict here and enforce Fail-Closed via our own allowlists below.
+// Initialize Ajv with strict: false (allows non-standard keywords)
 const ajv = new Ajv2020({
   allErrors: true,
   strict: false
 });
 addFormats(ajv);
 
-// Ajv2020 supports JSON Schema Draft 4, 6, 7, 2019-09, 2020-12 natively.
-// No need to explicitly addMetaSchema for draft-07 unless compiler fails on explicit $schema refs.
-
-
-// Register the local models.dev schema to help resolve $refs
-if (modelsDevSchema) {
-  ajv.addSchema(modelsDevSchema, 'https://models.dev/model-schema.json');
+// Register draft-07 meta-schema if available (Ajv2020 auto-registers it, but explicit call ensures it's ready)
+if (draft7MetaSchema) {
+  ajv.addMetaSchema(draft7MetaSchema);
 }
 
+// Selftest mode: verify draft-07 support
+if (selftest) {
+  const testSchema = {
+    $schema: "http://json-schema.org/draft-07/schema#",
+    type: "object",
+    properties: {
+      test: { type: "string" }
+    }
+  };
+  try {
+    ajv.compile(testSchema);
+    console.log("[selftest] PASS: draft-07 meta-schema support verified");
+    process.exit(0);
+  } catch (err) {
+    console.error("[selftest] FAIL:", err.message);
+    process.exit(1);
+  }
+}
+
+// Load and parse config file
+const txt = fs.readFileSync(filePath, "utf8");
+const cfg = parse(txt);
+
+// Load upstream schema
+const schemaTxt = await (await fetch(schemaUrl)).text();
+const schema = JSON.parse(schemaTxt);
+
+// Load local models.dev schema for $ref resolution
+const modelsDevPath = new URL("../schemas/models.dev-model-schema.json", import.meta.url);
+let modelsDevSchema;
+try {
+  modelsDevSchema = JSON.parse(fs.readFileSync(modelsDevPath, "utf8"));
+  ajv.addSchema(modelsDevSchema, "https://models.dev/model-schema.json");
+} catch (err) {
+  // non-fatal
+}
+
+// Compile and validate
 const validate = ajv.compile(schema);
 const ok = validate(cfg);
 if (!ok) {

@@ -1,27 +1,33 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Drift report (WP-014 aligned; skeleton; SUPPORT-only facts must include dates)
 TS="${OMOC_TS:-$(date -u +%Y%m%dT%H%M%SZ)}"
 LAST_VERIFIED_AT="${OMOC_WEB_LAST_VERIFIED_AT:-REDACTED}"
 DRIFT_ACTION="${OMOC_DRIFT_ACTION:-NEEDS-TEST}"
 
-cat > drift_report.md <<'MD'
-# Safety: detect malformed shell tokens in this script
-if grep -q "cat '>'\|cat '<<JSON'" "$0"; then
-  echo '[ERROR] omoc_drift_report.sh: detected unsafe shell token patterns. Aborting.' >&2
-  exit 2
-fi
+python3 << 'PYTHON'
+import json
+import os
 
-cat > drift_report.md <<'MD'
-# drift_report (RIP-A) — ${TS}
+ts = os.environ.get('TS', 'UNKNOWN')
+last_verified = os.environ.get('LAST_VERIFIED_AT', 'REDACTED')
+drift_action = os.environ.get('DRIFT_ACTION', 'NEEDS-TEST')
 
-- last_verified_at: ${LAST_VERIFIED_AT}
-- drift_action: ${DRIFT_ACTION}
+drift_report = f"""# drift_report (RIP-A) — {ts}
+
+- last_verified_at: {last_verified}
+- drift_action: {drift_action}
 - notes:
   - Any platform behavior claims are SUPPORT-only and must be verified in environment.
-MD
+"""
 
-cat > tt_export.json <<'JSON'
-{}
-JSON
+with open('drift_report.md', 'w') as f:
+    f.write(drift_report)
+
+with open('tt_export.json', 'w') as f:
+    json.dump({}, f)
+
+print(f"DRIFT_REPORT_SH_SHA256=$(sha256sum \"$0\" | awk '{{print $1}}')")
+PYTHON
+
+echo "DRIFT_REPORT_GENERATED=1"
