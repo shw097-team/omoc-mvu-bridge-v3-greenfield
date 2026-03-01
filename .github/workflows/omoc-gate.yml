@@ -18,7 +18,7 @@ jobs:
   # Worker (optional wiring; PR-only by policy)  
   # -----------------------------  
   worker:  
-    if: ${{ github.event_name \!= 'pull_request' && github.event_name \!= 'merge_group' }}  
+    if: ${{ github.event_name != 'pull_request' && github.event_name != 'merge_group' }}  
     runs-on: ubuntu-latest  
     permissions:  
       contents: read  
@@ -38,7 +38,7 @@ jobs:
   # Reviewer / Gatekeeper (PR \+ merge_group)  
   # -----------------------------  
   review:  
-    if: ${{ github.event_name \== 'pull_request' || github.event_name \== 'merge_group' }}  
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}  
     runs-on: ubuntu-latest  
     permissions:  
       contents: read  
