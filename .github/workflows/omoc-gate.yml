@@ -67,6 +67,15 @@ jobs:
         run: |  
           bash scripts/omoc_superseded_scan.sh
 
+      - name: Pre-check drift report script  
+        run: |  
+          sha256sum scripts/omoc_drift_report.sh  
+          grep -n "cat:" scripts/omoc_drift_report.sh || echo "OK: no cat: tokens"  
+
+      - name: Drift report + TT export (skeleton)  
+        run: |  
+          bash scripts/omoc_superseded_scan.sh
+
       - name: Drift report \+ TT export (skeleton)  
         run: |  
           bash scripts/omoc_drift_report.sh  
