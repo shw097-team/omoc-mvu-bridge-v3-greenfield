@@ -4,7 +4,10 @@ set -euo pipefail
 TS="${TS:-$(date -u +%Y%m%dT%H%M%SZ)}"
 EV_DIR="evidence/_acceptance/${TS}"
 LOG_DIR="${EV_DIR}/log"
-mkdir -p "$:contentReference[oaicite:21]{index=21}rintf "%s\n" "$*" | tee -a "${LOG_DIR}/preflight.log" >/dev/null; }
+mkdir -p "$LOG_DIR"
+
+log() {
+  printf "%s\n" "$*" | tee -a "${LOG_DIR}/preflight.log" >/dev/null; }
 
 step() {
   local name="$1"; shift
@@ -15,7 +18,7 @@ step() {
   }
 }
 
-# L:contentReference[oaicite:22]{index=22}heck (RBWI)
+# L5-check (RBWI)
 step "L5-opencode-version" bash -lc 'opencode --version'
 
 # Auth/provider visibility
@@ -28,6 +31,6 @@ SCHEMA_URL="https://opencode.ai/config.json"
 CONF="opencode.jsonc"
 
 step "opencode-config-fetch-schema" bash -lc "curl -fsSL '${SCHEMA_URL}' -o '${LOG_DIR}/opencode-config.schema.json'"
-step "opencode-config-validate" bash -lc "node -e \"const fs=require('fs');const Ajv=require('ajv');const addFormats=require('ajv-formats');const {parse}=require('jsonc-parser');const schema=JSON.parse(fs.readFileSync('${LOG_DIR}/opencode-config.schema.json','utf8'));const data=parse(fs.readFileSync('${CONF}','utf8'));const ajv=new Ajv({allErrors:true,strict:true});addFormats(ajv);const validate=ajv.compile(schema);const ok=validate(data);if(!ok){console.error(validate.errors);process.exit(2)}\""
+step "opencode-config-validate" bash -lc "node scripts/opencode_config_validate.mjs '${LOG_DIR}/opencode-config.schema.json' '${CONF}'"
 
 log "OK: preflight passed"

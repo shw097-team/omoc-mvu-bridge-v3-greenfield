@@ -10,6 +10,7 @@
   },
   "scripts": {
     "verify": "bash scripts/verify.sh",
+    "test": "npm run verify",
     "preflight:opencode": "bash scripts/preflight-opencode.sh"
   }
 }
