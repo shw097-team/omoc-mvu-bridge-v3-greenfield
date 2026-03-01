@@ -6,7 +6,7 @@ TS="${OMOC_TS:-$(date -u \+%Y%m%dT%H%M%SZ)}"
 LAST_VERIFIED_AT="${OMOC_WEB_LAST_VERIFIED_AT:-REDACTED}"  
 DRIFT_ACTION="${OMOC_DRIFT_ACTION:-NEEDS-TEST}"
 
-cat \> drift_report.md \<\<MD  
+cat > drift_report.md <<MD
 # drift_report (RIP-A) — ${TS}
 
 - last_verified_at: ${LAST_VERIFIED_AT}  
