@@ -48,8 +48,14 @@ jobs:
       - uses: actions/checkout@v4
         with:  
           fetch-depth: 0
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
-      - name: Collect checks_manifest (expected/observed/diff)  
+      - name: init OMOC_TS
+        shell: bash
+        run: echo "OMOC_TS=$(date -u +%Y%m%dT%H%M%SZ)" >> "$GITHUB_ENV"
+      - name: Collect checks_manifest (expected/observed/diff)
         env:  
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}  
         run: |  
