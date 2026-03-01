@@ -14,4 +14,7 @@ cat > drift_report.md <<MD
 - notes:  
   - Any platform behavior claims are SUPPORT-only and must be verified in environment.  
 MD
+cat > tt_export.json <<'JSON'
+{}
+JSON
 

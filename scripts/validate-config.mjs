@@ -16,6 +16,15 @@ const cfg = parse(txt);
 const schemaTxt = await (await fetch(schemaUrl)).text();
 const schema = JSON.parse(schemaTxt);
 
+// Register local models.dev schema to resolve external $refs
+const modelsDevPath = new URL('../schemas/models.dev-model-schema.json', import.meta.url);
+let modelsDevSchema;
+try {
+  modelsDevSchema = JSON.parse(fs.readFileSync(modelsDevPath, 'utf8'));
+} catch (err) {
+  console.warn('[schema] WARNING: could not load local models.dev schema, proceeding without it');
+}
+
 // Ajv strict-mode throws on unknown keywords like "ref" (non-JSON-Schema keyword).
 // We disable strict here and enforce Fail-Closed via our own allowlists below.
 const ajv = new Ajv2020({
@@ -23,6 +32,11 @@ const ajv = new Ajv2020({
   strict: false
 });
 addFormats(ajv);
+
+// Register the local models.dev schema to help resolve $refs
+if (modelsDevSchema) {
+  ajv.addSchema(modelsDevSchema, 'https://models.dev/model-schema.json');
+}
 
 const validate = ajv.compile(schema);
 const ok = validate(cfg);
