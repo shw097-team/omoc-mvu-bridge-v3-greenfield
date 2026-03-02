@@ -177,6 +177,11 @@ jobs:
           
           tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md bundle_audit.json evidence/ || (echo "First tar failed, retrying without evidence/..."; tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md bundle_audit.json) || (echo "Second tar also failed"; exit 1)
 
+          # Debug: list tar contents
+          echo "=== Tar file contents ==="
+          tar -tzf evidence_bundle.tgz || echo "(Could not read tar file)"
+          echo "=== End tar listing ==="
+
 
       - name: Validate contracts (Fail-Closed)  
         run: |  
