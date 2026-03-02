@@ -1,8 +1,0 @@
-ts=20260301T051613Z
-branch=wp-008-upstream
-fix_target=scripts/omoc_drift_report.sh
-sha256_drift_report_sh=20f4a05f86d693628c985ed61cee9869fbcb465fbda5845a2121c0ff30d6b2de
-local_dryrun=PASS
-files_touched=scripts/omoc_drift_report.sh
-next_expected_check=ci/omoc-gate:review
-VERDICT=PASS

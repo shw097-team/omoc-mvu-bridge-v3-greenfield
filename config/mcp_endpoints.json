@@ -1,8 +1,0 @@
-{
-  "endpoints": [
-    {
-      "endpoint_ref": "ep-1",
-      "url": "https://example.com/api?tamper=1?tamper=1?tamper=1"
-    }
-  ]
-}

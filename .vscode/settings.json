@@ -8,5 +8,4 @@
     "sound": "on"
   },
   "terminal.integrated.enableVisualBell": true
-  ,"npm.packageManager": "npm"
 }

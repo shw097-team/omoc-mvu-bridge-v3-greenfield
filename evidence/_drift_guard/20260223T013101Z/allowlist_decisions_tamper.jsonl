@@ -1,1 +1,0 @@
-{"endpoint_ref": "ep-1", "url": "https://example.com/api?tamper=1", "decision": "BLOCK", "reason": "HASH_MISMATCH"}

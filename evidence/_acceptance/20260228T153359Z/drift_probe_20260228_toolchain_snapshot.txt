@@ -1,4 +1,0 @@
-opencode_version=1.2.15
-os_uname=Linux
-repo_branch=rip-a-land-20260223T013101Z
-repo_tag=OMOC-ATTEMPT-4-PASS-20260228T153359Z

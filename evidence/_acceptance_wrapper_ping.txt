@@ -1,4 +1,0 @@
-[0m
-> Sisyphus (Ultraworker) · gpt-5-mini
-[0m
-pong

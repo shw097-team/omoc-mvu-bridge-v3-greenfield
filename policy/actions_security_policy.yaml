@@ -1,4 +1,0 @@
-name: actions-security-policy
-rules:
-  - id: block_unverified
-    action: deny

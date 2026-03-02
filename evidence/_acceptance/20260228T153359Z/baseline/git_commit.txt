@@ -1,1 +1,0 @@
-97f1c84 omoc: prefer SSOT .opencode/opencode.jsonc; add GATE-PATH-SSOT; enforce schemaKind arg

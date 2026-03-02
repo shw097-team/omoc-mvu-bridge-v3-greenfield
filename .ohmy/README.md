@@ -1,1 +1,0 @@
-OMOC helper directory placeholder
