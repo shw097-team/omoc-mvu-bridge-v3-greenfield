@@ -1,0 +1,14 @@
+{
+  "ts": "20260302T122328Z",
+  "overall_verdict": "PASS",
+  "contract_snapshot": {
+    "contract_version": "",
+    "ssot_locators": [],
+    "observed_contract_sha256": "",
+    "observed_required_canonical": []
+  },
+  "required_files_diff": [
+    []
+  ],
+  "secrets_hits_path": "evidence/skills_pack_validation/20260302T122328Z/secrets_hits.txt"
+}

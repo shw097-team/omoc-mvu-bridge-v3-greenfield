@@ -1,0 +1,7 @@
+{
+  "id": "TT-RIPB-ENDPOINTS-DISCOVER-001",
+  "title": "Endpoints hash mismatch or missing",
+  "close_criteria": "Update config/mcp_endpoints.hash to match config/mcp_endpoints.json or restore audited endpoints",
+  "test_probe": "Run scripts/mcp_allowlist_enforce.sh with OMOC_TS=<TS> and observe exit code 42; verify decision=BLOCK",
+  "evidence_expected": ["evidence/_drift_guard/<TS>/allowlist_enforce.log","evidence/_drift_guard/<TS>/allowlist_decisions.jsonl"]
+}

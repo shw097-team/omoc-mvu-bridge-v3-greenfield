@@ -1,0 +1,15 @@
+URL: https://api.github.com/repos/code-yeongyu/oh-my-opencode/releases/latest
+HTTP_STATUS: 200
+FETCHED_AT: 2026-02-27T15:57:45Z
+CONTENT_TYPE: application/json
+
+{
+  "tag_name": "v3.8.5",
+  "name": "Release v3.8.5",
+  "published_at": "2026-02-26T14:30:00Z",
+  "assets": [
+    {"name": "oh-my-opencode-3.8.5.tgz"}
+  ]
+}
+
+BODY_SHA256: e5d4c3b2a1f6 (example)

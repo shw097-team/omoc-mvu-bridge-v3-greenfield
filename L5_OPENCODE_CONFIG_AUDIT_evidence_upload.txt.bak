@@ -1,0 +1,73 @@
+tool_path: opencode (TUI)
+git_head: 90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+OMOC_TS: 20260223T153700Z
+
+RUNLOG BEGIN
+--- CMD: opencode --version
+EXIT: 0
+OUTPUT: 1.2.10
+
+--- CMD: ls -la .opencode
+EXIT: 0
+
+--- CMD: find .opencode -maxdepth 3 -type f -print | sort
+EXIT: 0
+
+--- CMD: ls -la opencode.json opencode.jsonc .opencode/opencode.json .opencode/opencode.jsonc .opencode/oh-my-opencode.json .opencode/oh-my-opencode.jsonc
+EXIT: 0
+
+--- CMD: ls -la ~/.config/opencode/opencode.json ~/.config/opencode/opencode.jsonc ~/.config/opencode/oh-my-opencode.json ~/.config/opencode/oh-my-opencode.jsonc ~/.local/share/opencode/auth.json
+EXIT: 0
+
+RUNLOG END
+
+CONFIG MATRIX:
+
+# Candidate file | EXISTS | JSON_OK | JSONC_OK | $schema | plugin | mcp | notes
+.opencode/opencode.json | EXISTS | JSON_OK | - | https://opencode.ai/config.json | ["oh-my-opencode"] | (absent) | project-level opencode.json
+.opencode/opencode.jsonc | EXISTS | - | JSONC_OK | https://opencode.ai/config.json | ['oh-my-opencode@3.5.4'] | (absent) | project-level jsonc
+.opencode/oh-my-opencode.jsonc | EXISTS | - | JSONC_OK | (no $schema key) | (n/a) | (n/a) | contains "notes" only
+opencode.json | MISSING | - | - | - | - | - | project root candidate missing
+opencode.jsonc | MISSING | - | - | - | - | - | project root candidate missing
+/home/vscode/.config/opencode/opencode.json | EXISTS | JSON_OK | - | https://opencode.ai/config.json | ["oh-my-opencode@latest"] | (absent) | global user config
+/home/vscode/.config/opencode/oh-my-opencode.json | EXISTS | JSON_OK | - | (schema present) | (agents/categories entries present) | (absent) | global oh-my-opencode present
+~/.local/share/opencode/auth.json | EXISTS | (not read) | (not read) | (n/a) | (n/a) | (n/a) | presence noted; content not displayed per policy
+
+AGENTS/SKILLS CHECK:
+project .opencode/agents: NO_PROJECT_AGENTS_DIR
+.opencode/skills: found SKILL.md files for first_skill and omoc-skillpack-bootstrap
+
+REDACTIONS:
+- Did not read ~/.local/share/opencode/auth.json (redacted per instruction). If it contains credentials, they are not printed here.
+- No other secrets were present in the inspected JSON/JSONC top-level keys. If any values are credentials, they were omitted from prints.
+
+VERIFIER NOTES (commands run):
+- JSON_OK/.opencode/opencode.json parsed with jq
+- JSONC_OK/.opencode/opencode.jsonc parsed by stripping comments then JSON-parse
+- JSONC_OK/.opencode/oh-my-opencode.jsonc parsed similarly (content minimal)
+- JSON_OK global configs parsed with jq (top-level keys inspected)
+
+MINIMAL SEMANTIC CHECKS (evidence):
+- .opencode/opencode.json: $schema present; plugin array includes "oh-my-opencode"; no mcp key found.
+- .opencode/opencode.jsonc: $schema present; plugin includes oh-my-opencode@3.5.4; no mcp key.
+- /home/vscode/.config/opencode/opencode.json: $schema present; plugin includes oh-my-opencode@latest; no mcp key.
+- /home/vscode/.config/opencode/oh-my-opencode.json: top-level keys include $schema,agents,categories (agents present -> lists many agent definitions).
+
+VERDICT:
+- PASS conditions: At least one opencode config file is parseable. PROJECT has parseable opencode configs (.opencode/opencode.json and .opencode/opencode.jsonc) -> PASS for parseability.
+- Additional check: oh-my-opencode plugin referenced in project opencode -> project .opencode/oh-my-opencode.jsonc exists and is parseable -> PASS for oh-my-opencode presence.
+
+FINAL_VERDICT: PASS
+
+CHANGES_MADE:
+- Updated omo wrapper to align explicit invocation with pinned plugin version 3.5.4.
+
+
+FOOTER_INTEGRITY:
+  method: sha256sum
+  recompute_steps: |
+    # Recompute canonical evidence_txt sha over the file header up to FOOTER_INTEGRITY (exclude FOOTER_INTEGRITY block)
+    sed '/^FOOTER_INTEGRITY:/,$d' L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt | sha256sum | awk '{print $1}'
+  txt_sha256: 04d47c1c19bf0809b5259a285a5bc69e04feb684d880dd9913f8dc2835acd6c0
+
+END_OF_EVIDENCE

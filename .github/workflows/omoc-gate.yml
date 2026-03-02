@@ -61,9 +61,16 @@ jobs:
         run: |  
           bash scripts/omoc_collect_checks_manifest.sh
 
+      - name: Install gitleaks (pinned)
+        run: |
+          bash scripts/install_gitleaks.sh
+          export PATH="$PWD/.tools/gitleaks/bin:$PATH"
+          gitleaks --version
+
       - name: Secrets scan (must be 0)  
         run: |  
-          bash scripts/omoc_secrets_scan.sh
+          export PATH="$PWD/.tools/gitleaks/bin:$PATH"
+          bash scripts/omoc_external_secrets_scan.sh
 
       - name: Doc hygiene scan (must be 0)  
         run: |  

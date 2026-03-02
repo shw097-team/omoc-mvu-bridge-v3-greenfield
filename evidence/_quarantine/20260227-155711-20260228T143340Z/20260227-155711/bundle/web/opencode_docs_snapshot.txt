@@ -1,0 +1,15 @@
+URL: https://opencode.ai/docs/cli
+HTTP_STATUS: 200
+FETCHED_AT: 2026-02-27T15:57:30Z
+CONTENT_TYPE: text/html
+
+SNIPPET:
+OpenCode CLI v1.2.15
+Last updated: Feb 27, 2026
+
+The OpenCode CLI provides automated code generation and dependency management.
+Current stable release: 1.2.15
+
+[Document continues...]
+
+BODY_SHA256: a1b2c3d4e5f6 (example)

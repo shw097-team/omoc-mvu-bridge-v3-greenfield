@@ -1,0 +1,103 @@
+INFO  2026-02-26T07:18:48 +127ms service=server method=GET path=/event request
+INFO  2026-02-26T07:18:48 +1ms service=server status=started method=GET path=/event request
+INFO  2026-02-26T07:18:48 +0ms service=default directory=/workspaces/omoc-mvu-bridge-v3-greenfield creating instance
+INFO  2026-02-26T07:18:48 +1ms service=project directory=/workspaces/omoc-mvu-bridge-v3-greenfield fromDirectory
+INFO  2026-02-26T07:18:48 +4ms service=server method=GET path=/session request
+INFO  2026-02-26T07:18:48 +0ms service=server status=started method=GET path=/session request
+INFO  2026-02-26T07:18:48 +0ms service=server method=GET path=/config/providers request
+INFO  2026-02-26T07:18:48 +0ms service=server status=started method=GET path=/config/providers request
+INFO  2026-02-26T07:18:48 +0ms service=server method=GET path=/provider request
+INFO  2026-02-26T07:18:48 +0ms service=server status=started method=GET path=/provider request
+INFO  2026-02-26T07:18:48 +1ms service=server method=GET path=/agent request
+INFO  2026-02-26T07:18:48 +0ms service=server status=started method=GET path=/agent request
+INFO  2026-02-26T07:18:48 +0ms service=server method=GET path=/config request
+INFO  2026-02-26T07:18:48 +0ms service=server status=started method=GET path=/config request
+INFO  2026-02-26T07:18:48 +67ms service=db path=/home/vscode/.local/share/opencode/opencode.db opening database
+INFO  2026-02-26T07:18:48 +3ms service=db count=3 mode=bundled applying migrations
+INFO  2026-02-26T07:18:48 +24ms service=default directory=/workspaces/omoc-mvu-bridge-v3-greenfield bootstrapping
+INFO  2026-02-26T07:18:48 +14ms service=config path=/home/vscode/.config/opencode/config.json loading
+INFO  2026-02-26T07:18:48 +1ms service=config path=/home/vscode/.config/opencode/opencode.json loading
+INFO  2026-02-26T07:18:48 +0ms service=config path=/home/vscode/.config/opencode/opencode.jsonc loading
+INFO  2026-02-26T07:18:48 +28ms service=config path=/home/vscode/.config/opencode/opencode.jsonc loading
+INFO  2026-02-26T07:18:48 +6ms service=config path=/home/vscode/.config/opencode/opencode.json loading
+INFO  2026-02-26T07:18:48 +15ms service=config path=/workspaces/omoc-mvu-bridge-v3-greenfield/.opencode/opencode.jsonc loading
+INFO  2026-02-26T07:18:48 +13ms service=config path=/workspaces/omoc-mvu-bridge-v3-greenfield/.opencode/opencode.json loading
+INFO  2026-02-26T07:18:49 +63ms service=config path=/home/vscode/.opencode/opencode.jsonc loading
+INFO  2026-02-26T07:18:49 +0ms service=config path=/home/vscode/.opencode/opencode.json loading
+INFO  2026-02-26T07:18:49 +16ms service=plugin name=CodexAuthPlugin loading internal plugin
+INFO  2026-02-26T07:18:49 +0ms service=plugin name=CopilotAuthPlugin loading internal plugin
+INFO  2026-02-26T07:18:49 +1ms service=plugin name=gitlabAuthPlugin loading internal plugin
+INFO  2026-02-26T07:18:49 +0ms service=plugin path=opencode-anthropic-auth@0.0.13 loading plugin
+INFO  2026-02-26T07:18:49 +20ms service=plugin path=oh-my-opencode loading plugin
+WARN  2026-02-26T07:18:49 +215ms service=bun pkg=oh-my-opencode cachedVersion=3.8.5 Failed to resolve latest version, using cached
+INFO  2026-02-26T07:18:50 +1222ms service=plugin path=file:///workspaces/omoc-mvu-bridge-v3-greenfield/node_modules/oh-my-opencode/dist/index.js loading plugin
+INFO  2026-02-26T07:18:51 +927ms service=bus type=* subscribing
+INFO  2026-02-26T07:18:51 +0ms service=bus type=session.updated subscribing
+INFO  2026-02-26T07:18:51 +0ms service=bus type=message.updated subscribing
+INFO  2026-02-26T07:18:51 +0ms service=bus type=message.part.updated subscribing
+INFO  2026-02-26T07:18:51 +0ms service=bus type=session.diff subscribing
+INFO  2026-02-26T07:18:51 +0ms service=format init
+INFO  2026-02-26T07:18:51 +0ms service=bus type=file.edited subscribing
+INFO  2026-02-26T07:18:51 +1ms service=lsp serverIds=deno, typescript, vue, eslint, oxlint, biome, gopls, ruby-lsp, pyright, elixir-ls, zls, csharp, fsharp, sourcekit-lsp, rust, clangd, svelte, astro, jdtls, kotlin-ls, yaml-ls, lua-ls, php intelephense, prisma, dart, ocaml-lsp, bash, terraform, texlab, dockerfile, gleam, clojure-lsp, nixd, tinymist, haskell-language-server, julials enabled LSP servers
+INFO  2026-02-26T07:18:51 +0ms service=file.watcher init
+INFO  2026-02-26T07:18:51 +2ms service=scheduler id=snapshot.cleanup run
+INFO  2026-02-26T07:18:51 +0ms service=scheduler id=tool.truncation.cleanup run
+INFO  2026-02-26T07:18:51 +1ms service=bus type=command.executed subscribing
+INFO  2026-02-26T07:18:51 +1ms service=file.watcher platform=linux backend=inotify watcher backend
+INFO  2026-02-26T07:18:51 +6ms service=server event connected
+INFO  2026-02-26T07:18:51 +2ms service=bus type=* subscribing
+INFO  2026-02-26T07:18:51 +0ms service=server status=started providers
+INFO  2026-02-26T07:18:51 +2ms service=provider status=started state
+INFO  2026-02-26T07:18:51 +9ms service=server status=completed duration=2665 method=GET path=/event request
+INFO  2026-02-26T07:18:51 +1ms service=server status=completed duration=2660 method=GET path=/config request
+INFO  2026-02-26T07:18:51 +2ms service=server status=completed duration=2663 method=GET path=/session request
+INFO  2026-02-26T07:18:51 +29ms service=provider init
+INFO  2026-02-26T07:18:51 +22ms service=provider providerID=github-copilot found
+INFO  2026-02-26T07:18:51 +0ms service=provider status=completed duration=63 state
+INFO  2026-02-26T07:18:51 +3ms service=server status=completed duration=68 providers
+INFO  2026-02-26T07:18:51 +0ms service=server status=completed duration=2717 method=GET path=/provider request
+INFO  2026-02-26T07:18:51 +0ms service=server status=completed duration=2717 method=GET path=/config/providers request
+INFO  2026-02-26T07:18:51 +15ms service=vcs branch=rip-a-land-20260223T013101Z initialized
+INFO  2026-02-26T07:18:51 +0ms service=bus type=file.watcher.updated subscribing
+INFO  2026-02-26T07:18:51 +18ms service=server status=completed duration=2749 method=GET path=/agent request
+INFO  2026-02-26T07:18:51 +15ms service=server method=GET path=/command request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/command request
+INFO  2026-02-26T07:18:51 +3ms service=mcp key=websearch type=remote found
+INFO  2026-02-26T07:18:51 +6ms service=mcp key=context7 type=remote found
+INFO  2026-02-26T07:18:51 +0ms service=mcp key=grep_app type=remote found
+INFO  2026-02-26T07:18:51 +2ms service=server method=GET path=/lsp request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/lsp request
+INFO  2026-02-26T07:18:51 +1ms service=server status=completed duration=1 method=GET path=/lsp request
+INFO  2026-02-26T07:18:51 +0ms service=server method=GET path=/mcp request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/mcp request
+INFO  2026-02-26T07:18:51 +1ms service=server method=GET path=/experimental/resource request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/experimental/resource request
+INFO  2026-02-26T07:18:51 +0ms service=server method=GET path=/formatter request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/formatter request
+INFO  2026-02-26T07:18:51 +5ms service=server method=GET path=/session/status request
+INFO  2026-02-26T07:18:51 +1ms service=server status=started method=GET path=/session/status request
+INFO  2026-02-26T07:18:51 +0ms service=server status=completed duration=0 method=GET path=/session/status request
+INFO  2026-02-26T07:18:51 +0ms service=server method=GET path=/provider/auth request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/provider/auth request
+INFO  2026-02-26T07:18:51 +1ms service=server status=completed duration=1 method=GET path=/provider/auth request
+INFO  2026-02-26T07:18:51 +1ms service=server method=GET path=/vcs request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/vcs request
+INFO  2026-02-26T07:18:51 +0ms service=server status=completed duration=0 method=GET path=/vcs request
+INFO  2026-02-26T07:18:51 +0ms service=server method=GET path=/path request
+INFO  2026-02-26T07:18:51 +0ms service=server status=started method=GET path=/path request
+INFO  2026-02-26T07:18:51 +0ms service=server status=completed duration=0 method=GET path=/path request
+INFO  2026-02-26T07:18:51 +3ms service=server status=completed duration=10 method=GET path=/formatter request
+INFO  2026-02-26T07:18:52 +559ms service=snapshot prune=7.days cleanup
+INFO  2026-02-26T07:18:52 +89ms service=mcp key=websearch transport=StreamableHTTP connected
+INFO  2026-02-26T07:18:52 +105ms service=mcp key=grep_app transport=StreamableHTTP connected
+INFO  2026-02-26T07:18:52 +246ms service=mcp key=websearch toolCount=1 create() successfully created client
+INFO  2026-02-26T07:18:52 +78ms service=mcp key=context7 transport=StreamableHTTP connected
+INFO  2026-02-26T07:18:52 +115ms service=mcp key=grep_app toolCount=1 create() successfully created client
+INFO  2026-02-26T07:18:53 +765ms service=mcp key=context7 toolCount=2 create() successfully created client
+INFO  2026-02-26T07:18:53 +2ms service=server status=completed duration=1971 method=GET path=/mcp request
+ERROR 2026-02-26T07:18:53 +224ms service=mcp clientName=context7 error=MCP error -32601: Method not found failed to get prompts
+ERROR 2026-02-26T07:18:53 +92ms service=mcp clientName=grep_app error=MCP error -32601: Method not found failed to get prompts
+INFO  2026-02-26T07:18:53 +2ms service=server status=completed duration=2301 method=GET path=/command request
+ERROR 2026-02-26T07:18:54 +203ms service=mcp clientName=grep_app error=MCP error -32601: Method not found failed to get prompts
+ERROR 2026-02-26T07:18:54 +351ms service=mcp clientName=context7 error=MCP error -32601: Method not found failed to get prompts
+INFO  2026-02-26T07:18:54 +0ms service=server status=completed duration=2842 method=GET path=/experimental/resource request

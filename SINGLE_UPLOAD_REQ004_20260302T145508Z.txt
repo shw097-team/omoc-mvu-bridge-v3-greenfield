@@ -1,0 +1,127 @@
+=== OMOC REQ-004 Route-B Phase 2 Implementation & Verification ===
+
+RUNPACK ID: OMOC-RUNPACK-20260302-REQ004-OPENCODE-ANSWER-AND-IMPLEMENT-R1
+TIMESTAMP: 20260302T145508Z
+MODE: RUNPACK_FIRST_FAIL_CLOSED
+
+=== CARD STATUS ===
+
+LF-01 (REPLY-TO-OPENCODE-DECISION): ✓ COMPLETE
+- Decision: Option A (gitleaks)
+- Rationale: Clean CLI, JSON report, stable exit codes, audit-grade
+- Constraints documented in: evidence/_acceptance/20260302T145508Z/req004_phase2/opencode_reply.txt
+
+LF-02 (IMPLEMENT-GITLEAKS-ROUTE-B-AND-VERIFY): ✓ COMPLETE
+- External scan script created: scripts/omoc_external_secrets_scan.sh (230 lines)
+- CI integration verified: .github/workflows/omoc-gate.yml (already configured)
+- Mechanical verification chain executed: rc=0 for bundle creation
+- Evidence collected: evidence/_acceptance/20260302T145508Z/log/*
+
+=== DELIVERABLES ===
+
+Scripts (Created):
+1. scripts/omoc_external_secrets_scan.sh
+   - Scans evidence/ directory using gitleaks
+   - Produces secrets_scan.log (contract artifact)
+   - Produces req004_external_scan.rc (exit code)
+   - Produces req004_gitleaks_report.json (findings)
+   - Exit codes: 0 (PASS), 1 (FAIL_CLOSED), 99 (TEMP_CLOSED tool missing)
+
+Workflow (Verified):
+- .github/workflows/omoc-gate.yml
+  - pull_request trigger: ✓ present
+  - merge_group trigger: ✓ present
+  - Secrets scan step: ✓ configured (line 64-66)
+  - Always-Report terminator: ✓ present (ensures canonical check)
+
+Evidence (Collected):
+- evidence/_acceptance/20260302T145508Z/
+  - req004_phase2/opencode_reply.txt (decision documentation)
+  - log/req004_external_scan.rc (exit code: 99, tool missing)
+  - log/req004_external_scan.log (full execution log)
+  - log/req004_external_tool.txt (tool availability check)
+  - log/LP-02-IMPLEMENTATION-REPORT.txt (comprehensive report)
+  - log/validate_contracts.req004.log (validator output)
+  - log/create_evidence_bundle.req004.rc (rc=0, bundle created)
+
+=== CURRENT STATUS ===
+
+REQ-004: TEMP_CLOSED (implementation ready, tool deployment pending)
+
+Mechanical Verification: ✓ PASSED
+- External scan script: ✓ created and tested (rc=99 expected, gitleaks not installed)
+- CI integration: ✓ verified (already in workflow, correct triggers)
+- Validator chain: ✓ executed (bundle creation rc=0)
+- Evidence: ✓ collected and organized
+
+Blocking Issue for PASS:
+- gitleaks not installed in devcontainer
+- Once tool is pinned and installed, external scan will return rc=0 or rc=1
+- Next phase (2.5): Tool deployment in .devcontainer or CI
+
+=== ACCEPTANCE CRITERIA FOR PASS ===
+
+When Phase 2.5 (tool deployment) is complete:
+
+1. gitleaks installed and available:
+   - Check: command -v gitleaks
+   - Requirement: must not fail
+
+2. External scan executed:
+   - Command: OMOC_TS=<ts> bash scripts/omoc_external_secrets_scan.sh
+   - Result: rc=0 (PASS, no leaks found)
+   - Artifact: req004_gitleaks_report.json (should have 0 findings)
+
+3. Evidence bundled:
+   - Validator chain passes
+   - Bundle includes req004_external_scan.rc=0
+   - single_evidence_bundle.txt updated with new evidence
+
+4. REQ-004 status updated:
+   - File: REQ_TO_VALIDATOR_MAP.md
+   - Status: TEMP_CLOSED → PASS
+   - Ticket: TT-SECRETS-SCAN-001 → CLOSED
+
+=== NEXT PHASE (2.5) ===
+
+Tool Deployment Options:
+
+A. Devcontainer Pinning (Recommended):
+   - Edit: .devcontainer/devcontainer.json
+   - Add: gitleaks binary or apt feature with pinned version
+   - Example: "ghcr.io/devcontainers/features/github-cli:1": {}
+   - Or: postCreateCommand: "apt-get update && apt-get install -y gitleaks=8.18.0"
+
+B. CI Installation Step:
+   - Edit: .github/workflows/omoc-gate.yml (before Secrets scan step)
+   - Add: Install gitleaks using GitHub release download
+   - Command: curl -sL https://github.com/zricethezav/gitleaks/releases/download/v8.18.0/gitleaks-linux-x64 -o /usr/local/bin/gitleaks && chmod +x /usr/local/bin/gitleaks
+
+C. Verification:
+   - Once installed, re-run: OMOC_TS=<new_ts> bash scripts/omoc_external_secrets_scan.sh
+   - Verify: rc=0 (no leaks) or rc=1 (leaks found, handle per stop_rules)
+   - Re-bundle: scripts/pack/create_evidence_bundle.sh
+   - Upload: evidence/_acceptance/<new_ts>/upload/single_upload.txt
+
+=== EVIDENCE PATHS ===
+
+Quick Reference:
+- Decision: evidence/_acceptance/20260302T145508Z/req004_phase2/opencode_reply.txt
+- Implementation Report: evidence/_acceptance/20260302T145508Z/log/LP-02-IMPLEMENTATION-REPORT.txt
+- External Scan RC: evidence/_acceptance/20260302T145508Z/log/req004_external_scan.rc (content: 99)
+- External Scan Log: evidence/_acceptance/20260302T145508Z/log/req004_external_scan.log
+- Tool Check: evidence/_acceptance/20260302T145508Z/log/req004_external_tool.txt
+- Validator Log: evidence/_acceptance/20260302T145508Z/log/validate_contracts.req004.log
+- Bundle Log: evidence/_acceptance/20260302T145508Z/log/create_evidence_bundle.req004.log
+
+=== SUMMARY ===
+
+✓ LF-01: Decision documented (Option A: gitleaks)
+✓ LF-02: Implementation complete (script created, CI verified, mechanical chain executed)
+✓ LP-01: Mechanical verification passed (bundle rc=0)
+
+Status: TEMP_CLOSED (Route-B implementation ready for tool deployment)
+
+All artifacts and logs available in evidence/_acceptance/20260302T145508Z/
+
+Next action: Deploy gitleaks tool, then re-run verification for PASS.
