@@ -1,0 +1,98 @@
+/workspaces/omoc-mvu-bridge-v3-greenfield
+97f1c84d68a306df4c4e3319ed2031da848824c6
+ M .comment_hook_ack.txt
+ M .devcontainer/Dockerfile
+ M .devcontainer/devcontainer.json
+ M .opencode/oh-my-opencode.jsonc
+ M .opencode/opencode.jsonc
+ M .vscode/settings.json
+ M WP-002_evidence_upload.txt
+ M WP-002_evidence_upload.txt.sha256
+ M WP-007_evidence_upload.txt
+ M WP-008_evidence_upload.txt
+ M WP-008_evidence_upload.txt.sha256
+ D _acceptance/config_dump.txt
+ D _acceptance/config_dump.txt.bak.2026-02-24T01:45:32Z
+ M bundle_audit.json
+ M checks_manifest.json
+ M evidence/bundle_audit.json
+ M evidence/checks_manifest.json
+ M evidence/evidence_index.md
+ D evidence/skills_pack_validation/20260222T161724Z/contract_snapshot.json
+ D evidence/skills_pack_validation/20260222T161724Z/rc.txt
+ D evidence/skills_pack_validation/20260222T161724Z/report.json
+ D evidence/skills_pack_validation/20260222T161724Z/report.md
+ D evidence/skills_pack_validation/20260222T161724Z/required_canonical.json
+ D evidence/skills_pack_validation/20260222T161724Z/required_files_diff.json
+ D evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt
+ M evidence/verdict.json
+ M evidence_index.md
+ M ops/opencode/opencode.jsonc
+M  scripts/omoc-evidence-minset.sh
+MM scripts/omoc-opencode-preflight.sh
+ M scripts/omoc-opencode-run-rate-safe.sh
+MM scripts/omoc-opencode-run.sh
+M  scripts/omoc_opencode_preflight.sh
+ M scripts/omoc_validate_contracts.sh
+ M scripts/opencode-gpt5mini
+ M scripts/opencode/fetch-schemas.sh
+ M scripts/run_acceptance_all_ts.sh
+ M verdict.json
+?? .last_ts
+?? .schemas/
+?? .sisyphus/
+?? WP-001_evidence_upload.txt
+?? WP-001_evidence_upload.txt.sha256
+?? WP-008_evidence_upload_20260225T023000Z.txt
+?? bnsyn-phase-controlled-emergent-dynamics/
+?? bundle_audit.json.bak_for_pack_20260225T035319Z
+?? checks_manifest.json.bak_20260225T033958Z
+?? checks_manifest.json.bak_20260225T033959Z
+?? checks_manifest.json.bak_20260225T034000Z
+?? checks_manifest.json.bak_20260225T034102Z
+?? checks_manifest.json.bak_20260225T034812Z
+?? checks_manifest.json.bak_20260225T034813Z
+?? checks_manifest.json.bak_20260225T034815Z
+?? checks_manifest.json.bak_20260225T040634Z
+?? checks_manifest.json.bak_for_pack_20260225T035319Z
+?? config/secrets_allowlist.txt
+?? "docs/_omoc_inputs/normative/OMOC-MVU Lane-F_\351\251\227\346\224\266 RB+WI.md"
+?? docs/omoc_process_policy.md
+?? evidence/evidence_bundle.tgz.bak_20260225T040634Z
+?? evidence/evidence_bundle.tgz.orig
+?? evidence/skills_pack_validation/20260225T061912Z/
+?? evidence_index.md.bak_20260225T033958Z
+?? evidence_index.md.bak_20260225T033959Z
+?? evidence_index.md.bak_20260225T034000Z
+?? evidence_index.md.bak_20260225T034102Z
+?? evidence_index.md.bak_20260225T034812Z
+?? evidence_index.md.bak_20260225T034813Z
+?? evidence_index.md.bak_20260225T034815Z
+?? evidence_index.md.bak_20260225T040634Z
+?? evidence_index.md.bak_for_pack_20260225T035319Z
+?? matched_files_inspect.txt
+?? matched_files_inspect.txt.sha256
+?? matched_files_proposed_patches.json
+?? matched_files_proposed_patches.json.sha256
+?? omoc-mvu-sandbox/
+?? scripts/delegate_devcontainer_fetch.sh
+?? scripts/omoc-opencode-safe-stop.sh
+?? scripts/omoc_fastpass_run.sh
+?? scripts/omoc_packager_generate_four_artifacts.sh
+?? scripts/wp008_generate.sh
+?? scripts/wp008_remediate.sh
+?? single_evidence_bundle.txt
+?? single_evidence_bundle.txt.bak_20260225T033958Z
+?? single_evidence_bundle.txt.bak_20260225T034000Z
+?? single_evidence_bundle.txt.bak_20260225T034103Z
+?? single_evidence_bundle.txt.bak_20260225T040634Z
+?? single_evidence_bundle.txt.sha256
+?? verdict.json.bak_20260225T033958Z
+?? verdict.json.bak_20260225T033959Z
+?? verdict.json.bak_20260225T034000Z
+?? verdict.json.bak_20260225T034102Z
+?? verdict.json.bak_20260225T034812Z
+?? verdict.json.bak_20260225T034813Z
+?? verdict.json.bak_20260225T034815Z
+?? verdict.json.bak_20260225T040634Z
+?? verdict.json.bak_for_pack_20260225T035319Z

@@ -1,0 +1,16 @@
+TS_BEFORE: 20260224T090059Z
+GIT_HEAD: 97f1c84d68a306df4c4e3319ed2031da848824c6
+GIT_STATUS:
+ M scripts/devcontainer_post_create.sh
+ M scripts/install-opencode-config.sh
+ M scripts/validate-config.mjs
+
+WHICH:
+/usr/local/share/nvm/versions/node/v20.20.0/bin/node
+/usr/local/share/nvm/versions/node/v20.20.0/bin/npm
+/usr/local/share/nvm/versions/node/v20.20.0/bin/corepack
+
+NODE: v20.20.0
+NPM: 10.8.2
+COREPACK: 0.34.1
+PRE_OPENCODE_VER: 1.2.10

@@ -1,0 +1,21 @@
+total 0
+drwxr-xr-x 1 vscode vscode 512 Feb 23  2026 .
+drwxr-xr-x 1 vscode vscode 512 Feb 23 07:07 ..
+-rw-r--r-- 1 vscode vscode  96 Feb 23  2026 audit_decisions.jsonl
+-rw-r--r-- 1 vscode vscode 111 Feb 23  2026 audit_ready.json
+-rw-r--r-- 1 vscode vscode 134 Feb 23  2026 run_git_before.out
+-rw-r--r-- 1 vscode vscode  20 Feb 23  2026 run_guard_present.out
+-rw-r--r-- 1 vscode vscode   0 Feb 23  2026 run_ls.out
+-rw-r--r-- 1 vscode vscode  21 Feb 23  2026 run_not_ready_rc.out
+total 0
+drwxr-xr-x 1 vscode vscode 512 Feb 23  2026 .
+drwxr-xr-x 1 vscode vscode 512 Feb 23 07:07 ..
+-rw-r--r-- 1 vscode vscode  96 Feb 23  2026 audit_decisions.jsonl
+-rw-r--r-- 1 vscode vscode  21 Feb 23  2026 audit_ready.json
+-rw-r--r-- 1 vscode vscode 111 Feb 23  2026 run_audit_ready.out
+-rw-r--r-- 1 vscode vscode  96 Feb 23  2026 run_decisions.out
+-rw-r--r-- 1 vscode vscode 134 Feb 23 07:07 run_git_before.out
+-rw-r--r-- 1 vscode vscode  20 Feb 23 07:07 run_guard_present.out
+-rw-r--r-- 1 vscode vscode 477 Feb 23  2026 run_ls.out
+-rw-r--r-- 1 vscode vscode  21 Feb 23  2026 run_not_ready_rc.out
+-rw-r--r-- 1 vscode vscode  19 Feb 23  2026 run_ready_rc.out
