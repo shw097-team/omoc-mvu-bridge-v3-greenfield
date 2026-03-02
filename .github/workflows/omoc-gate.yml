@@ -153,14 +153,16 @@ jobs:
             fi
           done
           
-          # Copy acceptance verdict.json to evidence/ (if exists)
+          # Copy acceptance verdict.json to root AND evidence/ (if exists)
           mkdir -p evidence
           if [ -n "${OMOC_TS:-}" ] && [ -f "evidence/_acceptance/${OMOC_TS}/verdict.json" ]; then
+            cp "evidence/_acceptance/${OMOC_TS}/verdict.json" verdict.json
             cp "evidence/_acceptance/${OMOC_TS}/verdict.json" evidence/verdict.json
           elif [ -d "evidence/_acceptance" ]; then
             # fallback: use newest acceptance verdict if available
             latest=$(find evidence/_acceptance -maxdepth 1 -type d -name '20*' | sort -r | head -1)
             if [ -f "${latest}/verdict.json" ]; then
+              cp "${latest}/verdict.json" verdict.json
               cp "${latest}/verdict.json" evidence/verdict.json
             fi
           fi
