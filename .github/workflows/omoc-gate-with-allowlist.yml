@@ -1,0 +1,41 @@
+name: ci / omoc-gate (with RIP-B allowlist)
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+  merge_group:
+  workflow_dispatch:
+
+permissions: {}
+
+concurrency:
+  group: omoc-gate-allowlist-${{ github.repository }}-${{ github.event_name }}-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  review:
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      checks: write
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: RIP-B allowlist enforce
+        # Fail-closed: do NOT swallow failures; allow the job to fail if the enforcer exits non-zero
+        id: ripb_allowlist
+        run: |
+          echo "Running RIP-B MCP allowlist enforcer"
+          OMOC_TS=${{ github.run_id }} bash scripts/mcp_allowlist_enforce.sh
+        # Do not set continue-on-error or any swallow pattern; job will fail if the script exits non-zero
+
+      - name: Upload drift-guard evidence
+        uses: actions/upload-artifact@v4
+        with:
+          name: ripb-drift-guard
+          path: evidence/_drift_guard/${{ github.run_id }}
+          retention-days: 7

@@ -1,0 +1,42 @@
+#\!/usr/bin/env bash  
+set -euo pipefail
+
+# OMOC contract validator (skeleton; Fail-Closed)  
+# MUST:  
+#  - refuse stubbed evidence (empty files) for key artifacts  
+#  - enforce presence of WP-008 hard items  
+#  - enforce forbidden patterns scan results (0 hits)  
+#  - emit single exit code (rc\!=0 \=\> FAIL_CLOSED)
+
+require_file() {  
+  local f="$1"  
+  if [[ \! -f "$f" ]]; then  
+    echo "[FAIL] missing file: $f" \>&2  
+    return 2  
+  fi  
+  if [[ \! -s "$f" ]]; then  
+    echo "[FAIL] empty file (stub detected): $f" \>&2  
+    return 3  
+  fi  
+  return 0  
+}
+
+rc=0
+
+# Required root artifacts (minset \+ hard items)  
+for f in verdict.json checks_manifest.json evidence_index.md evidence_bundle.tgz bundle_audit.json; do  
+  require_file "$f" || rc=$?  
+done
+
+# Scans must exist and be non-empty; content-level validation is downstream (parser can be added)  
+for f in secrets_scan.log doc_hygiene_scan.txt superseded_scan.txt drift_report.md tt_export.json pinned_actions_report.json; do  
+  require_file "$f" || rc=$?  
+done
+
+if [[ "$rc" -ne 0 ]]; then  
+  echo "[omoc_validate_contracts] FAIL_CLOSED rc=$rc" \>&2  
+  exit "$rc"  
+fi
+
+echo "[omoc_validate_contracts] PASS"
+

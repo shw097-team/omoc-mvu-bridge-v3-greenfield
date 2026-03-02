@@ -1,0 +1,27 @@
+{
+  "schema_version": "omoc.preflight.v1",
+  "generated_at": "2026-02-22T16:23:25+00:00",
+  "timezone": "UTC",
+  "tools": {
+    "bash": {
+      "ok": true,
+      "out": "GNU bash, version 5.2.21(1)-release (x86_64-pc-linux-gnu)\nCopyright (C) 2022 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>\n\nThis is free "
+    },
+    "python3": {
+      "ok": true,
+      "out": "Python 3.12.12"
+    },
+    "sha256sum": {
+      "ok": true,
+      "out": "sha256sum (GNU coreutils) 9.4\nCopyright (C) 2023 Free Software Foundation, Inc.\nLicense GPLv3+: GNU GPL version 3 or later <https://gnu.org/licenses/gpl.html>.\nThis is free software: you are free to c"
+    },
+    "jq": {
+      "ok": true,
+      "out": "jq-1.7"
+    },
+    "git": {
+      "ok": true,
+      "out": "git version 2.52.0"
+    }
+  }
+}

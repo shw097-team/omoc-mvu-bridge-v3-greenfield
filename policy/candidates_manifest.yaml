@@ -1,0 +1,44 @@
+schema: omoc.candidates_manifest.v1  
+generated_at: 2026-02-21T00:00:00+08:00  
+support_only: true
+
+candidates:  
+  - name: OpenHands  
+    type: worker_engine  
+    canonical_refs:  
+      - source: github  
+        ref: "OpenHands/OpenHands"  
+      - source: docs  
+        ref: "OpenHands GitHub Action docs"  
+    quarantine_flag: false  
+    conflict_flag: "NONE"  
+    drift_action: "NEEDS-TEST"  
+    repo_path_stub:  
+      - ".github/workflows/omoc-gate.yml (worker steps wiring)"  
+      - "policy/omoc_agent_policy.yml (limits/ack)"  
+  - name: SWE-agent  
+    type: worker_engine  
+    canonical_refs:  
+      - source: github  
+        ref: "SWE-agent/SWE-agent"  
+      - source: docs  
+        ref: "SWE-agent CLI tutorial (--actions.open_pr)"  
+    quarantine_flag: false  
+    conflict_flag: "NONE"  
+    drift_action: "NEEDS-TEST"  
+    repo_path_stub:  
+      - ".github/workflows/omoc-gate.yml (worker steps wiring)"  
+  - name: PR-Agent (Qodo)  
+    type: reviewer_engine  
+    canonical_refs:  
+      - source: github  
+        ref: "qodo-ai/pr-agent"  
+      - source: docs  
+        ref: "qodo-merge-docs GitHub install"  
+    quarantine_flag: "NEEDS-ISOLATION"  
+    conflict_flag: "NONE"  
+    drift_action: "NEEDS-TEST"  
+    repo_path_stub:  
+      - ".github/workflows/omoc-gate.yml (review steps wiring)"  
+      - "policy/omoc_agent_policy.yml (permissions \+ ack)"
+

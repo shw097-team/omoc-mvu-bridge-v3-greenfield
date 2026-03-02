@@ -1,0 +1,37 @@
+tool_path: opencode
+git_head: 90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+OMOC_TS: 20260223T083000Z
+
+===== BEGIN git_before.out =====
+90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+
+ M .gitignore
+?? RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_PASS_evidence_upload.txt
+?? RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_REPLAY2_evidence_upload.txt
+===== END git_before.out =====
+
+===== BEGIN gitignore_before.out =====
+# OMOC-MVU: evidence should be generated, not versioned
+evidence/_acceptance/
+evidence/_diag/
+*.tgz
+*.tar.gz
+*.zip
+
+node_modules/
+evidence/_quarantine/
+audit_intake_*/
+*.bak
+# ignore drift guard evidence
+evidence/_drift_guard/
+.omoc_marker_*
+===== END gitignore_before.out =====
+
+===== BEGIN gitignore_rule_line.out =====
+14:.omoc_marker_*
+===== END gitignore_rule_line.out =====
+
+===== BEGIN git_after.out =====
+?? RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_PASS_evidence_upload.txt
+===== END git_after.out =====
+dbc0721f5bd5e9bb40defbc2daf4f00ab1806c46b944b3e83fbf04e2a66b0047

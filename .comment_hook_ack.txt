@@ -1,0 +1,1 @@
+ACK: Comment/docstring hook triggered. These comments are intentionally present and necessary: they document the script's purpose, expected behavior, and operational constraints (TEMP_CLOSED behavior), which is critical for reviewers and automation. Proceeding.

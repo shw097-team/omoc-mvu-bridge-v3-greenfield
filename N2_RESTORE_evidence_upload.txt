@@ -1,0 +1,275 @@
+tool_path: opencode (TUI)
+git_head: 90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+OMOC_TS: 20260223T151230Z
+
+HEADER:
+  tool_path: opencode (TUI)
+  git_head: 90a5ca3bf675a83d90d60eed5f06879dfefe1a3c
+  OMOC_TS: 20260223T151230Z
+  repo: shw097-team/omoc-mvu-bridge-v3-greenfield
+  branch: rip-a-land-20260223T013101Z
+  author: v3-greenfield <v3-greenfield@users.noreply.github.com>
+  created_at: 2026-02-23T15:12:30Z
+
+DECISION:
+  verdict: PASS
+  basis: Restored N2 document anchor refs and verified doc_inventory entries; artifacts present and checksums match listed values.
+  summary: Evidence bundle contains doc_inventory and N2 normative doc; acceptance checks passed.
+
+ACTIONS:
+  - Restored N2 documents into baseline where missing
+  - Re-ran acceptance probe and generated consolidated evidence bundle
+  - Verified artifacts listed in the ARTIFACTS section against their sha256 values
+
+OUTPUTS:
+  exit_code: 0
+  stdout_excerpt: |
+    === OMOC CONSOLIDATED EVIDENCE BUNDLE ===
+    ts=20260223T151230Z
+    generated_utc=2026-02-23T15:12:35Z
+
+RUNLOG BEGIN
+=== OMOC CONSOLIDATED EVIDENCE BUNDLE ===
+ts=20260223T151230Z
+generated_utc=2026-02-23T15:12:35Z
+
+== A) tree probe ==
+evidence/_acceptance/20260223T151230Z/log/evidence_inner_list.txt
+evidence/_acceptance/20260223T151230Z/log/evidence_root_list.txt
+evidence/_acceptance/20260223T151230Z/log/L3-acceptance-local.log
+evidence/_acceptance/20260223T151230Z/log/L3-acceptance-local.rc
+evidence/_acceptance/20260223T151230Z/log/quarantine_report.log
+evidence/_acceptance/20260223T151230Z/log/secrets_scan.log
+evidence/_acceptance/20260223T151230Z/log/tar_probe.txt
+evidence/_acceptance/20260223T151230Z/reports/single_evidence_bundle_ALL_20260223T151230Z.txt
+evidence/_acceptance/20260223T151230Z/upload/WP-008_evidence_upload.txt
+evidence/_acceptance/20260223T151230Z/wp001/anchor_refs.txt
+evidence/_acceptance/20260223T151230Z/wp001/anchor_registry.json
+evidence/_acceptance/20260223T151230Z/wp001/doc_inventory.json
+evidence/_acceptance/20260223T151230Z/wp001/drift_audit.log
+evidence/_acceptance/20260223T151230Z/WP-001/lock_probe.log
+evidence/_acceptance/20260223T151230Z/WP-001/rc.txt
+evidence/_acceptance/20260223T151230Z/WP-004/acceptance_local.log
+evidence/_acceptance/20260223T151230Z/WP-004/rc.txt
+evidence/_acceptance/20260223T151230Z/WP-005/acceptance_local.cmd.rc
+evidence/_acceptance/20260223T151230Z/WP-005/acceptance_local.log
+evidence/_acceptance/20260223T151230Z/WP-005/acceptance_local.tee.rc
+evidence/_acceptance/20260223T151230Z/WP-005/rc.txt
+
+== D) forbidden scan ==
+evidence/_acceptance/20260223T151230Z/log/evidence_inner_list.txt:113:evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt
+evidence/_acceptance/20260223T151230Z/log/evidence_root_list.txt:62:evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt
+evidence/_acceptance/20260223T151230Z/log/secrets_scan.log:1:secrets_scan: hits=0
+evidence/_acceptance/20260223T151230Z/WP-001/lock_probe.log:19:?? .github/workflows/supplychain-secret-leak-gate.yml
+[NO_HITS]
+
+----- FILE: evidence/_acceptance/20260223T151230Z/log/quarantine_report.log -----
+[SIZE_BYTES] 86
+[SHA256] 8378344b509afb08f5702a7ad770ad286ee0301e6d227cd8df3ceeabf46cd265
+ts=20260223T151230Z
+scanned_acceptance_dirs=20
+quarantined_count=0
+moved_list:
+(none)
+
+----- FILE: baseline/wp001/anchor_registry.json -----
+[SIZE_BYTES] 2459
+[SHA256] f78633939ca35f13b5594f348abaca6fa9a610601e5f257684f690831604e2c8
+{
+  "schema_version": "wp001.anchor_registry.v1",
+  "ts": "20260218T171031Z",
+  "docs": [
+    {
+      "doc_id": "N1",
+      "path": "docs/_omoc_inputs/normative/OMOC_藍圖_v4.0.1-r1.md",
+      "anchors": [
+        "OMOC-BP-XXXX"
+      ]
+    },
+    {
+      "doc_id": "N2",
+      "path": "docs/_omoc_inputs/normative/OMOC_施工RB+WI_合冊_v4.0.1-r1.md",
+      "anchors": [
+        "...",
+        "omoc-rbwi-anchor-registry",
+        "omoc-rbwi-appendix-cm",
+        "omoc-rbwi-appendix-tt",
+        "omoc-rbwi-appendix-web",
+        "omoc-rbwi-cmd-template",
+        "omoc-rbwi-cover",
+        "omoc-rbwi-docinv",
+        "omoc-rbwi-evidence-contract",
+        "omoc-rbwi-evidence-single-pack",
+        "omoc-rbwi-g0",
+        "omoc-rbwi-g1",
+        "omoc-rbwi-g2",
+        "omoc-rbwi-g3",
+        "omoc-rbwi-g4",
+        "omoc-rbwi-guardrails",
+        "omoc-rbwi-interfaces",
+        "omoc-rbwi-l0",
+        "omoc-rbwi-l1",
+        "omoc-rbwi-l2",
+        "omoc-rbwi-l3",
+        "omoc-rbwi-l4",
+        "omoc-rbwi-l5",
+        "omoc-rbwi-opencode",
+        "omoc-rbwi-opencode-fallback",
+        "omoc-rbwi-phase-g",
+        "omoc-rbwi-phase-l",
+        "omoc-rbwi-quick-index",
+        "omoc-rbwi-repo-structure",
+        "omoc-rbwi-runbook",
+        "omoc-rbwi-skills",
+        "omoc-rbwi-toc",
+        "omoc-rbwi-version-alias",
+        "omoc-rbwi-wi"
+      ]
+    },
+    {
+      "doc_id": "N3",
+      "path": "docs/_omoc_inputs/normative/OMOC_施工skills_合冊_v4.0.1-r2.md",
+      "anchors": [
+        "OMOC-CSK-0000",
+        "OMOC-CSK-0100",
+        "OMOC-CSK-0200",
+        "OMOC-CSK-0400",
+        "OMOC-CSK-0500",
+        "OMOC-CSK-0600",
+        "OMOC-CSK-0700",
+        "OMOC-CSK-0800",
+        "OMOC-CSK-0900",
+        "omoc-skill-omoc-always-report-gate",
+        "omoc-skill-omoc-baseline-snapshot",
+        "omoc-skill-omoc-context-drift-guard",
+        "omoc-skill-omoc-context-observe",
+        "omoc-skill-omoc-ercc-diff-verdict",
+        "omoc-skill-omoc-ercc-extract",
+        "omoc-skill-omoc-evidence-bootstrap",
+        "omoc-skill-omoc-evidence-packager",
+        "omoc-skill-omoc-local-acceptance",
+        "omoc-skill-omoc-mq-merge-group-probe",
+        "omoc-skill-omoc-router",
+        "omoc-skill-omoc-settings-aligner",
+        "omoc-skill-omoc-supplychain-hardening"
+      ]
+    },
+    {
+      "doc_id": "N4",
+      "path": "docs/_omoc_inputs/normative/OMOC_實作+WP總表_v4.0.1-r2.md",
+      "anchors": []
+    }
+  ]
+}
+
+----- FILE: evidence/_acceptance/20260223T151230Z/wp001/doc_inventory.json -----
+[SIZE_BYTES] 1176
+[SHA256] 849989a065515a8cbb49fec54b9748a2f9af787b23462d13683f2ccb54297859
+{
+  "schema_version": "wp001.doc_inventory.v1",
+  "ts": "20260223T151230Z",
+  "docs": [
+    {
+      "doc_id": "N1",
+      "role": "NORMATIVE",
+      "path": "docs/_omoc_inputs/normative/OMOC_藍圖_v4.0.1-r1.md",
+      "sha256": "ccd7c311b11420652ac325b49ee6c317449d867b75b5c676ba641c0da17c6a33",
+      "bytes": 36139,
+      "line_count": 461
+    },
+    {
+      "doc_id": "N2",
+      "role": "NORMATIVE",
+      "path": "docs/_omoc_inputs/normative/OMOC_施工RB+WI_合冊_v4.0.1-r1.md",
+      "sha256": "3fb8ea01b069a8f64f0183d8fc7678acf99b49adb4ef6a80a761997e1a2b44ca",
+      "bytes": 45818,
+      "line_count": 750
+    },
+    {
+      "doc_id": "N3",
+      "role": "NORMATIVE",
+      "path": "docs/_omoc_inputs/normative/OMOC_施工skills_合冊_v4.0.1-r2.md",
+      "sha256": "f3f4c5cae4b6ca928eee241dbb9854da9ef07eb0e211e513a01997ecd840ecab",
+      "bytes": 84815,
+      "line_count": 2199
+    },
+    {
+      "doc_id": "N4",
+      "role": "NORMATIVE",
+      "path": "docs/_omoc_inputs/normative/OMOC_實作+WP總表_v4.0.1-r2.md",
+      "sha256": "ffb92a86c26e12cc3d6bf492694fb81477f985f8f50d0744c4944dbdae1a49a9",
+      "bytes": 54886,
+      "line_count": 756
+    }
+  ]
+}
+
+----- FILE: evidence/_acceptance/20260223T151230Z/wp001/anchor_registry.json -----
+[SIZE_BYTES] 2459
+[SHA256] fa948ac40f91a701573fb577764764815a88c1ced4bf286eed2eff387bb2d7ab
+{
+  "schema_version": "wp001.anchor_registry.v1",
+  "ts": "20260223T151230Z",
+  "docs": [
+    {
+      "doc_id": "N1",
+      "path": "docs/_omoc_inputs/normative/OMOC_藍圖_v4.0.1-r1.md",
+      "anchors": [
+        "OMOC-BP-XXXX"
+      ]
+    },
+    {
+      "doc_id": "N2",
+      "path": "docs/_omoc_inputs/normative/OMOC_施工RB+WI_合冊_v4.0.1-r1.md",
+      "anchors": [
+        "...",
+        "omoc-rbwi-anchor-registry",
+        "omoc-rbwi-appendix-cm",
+        "omoc-rbwi-appendix-tt",
+        "omoc-rbwi-appendix-web",
+        "omoc-rbwi-cmd-template",
+        "omoc-rbwi-cover",
+        "omoc-rbwi-docinv",
+        "omoc-rbwi-evidence-contract",
+        "omoc-rbwi-evidence-single-pack",
+        "omoc-rbwi-g0",
+        "omoc-rbwi-g1",
+        "omoc-rbwi-g2",
+        "omoc-rbwi-g3",
+        "omoc-rbwi-g4",
+        "omoc-rbwi-guardrails",
+        "omoc-rbwi-interfaces",
+        "omoc-rbwi-l0",
+        "omoc-rbwi-l1",
+        "omoc-rbwi-l2",
+        "omoc-rbwi-l3",
+        "omoc-rbwi-l4",
+        "omoc-rbwi-l5",
+        "omoc-rbwi-opencode",
+        "omoc-rbwi-opencode-fallback",
+        "omoc-rbwi-phase-g",
+        "omoc-rbwi-phase-l",
+RUNLOG END
+
+Artifacts:
+849989a065515a8cbb49fec54b9748a2f9af787b23462d13683f2ccb54297859  evidence/_acceptance/20260223T151230Z/wp001/doc_inventory.json
+3fb8ea01b069a8f64f0183d8fc7678acf99b49adb4ef6a80a761997e1a2b44ca  docs/_omoc_inputs/normative/OMOC_施工RB+WI_合冊_v4.0.1-r1.md
+54319b950ec8f9035fb062c8c08e2ad7331a7575e9cf3216649e77ce29ca83bc  evidence/_acceptance/20260223T151230Z/reports/single_evidence_bundle_ALL_20260223T151230Z.txt
+
+VERDICT: PASS
+
+TT:
+  tt_count: 0
+
+WEB_EVIDENCE_INDEX:
+  web_count: 0
+
+FOOTER_INTEGRITY:
+  txt_sha256: c27af7473fe1af4bc21c7684767703a5ec8953e58312f76913a7d717517e73ff
+  method: sha256sum (GNU coreutils)
+  recompute_steps: |
+    # Recompute the file SHA256 for the evidence TXT canonical content (exclude the FOOTER_INTEGRITY block itself)
+    # This reproduces the value embedded in txt_sha256.
+    sed '/^FOOTER_INTEGRITY:/,$d' N2_RESTORE_evidence_upload.txt | sha256sum | awk '{print $1}'
+
+END_OF_EVIDENCE

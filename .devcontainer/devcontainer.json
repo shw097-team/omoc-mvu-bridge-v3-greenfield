@@ -22,7 +22,10 @@
       ]
     }
   },
-  // 3. 延遲注入 (Late Injection): 將剛才成功的物理修復指令轉為自動化背景執行
-  "postCreateCommand": "npm install -g bun && bun add -g oh-my-opencode && curl -fsSL https://opencode.ai/install | bash && echo 'export PATH=\"$HOME/.opencode/bin:$HOME/.bun/bin:$PATH\"' >> ~/.bashrc",
+  // 3. 延遲注入 (Late Injection): delegate to a pinned, auditable script under scripts/
+  // NOTE: Avoid long single-quoted bash snippets inlined here. The script will
+  // perform pinned installs or record a documented exception if a remote bootstrap
+  // (curl|bash) is required. See scripts/devcontainer_post_create.sh
+  "postCreateCommand": "./scripts/devcontainer_post_create.sh",
   "remoteUser": "vscode"
 }

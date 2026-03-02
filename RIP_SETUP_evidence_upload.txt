@@ -1,0 +1,24 @@
+RIP_SETUP evidence upload
+ts: 2026-02-22T15:55:44Z
+
+## git_head
+6cd6f881253c06fb0fb82f73fe73fc381abfece9
+
+## rip_files_present
+-rw-r--r-- 1 vscode vscode 49085 Feb 22 15:53 docs/_omoc_inputs/rip/OMOC_RIP-A_v1.1.0.md
+-rw-r--r-- 1 vscode vscode 67646 Feb 22 15:53 docs/_omoc_inputs/rip/OMOC_RIP-B_v1.1.0.md
+-rw-r--r-- 1 vscode vscode 51978 Feb 22 15:53 docs/_omoc_inputs/rip/OMOC_RIP-C_v1.1.0.md
+-rw-r--r-- 1 vscode vscode 46942 Feb 22 15:53 docs/_omoc_inputs/rip/OMOC_RIP-D_v1.1.0.md
+-rw-r--r-- 1 vscode vscode 45044 Feb 22 15:53 docs/_omoc_inputs/rip/OMOC_RIP-E_v1.1.0.md
+-rw-r--r-- 1 vscode vscode 52169 Feb 22 15:53 docs/_omoc_inputs/rip/OMOC_RIP-F_v1.1.0.md
+
+## sha256_rip_files
+ac3e839d592f158e5bedca927c5b1badb8b0ad0bce66ce806113580d035b2139  docs/_omoc_inputs/rip/OMOC_RIP-A_v1.1.0.md
+1c5581baa9d5b2d92abba6ec77846e392fa4dd4a71bf045a43122fea95a783a3  docs/_omoc_inputs/rip/OMOC_RIP-B_v1.1.0.md
+f8f328089858548970607e0fe283d502177b31f023d1c931ac0b703bd1f3fefb  docs/_omoc_inputs/rip/OMOC_RIP-C_v1.1.0.md
+3f0be06587e6a0c1f0b0ef61171f4642af5f9b8fa76331692d6b81d1d6e348f5  docs/_omoc_inputs/rip/OMOC_RIP-D_v1.1.0.md
+89395b2fa0d4909402ad430b027fd9f52ce52f988b9b295a06e1f59146ab33fc  docs/_omoc_inputs/rip/OMOC_RIP-E_v1.1.0.md
+fa94b199445a89bb9ebc4bc0018fd23272c956f430c9a36b7763d03b822d2d4a  docs/_omoc_inputs/rip/OMOC_RIP-F_v1.1.0.md
+
+## rip_plan_alignment_probe
+- RIP-C/D/E/F described in OMOC_總體RIP修補方案.md (probe lines via rg):

@@ -1,0 +1,7 @@
+name: Supplychain Scorecard
+on: [push]
+jobs:
+  scorecard:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo "scorecard"

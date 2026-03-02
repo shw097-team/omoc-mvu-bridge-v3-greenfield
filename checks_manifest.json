@@ -1,13 +1,10 @@
 {
-  "wp_001": "PASS",
-  "wp_002": "PASS",
-  "wp_003": "PASS",
-  "wp_004": "PASS",
-  "wp_005": "PASS",
-  "wp_006": "PASS",
-  "wp_007": "PASS",
-  "wp_008": "PASS"
-  "wp_009": "PASS"
-  "wp_010": "PASS"
-  "wp_011": "IN_PROGRESS"
+  "required_contexts_contract":{
+    "expected_source_order":["rulesets","branch_protection"],
+    "expected_file":"evidence/_acceptance/20260223T013101Z/ercc_observed/expected.json",
+    "observed_file":"evidence/_acceptance/20260223T013101Z/ercc_observed/observed.json",
+    "diff":{"missing":[],"extra":[]},
+    "verdict":"TEMP_CLOSED",
+    "tt":["TT-RIPA-003"]
+  }
 }

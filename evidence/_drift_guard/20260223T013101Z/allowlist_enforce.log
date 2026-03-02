@@ -1,0 +1,4 @@
+mcp_allowlist_enforce.sh start: 2026-02-23T02:51:59Z
+HASH_MISMATCH expected=6373b3b3765c92d721234d7e525caf4b397885db53df21496c8a54c683d592ca actual=98551f613c0ea837148bbec6ef37103a68024ffe7b70d7b0ed931405065430f5
+Fail-closed: HASH mismatch or missing; writing BLOCK decisions and exiting
+{"endpoint_ref": "ep-1", "url": "https://example.com/api?tamper=1?tamper=1", "decision": "BLOCK", "reason": "HASH_MISMATCH"}

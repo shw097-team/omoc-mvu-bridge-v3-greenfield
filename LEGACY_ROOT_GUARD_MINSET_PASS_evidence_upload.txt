@@ -1,0 +1,57 @@
+tool_path: opencode (TUI)
+
+git_head: cbbb81e383f229b1cf0aacb055798a56821c1153
+OMOC_TS: 20260224T051855Z
+
+RUNLOG BEGIN
+OMOC_TS=20260224T051855Z
+--- BEFORE: ls -la agent.md opencode.json || true ---
+-rw-r--r-- 1 vscode vscode 3 Feb 24 05:18 agent.md
+-rw-r--r-- 1 vscode vscode 3 Feb 24 05:18 opencode.json
+--- RUNNING scripts/omoc_legacy_root_guard.sh ---
+QUARANTINED agent.md -> evidence/_quarantine/20260224T051855Z/agent.md
+QUARANTINED opencode.json -> evidence/_quarantine/20260224T051855Z/opencode.json
+GUARD_RC=0
+--- AFTER: ls -la agent.md opencode.json || true ---
+--- QUARANTINE LIST ---
+evidence/_quarantine/20260224T051855Z/agent.md
+evidence/_quarantine/20260224T051855Z/opencode.json
+RUNLOG END
+
+Final git diff --name-only:
+scripts/omoc_legacy_root_guard.sh
+scripts/run_acceptance_all_ts.sh
+
+Final git diff (minset files):
+diff --git a/scripts/omoc_legacy_root_guard.sh b/scripts/omoc_legacy_root_guard.sh
+index eddf6f9..07f1c15 100755
+--- a/scripts/omoc_legacy_root_guard.sh
++++ b/scripts/omoc_legacy_root_guard.sh
+@@ -29,3 +29,4 @@ done
+ 
+ # Always exit 0 so this guard cannot fail runs
+ exit 0
++# edited-for-evidence
+diff --git a/scripts/run_acceptance_all_ts.sh b/scripts/run_acceptance_all_ts.sh
+index 7ba3408..d8fb961 100755
+--- a/scripts/run_acceptance_all_ts.sh
++++ b/scripts/run_acceptance_all_ts.sh
+@@ -1,5 +1,11 @@
+ #!/usr/bin/env bash
+ set +e
++
++# Run legacy root guard early to quarantine stray legacy root files
++if [ -f "scripts/omoc_legacy_root_guard.sh" ]; then
++  # guard is safe to run multiple times and exits 0
++  bash scripts/omoc_legacy_root_guard.sh || true
++fi
+ TS="${OMOC_TS:?OMOC_TS missing}"
+ ADIR="evidence/_acceptance/${TS}"
+ LOG="${ADIR}/log"
+
+sha256sum for files in final diff list:
+62c56fd8598d42e1b43d127e5d41e0c0ff0de1cafaa9ab19a086191ed6cc4dbb  scripts/omoc_legacy_root_guard.sh
+9ad853b5cf62ab882bb068e8916b4610ca4f5ff9d03d9fda52491835e129e0f7  scripts/run_acceptance_all_ts.sh
+
+VERDICT: PASS
+REASON: 

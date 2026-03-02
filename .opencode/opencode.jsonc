@@ -1,0 +1,19 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+
+  // ===== OMOC-MVU: 必須可重跑 + 可回放；禁止工具自動更新造成 drift =====
+  "autoupdate": false,
+
+  // ===== 模型：你要求的 github-copilot/gpt-5-mini =====
+  "model": "github-copilot/gpt-5-mini",
+  "small_model": "github-copilot/gpt-5-mini",
+
+  // ===== 供應商白名單：只允許 github-copilot（避免模型解析飄到別家） =====
+  "enabled_providers": ["github-copilot"],
+
+  // ===== 插槽化：Oh-My 僅 Quarantine/Support-only；必須釘版本 =====
+  "plugin": ["oh-my-opencode@3.5.4"],
+
+  // 建議：分享功能關閉（避免外洩對話/上下文）
+  "share": "disabled"
+}

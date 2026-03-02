@@ -1,0 +1,22 @@
+{
+  "schema_version": "omoc.runtime_probe.v1",
+  "generated_at": "2026-02-23T00:42:20+08:00",
+  "timezone": "Asia/Taipei",
+  "paths_observed": [
+    {
+      "path": ".opencode/skills",
+      "exists": true
+    },
+    {
+      "path": ".ohmy/skills",
+      "exists": false
+    },
+    {
+      "path": "docs/skills_pack_src",
+      "exists": true
+    }
+  ],
+  "precedence_note": "driftable: actual precedence must be verified in target runtime; treat as NEEDS-TEST if not executed in the real opencode runtime",
+  "last_verified_at": null,
+  "drift_action": "NEEDS-TEST"
+}

@@ -1,0 +1,417 @@
+tool_path: opencode (TUI)
+git_head: cbbb81e383f229b1cf0aacb055798a56821c1153
+OMOC_TS: 2026-02-24T01:41:54Z
+
+RUNLOG BEGIN
+--- DIAGNOSE BEFORE ---
+git status --porcelain=v1 (captured)
+ M .opencode/opencode.jsonc
+?? .github/workflows/ci-omoc-gate.yml
+?? .github/workflows/omoc-opencode-preflight.yml
+?? .github/workflows/supplychain-dependency-review.yml
+?? .github/workflows/supplychain-pinact.yml
+?? .github/workflows/supplychain-scorecard.yml
+?? .github/workflows/supplychain-secret-leak-gate.yml
+?? .opencode/agents/
+?? .opencode/oh-my-opencode.jsonc.bak.2026-02-23T17-43-08-043Z
+?? .opencode_backup_1771865429/
+?? AGENTS_MCP_SETUP_evidence_upload.txt
+?? L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt
+?? MVU_FULL_STATUS_evidence_upload.txt
+?? MVU_FULL_STATUS_evidence_upload.txt.sha256
+?? N2_RESTORE_evidence_upload.txt
+?? N2_RESTORE_evidence_upload.txt.sha256
+?? "O.0 artifacts_manifest.yaml"
+?? OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt
+?? RIP-B_DT03_AUDIT_GUARD_PASS_evidence_upload.txt
+?? RIP-B_DT03_AUDIT_GUARD_PASS_evidence_upload.txt.sha256
+?? RIP-B_DT03_AUDIT_GUARD_REPLAY_evidence_upload.txt
+?? RIP-B_DT03_AUDIT_GUARD_REPLAY_evidence_upload.txt.sha256
+?? RIP-B_DT03_AUDIT_GUARD_evidence_upload.txt
+?? RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_PASS_evidence_upload.txt
+?? RIP-F_LAND_evidence_upload.txt
+?? RIP-F_LAND_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_PASS2_evidence_upload.txt
+?? RIP-F_STATIC_GATES_PASS2_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_PASS4_evidence_upload.txt
+?? RIP-F_STATIC_GATES_PASS4_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_PASS_evidence_upload.txt
+?? RIP-F_STATIC_GATES_PASS_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_evidence_upload.txt
+?? RIP-F_STATIC_GATES_evidence_upload.txt.sha256
+?? WP-002_evidence_upload.txt
+?? WP-002_evidence_upload.txt.sha256
+?? WP-008_evidence_upload.txt.sha256
+?? _acceptance/
+?? config/closure_allow.json
+?? config/governance_allowable_drift.json
+?? config/required_checks_contract.json
+?? config/tt_external.json
+?? docs/ACTIONS_HARDENING.md
+?? docs/RULESETS_AS_CODE.md
+?? "docs/_omoc_inputs/normative/OMOC_\346\226\275\345\267\245RB+WI_\345\220\210\345\206\212_v4.0.1-r1.md"
+?? package-lock.json
+?? policy/actions_security_policy.yaml
+?? scripts/_lib_evidence.sh
+?? scripts/install-opencode-config.sh
+?? scripts/mcp_audit_guard.sh
+?? scripts/ohmy-toggle.sh
+?? scripts/omoc_governance_diff.sh
+?? scripts/omoc_governance_drift_guard.sh
+?? scripts/omoc_governance_snapshot.sh
+?? scripts/omoc_pinning_gate.sh
+?? scripts/omoc_required_checks_contract_guard.sh
+?? scripts/opencode/
+?? scripts/preflight-opencode.sh
+?? scripts/validate-config.mjs
+?? scripts/verify.sh
+?? scripts/versions_snapshot.sh
+--- git diff --name-only (before) ---
+.opencode/opencode.jsonc
+--- git diff limited (before) ---
+diff --git a/.opencode/opencode.jsonc b/.opencode/opencode.jsonc
+index c08be00..87cf19d 100644
+--- a/.opencode/opencode.jsonc
++++ b/.opencode/opencode.jsonc
+@@ -1,55 +1,65 @@
+ {
+   "$schema": "https://opencode.ai/config.json",
+-  "theme": "opencode",
++
++  // ===== OMOC-MVU: 必須可重跑 + 可回放；禁止工具自動更新造成 drift =====
+   "autoupdate": false,
+ 
+-  // 重要：鎖死 Kimi，避免 OmO agent model override 被 UI/config.model 覆蓋的已知問題
+-  "model": "opencode/kimi-k2.5",
++  // ===== 模型：你要求的 github-copilot/gpt-5-mini =====
++  "model": "github-copilot/gpt-5-mini",
++  "small_model": "github-copilot/gpt-5-mini",
+ 
+-  // 釘版本：npm 顯示 oh-my-opencode 最新 3.8.0（2026-02-23 時點）
+-  "plugin": ["oh-my-opencode@3.5.4"],
++  // ===== 供應商白名單：只允許 github-copilot（避免模型解析飄到別家） =====
++  "enabled_providers": ["github-copilot"],
+ 
+-  // 規則注入（AGENTS.md）
+-  "instructions": ["AGENTS.md"],
++  // ===== 插槽化：Oh-My 僅 Quarantine/Support-only；必須釘版本 =====
++  "plugin": ["oh-my-opencode@3.5.4"],
+ 
+-  // ============ MODE A：deny-by-default，且「完全不詢問」 ============
++  // ===== Deny-by-default：用 global '*' 先收緊，再逐項放行 =====
+   "permission": {
+     "*": "deny",
+ 
+-    // Read-only 能力（不詢問）
+-    "read": "allow",
++    // 低風險只讀：允許
++    "read": {
++      "*": "allow",
++      "*.env": "deny",
++      "*.env.*": "deny",
++      "*.pem": "deny",
++      "*.key": "deny"
++    },
+     "list": "allow",
+     "glob": "allow",
+     "grep": "allow",
+ 
+-    // Todo 可用（依你的 OMOC 工具鏈慣例，保留；也不詢問）
+-    "todoread": "allow",
+-    "todowrite": "allow",
++    // 高風險：一律 ask 或 deny
++    "edit": "ask",
++    "bash": {
++      "*": "ask",
++      "git status*": "allow",
++      "git diff*": "allow",
++      "git log*": "allow",
++      "git show*": "allow",
++      "git rev-parse*": "allow",
++      "git commit*": "deny",
++      "git push*": "deny",
++      "rm*": "deny"
++    },
+ 
+-    // Web 僅 SUPPORT-only：禁用避免外網成為執行相依（OMOC/藍圖與 SubP1 要求）
++    // Web / Code search：OMOC 要 SUPPORT-only，預設關閉（需要就走 TT + 明示開啟）
+     "webfetch": "deny",
+     "websearch": "deny",
++    "codesearch": "deny",
+ 
+-    // 禁外部目錄（避免越權掃 host）
+-    "external_directory": "deny",
++    // 子代理/skills：預設 ask（由 oh-my 做 Quarantine/分類路由）
++    "task": "ask",
++    "skill": "ask",
+ 
+-    // Bash 白名單：不詢問；沒列到就直接 deny
+-    "bash": {
+-      "*": "deny",
+-      "git *": "allow",
+-      "rg *": "allow",
+-      "jq *": "allow",
+-      "opencode *": "allow",
+-      "bash scripts/*": "allow"
+-    },
++    // 防呆：重複三次同輸入工具呼叫（doom_loop）直接 ask
++    "doom_loop": "ask",
++
++    // 外部路徑：預設 ask（避免越權碰工作區外）
++    "external_directory": "ask"
++  },
+ 
+-    // Edit 白名單：不詢問；只允許“工廠線/驗收線”允許改動面
+-    "edit": {
+-      "*": "deny",
+-      ".github/workflows/**": "allow",
+-      ".github/actions/**": "allow",
+-      "scripts/**": "allow",
+-      ".opencode/**": "allow"
+-    }
+-  }
+-}
++  // 建議：分享功能關閉（避免外洩對話/上下文）
++  "share": "disabled"
++}
+\ No newline at end of file
+--- evidence changed check (before) ---
+
+--- RESTORE PLAN ---
+KEEP: .opencode/opencode.jsonc
+SPECIAL_RESTORE: WP-008_evidence_upload.txt
+SPECIAL_RESTORE: OHMY_VERSION_ALIGN_evidence_upload.txt
+SPECIAL_RESTORE: L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt
+SPECIAL_RESTORE: AGENTS_MCP_SETUP_evidence_upload.txt
+--- RESTORE RUNLOG ---
+CMD: git restore --source=HEAD -- "WP-008_evidence_upload.txt"
+RC:0
+CMD: git restore --source=HEAD -- "OHMY_VERSION_ALIGN_evidence_upload.txt"
+RC:0
+CMD: git restore --source=HEAD -- "L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt"
+error: pathspec 'L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt' did not match any file(s) known to git
+RC:1
+CMD: git restore --source=HEAD -- "AGENTS_MCP_SETUP_evidence_upload.txt"
+error: pathspec 'AGENTS_MCP_SETUP_evidence_upload.txt' did not match any file(s) known to git
+RC:1
+
+--- VERIFIER AFTER ---
+git status --porcelain=v1 (after)
+ M .opencode/opencode.jsonc
+?? .github/workflows/ci-omoc-gate.yml
+?? .github/workflows/omoc-opencode-preflight.yml
+?? .github/workflows/supplychain-dependency-review.yml
+?? .github/workflows/supplychain-pinact.yml
+?? .github/workflows/supplychain-scorecard.yml
+?? .github/workflows/supplychain-secret-leak-gate.yml
+?? .opencode/agents/
+?? .opencode/oh-my-opencode.jsonc.bak.2026-02-23T17-43-08-043Z
+?? .opencode_backup_1771865429/
+?? AGENTS_MCP_SETUP_evidence_upload.txt
+?? L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt
+?? MVU_FULL_STATUS_evidence_upload.txt
+?? MVU_FULL_STATUS_evidence_upload.txt.sha256
+?? N2_RESTORE_evidence_upload.txt
+?? N2_RESTORE_evidence_upload.txt.sha256
+?? "O.0 artifacts_manifest.yaml"
+?? OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt
+?? RIP-B_DT03_AUDIT_GUARD_PASS_evidence_upload.txt
+?? RIP-B_DT03_AUDIT_GUARD_PASS_evidence_upload.txt.sha256
+?? RIP-B_DT03_AUDIT_GUARD_REPLAY_evidence_upload.txt
+?? RIP-B_DT03_AUDIT_GUARD_REPLAY_evidence_upload.txt.sha256
+?? RIP-B_DT03_AUDIT_GUARD_evidence_upload.txt
+?? RIP-B_REPO_HYGIENE_CLOSEOUT_FINAL_PASS_evidence_upload.txt
+?? RIP-F_LAND_evidence_upload.txt
+?? RIP-F_LAND_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_PASS2_evidence_upload.txt
+?? RIP-F_STATIC_GATES_PASS2_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_PASS4_evidence_upload.txt
+?? RIP-F_STATIC_GATES_PASS4_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_PASS_evidence_upload.txt
+?? RIP-F_STATIC_GATES_PASS_evidence_upload.txt.sha256
+?? RIP-F_STATIC_GATES_evidence_upload.txt
+?? RIP-F_STATIC_GATES_evidence_upload.txt.sha256
+?? WP-002_evidence_upload.txt
+?? WP-002_evidence_upload.txt.sha256
+?? WP-008_evidence_upload.txt.sha256
+?? _acceptance/
+?? config/closure_allow.json
+?? config/governance_allowable_drift.json
+?? config/required_checks_contract.json
+?? config/tt_external.json
+?? docs/ACTIONS_HARDENING.md
+?? docs/RULESETS_AS_CODE.md
+?? "docs/_omoc_inputs/normative/OMOC_\346\226\275\345\267\245RB+WI_\345\220\210\345\206\212_v4.0.1-r1.md"
+?? package-lock.json
+?? policy/actions_security_policy.yaml
+?? scripts/_lib_evidence.sh
+?? scripts/install-opencode-config.sh
+?? scripts/mcp_audit_guard.sh
+?? scripts/ohmy-toggle.sh
+?? scripts/omoc_governance_diff.sh
+?? scripts/omoc_governance_drift_guard.sh
+?? scripts/omoc_governance_snapshot.sh
+?? scripts/omoc_pinning_gate.sh
+?? scripts/omoc_required_checks_contract_guard.sh
+?? scripts/opencode/
+?? scripts/preflight-opencode.sh
+?? scripts/validate-config.mjs
+?? scripts/verify.sh
+?? scripts/versions_snapshot.sh
+--- git diff --name-only (after) ---
+.opencode/opencode.jsonc
+--- version scan (exclude evidence/) ---
+./_acceptance/config_dump.txt:2:{"$schema": "https://opencode.ai/config.json", "autoupdate": false, "model": "moonshotai-cn/kimi-k2-thinking-turbo", "permission": {"*": "deny", "bash": {"*": "deny", "git *": "allow", "jq *": "allow", "opencode *": "allow", "rg *": "allow"}, "doom_loop": "deny", "edit": {"*": "deny", ".github/actions/**": "allow", ".github/workflows/**": "allow", ".opencode/**": "allow", "config/**": "allow", "scripts/**": "allow"}, "external_directory": "deny", "glob": "allow", "grep": "allow", "list": "allow", "question": "allow", "read": {"*": "allow", "*.env": "deny", "*.env.*": "deny", "*.env.example": "allow"}, "todoread": "allow", "todowrite": "allow", "webfetch": "deny", "websearch": "deny"}, "plugin": ["oh-my-opencode@3.5.4"], "share": "disabled", "small_model": "github-copilot/gpt-5-mini"}
+./AGENTS_MCP_SETUP_evidence_upload.txt:123:+  "plugin": ["oh-my-opencode@3.5.4"],
+./AGENTS_MCP_SETUP_evidence_upload.txt:41:-  "plugin": ["oh-my-opencode@3.5.4"],
+./bundle_staging/evidence/_acceptance/20260221T140922Z/upload/WP-008_evidence_upload.txt:18: - pinned plugin to oh-my-opencode@3.5.4
+./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:28:.opencode/opencode.jsonc | EXISTS | - | JSONC_OK | https://opencode.ai/config.json | ['oh-my-opencode@3.5.4'] | (absent) | project-level jsonc
+./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:52:- .opencode/opencode.jsonc: $schema present; plugin includes oh-my-opencode@3.5.4; no mcp key.
+./OHMY_VERSION_ALIGN_evidence_upload.txt:15:.opencode/opencode.jsonc:10:  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_ALIGN_evidence_upload.txt:16:omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_ALIGN_evidence_upload.txt:17:bundle_staging/.opencode/opencode.jsonc:6:    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_ALIGN_evidence_upload.txt:28:-npx --yes oh-my-opencode@3.7.3 "$@"
+./OHMY_VERSION_ALIGN_evidence_upload.txt:30:+npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:10:./AGENTS_MCP_SETUP_evidence_upload.txt:123:+  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:11:./AGENTS_MCP_SETUP_evidence_upload.txt:41:-  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:12:./bundle_staging/evidence/_acceptance/20260221T140922Z/upload/WP-008_evidence_upload.txt:18: - pinned plugin to oh-my-opencode@3.5.4
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:13:./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:28:.opencode/opencode.jsonc | EXISTS | - | JSONC_OK | https://opencode.ai/config.json | ['oh-my-opencode@3.5.4'] | (absent) | project-level jsonc
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:14:./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:52:- .opencode/opencode.jsonc: $schema present; plugin includes oh-my-opencode@3.5.4; no mcp key.
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:15:./OHMY_VERSION_ALIGN_evidence_upload.txt:15:.opencode/opencode.jsonc:10:  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:16:./OHMY_VERSION_ALIGN_evidence_upload.txt:16:omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:17:./OHMY_VERSION_ALIGN_evidence_upload.txt:17:bundle_staging/.opencode/opencode.jsonc:6:    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:18:./OHMY_VERSION_ALIGN_evidence_upload.txt:28:-npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:19:./OHMY_VERSION_ALIGN_evidence_upload.txt:30:+npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:20:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:10:./bundle_staging/evidence/_acceptance/20260221T140922Z/upload/WP-008_evidence_upload.txt:18: - pinned plugin to oh-my-opencode@3.5.4
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:21:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:11:./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:28:.opencode/opencode.jsonc | EXISTS | - | JSONC_OK | https://opencode.ai/config.json | ['oh-my-opencode@3.5.4'] | (absent) | project-level jsonc
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:22:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:12:./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:52:- .opencode/opencode.jsonc: $schema present; plugin includes oh-my-opencode@3.5.4; no mcp key.
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:23:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:13:./OHMY_VERSION_ALIGN_evidence_upload.txt:15:.opencode/opencode.jsonc:10:  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:24:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:14:./OHMY_VERSION_ALIGN_evidence_upload.txt:16:omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:25:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:15:./OHMY_VERSION_ALIGN_evidence_upload.txt:17:bundle_staging/.opencode/opencode.jsonc:6:    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:26:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:16:./OHMY_VERSION_ALIGN_evidence_upload.txt:28:-npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:27:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:17:./OHMY_VERSION_ALIGN_evidence_upload.txt:30:+npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:28:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:18:./omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:297:-  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:29:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:19:./scripts/ohmy-toggle.sh:19:    sed -i.bak 's/"oh-my-opencode@3.5.4"//g' "${CFG}"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:30:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:20:./scripts/ohmy-toggle.sh:26:      perl -0777 -pe 's/"plugin"\s*:\s*\[\s*/"plugin": [\n    "oh-my-opencode@3.5.4",\n    /' -i "${CFG}"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:31:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:22:./_acceptance/config_dump.txt:2:{"$schema": "https://opencode.ai/config.json", "autoupdate": false, "model": "moonshotai-cn/kimi-k2-thinking-turbo", "permission": {"*": "deny", "bash": {"*": "deny", "git *": "allow", "jq *": "allow", "opencode *": "allow", "rg *": "allow"}, "doom_loop": "deny", "edit": {"*": "deny", ".github/actions/**": "allow", ".github/workflows/**": "allow", ".opencode/**": "allow", "config/**": "allow", "scripts/**": "allow"}, "external_directory": "deny", "glob": "allow", "grep": "allow", "list": "allow", "question": "allow", "read": {"*": "allow", "*.env": "deny", "*.env.*": "deny", "*.env.example": "allow"}, "todoread": "allow", "todowrite": "allow", "webfetch": "deny", "websearch": "deny"}, "plugin": ["oh-my-opencode@3.5.4"], "share": "disabled", "small_model": "github-copilot/gpt-5-mini"}
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:32:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:23:./AGENTS_MCP_SETUP_evidence_upload.txt:123:+  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:33:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:24:./AGENTS_MCP_SETUP_evidence_upload.txt:41:-  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:34:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:25:./bundle_staging/evidence/_acceptance/20260221T140922Z/upload/WP-008_evidence_upload.txt:18: - pinned plugin to oh-my-opencode@3.5.4
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:35:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:26:./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:28:.opencode/opencode.jsonc | EXISTS | - | JSONC_OK | https://opencode.ai/config.json | ['oh-my-opencode@3.5.4'] | (absent) | project-level jsonc
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:361:+    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:36:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:27:./L5_OPENCODE_CONFIG_AUDIT_evidence_upload.txt:52:- .opencode/opencode.jsonc: $schema present; plugin includes oh-my-opencode@3.5.4; no mcp key.
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:37:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:28:./OHMY_VERSION_ALIGN_evidence_upload.txt:15:.opencode/opencode.jsonc:10:  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:38:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:29:./OHMY_VERSION_ALIGN_evidence_upload.txt:16:omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:397:--npx --yes oh-my-opencode@3.7.3 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:398:+-npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:39:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:308:-  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:400: +npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:40:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:30:./OHMY_VERSION_ALIGN_evidence_upload.txt:17:bundle_staging/.opencode/opencode.jsonc:6:    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:41:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:31:./OHMY_VERSION_ALIGN_evidence_upload.txt:28:-npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:42:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:32:./OHMY_VERSION_ALIGN_evidence_upload.txt:30:+npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:43:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:33:./omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:44:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:34:./scripts/ohmy-toggle.sh:19:    sed -i.bak 's/"oh-my-opencode@3.5.4"//g' "${CFG}"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:45:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:35:./scripts/ohmy-toggle.sh:26:      perl -0777 -pe 's/"plugin"\s*:\s*\[\s*/"plugin": [\n    "oh-my-opencode@3.5.4",\n    /' -i "${CFG}"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:46:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:372:+    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:47:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:65:    "oh-my-opencode@3.5.4"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:48:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:786:2:./AGENTS_MCP_SETUP_evidence_upload.txt:123:+  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:49:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:787:10:./OHMY_VERSION_ALIGN_evidence_upload.txt:28:-npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:50:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:7:./_acceptance/config_dump.txt:2:{"$schema": "https://opencode.ai/config.json", "autoupdate": false, "model": "moonshotai-cn/kimi-k2-thinking-turbo", "permission": {"*": "deny", "bash": {"*": "deny", "git *": "allow", "jq *": "allow", "opencode *": "allow", "rg *": "allow"}, "doom_loop": "deny", "edit": {"*": "deny", ".github/actions/**": "allow", ".github/workflows/**": "allow", ".opencode/**": "allow", "config/**": "allow", "scripts/**": "allow"}, "external_directory": "deny", "glob": "allow", "grep": "allow", "list": "allow", "question": "allow", "read": {"*": "allow", "*.env": "deny", "*.env.*": "deny", "*.env.example": "allow"}, "todoread": "allow", "todowrite": "allow", "webfetch": "deny", "websearch": "deny"}, "plugin": ["oh-my-opencode@3.5.4"], "share": "disabled", "small_model": "github-copilot/gpt-5-mini"}
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:51:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:8:./AGENTS_MCP_SETUP_evidence_upload.txt:123:+  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:52:./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:9:./AGENTS_MCP_SETUP_evidence_upload.txt:41:-  "plugin": ["oh-my-opencode@3.5.4"],
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:53:./omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:54:./scripts/ohmy-toggle.sh:19:    sed -i.bak 's/"oh-my-opencode@3.5.4"//g' "${CFG}"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:55:./scripts/ohmy-toggle.sh:26:      perl -0777 -pe 's/"plugin"\s*:\s*\[\s*/"plugin": [\n    "oh-my-opencode@3.5.4",\n    /' -i "${CFG}"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:61:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./OHMY_VERSION_REALIGN_AFTER_AGENTS_evidence_upload.txt:9:./_acceptance/config_dump.txt:2:{"$schema": "https://opencode.ai/config.json", "autoupdate": false, "model": "moonshotai-cn/kimi-k2-thinking-turbo", "permission": {"*": "deny", "bash": {"*": "deny", "git *": "allow", "jq *": "allow", "opencode *": "allow", "rg *": "allow"}, "doom_loop": "deny", "edit": {"*": "deny", ".github/actions/**": "allow", ".github/workflows/**": "allow", ".opencode/**": "allow", "config/**": "allow", "scripts/**": "allow"}, "external_directory": "deny", "glob": "allow", "grep": "allow", "list": "allow", "question": "allow", "read": {"*": "allow", "*.env": "deny", "*.env.*": "deny", "*.env.example": "allow"}, "todoread": "allow", "todowrite": "allow", "webfetch": "deny", "websearch": "deny"}, "plugin": ["oh-my-opencode@3.5.4"], "share": "disabled", "small_model": "github-copilot/gpt-5-mini"}
+./omo:5:npx --yes oh-my-opencode@3.5.4 "$@"
+./scripts/ohmy-toggle.sh:19:    sed -i.bak 's/"oh-my-opencode@3.5.4"//g' "${CFG}"
+./scripts/ohmy-toggle.sh:26:      perl -0777 -pe 's/"plugin"\s*:\s*\[\s*/"plugin": [\n    "oh-my-opencode@3.5.4",\n    /' -i "${CFG}"
+--- jsonc_parse_ok ---
+JSONC_BAD:.opencode/opencode.jsonc
+jsonc_check_output:
+{
+  "$schema": "https://opencode.ai/config.json",
+
+ 
+  "autoupdate": false,
+
+ 
+  "model": "github-copilot/gpt-5-mini",
+  "small_model": "github-copilot/gpt-5-mini",
+
+ 
+  "enabled_providers": ["github-copilot"],
+
+ 
+  "plugin": ["oh-my-opencode@3.5.4"],
+
+ 
+  "permission": {
+    "*": "deny",
+
+   
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.pem": "deny",
+      "*.key": "deny"
+    },
+    "list": "allow",
+    "glob": "allow",
+    "grep": "allow",
+
+   
+    "edit": "ask",
+    "bash": {
+      "*": "ask",
+      "git status*": "allow",
+      "git diff*": "allow",
+      "git log*": "allow",
+      "git show*": "allow",
+      "git rev-parse*": "allow",
+      "git commit*": "deny",
+      "git push*": "deny",
+      "rm*": "deny"
+    },
+
+   
+    "webfetch": "deny",
+    "websearch": "deny",
+    "codesearch": "deny",
+
+   
+    "task": "ask",
+    "skill": "ask",
+
+   
+    "doom_loop": "ask",
+
+   
+    "external_directory": "ask"
+  },
+
+ 
+  "share": "disabled"
+}
+--- final limited diff ---
+--- minset sha256 (if present) ---
+3e9298e48b8ebbe4237164175bb9d3c8e32db25b11883cc7fafceef465985a8c  .opencode/opencode.jsonc
+4273db3d08724db555908a9666a3ff39ee1910a9ae4bb075a73903d88ebf3512  .opencode/agents/Coordinator.md
+b5ff321e2f67891e5135bf7a69e5f253a42ab2224320dd36bbf9a2a53b41da51  .opencode/agents/Fixer.md
+c4fa250f81391e1b9d7994137072942c63f1120eb9574d8a7185c786e2ce6f9f  .opencode/agents/Verifier.md
+b48ccfb54658c5f78d8951d02459eebe325b3ce84ed97311402a266f38a86977  .opencode/agents/Evidence-Collector.md
+f22d4e19a5fe0da4dd1f217eeb674c4fab405fe1228cbc0c05f48dca6b8b6f53  omo
+RUNLOG END
+
+BEFORE_DIFF_LIST:
+.opencode/opencode.jsonc
+AFTER_DIFF_LIST:
+.opencode/opencode.jsonc
+
+FINAL_GIT_DIFF_LIMITED_TO_MINSET:
+
+VERDICT: FAIL_CLOSED
+FAIL_REASONS: BAD_AFTER=0 EVID_MODIFIED=0 VERS_OK=0

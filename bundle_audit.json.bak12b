@@ -1,0 +1,47 @@
+{
+  "members": [
+    {
+      "path": "evidence/verdict.json",
+      "sha256": "278087d551f5473ab3d62a02067ebfcd9d989a58547b5dbd9bf67f8b24c22878",
+      "bytes": 201
+    },
+    {
+      "path": "evidence/checks_manifest.json",
+      "sha256": "88f6a8a8aff983ab95ef4802a87ac25e3f63aa02f341a1c4f7550fc4e8d3137d",
+      "bytes": 66
+    },
+    {
+      "path": "evidence/evidence_index.md",
+      "sha256": "afe8b96a9da1f796a4cc20bcad5adb08d839d7b772450a1a5b44629172607689",
+      "bytes": 277
+    },
+    {
+      "path": "evidence/_acceptance/20260221T153200Z/log/secrets_scan.log",
+      "sha256": "28f63f839952a3939bd9dffbcf7b45588e8bf95bff7b2ad355621adc235617f5",
+      "bytes": 438
+    },
+    {
+      "path": "evidence/_acceptance/20260221T153200Z/log/secrets_scan_summary.txt",
+      "sha256": "f23c0852cc979a5c2247f52b663cb302fc17617082e6b5822433779aee16c1b8",
+      "bytes": 32881
+    },
+    {
+      "path": "evidence/_acceptance/20260221T153200Z/upload/WP-008_evidence_upload.txt",
+      "sha256": "25b67c46ef4225006678e641ab505b816ca5bd188241c23f8e9f38f238ab1293",
+      "bytes": 1253
+    },
+    {
+      "path": "evidence/bundle_audit.json",
+      "sha256": "ad157b3297417315cdf8976243137728198fa602660ec28bd37a321232a8ab09",
+      "bytes": 1119
+    }
+  ],
+  "must_include": [
+    "evidence/verdict.json",
+    "evidence/checks_manifest.json",
+    "evidence/evidence_index.md",
+    "evidence/bundle_audit.json",
+    "evidence/_acceptance/20260221T153200Z/"
+  ],
+  "result": "PASS"
+}

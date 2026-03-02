@@ -1,0 +1,4 @@
+mcp_allowlist_enforce.sh start: 2026-02-23T02:38:06Z
+HASH_OK
+Preparing decisions file: evidence/_drift_guard/20260223T013101Z/allowlist_decisions.jsonl
+Completed allowlist enforcement run

@@ -1,0 +1,10 @@
+0b0e2bb70901bc78917d6f9b1208662e431bb7ffa200c6140c345650280501be  .devcontainer/devcontainer.json
+1096 .devcontainer/devcontainer.json
+0b485bab067453fb421437cb596af313fd89696bc7dbafcd9e3f397541998e8a  scripts/devcontainer_post_create.sh
+918 scripts/devcontainer_post_create.sh
+5278acdf686a177890e2a715723c91178e55137c5a189188a28fa0a8d374c221  scripts/install-opencode-config.sh
+468 scripts/install-opencode-config.sh
+a81fbe2b6d0fc28aaf7999cb8458b52c4507b3d2c18bd7a2e0408a67b978b532  scripts/omoc_safe_step.sh
+952 scripts/omoc_safe_step.sh
+f631d2d086e11e119670057cce5aa4eeb8b5e5a6b01c58d4ad4483efc32d7927  .gitignore
+464 .gitignore
