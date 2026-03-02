@@ -202,24 +202,9 @@ jobs:
     permissions:
       checks: write
     steps:
-      - name: Report check
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const status = context.payload.pull_request?.draft === false ? 'completed' : 'in_progress';
-            const conclusion = 'neutral';
-            github.rest.checks.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: 'omoc / ci-gate',
-              head_sha: context.sha,
-              status: status,
-              conclusion: conclusion,
-              output: {
-                title: 'OMOC Gate Review',
-                summary: 'Gate review workflow execution completed.'
-              }
-            });
+      # Removed: github.rest.checks.create with 'omoc / ci-gate'
+      # GitHub automatically creates check context from workflow name + job name
+      # API cannot include '/' in name parameter, so manual creation was impossible
 
   # -----------------------------  
   # Terminator job: aggregate needs, never skipped  
@@ -236,20 +221,8 @@ jobs:
         run: |  
           echo "Terminator: ensures canonical check is produced even if upstream fails."
 
-      - name: Create omoc-gate check
-        if: ${{ always() }}
-        uses: actions/github-script@v7
-        with:
-          script: |
-            github.rest.checks.create({
-              owner: context.repo.owner,
-              repo: context.repo.repo,
-              name: 'omoc / ci-gate',
-              head_sha: context.sha,
-              status: 'completed',
-              conclusion: 'neutral',
-              output: {
-                title: 'OMOC Gate',
-                summary: 'Gate review workflow completed.'
-              }
-            });
+      # Removed: github.rest.checks.create with 'omoc / ci-gate'
+      # GitHub automatically creates check context 'omoc / ci-gate' from:
+      # - Workflow name: 'omoc'
+      # - Job name: 'ci-gate'
+      # This terminator job ensures the check is always produced, even if upstream fails
