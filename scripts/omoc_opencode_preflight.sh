@@ -28,7 +28,7 @@ step() {
     local rc=$?
     log "FAIL: ${name} (exit code: ${rc})"
     # Show last few lines of step log for diagnostics
-    tail -n 10 "${LOG_DIR}/${name}.log" | sed 's/^/  /' | tee -a "${LOG_DIR}/preflight.log" >/dev/null || true
+    tail -n 10 "${LOG_DIR}/${name}.log" | sed 's/^/  /' | tee -a "${LOG_DIR}/preflight.log"
     return $rc
   fi
 }
@@ -67,8 +67,17 @@ fi
 CONF="opencode.jsonc"
 if [ ! -f "$CONF" ]; then
   log "WARNING: ${CONF} not found; creating placeholder for validation"
-  echo '{}' > "$CONF"
+  mkdir -p "$(dirname "$CONF")"
+  if ! echo '{}' > "$CONF"; then
+    log "ERROR: Cannot create $CONF"
+    exit 2
+  fi
 fi
+
+# Debug checks before validation
+log "INFO: Config file exists: $([ -f "$CONF" ] && echo 'yes' || echo 'no')"
+log "INFO: Config file readable: $([ -r "$CONF" ] && echo 'yes' || echo 'no')"
+log "INFO: Config file size: $(stat -f%z "$CONF" 2>/dev/null || stat -c%s "$CONF" 2>/dev/null || echo 'unknown')"
 
 step "opencode-config-validate" node scripts/opencode_config_validate.mjs /dev/null "${CONF}"
 
