@@ -1,7 +1,0 @@
-name: Supplychain Pinact
-on: [push]
-jobs:
-  pinact:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "pinact"

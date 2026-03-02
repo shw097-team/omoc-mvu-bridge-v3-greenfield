@@ -1,1 +1,0 @@
-Attempting oh-my probe: check for .ohmy or oh-my-opencode dir

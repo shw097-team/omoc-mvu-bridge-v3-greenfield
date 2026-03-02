@@ -1,5 +1,0 @@
-#!/bin/bash
-# 2026 斷網容錯執行器
-export NODE_OPTIONS="--dns-result-order=ipv4first"
-# Align oh-my-opencode invocation with project pin (3.5.4)
-npx --yes oh-my-opencode@3.5.4 "$@"

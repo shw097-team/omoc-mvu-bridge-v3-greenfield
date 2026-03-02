@@ -1,34 +1,4 @@
 {
-  "members": [
-    {
-      "path": "evidence/verdict.json",
-      "sha256": "278087d551f5473ab3d62a02067ebfcd9d989a58547b5dbd9bf67f8b24c22878",
-      "bytes": 201
-    },
-    {
-      "path": "evidence/checks_manifest.json",
-      "sha256": "88f6a8a8aff983ab95ef4802a87ac25e3f63aa02f341a1c4f7550fc4e8d3137d",
-      "bytes": 66
-    },
-    {
-      "path": "evidence/evidence_index.md",
-      "sha256": "afe8b96a9da1f796a4cc20bcad5adb08d839d7b772450a1a5b44629172607689",
-      "bytes": 277
-    },
-    {
-      "path": "evidence/bundle_audit.json"
-    },
-    {
-      "path": "evidence/_acceptance/20260222T154813Z/"
-    }
-  ],
-  "must_include": [
-    "evidence/verdict.json",
-    "evidence/checks_manifest.json",
-    "evidence/evidence_index.md",
-    "evidence/bundle_audit.json",
-    "evidence/_acceptance/20260222T154813Z/"
-  ],
-  "result": "PASS",
-  "schema_version": "1.0"
+  "audit": "minimal",
+  "notes": "generated during Phase0 probe run"
 }

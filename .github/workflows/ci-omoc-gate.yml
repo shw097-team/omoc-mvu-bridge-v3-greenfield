@@ -1,7 +1,0 @@
-name: CI OMOC Gate
-on: [push]
-jobs:
-  gate:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo "gate" 

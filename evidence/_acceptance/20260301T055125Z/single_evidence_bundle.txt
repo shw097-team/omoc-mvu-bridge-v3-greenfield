@@ -1,8 +1,0 @@
-ts=20260301T055125Z
-branch=wp-008-upstream
-commit=9221b45a070b5e17410f60c23ffa159567a11ca3
-fixes=drift_report+ajv_ref+allowlist+status
-files_touched=scripts/omoc_drift_report.sh scripts/validate-config.mjs config/mcp_endpoints.hash schemas/models.dev-model-schema.json .github/workflows/omoc-gate.yml
-next_expected_checks=ci/omoc-gate:review ci/omoc-opencode-preflight ci/omoc-gate-with-allowlist omoc-gate doc-validate
-verification_status=local_dryrun_pass schema_resolution_ok allowlist_hash_ok workflow_check_added
-VERDICT=PASS

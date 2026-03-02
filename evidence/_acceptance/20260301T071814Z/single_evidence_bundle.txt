@@ -1,8 +1,0 @@
-ts=20260301T071814Z
-branch=wp-008-upstream
-fixes=workflows_yaml_syntax+workflow_duplicate_keys
-files_touched=.github/workflows/omoc-gate.yml .github/workflows/omoc-opencode-preflight.yml
-verify_yaml_ok=YES
-web_opencode=v1.2.15@2026-02-26
-web_ohmy=v3.9.0@recent
-VERDICT=PASS
