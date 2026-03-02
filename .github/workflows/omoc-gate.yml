@@ -31,7 +31,7 @@ jobs:
       - name: Worker engine (skeleton)  
         run: |  
           echo '{"overall_verdict":"TEMP_CLOSED","reason":"wire worker engine (OpenHands/SWE-agent)","tt":["TT-RIPA-001"]}' \> verdict.json  
-          echo '{"required_contexts_contract":{"expected_source_order":["rulesets","branch_protection"],"expected_file":"REDACTED","observed_file":"REDACTED","diff":{"missing":[],"extra":[]},"verdict":"TEMP_CLOSED","tt":["TT-RIPA-003"]}}' \> checks_manifest.json  
+          echo '{"required_check_name_contract":{"expected":{"check_name":"omoc / ci-gate"},"canonical":{"check_name":"omoc / ci-gate"},"expected_source_order":["rulesets","branch_protection"],"expected_file":"REDACTED","observed_file":"REDACTED","diff":{"missing":[],"extra":[]},"verdict":"TEMP_CLOSED","tt":["TT-RIPA-003"]}}' \> checks_manifest.json
           echo "# evidence_index (skeleton)" \> evidence_index.md
 
   # -----------------------------  

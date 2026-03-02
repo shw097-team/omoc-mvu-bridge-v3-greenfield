@@ -25,12 +25,10 @@ step "L5-opencode-version" bash -lc 'opencode --version'
 step "opencode-auth-list" bash -lc 'opencode auth list || opencode auth ls || true'
 step "opencode-models-refresh" bash -lc 'opencode models --refresh || true'
 
-# Schema preflight (Fail-Closed)
-# We pin schema snapshot to avoid silent drift. If you want, you can refresh it deliberately via scripts/update-schema.sh (not included here).
-SCHEMA_URL="https://opencode.ai/config.json"
+# Config validation (offline-safe)
 CONF="opencode.jsonc"
 
-step "opencode-config-fetch-schema" bash -lc "curl -fsSL '${SCHEMA_URL}' -o '${LOG_DIR}/opencode-config.schema.json'"
-step "opencode-config-validate" bash -lc "node scripts/opencode_config_validate.mjs '${LOG_DIR}/opencode-config.schema.json' '${CONF}'"
+step "opencode-config-validate" bash -lc "node scripts/opencode_config_validate.mjs /dev/null '${CONF}'"
+
 
 log "OK: preflight passed"

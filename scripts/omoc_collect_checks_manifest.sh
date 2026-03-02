@@ -45,7 +45,9 @@ fi
 
 cat > checks_manifest.json <<JSON
 {
-  "required_contexts_contract":{
+  "required_check_name_contract":{
+    "expected":{"check_name":"omoc / ci-gate"},
+    "canonical":{"check_name":"omoc / ci-gate"},
     "expected_source_order":["rulesets","branch_protection"],
     "expected_file":"${expected_json}",
     "observed_file":"${observed_json}",
