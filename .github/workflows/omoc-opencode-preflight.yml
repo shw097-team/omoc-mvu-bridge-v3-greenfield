@@ -12,6 +12,35 @@ jobs:
       - name: init OMOC_TS
         shell: bash
         run: echo "OMOC_TS=$(date -u +%Y%m%dT%H%M%SZ)" >> "$GITHUB_ENV"
+      - name: Check dependencies (opencode, node)
+        shell: bash
+        run: |
+          set +e  # Don't fail immediately, collect all missing deps
+          missing=""
+          
+          if ! command -v opencode >/dev/null 2>&1; then
+            echo "❌ ERROR: 'opencode' binary not found in PATH"
+            missing="${missing}opencode "
+          else
+            echo "✅ opencode found: $(opencode --version 2>&1 || echo 'version check failed')"
+          fi
+          
+          if ! command -v node >/dev/null 2>&1; then
+            echo "❌ ERROR: 'node' binary not found in PATH"
+            missing="${missing}node "
+          else
+            echo "✅ node found: $(node --version)"
+          fi
+          
+          if [ -n "$missing" ]; then
+            echo ""
+            echo "Missing critical dependencies: $missing"
+            echo "Please install the required tools before running preflight."
+            exit 2
+          fi
+          echo ""
+          echo "✅ All dependencies present"
+
       - name: Preflight (Mode A / No prompts)
         run: |
           bash scripts/omoc_opencode_preflight.sh
