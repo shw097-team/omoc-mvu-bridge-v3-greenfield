@@ -175,7 +175,7 @@ jobs:
           ls -la verdict.json checks_manifest.json evidence_index.md 2>/dev/null || true
           ls -la evidence/verdict.json 2>/dev/null || echo "(evidence/verdict.json not found)"
           
-          tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md bundle_audit.json evidence/ 2>/dev/null || tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md bundle_audit.json
+          tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md bundle_audit.json evidence/ || (echo "First tar failed, retrying without evidence/..."; tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md bundle_audit.json) || (echo "Second tar also failed"; exit 1)
 
 
       - name: Validate contracts (Fail-Closed)  
