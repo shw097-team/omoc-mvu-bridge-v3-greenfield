@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+# Redirect stderr to stdout so errors show in workflow logs
+exec 2>&1
+
 set -euo pipefail
 
 TS="${TS:-$(date -u +%Y%m%dT%H%M%SZ)}"
@@ -7,7 +10,8 @@ LOG_DIR="${EV_DIR}/log"
 mkdir -p "$LOG_DIR"
 
 log() {
-  printf "%s\n" "$*" | tee -a "${LOG_DIR}/preflight.log" >/dev/null; }
+  printf '%s\n' "$*" | tee -a "${LOG_DIR}/preflight.log"
+}
 
 fail() {
   local msg="$1"
