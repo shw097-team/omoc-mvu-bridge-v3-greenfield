@@ -193,19 +193,6 @@ jobs:
         run: |  
           echo "[always-report] ci / omoc-gate completed."
 
-  # Report check-run status (GitHub required checks)
-  omoc_gate_check_report:
-    name: Report omoc-gate status
-    if: ${{ always() }}
-    needs: [review]
-    runs-on: ubuntu-latest
-    permissions:
-      checks: write
-    steps:
-      # Removed: github.rest.checks.create with 'omoc / ci-gate'
-      # GitHub automatically creates check context from workflow name + job name
-      # API cannot include '/' in name parameter, so manual creation was impossible
-
   # -----------------------------  
   # Terminator job: aggregate needs, never skipped  
   # -----------------------------  
@@ -221,8 +208,5 @@ jobs:
         run: |  
           echo "Terminator: ensures canonical check is produced even if upstream fails."
 
-      # Removed: github.rest.checks.create with 'omoc / ci-gate'
-      # GitHub automatically creates check context 'omoc / ci-gate' from:
-      # - Workflow name: 'omoc'
-      # - Job name: 'ci-gate'
-      # This terminator job ensures the check is always produced, even if upstream fails
+      # Check context is automatically created by GitHub Actions
+      # as '<workflow-name> / <job-name>' = 'omoc / ci-gate'
