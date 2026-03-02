@@ -29,11 +29,7 @@ step() {
   fi
 }
 
-# Pre-flight dependency checks (fail fast with clear messages)
-if ! command -v opencode >/dev/null 2>&1; then
-  fail "Missing 'opencode' binary. Ensure opencode is installed and in PATH."
-fi
-
+# Pre-flight dependency checks (node is required, opencode is optional for CI)
 if ! command -v node >/dev/null 2>&1; then
   fail "Missing 'node' binary. Ensure Node.js is installed and in PATH."
 fi
@@ -42,16 +38,28 @@ if [ ! -f "scripts/opencode_config_validate.mjs" ]; then
   fail "Missing scripts/opencode_config_validate.mjs"
 fi
 
-log "Dependencies: opencode=$(opencode --version 2>&1 | head -1 || echo 'unknown'), node=$(node --version)"
+# Check if opencode is available (graceful degradation for CI/offline environments)
+HAVE_OPENCODE=0
+if command -v opencode >/dev/null 2>&1; then
+  HAVE_OPENCODE=1
+  log "Dependencies: opencode=$(opencode --version 2>&1 | head -1 || echo 'unknown'), node=$(node --version)"
+else
+  log "WARNING: 'opencode' CLI not found; running in offline mode (skipping opencode CLI checks)"
+  log "Dependencies: opencode=NOT_AVAILABLE, node=$(node --version)"
+fi
 
-# L5-check (RBWI)
-step "L5-opencode-version" opencode --version
+# L5-check (RBWI) - only if opencode available
+if [ "$HAVE_OPENCODE" -eq 1 ]; then
+  step "L5-opencode-version" opencode --version
 
-# Auth/provider visibility
-step "opencode-auth-list" bash -lc 'opencode auth list || opencode auth ls || true'
-step "opencode-models-refresh" bash -lc 'opencode models --refresh || true'
+  # Auth/provider visibility
+  step "opencode-auth-list" bash -lc 'opencode auth list || opencode auth ls || true'
+  step "opencode-models-refresh" bash -lc 'opencode models --refresh || true'
+else
+  log "SKIP: opencode version/auth checks (opencode CLI not available)"
+fi
 
-# Config validation (offline-safe)
+# Config validation (offline-safe) - this step does NOT require opencode CLI
 CONF="opencode.jsonc"
 if [ ! -f "$CONF" ]; then
   log "WARNING: ${CONF} not found; creating placeholder for validation"
