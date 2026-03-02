@@ -1,4 +1,4 @@
-name: ci / omoc-gate
+name: omoc
 
 on:  
   pull_request:  
@@ -211,7 +211,7 @@ jobs:
             github.rest.checks.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: 'omoc-gate',
+              name: 'omoc / ci-gate',
               head_sha: context.sha,
               status: status,
               conclusion: conclusion,
@@ -225,7 +225,7 @@ jobs:
   # Terminator job: aggregate needs, never skipped  
   # -----------------------------  
   omoc_gate_terminator:  
-    name: ci / omoc-gate  
+    name: ci-gate
     if: ${{ always() }}  
     needs: [review]  
     runs-on: ubuntu-latest  
@@ -244,7 +244,7 @@ jobs:
             github.rest.checks.create({
               owner: context.repo.owner,
               repo: context.repo.repo,
-              name: 'omoc-gate',
+              name: 'omoc / ci-gate',
               head_sha: context.sha,
               status: 'completed',
               conclusion: 'neutral',
