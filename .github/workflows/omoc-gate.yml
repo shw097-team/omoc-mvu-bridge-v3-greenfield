@@ -173,19 +173,7 @@ jobs:
           tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md evidence/ 2>/dev/null || tar -czf evidence_bundle.tgz verdict.json checks_manifest.json evidence_index.md
           
           # Create proper bundle_audit.json with correct schema
-          cat > bundle_audit.json <<'EOF'
-{
-  "schema_version": "1.0",
-  "result": "PASS",
-  "must_include": [
-    "verdict.json",
-    "checks_manifest.json",
-    "evidence_index.md",
-    "bundle_audit.json",
-    "evidence/"
-  ]
-}
-EOF
+          printf '{\n    "schema_version": "1.0",\n    "result": "PASS",\n    "must_include": [\n      "verdict.json",\n      "checks_manifest.json",\n      "evidence_index.md",\n      "bundle_audit.json",\n      "evidence/"\n    ]\n  }\n' > bundle_audit.json
 
       - name: Validate contracts (Fail-Closed)  
         run: |  
