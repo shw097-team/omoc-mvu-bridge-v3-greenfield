@@ -1,0 +1,7 @@
+  id-token: write
+  checks: write
+  pull-requests: write
+      pull-requests: write  
+      pull-requests: write  
+      checks: write  
+      checks: write  

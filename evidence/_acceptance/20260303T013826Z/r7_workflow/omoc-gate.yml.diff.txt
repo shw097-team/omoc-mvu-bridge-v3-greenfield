@@ -1,0 +1,26 @@
+--- evidence/_acceptance/20260303T013826Z/r7_workflow/omoc-gate.yml.before	2026-03-03 01:39:48.586130700 +0000
++++ evidence/_acceptance/20260303T013826Z/r7_workflow/omoc-gate.yml.after	2026-03-03 01:40:35.431713300 +0000
+@@ -7,7 +7,22 @@
+   workflow_dispatch:
+ 
+ # Least privilege by default; elevate per job as needed  
+-permissions: {}
++# Real-env Phase 6.2 contract (names only; values from GitHub vars/secrets)
++env:
++  OMOC_ENV: ${{ vars.OMOC_ENV || 'staging' }}
++  OMOC_API_BASE: ${{ vars.OMOC_API_BASE }}
++  OMOC_PROJECT: ${{ vars.OMOC_PROJECT }}
++  OMOC_TENANT: ${{ vars.OMOC_TENANT }}
++  GCP_PROJECT_ID: ${{ vars.GCP_PROJECT_ID }}
++  GCP_WIF_PROVIDER: ${{ vars.GCP_WIF_PROVIDER }}
++  GCP_SERVICE_ACCOUNT_EMAIL: ${{ vars.GCP_SERVICE_ACCOUNT_EMAIL }}
++  ACCEPTANCE_TIMEOUT: ${{ vars.ACCEPTANCE_TIMEOUT || '300' }}
++
++permissions:
++  contents: read
++  id-token: write
++  checks: write
++  pull-requests: write
+ 
+ concurrency:  
+   group: omoc-gate-${{ github.repository }}-${{ github.event_name }}-${{ github.ref }}  

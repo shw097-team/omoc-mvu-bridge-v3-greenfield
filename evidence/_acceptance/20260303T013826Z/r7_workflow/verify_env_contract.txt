@@ -1,0 +1,3 @@
+  OMOC_ENV: ${{ vars.OMOC_ENV || 'staging' }}
+  GCP_WIF_PROVIDER: ${{ vars.GCP_WIF_PROVIDER }}
+  ACCEPTANCE_TIMEOUT: ${{ vars.ACCEPTANCE_TIMEOUT || '300' }}

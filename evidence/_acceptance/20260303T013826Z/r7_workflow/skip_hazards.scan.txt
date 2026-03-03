@@ -1,0 +1,4 @@
+21:    if: ${{ github.event_name != 'pull_request' && github.event_name != 'merge_group' }}  
+41:    if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}  
+199:        if: ${{ always() }}  
+208:    if: ${{ always() }}  
