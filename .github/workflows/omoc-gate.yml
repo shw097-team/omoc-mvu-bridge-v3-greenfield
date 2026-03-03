@@ -61,9 +61,6 @@ jobs:
       checks: write  
     steps:  
       - uses: actions/checkout@v4
-        with:  
-          fetch-depth: 0
-      - uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
@@ -218,7 +215,7 @@ jobs:
   # -----------------------------  
   # Terminator job: aggregate needs, never skipped  
   # -----------------------------  
-  omoc_gate_terminator:  
+  ci_gate:
     name: ci-gate
     if: ${{ always() }}  
     needs: [review]  

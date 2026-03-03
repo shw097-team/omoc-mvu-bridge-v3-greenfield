@@ -45,15 +45,15 @@ fi
 
 cat > checks_manifest.json <<JSON
 {
-  "required_check_name_contract":{
-    "expected":{"check_name":"omoc / ci-gate"},
-    "canonical":{"check_name":"omoc / ci-gate"},
-    "expected_source_order":["rulesets","branch_protection"],
-    "expected_file":"${expected_json}",
-    "observed_file":"${observed_json}",
-    "diff":{"missing":[],"extra":[]},
-    "verdict":"${verdict}",
-    "tt":${tt_list}
+  "required_check_name_contract": {
+    "expected": "omoc / ci-gate",
+    "canonical": "omoc / ci-gate",
+    "expected_source_order": ["rulesets", "branch_protection"],
+    "expected_file": "${expected_json}",
+    "observed_file": "${observed_json}",
+    "diff": {"missing": [], "extra": []},
+    "verdict": "${verdict}",
+    "tt": ${tt_list}
   }
 }
 JSON
