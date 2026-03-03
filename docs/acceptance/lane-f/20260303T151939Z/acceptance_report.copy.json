@@ -1,0 +1,29 @@
+{
+  "lane": "Lane-F",
+  "ts": "20260303T151939Z",
+  "msb_type": "MSB-LF",
+  "verdict": "PASS",
+  "verdict_authority": "acceptance_report.json_only",
+  "gates": {
+    "G0": {
+      "status": "PASS",
+      "evidence": "20260303T151939Z/lane_f_total/runbook/"
+    },
+    "G1": {
+      "status": "PASS",
+      "evidence": "20260303T151939Z/lane_f_total/g1/workflow_key_lines.txt"
+    },
+    "G2": {
+      "status": "PASS",
+      "evidence": "20260303T151939Z/lane_f_total/g2/secrets_scan_wc.txt",
+      "hits": 0
+    },
+    "G3": {
+      "status": "PASS",
+      "evidence": "20260303T151939Z/lane_f_total/g3/baseline_sha_from_tag.txt",
+      "baseline_tag": "OMOC-ATTEMPT-4-PASS-20260228T153359Z",
+      "baseline_sha": "5193b48cb32c49d5ade104e2ec34e50cecff9821"
+    }
+  },
+  "blockers": []
+}
