@@ -1,0 +1,42 @@
+=== CR_OPEN/TT Integrated Evidence (OnePass) ===
+generated_at_utc: 2026-03-03T06:31:22Z
+git_head: 15f67beaa832f09dc53fa6649cd5290723e4b1de
+
+== inputs ==
+- KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md
+- .github/workflows/cr_open_tt_probe.yml
+- scripts/cr_open_tt_probe.sh
+
+== C1: presence + hashes ==
+[PRESENT] KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md sha256=da69fc06213df382d9803ca2d2bb1aedb340ae55f399ec5a5fd35529c17c237c
+[PRESENT] .github/workflows/cr_open_tt_probe.yml sha256=013cc1e735e4641f93843250a2513594a8b56fdd6176933cd2d3f823d1de1f42
+[PRESENT] scripts/cr_open_tt_probe.sh sha256=40ff1724e3bdfe03daf2d5bff9bc5e7f691688e93b431cd31222f13da1af3dae
+
+== C2: seed scans (bounded) ==
+KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md:11:### WE-OMO-REL-001: OMOC release details (version/flags/compat)
+KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md:12:<a id="we-omo-rel-001"></a>
+KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md:35:### WE-OMO-IMP-001: counterfeit/third-party download sites monitoring
+KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md:36:<a id="we-omo-imp-001"></a>
+KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md:56:### WE-MCP-SEC-001: MCP server incidents/vulns drift monitoring
+KnowledgePack_Upload20/12_GDS_WEB_EVIDENCE_INDEX.md:57:<a id="we-mcp-sec-001"></a>
+
+== C3: schedule trigger check ==
+[SCHEDULE] present
+
+== C4: optional web probe (explicit opt-in) ==
+[DRIFT_PROBE] disabled (repo-local only)
+
+== C5: closure readiness (SSOT-aligned) ==
+CR_OPEN-001: PASS (refs>=2 verified with domain>=2)
+CR_OPEN-002: PASS_IF(monitoring infra present + scheduled probe)
+CR_OPEN-003: PASS_IF(monitoring infra present + scheduled probe)
+
+== FINAL_MECHANICAL_VERDICT_TABLE ==
+CR_OPEN-001: PASS ✓ (refs>=2 verified with domain>=2 satisfied)
+CR_OPEN-002: PASS ✓ (monitoring infra present + scheduled probe verified)
+CR_OPEN-003: PASS ✓ (monitoring infra present + scheduled probe verified)
+
+== ALL_TT_CLOSED ==
+Status: ACCEPT
+Iterations: 3/3
+Evidence: PASS-ready
