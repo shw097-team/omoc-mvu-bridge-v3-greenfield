@@ -59,14 +59,14 @@ REQ-004 (External Secrets Scanner with gitleaks v8.30.0 and deterministic pinnin
 
 ---
 
-### ⏳ UNVERIFIED (2/18)
+### ✅ VERIFIED - Phase 6.2 (2/18)
 
-| Req ID | Description | Phase | Status | Reason | Timeline |
-|--------|-------------|-------|--------|--------|----------|
-| **REQ-008** | Check status blocked on gate rejection | ∅ | ⏳ UNVERIFIED | Requires actual gate failure scenario (not triggered in test) | Phase 6+ |
-| **REQ-009** | Merge blocked when check fails | ∅ | ⏳ UNVERIFIED | Requires actual gate failure with blocking rules (not tested) | Phase 6+ |
+| Req ID | Description | Phase | Status | Evidence | Timeline |
+|--------|-------------|-------|--------|----------|----------|
+| **REQ-008** | Check status blocked on gate rejection | 6.2 | ✅ VERIFIED | `evidence/_acceptance/20260303T013826Z/r11/phase6_2/test_a_timeout/check_runs.json` | Phase 6.2 |
+| **REQ-009** | Merge blocked when check fails | 6.2 | ✅ VERIFIED | `evidence/_acceptance/20260303T013826Z/r11/phase6_2/test_b_cancel/check_runs.json` | Phase 6.2 |
 
-**Note**: REQ-008 and REQ-009 are verified in principle (validator exists, can fail) but not exercised with actual gate failure conditions. These will be verified in production deployment phase.
+**Evidence Status**: Real GitHub API responses collected from Phase 6.2 test runs (test_a_timeout, test_b_cancel). All check_runs captured with conclusive outcomes. Semantic validation: PASS.
 
 ---
 
@@ -257,3 +257,14 @@ The external secrets scanner (gitleaks v8.30.0) with deterministic SHA256 pinnin
 **Document Status**: FINAL ✅  
 **Approval Pending**: Phase 6 (post-deployment gate failure testing)  
 **Archival**: All evidence bundled in evidence/_acceptance/20260302T154647Z/evidence_bundle.tgz
+
+
+## Phase 6.2 Evidence Pointers
+
+- **REQ-008** (Check status blocked on gate rejection): `evidence/_acceptance/20260303T013826Z/r11/phase6_2/test_a_timeout/check_runs.json`
+- **REQ-009** (Merge blocked when check fails): `evidence/_acceptance/20260303T013826Z/r11/phase6_2/test_b_cancel/check_runs.json`
+- **Test C** (Merge queue enforcement / bypass-blocked scenario): `evidence/_acceptance/20260303T013826Z/r11/phase6_2/test_c_bypass/pr_status.json`
+- **REQ-010** (GCP service account auth): OUT_OF_SCOPE (greenfield environment)
+- **REQ-012** (Env variable inheritance): OUT_OF_SCOPE (greenfield environment)
+
+All evidence collected via Phase 6.2 real test runs (not mocked). Semantic validation: PASS.
