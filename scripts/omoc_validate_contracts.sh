@@ -388,7 +388,7 @@ done <<<"$must_include"
 # logs and token-status files used for offline analysis; exclude those paths
 # from the secret-scan to avoid false positives while still scanning the
 # rest of the archive.
-EXCLUDE_SECRETS='^evidence/_acceptance(/|$)|^evidence/_quarantine(/|$)|^evidence/opencode_diag(/|$)|^evidence/step-opencode-repair(/|$)|^evidence/step-opencode-fix(/|$)|^evidence/_backup(/|$)|^evidence/_drift_guard(/|$)|^evidence/upload(/|$)|^evidence/skills_pack_validation(/|$)|^log(/|$)|^upload(/|$)'
+EXCLUDE_SECRETS='^evidence/(_acceptance|_quarantine|_backup|_drift_guard|opencode_diag|skills_pack.*|step-opencode-repair|step-opencode-fix)(/|$)'
 if grep -v -E "$EXCLUDE_SECRETS" "$members_norm_file" 2>/dev/null \
      | grep -Ei '(^|/)(\.env|.*token.*|.*secret.*|.*password.*)' >/dev/null; then
   # Print the offending matches from the full normalized list for operator

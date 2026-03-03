@@ -1,0 +1,25 @@
+## git_head
+$(git rev-parse HEAD 2>/dev/null || echo "no-git")
+
+## OMOC_TS
+20260222T161724Z
+
+## preflight_artifacts
+$(ls -1 evidence/preflight/20260222T161724Z 2>/dev/null || true)
+
+## skills_pack_validation_artifacts
+$(ls -1 evidence/skills_pack_validation/20260222T161724Z 2>/dev/null || true)
+
+## report_json_head
+$(head -n 80 evidence/skills_pack_validation/20260222T161724Z/report.json 2>/dev/null || true)
+
+## report_md_head
+$(head -n 120 evidence/skills_pack_validation/20260222T161724Z/report.md 2>/dev/null || true)
+
+## sha256_reports
+$(sha256sum evidence/skills_pack_validation/20260222T161724Z/report.json 2>/dev/null || true)
+$(sha256sum evidence/skills_pack_validation/20260222T161724Z/report.md 2>/dev/null || true)
+$(sha256sum evidence/skills_pack_validation/20260222T161724Z/required_files_diff.json 2>/dev/null || true)
+$(sha256sum evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt 2>/dev/null || true)
+$(sha256sum evidence/skills_pack_validation/20260222T161724Z/contract_snapshot.json 2>/dev/null || true)
+$(sha256sum evidence/skills_pack_validation/20260222T161724Z/rc.txt 2>/dev/null || true)

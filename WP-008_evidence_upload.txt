@@ -1,0 +1,153 @@
+WP-008 evidence upload
+TS: 20260222T154813Z (UTC)
+
+## git_head
+6cd6f881253c06fb0fb82f73fe73fc381abfece9
+
+## validator_rc
+0
+
+## ls_triplet_and_bundle
+-rw-r--r-- 1 vscode vscode  66 Feb 21 15:31 evidence/checks_manifest.json
+-rw-r--r-- 1 vscode vscode 277 Feb 21 15:31 evidence/evidence_index.md
+-rw-r--r-- 1 vscode vscode 201 Feb 21 15:31 evidence/verdict.json
+-rw-r--r-- 1 vscode vscode     873 Feb 22 15:48 evidence/bundle_audit.json
+-rw-r--r-- 1 vscode vscode 1679759 Feb 22 15:48 evidence/evidence_bundle.tgz
+
+## tar_members_acceptance_prefix_probe
+401:evidence/_acceptance/20260222T154813Z/
+402:evidence/_acceptance/20260222T154813Z/upload/
+403:evidence/_acceptance/20260222T154813Z/upload/WP-008_evidence_upload.txt
+404:evidence/_acceptance/20260222T154813Z/rc/
+405:evidence/_acceptance/20260222T154813Z/log/
+
+## bundle_audit_result_probe
+PASS
+
+## secrets_scan_probe
+secrets_scan: hits=0
+
+## validator_log_tail
+[PASS] omoc_validate_contracts OK (ts=20260222T154813Z)
+
+## debug_norm_trace_tail (only if exists)
+evidence/_acceptance/20260222T143532Z/upload/WP-008_evidence_upload.txt
+evidence/_acceptance/20260222T143532Z/rc
+evidence/_acceptance/20260222T143532Z/rc/validator.rc
+evidence/_acceptance/20260222T143532Z/manifest
+evidence/_acceptance/20260222T143532Z/log
+evidence/_acceptance/20260222T143532Z/log/validator.log
+evidence/_acceptance/20260222T143532Z/log/tar_probe.txt
+evidence/_acceptance/20260222T143532Z/log/validator_members_norm.txt
+evidence/_acceptance/20260222T143532Z/log/evidence_root_list.txt
+evidence/_acceptance/20260222T143532Z/log/evidence_inner_list.txt
+evidence/_acceptance/20260222T143532Z/log/validator_members.txt
+evidence/_acceptance/_last_opencode_fullcli_repair.seg3.log
+evidence/_acceptance/_last_cp3_gh.seg1.rc
+evidence/_acceptance/_last_cp2_s3.closeout_patchA.log
+evidence/_acceptance/_last_cp2_s2.segA.rc
+evidence/_acceptance/_last_cp3_gh.seg4.rc
+evidence/_acceptance/_last_cp2_s3.seg4.rc
+evidence/_acceptance/_last_cp3_gh.seg3.rc
+evidence/_acceptance/_last_cp2_s3.patch2.rc
+evidence/_acceptance/20260222T141057Z
+evidence/_acceptance/20260222T141057Z/upload
+evidence/_acceptance/20260222T141057Z/upload/WP-008_evidence_upload.txt
+evidence/_acceptance/20260222T141057Z/rc
+evidence/_acceptance/20260222T141057Z/rc/validator.rc
+evidence/_acceptance/20260222T141057Z/manifest
+evidence/_acceptance/20260222T141057Z/log
+evidence/_acceptance/20260222T141057Z/log/validator.log
+evidence/_acceptance/20260222T141057Z/log/tar_probe.txt
+evidence/_acceptance/20260222T141057Z/log/evidence_root_list.txt
+evidence/_acceptance/20260222T141057Z/log/evidence_inner_list.txt
+evidence/_acceptance/20260222T141057Z/log/validator_members.txt
+evidence/_acceptance/_last_cp2_s2.segB.log
+evidence/_acceptance/_last_cp2_s3.hygiene1.log
+evidence/_acceptance/_last_cp2_s3.fixB.log
+evidence/_acceptance/_last_opencode_fix.seg3.log
+evidence/_acceptance/_last_cp2_s3.closeout_patchB.rc
+evidence/_acceptance/_last_cp3_token.seg2.rc
+evidence/_acceptance/20260222T132603Z
+evidence/_acceptance/20260222T132603Z/upload
+evidence/_acceptance/20260222T132603Z/upload/WP-008_evidence_upload.txt
+evidence/_acceptance/20260222T132603Z/rc
+evidence/_acceptance/20260222T132603Z/log
+evidence/_acceptance/_last_cp2_s3.patch2.log
+evidence/_acceptance/_last_cp2_s3.close.segB.rc
+evidence/_acceptance/_last_opencode_fix.seg3.rc
+evidence/_acceptance/_last_cp2_s3.seg1.log
+evidence/_acceptance/FINAL
+evidence/_acceptance/FINAL/FINAL_VERDICT_WP001_005.md
+evidence/_acceptance/FINAL/FINAL_VERDICT_WP001_005.json
+evidence/_acceptance/FINAL/single_evidence_bundle_MASTER_WP001_005.txt
+evidence/_acceptance/_last_cp2_s3.seg1.rc
+evidence/_acceptance/20260222T150500Z
+evidence/_acceptance/20260222T150500Z/upload
+evidence/_acceptance/20260222T150500Z/upload/WP-008_evidence_upload.txt
+evidence/_acceptance/20260222T150500Z/rc
+evidence/_acceptance/20260222T150500Z/manifest
+evidence/_acceptance/20260222T150500Z/log
+evidence/_acceptance/20260222T150500Z/log/validator_members_tail.txt
+evidence/_acceptance/20260222T150500Z/log/validator_members_norm_test.txt
+evidence/_acceptance/20260222T150500Z/log/validator.log
+evidence/_acceptance/20260222T150500Z/log/tar_probe.txt
+evidence/_acceptance/20260222T150500Z/log/validator_tmp_norm.cmd
+evidence/_acceptance/20260222T150500Z/log/validator_tmp_norm.err
+evidence/_acceptance/20260222T150500Z/log/validator_tmp_norm.poststat
+evidence/_acceptance/20260222T150500Z/log/validator_members_norm.txt
+evidence/_acceptance/20260222T150500Z/log/evidence_root_list.txt
+evidence/_acceptance/20260222T150500Z/log/validator_members_head.txt
+evidence/_acceptance/20260222T150500Z/log/validator_members_from_probe.txt
+evidence/_acceptance/20260222T150500Z/log/tar_cmd.err
+evidence/_acceptance/20260222T150500Z/log/tar_cmd.rc
+evidence/_acceptance/20260222T150500Z/log/validator_debug.txt
+evidence/_acceptance/20260222T150500Z/log/validator_members.od
+evidence/_acceptance/20260222T150500Z/log/validator_tmp_norm.rc
+evidence/_acceptance/20260222T150500Z/log/validator_tmp_norm.out
+evidence/_acceptance/20260222T150500Z/log/evidence_inner_list.txt
+evidence/_acceptance/20260222T150500Z/log/validator_members.raw
+evidence/_acceptance/20260222T150500Z/log/validator_members.txt
+evidence/_acceptance/20260222T132844Z
+evidence/_acceptance/20260222T132844Z/upload
+evidence/_acceptance/20260222T132844Z/upload/WP-008_evidence_upload.txt
+evidence/_acceptance/20260222T132844Z/rc
+evidence/_acceptance/20260222T132844Z/log
+evidence/_acceptance/20260222T132844Z/log/validator_members_tail.txt
+evidence/_acceptance/20260222T132844Z/log/validator.log
+--- grep -nF TS in normalized ---
+--- grep -nF TS in raw ---
+401:evidence/_acceptance/20260222T154813Z
+402:evidence/_acceptance/20260222T154813Z/upload
+403:evidence/_acceptance/20260222T154813Z/upload/WP-008_evidence_upload.txt
+404:evidence/_acceptance/20260222T154813Z/rc
+405:evidence/_acceptance/20260222T154813Z/log
+--- grep -nF evidence/_acceptance/20260222T154813Z in normalized ---
+--- grep -nF evidence/_acceptance/20260222T154813Z in raw ---
+401:evidence/_acceptance/20260222T154813Z
+402:evidence/_acceptance/20260222T154813Z/upload
+403:evidence/_acceptance/20260222T154813Z/upload/WP-008_evidence_upload.txt
+404:evidence/_acceptance/20260222T154813Z/rc
+405:evidence/_acceptance/20260222T154813Z/log
+--- raw line 401: evidence/_acceptance/20260222T154813Z
+ 65 76 69 64 65 6e 63 65 2f 5f 61 63 63 65 70 74
+ 61 6e 63 65 2f 32 30 32 36 30 32 32 32 54 31 35
+ 34 38 31 33 5a
+--- raw line 402: evidence/_acceptance/20260222T154813Z/upload
+ 65 76 69 64 65 6e 63 65 2f 5f 61 63 63 65 70 74
+ 61 6e 63 65 2f 32 30 32 36 30 32 32 32 54 31 35
+ 34 38 31 33 5a 2f 75 70 6c 6f 61 64
+--- raw line 403: evidence/_acceptance/20260222T154813Z/upload/WP-008_evidence_upload.txt
+ 65 76 69 64 65 6e 63 65 2f 5f 61 63 63 65 70 74
+ 61 6e 63 65 2f 32 30 32 36 30 32 32 32 54 31 35
+ 34 38 31 33 5a 2f 75 70 6c 6f 61 64 2f 57 50 2d
+ 30 30 38 5f 65 76 69 64 65 6e 63 65 5f 75 70 6c
+ 6f 61 64 2e 74 78 74
+--- raw line 404: evidence/_acceptance/20260222T154813Z/rc
+ 65 76 69 64 65 6e 63 65 2f 5f 61 63 63 65 70 74
+ 61 6e 63 65 2f 32 30 32 36 30 32 32 32 54 31 35
+ 34 38 31 33 5a 2f 72 63
+--- raw line 405: evidence/_acceptance/20260222T154813Z/log
+ 65 76 69 64 65 6e 63 65 2f 5f 61 63 63 65 70 74
+ 61 6e 63 65 2f 32 30 32 36 30 32 32 32 54 31 35
+ 34 38 31 33 5a 2f 6c 6f 67
