@@ -7,7 +7,9 @@ Integrates snapshots and artifacts manifest into acceptance_report.json.
 import argparse
 import hashlib
 import json
+import os
 import pathlib
+import subprocess
 import sys
 
 def compute_sha256(file_path):
@@ -205,6 +207,32 @@ def check_promote_evidence(accept_dir):
     except Exception as e:
         return False, f"promote evidence parse error: {e}"
 
+def collect_run_urls():
+    """Collect GitHub Actions run URL using environment variables (set by Actions runner)."""
+    run_id = os.environ.get("GITHUB_RUN_ID")
+    repo = os.environ.get("GITHUB_REPOSITORY")
+    server = os.environ.get("GITHUB_SERVER_URL", "https://github.com")
+    
+    if run_id and repo:
+        run_url = f"{server}/{repo}/actions/runs/{run_id}"
+        return {"run_url": run_url, "check_runs": []}
+    
+    # Fallback: try gh CLI
+    try:
+        result = subprocess.run(
+            ["gh", "run", "view", "--json", "url"],
+            capture_output=True, text=True, timeout=5
+        )
+        if result.returncode == 0:
+            data = json.loads(result.stdout)
+            if "url" in data:
+                return {"run_url": data["url"], "check_runs": []}
+    except Exception:
+        pass
+    
+    # If no run available, return empty (not a failure condition)
+    return {"run_url": None, "check_runs": []}
+
 def main():
     ap = argparse.ArgumentParser(description="Acceptance gate: verify strict gates and emit verdict")
     ap.add_argument("--in", required=True, dest="accept_in", help="Path to evidence/_acceptance/$TS")
@@ -227,8 +255,20 @@ def main():
     if snapshot_manifest_path.exists():
         manifest_hash = compute_sha256(snapshot_manifest_path)
         artifacts["snapshot/snapshot_manifest.json"] = manifest_hash
-    artifacts.update(upload_artifacts)
-    artifacts.update(sha_pinning_artifacts)
+
+    # TT-ARTIFACT-MANIFEST-SCOPE-002: Include all dual_lane_prep snapshot files
+    dual_prep_dir = accept_dir / "dual_lane_prep"
+    if dual_prep_dir.exists():
+        for lane_dir in sorted(dual_prep_dir.iterdir()):
+            if not lane_dir.is_dir():
+                continue
+            snapshot_dir = lane_dir / "snapshot"
+            if not snapshot_dir.exists():
+                continue
+            for snap_file in sorted(snapshot_dir.glob("*.json")):
+                rel_path = str(snap_file.relative_to(accept_dir))
+                artifacts[rel_path] = compute_sha256(snap_file)
+
     
     gates = {
         "ENV-READY": (True, "Environment checks passed"),
@@ -241,6 +281,7 @@ def main():
         "OMOC-PERF": check_perf_reports(accept_dir),
         "SHA_PINNING_LINT": (sha_pinning_ok, sha_pinning_msg)
     }
+
     
     failed_gates = [k for k, (passed, _) in gates.items() if not passed]
     verdict = "FAIL_CLOSED" if failed_gates else "PASS"
@@ -254,7 +295,9 @@ def main():
         "failed_gates": failed_gates,
         "artifacts": artifacts,
         "single_adjudicator": "acceptance_report.json",
+        "run_url": run_info["run_url"],
         "runpack_id": accept_dir.name
+
     }
     
     out_path = pathlib.Path(args.accept_out)
