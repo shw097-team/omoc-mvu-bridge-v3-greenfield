@@ -1,0 +1,17 @@
+ts: 20260305T054305Z
+verdict: PASS
+note: evidence/_acceptance is NOT versioned; pointer-only handoff.
+
+artifacts_sha256:
+  - backup/backup_manifest.json: 379804514ed03b93ebfc0c548c7b07ab6b113fffe12b7b662e8a09f7cb85d60c
+  - dual_lane_prep/full/snapshot/full_snapshot.json: d6ffd97c7a732355c223de0dbac2ef345f58296d81f35bca53119a528659de25
+  - dual_lane_prep/spine/snapshot/spine_snapshot.json: b50c707b3cc81664b7dd8889a10e6a9617dc1cb9e310d53ae85b806cfe07bec7
+  - external/sha_pinning/sha_pinning_lint_report.txt: 43172c74e6a88e369d45f6094bdbbcbf76ff06bfbbb0e2322ec3221b191b7f56
+  - mission_lock.json: 8601f66a9f800028500a72833dba4b4c842d81dc3d3e5445be0ed91a692845af
+  - mission_lock.md: ff50ad2b772744b79eca589516a74d4d33ddec713f65134957a7624fd61049a8
+  - perf/omoc_perf_report.json: 3278460e645a4b1c274fe284de6c4434547a1455a34bc9b331eba8c53f348789
+  - perf/rca_tree.json: 47d737204fb8b6c95c8d7f30e7ee3483b3a4e1d43c7ba9d3ffa3cc6a817cd3c2
+  - perf/upgrade_plan.tsv: 70598a6e185706e5f2247848e79bae54c58eb0d3487b00fb67de3b459f51a324
+  - promote/pr_assets_manifest.json: c030c2ff8b671937673e86f62b9c31e6c4c0b64f0d2b79b3fa4a023d09ba4d35
+  - promote/pr_evidence_packet.md: a9e02985e85221b3554094f42e819e919449875fd1369758f42212131e892f21
+  - upload/evidence_upload.txt: ec8f0edb16ac099cd757560f20edcde4f053d93c2c2f5bfcc7a231270640fce3
