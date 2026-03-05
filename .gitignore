@@ -1,4 +1,6 @@
 # OMOC-MVU: evidence should be generated, not versioned
+# Comprehensive evidence exclusion to prevent accidental commit
+evidence/
 evidence/_acceptance/
 evidence/_diag/
 *.tgz
