@@ -245,6 +245,7 @@ def main():
     artifacts_ok, artifacts_msg, artifacts = check_required_artifacts(accept_dir)
     upload_txt_ok, upload_txt_msg, upload_artifacts = check_upload_txt_lint(accept_dir)
     sha_pinning_ok, sha_pinning_msg, sha_pinning_artifacts = check_sha_pinning_lint(accept_dir)
+    run_info = collect_run_urls()
     
     # Merge artifacts from all checks
     artifacts.update(upload_artifacts)
