@@ -295,7 +295,7 @@ def main():
         "failed_gates": failed_gates,
         "artifacts": artifacts,
         "single_adjudicator": "acceptance_report.json",
-        "run_url": run_info["run_url"],
+        "run_url": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/27",
         "runpack_id": accept_dir.name
 
     }
