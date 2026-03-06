@@ -44,13 +44,13 @@ jobs:
 
   omoc-gate:
     name: omoc-gate
-    runs-on: ubuntu-latest
     if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+    runs-on: ubuntu-latest
     permissions:
       checks: write
     steps:
       - uses: actions/checkout@v4
         with:
           persist-credentials: false
-      - name: always-report gate
-        run: echo "ci / omoc-gate reported"
+      - name: Report gate status
+        run: echo "omoc-gate check reported for PR/merge_group"

@@ -1,3 +1,5 @@
+# REFRESH: Triggered omoc-wt-full check on PR#37
+# CI re-run to ensure omoc-gate check is produced on merge_group event
 name: omoc
 
 on:  
