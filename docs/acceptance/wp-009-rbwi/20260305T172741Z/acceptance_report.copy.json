@@ -1,0 +1,48 @@
+{
+  "schema": "omoc.acceptance_report.v1",
+  "ts": "20260305T172741Z",
+  "macro_goal": "OMOC_WP-009+RB+WI_v4.0.1-r2 TOTAL (snapshot reuse + manifest + lints + export)",
+  "verdict": "PASS",
+  "blockers": [],
+  "gates": {
+    "WP009_SNAPSHOT_REUSE": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T165444Z/acceptance_report.json"
+    },
+    "ACCEPTANCE_MANIFEST_PRESENT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/snapshots/acceptance_manifest.json"
+    },
+    "WORKTREE_ROOT_LOCATOR_LINT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/tt_scan/worktree_root_locator_lint.json"
+    },
+    "HANDOFF_POINTER_MINSET_LINT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/tt_scan/handoff_pointer_minset_lint.json"
+    },
+    "UPLOAD_TXT_NAMING_LINT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/upload/20260305T172741Z_evidence_upload.txt"
+    },
+    "ERP_COVERAGE_LINT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/tt_scan/erp_coverage_lint.json"
+    },
+    "TS_COHERENCE_LINT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/tt_scan/ts_coherence_lint.json"
+    },
+    "EVIDENCE_EXPORT_LINT": {
+      "passed": true,
+      "evidence": "evidence/_acceptance/20260305T172741Z/export/evidence_export.tgz"
+    }
+  },
+  "upstream_dependencies": {
+    "wp009_snapshot": {
+      "ts": "20260305T165444Z",
+      "path": "evidence/_acceptance/20260305T165444Z/acceptance_report.json",
+      "verdict": "PASS"
+    }
+  }
+}

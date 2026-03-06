@@ -199,18 +199,21 @@ jobs:
 
   # -----------------------------  
   # Terminator job: aggregate needs, never skipped  
+  # Must run for PR/merge_group to ensure 'ci-gate' status check is reported
+  # Even if review job fails, this job must complete to report status
   # -----------------------------  
   ci_gate:
     name: ci-gate
-    if: ${{ always() }}  
+    if: ${{ (github.event_name == 'pull_request' || github.event_name == 'merge_group') && always() }}  
     needs: [review]  
     runs-on: ubuntu-latest  
     permissions:  
       checks: write  
     steps:  
-      - name: Terminator (never skip)  
+      - name: Terminator (never skip for PR/merge_group)  
         run: |  
-          echo "Terminator: ensures canonical check is produced even if upstream fails."
+          echo "Terminator: ensures canonical check 'ci-gate' is produced even if upstream fails."
+          echo "This job reports the status check context needed for branch protection rules."
 
       # Check context is automatically created by GitHub Actions
       # as '<workflow-name> / <job-name>' = 'omoc / ci-gate'

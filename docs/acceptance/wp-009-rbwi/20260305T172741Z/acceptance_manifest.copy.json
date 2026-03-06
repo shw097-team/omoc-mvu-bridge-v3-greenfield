@@ -1,0 +1,20 @@
+{
+  "schema": "omoc.acceptance_manifest.v1",
+  "ts": "20260305T172741Z",
+  "authority": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南_合冊.md#sec9.2-wsp-directory-adapter",
+  "generated_from_ts": "20260305T165444Z",
+  "directory_mapping": [
+    {
+      "from": "acceptance_bundle/",
+      "to": "evidence/_acceptance/"
+    },
+    {
+      "from": "acceptance_bundle/20260305T165444Z/",
+      "to": "evidence/_acceptance/20260305T165444Z/"
+    }
+  ],
+  "notes": [
+    "This manifest provides WSP↔OMOC path equivalence mapping.",
+    "No HOW steps are embedded; mapping only."
+  ]
+}

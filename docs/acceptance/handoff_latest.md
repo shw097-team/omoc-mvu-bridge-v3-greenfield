@@ -1,11 +1,11 @@
 # Acceptance Handoff Pointer — Latest
 
-**Latest Acceptance Timestamp**: `20260305T042114Z`
+**Latest Acceptance Timestamp**: `20260305T071233Z`
 
 ## Acceptance Report Location
 
 ```
-evidence/_acceptance/20260305T042114Z/acceptance_report.json
+evidence/_acceptance/20260305T071233Z/acceptance_report.json
 ```
 
 ## Acceptance Verdict
@@ -13,7 +13,7 @@ evidence/_acceptance/20260305T042114Z/acceptance_report.json
 - **Status**: PASS
 - **Failed Gates**: 0
 - **Test Tracking (TT)**: CR_OPEN count = 0 (all closed)
-- **Upload Packet**: evidence/_acceptance/20260305T042114Z/upload/evidence_upload.txt
+- **Upload Packet**: evidence/_acceptance/20260305T071233Z/upload/evidence_upload.txt
 
 ## VS Code Git Warning Fix
 
@@ -39,12 +39,12 @@ evidence/_acceptance/20260305T042114Z/acceptance_report.json
 
 ### For Continuity
 If resuming work:
-1. Latest acceptance artifacts are in `evidence/_acceptance/20260305T042114Z/`
+1. Latest acceptance artifacts are in `evidence/_acceptance/20260305T071233Z/`
 2. Latest acceptance report: `acceptance_report.json` in above directory
 3. Handoff documentation: This file (`docs/acceptance/handoff_latest.md`)
 
 ### For External Submission
-1. User submits: `evidence/_acceptance/20260305T042114Z/upload/evidence_upload.txt`
+1. User submits: `evidence/_acceptance/20260305T071233Z/upload/evidence_upload.txt`
 2. Supporting: `external_evidence_appendix.md` and `test_tracking_list.tsv` (maintained locally)
 3. Git PR: Contains only code/config changes (VS Code fix, handoff doc), NOT evidence
 
@@ -57,6 +57,6 @@ If resuming work:
 
 ---
 
-**Generated**: 2026-03-05T06:11:00Z  
+**Generated**: 2026-03-05T07:25:00Z
 **Repository**: omoc-mvu-bridge-v3-greenfield  
 **Branch**: Main (after PR merge)
