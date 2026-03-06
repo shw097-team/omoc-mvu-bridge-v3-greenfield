@@ -25,3 +25,14 @@ jobs:
 
       - name: Report status
         run: echo "ci completed"
+
+  omoc-gate:
+    name: omoc-gate
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+    steps:
+      - uses: actions/checkout@v4
+      - name: Report gate status
+        run: echo "omoc-gate check reported for PR/merge_group"
