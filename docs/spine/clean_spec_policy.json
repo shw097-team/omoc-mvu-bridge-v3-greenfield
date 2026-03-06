@@ -1,0 +1,21 @@
+{
+  "schema": "clean_spec_policy/v1",
+  "scope": "OMOC_WP_RBWI_SKILLS_ONLY",
+  "export_dir": "docs/spine/clean_spec_exports/<TS>/",
+  "strip": [
+    "code_fences",
+    "command_lines"
+  ],
+  "scan_regex": [
+    "opencode",
+    "bash",
+    "curl",
+    "git",
+    "pip",
+    "npm",
+    "sudo",
+    "kubectl",
+    "docker"
+  ],
+  "note": "export-only; do not modify SSOT originals"
+}

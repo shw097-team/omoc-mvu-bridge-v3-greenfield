@@ -11,3 +11,6 @@ node_modules/
 evidence/_quarantine/
 audit_intake_*/
 *.bak
+/evidence/_acceptance/
+/upload/
+/docs/spine/clean_spec_exports/
