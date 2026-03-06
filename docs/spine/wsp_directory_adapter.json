@@ -1,0 +1,16 @@
+{
+  "schema": "wsp_directory_adapter/v1",
+  "ts": "20260306T061157Z",
+  "mapping": [
+    {
+      "from": "acceptance_bundle/<RUN_ID>/",
+      "to": "evidence/_acceptance/<TS>/"
+    },
+    {
+      "from": "acceptance_bundle/<RUN_ID>/gates/<GATE_ID>/",
+      "to": "evidence/_acceptance/<TS>/spine_mvp_full/gates/<GATE_ID>/"
+    }
+  ],
+  "authority_locator": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南_合冊.md#sec9.2-wsp-directory-adapter",
+  "clean_spec": "NO-HOW"
+}

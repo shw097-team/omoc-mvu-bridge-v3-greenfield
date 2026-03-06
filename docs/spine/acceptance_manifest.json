@@ -1,0 +1,14 @@
+{
+  "schema": "acceptance_manifest/v1",
+  "ts": "20260306T061157Z",
+  "equivalence": [
+    {
+      "wsp": "acceptance_bundle/",
+      "omoc": "evidence/_acceptance/"
+    },
+    {
+      "wsp": "acceptance_bundle/<RUN_ID>/gates/",
+      "omoc": "evidence/_acceptance/20260306T061157Z/spine_mvp_full/gates/"
+    }
+  ]
+}
