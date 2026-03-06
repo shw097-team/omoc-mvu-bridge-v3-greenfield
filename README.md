@@ -2,3 +2,5 @@
 phase6.2 test A
 phase6.2 test B
 phase6.2 test C
+
+<!-- WP-011 FULL-LANE docs-only change: 20260306T035123Z -->
