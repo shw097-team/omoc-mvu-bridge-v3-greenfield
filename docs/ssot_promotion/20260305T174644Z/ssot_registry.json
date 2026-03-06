@@ -1,0 +1,252 @@
+{
+  "ts": "20260305T174644Z",
+  "root": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative",
+  "files_total": 49,
+  "files": [
+    {
+      "relpath": "OMOC/OMOC_實作+WP總表_v4.0.1-r2.md",
+      "bytes": 54886,
+      "sha256": "sha256:ffb92a86c26e12cc3d6bf492694fb81477f985f8f50d0744c4944dbdae1a49a9"
+    },
+    {
+      "relpath": "OMOC/OMOC_施工RBWI_v4.0.1-r1.md",
+      "bytes": 45818,
+      "sha256": "sha256:3fb8ea01b069a8f64f0183d8fc7678acf99b49adb4ef6a80a761997e1a2b44ca"
+    },
+    {
+      "relpath": "OMOC/OMOC_施工skills_合冊_v4.0.1-r2.md",
+      "bytes": 80007,
+      "sha256": "sha256:136cc5cb8513548c31715a748b1e0df8c4d4faf8eb869393eb3876bd2e11c1c7"
+    },
+    {
+      "relpath": "OMOC/OMOC_藍圖_v4.0.1-r1.md",
+      "bytes": 36139,
+      "sha256": "sha256:ccd7c311b11420652ac325b49ee6c317449d867b75b5c676ba641c0da17c6a33"
+    },
+    {
+      "relpath": "OMOC RIP/OMOC_RIP-A_v1.1.0.md",
+      "bytes": 49141,
+      "sha256": "sha256:c198152f0601fc9682f1ce3f74e2a64d1f15259cb1b4c6f5dcc16852a6bb263f"
+    },
+    {
+      "relpath": "OMOC RIP/OMOC_RIP-B_v1.1.0.md",
+      "bytes": 67646,
+      "sha256": "sha256:1c5581baa9d5b2d92abba6ec77846e392fa4dd4a71bf045a43122fea95a783a3"
+    },
+    {
+      "relpath": "OMOC RIP/OMOC_RIP-C_v1.1.0.md",
+      "bytes": 51978,
+      "sha256": "sha256:f8f328089858548970607e0fe283d502177b31f023d1c931ac0b703bd1f3fefb"
+    },
+    {
+      "relpath": "OMOC RIP/OMOC_RIP-D_v1.1.0.md",
+      "bytes": 46942,
+      "sha256": "sha256:3f0be06587e6a0c1f0b0ef61171f4642af5f9b8fa76331692d6b81d1d6e348f5"
+    },
+    {
+      "relpath": "OMOC RIP/OMOC_RIP-E_v1.1.0.md",
+      "bytes": 45044,
+      "sha256": "sha256:89395b2fa0d4909402ad430b027fd9f52ce52f988b9b295a06e1f59146ab33fc"
+    },
+    {
+      "relpath": "OMOC RIP/OMOC_RIP-F_v1.1.0.md",
+      "bytes": 52169,
+      "sha256": "sha256:fa94b199445a89bb9ebc4bc0018fd23272c956f430c9a36b7763d03b822d2d4a"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-001+RB+WI_v4.0.1-r2.md",
+      "bytes": 41578,
+      "sha256": "sha256:9d379a473ca2af7f3202982775815e8cf80c283cba3f1239e8381c89e0d0f1f9"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-002+RB+WI_v4.0.1-r2.md",
+      "bytes": 39664,
+      "sha256": "sha256:5e38e2137cf0230400ab32261544c0df4a641bafbf92b5d8f575a7751e20ed5c"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-003+RB+WI_v4.0.1-r2.md",
+      "bytes": 44125,
+      "sha256": "sha256:e8fde679effe030dac1445dfbb27240b9e1ceb4caa56ef568a3c5504b941b29b"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-004+RB+WI_v4.0.1-r2.md",
+      "bytes": 42251,
+      "sha256": "sha256:225ee9ee790cd02539da843be3a43207b7ed699fbb99eaca94f42bfa21c9ebc2"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-005+RB+WI_v4.0.1-r2.md",
+      "bytes": 35194,
+      "sha256": "sha256:ba6788de477a15aa4c8a78eb32ba460eaf48ec0343bfffde4c74c8cd97bb0022"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-006+RB+WI_v4.0.1-r2.md",
+      "bytes": 52339,
+      "sha256": "sha256:3a958ba100804e337d3307ce995664fb44ed13887dec85526039e69467cdf87b"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-007+RB+WI_v4.0.1-r2.md",
+      "bytes": 45400,
+      "sha256": "sha256:cac1e5bee943887eef547f6b4ec7be060197b96b77cf044e6a7392be403d5f92"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-008+RB+WI_v4.0.1-r2.md",
+      "bytes": 60018,
+      "sha256": "sha256:fff6383689c338a1a1bb8bc27087767470d5dfb1ebd93a30de2f01add33f8a59"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-009+RB+WI_v4.0.1-r2.md",
+      "bytes": 46986,
+      "sha256": "sha256:e3da8193d8f3a25fb3d437b1a75d32b9fd485e368a61f2ce518a492b70ca9e1d"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-010+RB+WI_v4.0.1-r2.md",
+      "bytes": 65186,
+      "sha256": "sha256:4a98647710a9d655c06e7c8a3843b789530a30cda910828fd8c9e7da019cdfca"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-011+RB+WI_v4.0.1-r2.md",
+      "bytes": 42583,
+      "sha256": "sha256:e3ef44749be9d1e39f5911ef9e5eb8bf6f3c5e17014ba0a130d7d93ceed6d27f"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-012+RB+WI_v4.0.1-r2.md",
+      "bytes": 46530,
+      "sha256": "sha256:a537a9a6ce723e86604169973d193a2ecf7148616ff988ed876888b5618ccf1e"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-013+RB+WI_v4.0.1-r2.md",
+      "bytes": 40539,
+      "sha256": "sha256:866c0ef398123228680d93afecbad3b3df548ca3cb0891a8896442fbe82fe4c7"
+    },
+    {
+      "relpath": "OMOC WP/OMOC_WP-014+RB+WI_v4.0.1-r2.md",
+      "bytes": 52217,
+      "sha256": "sha256:4390bf90e2444c7639b6566de625fa16a6612b85631994347c91a2070595016c"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC Blueprint v2.2.0-r1.md",
+      "bytes": 49489,
+      "sha256": "sha256:f1dc7cface0712e0db62b3c4f3ddd0ab618077ab7d8422da42a4b04255e95ca2"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_ARCH_v8.1.0.md",
+      "bytes": 351294,
+      "sha256": "sha256:b1cc16448755e074c5706b379c0ec2c4611b53fd72c3b57334db921a5c2cae99"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_LBP-A(SIR) v8.1.1-r1.md",
+      "bytes": 46911,
+      "sha256": "sha256:68989b89703863f0e3e31edac9777a583be4376f9bc65181ed55433976abcdbf"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_LBP-B(ICD)v8.1.1-r2.md",
+      "bytes": 44970,
+      "sha256": "sha256:8281f2d146a099ea5e81ed5565e060063ede5ba572dbcfebd926a630651551b5"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_LBP-C(ADR) v8.1.1-r2.md",
+      "bytes": 83255,
+      "sha256": "sha256:0090a80aa2d7d18f7ff2a8f8eb7bd0cb2d18f2c3afb324f589977f7866464d2d"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_LBP-D(C4) v8.1.1-r2.md",
+      "bytes": 37768,
+      "sha256": "sha256:ec9bfd9b796d5c00386e16dcbeeb42045fa32436c67d9032ea2ebbceaaf05d2b"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_LBP-E(Fitness) v8.1.1-r2.md",
+      "bytes": 44420,
+      "sha256": "sha256:57937efdb8714563310e4d1306dfc8968801186843fe6241451a167a613c29d2"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_MIP_v2.2.0.txt",
+      "bytes": 79564,
+      "sha256": "sha256:9659a65efc0948f74b5afca3bfc8e5e2a46a47e8aceaacf7d4433dd0c9a657e7"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_README_RDM v2.2.0.md",
+      "bytes": 41426,
+      "sha256": "sha256:026729b07f1a896dcd56d68b0bb6f01c05e53350900eab50c52a2d9dec549d4b"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_SRS_v8.1.0.md",
+      "bytes": 260499,
+      "sha256": "sha256:991a7790aa4803c644f502a729aa7c345f2aac9346b629c5e7c4b4f1f214942b"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_dev RB + WI_v8.1.1-dev-r2.md",
+      "bytes": 56041,
+      "sha256": "sha256:281851e7f465a465f888954ac63623ea63804582e81af413831cde2c52bd29c2"
+    },
+    {
+      "relpath": "Spartoi-OMOC/Spartoi-OMOC_ops RB + WI _v8.1.1-ops-r1.md",
+      "bytes": 56605,
+      "sha256": "sha256:ff20d7a09cc92abb4f70c847c2755762c6a92471645a14d1beef5cdb1b38ba27"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_MVP Spine_ Walking Skeleton Pack v0_最小實作包_v2.2.0-r1.md",
+      "bytes": 49856,
+      "sha256": "sha256:a5cba87ae83636b2a3d86756a9424d8beb1feabd3b52a79457864afe44eee4d5"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_SubP1-LITE+MVP Spine_Walking Skeleton Pack v0_v2.1.0-r1.md",
+      "bytes": 58469,
+      "sha256": "sha256:9daa9b9e49df208046c3638b7d17ef2294481bff2562d2776db029e099064b47"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_SubP1-LITE+MVP_Dev RUNBOOK + WI_ v2.1.0-r2.md",
+      "bytes": 150477,
+      "sha256": "sha256:c5af154c2ac8fa18b2fb49454268a08e50e8d0535871c62f8e22665d355110a2"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_SubP1-LITE+MVP_Ops RUNBOOK + WI_v2.1.0-r2.md",
+      "bytes": 54455,
+      "sha256": "sha256:cd99ab72ab00904af7bcebc078c9782b27b5a10b17b73a887e9a8bbedbbf8020"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_SubP1-LITE+MVP_RIP方案.md",
+      "bytes": 24289,
+      "sha256": "sha256:e70c0c1d881c0ee7668e1b02d9711e135c8d819c9e420d792b820ac4a77fc629"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_SubP1-LITE+MVP_總控控制平面_v2.1.0-r2.md",
+      "bytes": 35353,
+      "sha256": "sha256:5c5412ff22bd585968ed66a96f94f0a9413a4495cb514e5a6b942d0b78efd7dd"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP/Spartoi-OMOC_SubP1-LITE+MVP_藍圖_v1.3.0-r2.md",
+      "bytes": 38844,
+      "sha256": "sha256:1a508d84180385eaa7ccdcab3b346279a06fd1741a3754d7b5f43632c155055b"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Control Plane Pack_v2.2.0.md",
+      "bytes": 65160,
+      "sha256": "sha256:bb91995e7c4c3aa0a3242dc4a4d4def0c10ea035640d8981b6cf4476e05ccc77"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Execution Pack_v1.2.0.md",
+      "bytes": 45553,
+      "sha256": "sha256:69cc718e8567d0083d84f615769f2c8fccb16aa5c25f193ccb6bdf41d8c550f8"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Factory Pack_v1.2.0.md",
+      "bytes": 41726,
+      "sha256": "sha256:29e93646d4ae1bea99084c49a86ec5c99471a319fdbdb9359c198b6b286fa294"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Governance_Index Pack_v1.2.0.md",
+      "bytes": 102148,
+      "sha256": "sha256:d731a5da63638e754b022f4bea1308db36386127a1a6fa572fe154c14948ef52"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Subsystem Delivery Pack_v1.2.0.md",
+      "bytes": 56557,
+      "sha256": "sha256:320a27b6b3bd686e4eb06d9ffb51ebca08ede64a036da9f44725e247874bfcc5"
+    },
+    {
+      "relpath": "Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_前端文檔到實作驗收_工程指南.md",
+      "bytes": 61125,
+      "sha256": "sha256:724fd1b35a2906c1ffe84f77a835408b92723aa0338763a4e094bc1be434bbeb"
+    }
+  ]
+}

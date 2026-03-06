@@ -1,0 +1,73 @@
+{
+  "schema": "omoc.acceptance_report.v1",
+  "ts": "20260306T121505Z",
+  "verdict": "PASS",
+  "macro_goal": "WP-013 + WP-014 integration (double-pass)",
+  "wp013": {
+    "schema": "omoc.acceptance_report.v1",
+    "wp": "WP-013",
+    "ts": "20260306T121505Z",
+    "macro_goal": "WP-013 Merge Queue enablement + verification (spec-first)",
+    "verdict": "PASS",
+    "blockers": [],
+    "tt": [],
+    "gates": {
+      "WP013-ENTRY": {
+        "status": "PASS",
+        "refs": [
+          "evidence/_acceptance/20260306T022110Z/acceptance_report.json",
+          "evidence/_acceptance/20260306T055003Z/acceptance_report.json",
+          "evidence/_acceptance/20260306T072711Z/acceptance_report.json"
+        ]
+      },
+      "WP013-GH-AUTH": {
+        "status": "PASS"
+      },
+      "WP013-INPUTS": {
+        "status": "PASS",
+        "repo": "shw097-team/omoc-mvu-bridge-v3-greenfield",
+        "pr": "36",
+        "base": "main"
+      },
+      "WP013-BK-BEFORE": {
+        "status": "PASS"
+      },
+      "WP013-APPLY": {
+        "status": "PASS",
+        "note": "attempt recorded"
+      },
+      "WP013-BK-AFTER": {
+        "status": "PASS"
+      },
+      "WP013-VERIFY": {
+        "status": "PASS"
+      }
+    }
+  },
+  "wp014": {
+    "wp": "WP-014",
+    "ts": "20260306T121505Z",
+    "verdict": "PASS",
+    "blockers": [],
+    "tt": [],
+    "gates": {
+      "WP014-SUPERSEDED": {
+        "status": "PASS"
+      },
+      "WP014-GH-AUTH": {
+        "status": "PASS"
+      },
+      "WP014-DRIFT": {
+        "status": "PASS",
+        "repo": "shw097-team/omoc-mvu-bridge-v3-greenfield",
+        "base": "main"
+      },
+      "WP014-TT_EXPORT": {
+        "status": "PASS",
+        "path": "closure/tt_export.json"
+      }
+    }
+  },
+  "blockers": [],
+  "tt": []
+}

@@ -1,0 +1,24 @@
+{
+  "wp": "WP-014",
+  "ts": "20260306T121505Z",
+  "verdict": "PASS",
+  "blockers": [],
+  "tt": [],
+  "gates": {
+    "WP014-SUPERSEDED": {
+      "status": "PASS"
+    },
+    "WP014-GH-AUTH": {
+      "status": "PASS"
+    },
+    "WP014-DRIFT": {
+      "status": "PASS",
+      "repo": "shw097-team/omoc-mvu-bridge-v3-greenfield",
+      "base": "main"
+    },
+    "WP014-TT_EXPORT": {
+      "status": "PASS",
+      "path": "closure/tt_export.json"
+    }
+  }
+}
