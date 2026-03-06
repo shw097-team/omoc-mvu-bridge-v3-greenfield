@@ -12,10 +12,13 @@ jobs:
   build-test:
     name: ci
     runs-on: ubuntu-latest
+    permissions:
+      statuses: write
     steps:
       - uses: actions/checkout@v4
         with:
           fetch-depth: 0
+          persist-credentials: false
 
       - name: Install deps
         run: npm install
@@ -26,10 +29,28 @@ jobs:
       - name: Report status
         run: echo "ci completed"
 
+      - name: Emit omoc-gate status context (PR/merge_group)
+        if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          set -euo pipefail
+          SHA="${{ github.event.pull_request.head.sha || github.sha }}"
+          gh api repos/${{ github.repository }}/statuses/"$SHA" \
+            -f state="success" \
+            -f context="ci / omoc-gate" \
+            -f description="Gate condition satisfied" \
+            -f target_url="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
   omoc-gate:
     name: omoc-gate
     runs-on: ubuntu-latest
-    if: always()
+    if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+    permissions:
+      checks: write
     steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
       - name: always-report gate
         run: echo "ci / omoc-gate reported"
