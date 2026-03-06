@@ -1,0 +1,17 @@
+{
+  "schema": "omoc.acceptance_report.v1",
+  "ts": "20260306T165046Z",
+  "macro_goal": "Finalize handoff, export minimal artifacts, archive bundle, and prepare git push/PR",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "blockers": [],
+  "tt": [],
+  "artifacts": {
+    "export_dir": "docs/acceptance/final/20260306T165046Z",
+    "archive": "archives/20260306T165046Z_final_handoff_bundle.tar.gz",
+    "ts_prefixed_report": "evidence/_acceptance/20260306T165046Z/final_handoff/20260306T165046Z_acceptance_report.json",
+    "evidence_upload": "evidence/_acceptance/20260306T165046Z/final_handoff/20260306T165046Z_evidence_upload.txt"
+  },
+  "source_pass_report": "evidence/_acceptance/20260306T165046Z/final_handoff/acceptance_report.json",
+  "wrapped_from": "20260306T162746Z"
+}
