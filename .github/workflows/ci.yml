@@ -25,3 +25,11 @@ jobs:
 
       - name: Report status
         run: echo "ci completed"
+
+  omoc-gate:
+    name: omoc-gate
+    runs-on: ubuntu-latest
+    if: always()
+    steps:
+      - name: always-report gate
+        run: echo "ci / omoc-gate reported"
