@@ -1,0 +1,11 @@
+name: ci
+on:
+  pull_request:
+  merge_group:
+jobs:
+  omoc_gate:
+    name: omoc-gate
+    runs-on: ubuntu-latest
+    steps:
+      - name: report
+        run: echo ok
