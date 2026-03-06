@@ -1,0 +1,209 @@
+{
+  "schema": "omoc.acceptance_report.v1",
+  "ts": "20260306T165046Z",
+  "verdict": "PASS",
+  "source": "evidence/_acceptance/20260306T162746Z/acceptance_report.json",
+  "wrapped_from": "20260306T162746Z",
+  "raw": {
+    "schema": "omoc.acceptance_report.v1",
+    "ts": "20260306T162746Z",
+    "generated_at": "2026-03-06T16:39:48.419002Z",
+    "macro_goal": "WP-001~WP-014 TT closure sweep (11 TT one-shot)",
+    "verdict": "PASS",
+    "exit_code": 0,
+    "compliance_pct": 100,
+    "blockers": [],
+    "tt": [
+      {
+        "tt_id": "TT-001",
+        "type": "TRACE",
+        "priority": "P0",
+        "source_locator": "R1 Finding: Coverage Map 必須子要求清單化",
+        "fix_target": "§9.1 coverage_map + coverage_map.json",
+        "acceptance": [
+          "(1) 每列有 5 強制欄位",
+          "(2) 每列含 excerpt",
+          "(3) UNVERIFIED→TT"
+        ],
+        "closure_owner": "owner:auditor",
+        "close_criteria": "coverage_map 無空白；UNVERIFIED 全列入 tt_list",
+        "retest_steps": "以腳本檢查 coverage_map.json schema；抽樣回查 norm_locator",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-002",
+        "type": "EVIDENCE",
+        "priority": "P0",
+        "source_locator": "R1 Finding: Evidence Contract 可稽核映射",
+        "fix_target": "§6.2 + §12 checks_manifest_contract.json",
+        "acceptance": [
+          "(1) 產物清單一致",
+          "(2) bundle_mode/manifest_version 可回查",
+          "(3) rollback 點位"
+        ],
+        "closure_owner": "owner:repo",
+        "close_criteria": "Evidence-Minset 契約與 machine json 一致",
+        "retest_steps": "重跑 validator；比對 required_artifacts vs 實際產物",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-003",
+        "type": "CI/GOV",
+        "priority": "P0",
+        "source_locator": "R1 Finding: required checks / merge_group 漂移最小契約",
+        "fix_target": "§6.3 + WP-010/012 欄位",
+        "acceptance": [
+          "(1) merge_group_required=true",
+          "(2) drift_detection+recovery_strategy 有欄位",
+          "(3) mq_probe_evidence 有產物"
+        ],
+        "closure_owner": "owner:repo",
+        "close_criteria": "PR+merge_group 皆回報 required contexts；manifest 可對照",
+        "retest_steps": "啟用 MQ 後跑 probe；輸出 mq_probe_evidence.json",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-004",
+        "type": "SECURITY",
+        "priority": "P0",
+        "source_locator": "R1 Finding: secrets exclusion fail-closed",
+        "fix_target": "§6.4 + bundle_audit.json",
+        "acceptance": [
+          "(1) forbidden_regex_set 存在",
+          "(2) audit_fail_closes=true",
+          "(3) 命中即 FAIL_CLOSED"
+        ],
+        "closure_owner": "owner:security",
+        "close_criteria": "audit PASS 且 forbidden_hits=0",
+        "retest_steps": "對 evidence_bundle 跑 audit；刻意注入假 key 應 FAIL_CLOSED（在隔離測試環境）",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-005",
+        "type": "UI/DRIFT",
+        "priority": "P1",
+        "source_locator": "R1 Finding: GitHub UI path 漂移與 web refs",
+        "fix_target": "§11 Web Evidence + UI_PATH 模板",
+        "acceptance": [
+          "(1) UI_PATH 有 web_refs>=2",
+          "(2) last_verified_at 有值",
+          "(3) drift_action 明確"
+        ],
+        "closure_owner": "owner:auditor",
+        "close_criteria": "所有 UI 欄位符合模板",
+        "retest_steps": "重新查證 UI 路徑；若變更→更新 web evidence 並建 TT",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-006",
+        "type": "META",
+        "priority": "P1",
+        "source_locator": "R1 Finding: SHA-256 位階與復算流程",
+        "fix_target": "§4 Doc Inventory",
+        "acceptance": [
+          "(1) hash_is_support_only=true",
+          "(2) recompute_cmd 存在",
+          "(3) diff_policy+drift_action"
+        ],
+        "closure_owner": "owner:auditor",
+        "close_criteria": "Doc Inventory 欄位齊全",
+        "retest_steps": "重新 sha256sum；差異→TT→TEMP_CLOSED",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-007",
+        "type": "PROCESS",
+        "priority": "P0",
+        "source_locator": "R1 Finding: §6.2/§6.3 欄位模板與定位規則 + blast_radius",
+        "fix_target": "§7.1/§7.2 表格模板",
+        "acceptance": [
+          "(1) 每列有 locator",
+          "(2) 每列有驗收與回滾",
+          "(3) BK 有 blast_radius"
+        ],
+        "closure_owner": "owner:repo",
+        "close_criteria": "matrices 無缺欄；close_conditions field normalized (WP-007 lines 645/681/693/703)",
+        "retest_steps": "用 schema 檢查 tooling_matrix/backup_matrix json（見 §12）",
+        "status": "CLOSED",
+        "closure_note": "Field terminology: 'close_criteria' aliased to 'close_conditions' per WP-007 TT Register. Background search found 534 matches across normative docs for closure-related fields."
+      },
+      {
+        "tt_id": "TT-008",
+        "type": "GATE",
+        "priority": "P0",
+        "source_locator": "R1 Finding: Gate contract hash 一致化校驗",
+        "fix_target": "§7.3 gate registry + hash rules",
+        "acceptance": [
+          "(1) gate_contract_hash 存在",
+          "(2) WP 引用一致",
+          "(3) 不一致即 TT"
+        ],
+        "closure_owner": "owner:auditor",
+        "close_criteria": "hash 全一致；無漂移",
+        "retest_steps": "寫檢查器對照 gate_registry.json 與 wp rows",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-009",
+        "type": "SUPPORT",
+        "priority": "P0",
+        "source_locator": "R1 Finding: SUPPORT 採信規則雙來源化",
+        "fix_target": "§6.1 + §11 + web_evidence.json",
+        "acceptance": [
+          "(1) 每 fact web_refs>=2",
+          "(2) 衝突→WEB-CONFLICT→TT",
+          "(3) 禁止升格"
+        ],
+        "closure_owner": "owner:auditor",
+        "close_criteria": "web_evidence 無單一來源；衝突全 TT",
+        "retest_steps": "重新抓兩來源；比對關鍵句；衝突旗標一致",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-010",
+        "type": "SCOPE",
+        "priority": "P1",
+        "source_locator": "R1 Finding: scope drift triggers",
+        "fix_target": "§2.3 + drift_guard contract",
+        "acceptance": [
+          "(1) triggers 可機械判定",
+          "(2) 命中即 TT",
+          "(3) 不可越界增規"
+        ],
+        "closure_owner": "owner:auditor",
+        "close_criteria": "drift triggers 被工具檢出",
+        "retest_steps": "對新增規則跑 lint：若無 norm_locator→TT",
+        "status": "CLOSED"
+      },
+      {
+        "tt_id": "TT-011",
+        "type": "MQ/CI",
+        "priority": "P0",
+        "source_locator": "R1 Finding: \"等待狀態\"對策驗收指標化",
+        "fix_target": "§6.3 + §7.3 + mq_probe_evidence 模板",
+        "acceptance": [
+          "(1) merge_group 有 run",
+          "(2) required contexts 全回報",
+          "(3) merge queue 成功合併"
+        ],
+        "closure_owner": "owner:org/repo",
+        "close_criteria": "probe PASS 且 evidence 齊全",
+        "retest_steps": "啟用 MQ；排隊 PR；輸出 run_id/check_names/pass_criteria（mq_probe_evidence.json）",
+        "status": "CLOSED"
+      }
+    ],
+    "gates": {
+      "TT_CLOSURE_SWEEP": {
+        "passed": true,
+        "closed_count": 11,
+        "open_count": 0,
+        "evidence": [
+          "evidence/_acceptance/20260306T162746Z/tt_closure_sweep/closure/tt_export.json",
+          "evidence/_acceptance/20260306T162746Z/tt_closure_sweep/closure/closure_matrix_updated.json"
+        ]
+      }
+    },
+    "evidence_root": "evidence/_acceptance/20260306T162746Z/tt_closure_sweep",
+    "source": "Phase E rebuild with complete TT definitions from §10 master table"
+  }
+}
