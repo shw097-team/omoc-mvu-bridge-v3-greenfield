@@ -1,4 +1,4 @@
-name: ci
+name: omoc
 
 on:  
   pull_request:  
@@ -202,8 +202,8 @@ jobs:
   # Must run for PR/merge_group to ensure 'ci-gate' status check is reported
   # Even if review job fails, this job must complete to report status
   # -----------------------------  
-  omoc_gate:
-    name: omoc-gate
+  ci_gate:
+    name: ci-gate
     if: ${{ (github.event_name == 'pull_request' || github.event_name == 'merge_group') && always() }}  
     needs: [review]  
     runs-on: ubuntu-latest  
@@ -212,8 +212,8 @@ jobs:
     steps:  
       - name: Terminator (never skip for PR/merge_group)  
         run: |  
-          echo "Terminator: ensures canonical check 'omoc-gate' is produced even if upstream fails."
+          echo "Terminator: ensures canonical check 'ci-gate' is produced even if upstream fails."
           echo "This job reports the status check context needed for branch protection rules."
 
       # Check context is automatically created by GitHub Actions
-      # as '<workflow-name> / <job-name>' = 'ci / omoc-gate'
+      # as '<workflow-name> / <job-name>' = 'omoc / ci-gate'
