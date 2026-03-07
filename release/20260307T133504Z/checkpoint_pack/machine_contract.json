@@ -1,0 +1,64 @@
+{
+  "contract_version": "1.0.0",
+  "checkpoint_ts": "20260307T133504Z",
+  "sealed_source_batch": "20260307T125325Z",
+  "contract_type": "lightweight_handoff_checkpoint",
+  "bindings": {
+    "role_mode": "SPINE",
+    "objective": "push lightweight handoff/checkpoint pack only",
+    "no_heredoc": true,
+    "no_oral_pass": true
+  },
+  "immutability_constraints": {
+    "do_not_modify": [
+      "evidence/_acceptance/20260307T005101Z/**",
+      "evidence/_acceptance/20260307T125325Z/**",
+      "release/20260307T125325Z/**"
+    ],
+    "locked_until": "explicit_unlock_instruction"
+  },
+  "push_manifest": {
+    "stage_only": [
+      "release/20260307T133504Z/checkpoint_pack/HANDOFF_FINAL.md",
+      "release/20260307T133504Z/checkpoint_pack/COMPLETION_SUMMARY.md",
+      "release/20260307T133504Z/checkpoint_pack/ARCHIVE_MANIFEST.json",
+      "release/20260307T133504Z/checkpoint_pack/DELIVERY_MANIFEST.json",
+      "release/20260307T133504Z/checkpoint_pack/CHECKPOINT_POINTERS.json",
+      "release/20260307T133504Z/checkpoint_pack/CHECKPOINT_README.md",
+      "release/20260307T133504Z/checkpoint_pack/machine_contract.json",
+      "release/20260307T133504Z/checkpoint_pack/self_check.json"
+    ],
+    "exclude_from_stage": [
+      "evidence/_acceptance/**",
+      "evidence/_audit/**",
+      "upload/**",
+      "docs/spine/clean_spec_exports/**",
+      "release/**/TT_EXPORT.json",
+      "release/**/FINAL_CLOSEOUT_VERIFICATION.json"
+    ]
+  },
+  "validation_gates": {
+    "sealed_source_batch_integrity": "PASS",
+    "hash_parity_primary_compat": "PASS",
+    "no_excluded_file_staged": "PASS",
+    "checkpoint_docs_point_to_exact_sealed_batch": "PASS"
+  },
+  "guardrails": [
+    "DO_NOT push evidence/_acceptance/**",
+    "DO_NOT push upload/**",
+    "DO_NOT push docs/spine/clean_spec_exports/**",
+    "DO_NOT execute external promotion, external archive, communication, deployment, Phase9",
+    "DO_NOT modify sealed batches 20260307T005101Z or 20260307T125325Z",
+    "FAIL if any excluded file is staged",
+    "FAIL if checkpoint docs do not point to exact sealed batch locators"
+  ],
+  "success_criteria": {
+    "lightweight_checkpoint_pack_pushed": true,
+    "local_evidence_naming_valid": true,
+    "sealed_source_batches_unchanged": true,
+    "pushed_scope_correct": true,
+    "final_verdict_from_artifacts": true
+  },
+  "execution_mode": "no_reconfirmation_unless_hard_blocker",
+  "next_instruction_status": "awaiting_explicit_instruction"
+}

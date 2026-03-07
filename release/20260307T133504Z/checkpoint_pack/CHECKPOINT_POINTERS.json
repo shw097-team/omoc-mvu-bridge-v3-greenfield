@@ -1,0 +1,36 @@
+{
+  "checkpoint_ts": "20260307T133504Z",
+  "sealed_source_batch": "20260307T125325Z",
+  "authoritative_batch": "20260307T005101Z",
+  "sealed_source_paths": {
+    "primary_acceptance_report": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "compat_acceptance_report": "evidence/_acceptance/20260307T125325Z/acceptance_report.json",
+    "parity_sha256": "cc606b9ff1d5661fb4cf5316bc3a3e8a560824638a2003dc64ca4cd7881c561b",
+    "closure_report": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_closure_report.json",
+    "reconciled_summary": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report_reconciled_summary.json",
+    "execution_summary": "evidence/_acceptance/20260307T125325Z/EXECUTION_SUMMARY.txt"
+  },
+  "current_run_evidence": {
+    "primary_acceptance_report": "evidence/_acceptance/20260307T133504Z/20260307T133504Z_acceptance_report.json",
+    "compat_acceptance_report": "evidence/_acceptance/20260307T133504Z/acceptance_report.json",
+    "closure_report": "evidence/_acceptance/20260307T133504Z/20260307T133504Z_closure_report.json",
+    "reconciled_summary": "evidence/_acceptance/20260307T133504Z/20260307T133504Z_acceptance_report_reconciled_summary.json",
+    "execution_summary": "evidence/_acceptance/20260307T133504Z/EXECUTION_SUMMARY.txt",
+    "evidence_upload_manifest": "evidence/_acceptance/20260307T133504Z/upload/20260307T133504Z_evidence_upload.txt"
+  },
+  "audit_outputs": {
+    "checkpoint_source_verification": "evidence/_audit/20260307T133504Z/checkpoint_source_verification.json",
+    "checkpoint_pack_scope": "evidence/_audit/20260307T133504Z/checkpoint_pack_scope.json",
+    "checkpoint_push_exclusion_list": "evidence/_audit/20260307T133504Z/checkpoint_push_exclusion_list.json",
+    "git_stage_manifest": "evidence/_audit/20260307T133504Z/git_stage_manifest.json",
+    "git_push_receipt": "evidence/_audit/20260307T133504Z/git_push_receipt.json"
+  },
+  "immutability_locks": [
+    "evidence/_acceptance/20260307T005101Z/**",
+    "evidence/_acceptance/20260307T125325Z/**",
+    "release/20260307T125325Z/**"
+  ],
+  "validation_status": "PASS",
+  "checksum_parity": "PASS",
+  "ready_for_push": true
+}

@@ -1,0 +1,57 @@
+{
+  "archive_manifest_version": "1.0.0",
+  "checkpoint_ts": "20260307T133504Z",
+  "sealed_source_batch": "20260307T125325Z",
+  "archive_scope": {
+    "included": [
+      "release/20260307T133504Z/checkpoint_pack/HANDOFF_FINAL.md",
+      "release/20260307T133504Z/checkpoint_pack/COMPLETION_SUMMARY.md",
+      "release/20260307T133504Z/checkpoint_pack/ARCHIVE_MANIFEST.json",
+      "release/20260307T133504Z/checkpoint_pack/DELIVERY_MANIFEST.json",
+      "release/20260307T133504Z/checkpoint_pack/CHECKPOINT_POINTERS.json",
+      "release/20260307T133504Z/checkpoint_pack/CHECKPOINT_README.md",
+      "release/20260307T133504Z/checkpoint_pack/machine_contract.json",
+      "release/20260307T133504Z/checkpoint_pack/self_check.json"
+    ],
+    "excluded": [
+      "evidence/_acceptance/**",
+      "evidence/_audit/**",
+      "upload/**",
+      "docs/spine/clean_spec_exports/**",
+      "release/**/TT_EXPORT.json",
+      "release/**/FINAL_CLOSEOUT_VERIFICATION.json"
+    ]
+  },
+  "sealed_source_references": {
+    "acceptance_report_primary": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "acceptance_report_compat": "evidence/_acceptance/20260307T125325Z/acceptance_report.json",
+    "closure_report": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_closure_report.json",
+    "reconciled_summary": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report_reconciled_summary.json"
+  },
+  "current_run_evidence": {
+    "acceptance_report_primary": "evidence/_acceptance/20260307T133504Z/20260307T133504Z_acceptance_report.json",
+    "acceptance_report_compat": "evidence/_acceptance/20260307T133504Z/acceptance_report.json",
+    "closure_report": "evidence/_acceptance/20260307T133504Z/20260307T133504Z_closure_report.json",
+    "reconciled_summary": "evidence/_acceptance/20260307T133504Z/20260307T133504Z_acceptance_report_reconciled_summary.json"
+  },
+  "audit_trail": {
+    "root": "evidence/_audit/20260307T133504Z/",
+    "artifacts": [
+      "checkpoint_source_verification.json",
+      "checkpoint_pack_scope.json",
+      "checkpoint_push_exclusion_list.json",
+      "git_stage_manifest.json",
+      "git_push_receipt.json"
+    ]
+  },
+  "validation_summary": {
+    "sealed_batch_integrity": "PASS",
+    "hash_parity": "PASS",
+    "checkpoint_structure": "PASS",
+    "push_scope_clean": "PASS",
+    "immutability_locks": "PASS",
+    "all_gates_pass": true
+  },
+  "status": "READY_FOR_GIT_PUSH",
+  "push_policy": "lightweight_handoff_pack_only"
+}

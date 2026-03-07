@@ -1,0 +1,46 @@
+{
+  "delivery_manifest_version": "1.0.0",
+  "checkpoint_ts": "20260307T133504Z",
+  "sealed_source_batch": "20260307T125325Z",
+  "delivery_scope": {
+    "git_push_target_files": [
+      "release/20260307T133504Z/checkpoint_pack/HANDOFF_FINAL.md",
+      "release/20260307T133504Z/checkpoint_pack/COMPLETION_SUMMARY.md",
+      "release/20260307T133504Z/checkpoint_pack/ARCHIVE_MANIFEST.json",
+      "release/20260307T133504Z/checkpoint_pack/DELIVERY_MANIFEST.json",
+      "release/20260307T133504Z/checkpoint_pack/CHECKPOINT_POINTERS.json",
+      "release/20260307T133504Z/checkpoint_pack/CHECKPOINT_README.md",
+      "release/20260307T133504Z/checkpoint_pack/machine_contract.json",
+      "release/20260307T133504Z/checkpoint_pack/self_check.json"
+    ],
+    "local_evidence_root": "evidence/_acceptance/20260307T133504Z/",
+    "audit_trail_root": "evidence/_audit/20260307T133504Z/",
+    "sealed_source_reference": "evidence/_acceptance/20260307T125325Z/"
+  },
+  "immutability_bindings": {
+    "do_not_push": [
+      "evidence/_acceptance/20260307T005101Z/**",
+      "evidence/_acceptance/20260307T125325Z/**",
+      "release/20260307T125325Z/**"
+    ],
+    "reason": "sealed baselines, locked for integrity preservation"
+  },
+  "git_push_instructions": {
+    "branch": "current working branch only",
+    "stage": "release/20260307T133504Z/checkpoint_pack/**",
+    "commit_message": "checkpoint(spine): sealed lightweight handoff pack for post-20260307T125325Z baseline",
+    "push": "current branch",
+    "verify_push_success": true
+  },
+  "post_push_artifacts": {
+    "git_stage_manifest": "evidence/_audit/20260307T133504Z/git_stage_manifest.json",
+    "git_push_receipt": "evidence/_audit/20260307T133504Z/git_push_receipt.json"
+  },
+  "success_criteria": {
+    "only_checkpoint_pack_files_staged": true,
+    "excluded_files_not_staged": true,
+    "commit_message_matches_spec": true,
+    "git_push_succeeds": true
+  },
+  "status": "READY_FOR_PUSH"
+}

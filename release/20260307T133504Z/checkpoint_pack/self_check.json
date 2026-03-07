@@ -1,0 +1,62 @@
+{
+  "self_check_ts": "20260307T133504Z",
+  "checks": {
+    "sealed_batch_20260307T005101Z_exists": {
+      "status": "PASS",
+      "path": "evidence/_acceptance/20260307T005101Z",
+      "verified": true
+    },
+    "sealed_batch_20260307T125325Z_exists": {
+      "status": "PASS",
+      "path": "evidence/_acceptance/20260307T125325Z",
+      "verified": true
+    },
+    "release_20260307T125325Z_exists": {
+      "status": "PASS",
+      "path": "release/20260307T125325Z",
+      "verified": true
+    },
+    "hash_parity_20260307T125325Z": {
+      "status": "PASS",
+      "primary_sha256": "cc606b9ff1d5661fb4cf5316bc3a3e8a560824638a2003dc64ca4cd7881c561b",
+      "compat_sha256": "cc606b9ff1d5661fb4cf5316bc3a3e8a560824638a2003dc64ca4cd7881c561b",
+      "parity": true
+    },
+    "checkpoint_pack_structure": {
+      "status": "PASS",
+      "files": [
+        "HANDOFF_FINAL.md",
+        "COMPLETION_SUMMARY.md",
+        "ARCHIVE_MANIFEST.json",
+        "DELIVERY_MANIFEST.json",
+        "CHECKPOINT_POINTERS.json",
+        "CHECKPOINT_README.md",
+        "machine_contract.json",
+        "self_check.json"
+      ],
+      "all_present": true
+    },
+    "push_scope_clean": {
+      "status": "PASS",
+      "excluded_files_staged": false,
+      "validation": "no evidence_acceptance, upload, or TT_EXPORT files in scope"
+    },
+    "immutability_locks_respected": {
+      "status": "PASS",
+      "locked_dirs": [
+        "evidence/_acceptance/20260307T005101Z",
+        "evidence/_acceptance/20260307T125325Z",
+        "release/20260307T125325Z"
+      ],
+      "modified": false
+    },
+    "checkpoint_docs_point_to_sealed_batch": {
+      "status": "PASS",
+      "sealed_batch_reference": "20260307T125325Z",
+      "all_locators_exact": true
+    }
+  },
+  "overall_status": "PASS",
+  "ready_for_git_push": true,
+  "blocker_count": 0
+}
