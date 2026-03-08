@@ -1,0 +1,107 @@
+{
+  "schema": "omoc.completion_index.v1",
+  "ts": "20260308T052442Z",
+  "mode": "TUI_CARD_COMPLETION_EVIDENCE_GENERATION",
+  "primary_verdict_ts": "20260308T013645Z",
+  "minset_ts": "20260308T042054Z",
+  "minset_path": "docs/acceptance/final/20260306T165046Z/",
+  "generated_at_utc": "2026-03-08T05:24:42Z",
+  "artifacts": {
+    "triplet": [
+      {
+        "type": "acceptance_report",
+        "path": "evidence/_acceptance/20260308T013645Z/triplet/20260308T013645Z_acceptance_report.json",
+        "sha256": "2280b3c51ce32f4d4c2ee6ae8164fad8e128c8018967d820e98c9b21006845bf",
+        "size_bytes": 7397
+      },
+      {
+        "type": "evidence_index",
+        "path": "evidence/_acceptance/20260308T013645Z/triplet/20260308T013645Z_evidence_index.md",
+        "sha256": "6812000f6ee3e20d7ec24781c87df6867450c8dee220136367034630a4a5682c",
+        "size_bytes": 12847
+      },
+      {
+        "type": "evidence_bundle",
+        "path": "evidence/_acceptance/20260308T013645Z/triplet/20260308T013645Z_evidence_bundle.tgz",
+        "sha256": "6eba6fa5b1b0631b388bc0adc80705de4cbe90acb9936def5ac0a904df7fbf9f",
+        "size_bytes": 45056
+      }
+    ],
+    "minset_summary": [
+      {
+        "type": "minset_push_summary",
+        "path": "evidence/_acceptance/20260308T042054Z/audit/20260308T042054Z_minset_push_summary.md",
+        "sha256": "bbbf2ad9d517fc4a5285078b76db80e1151774a75f350e197a2a1f07f8c148f2",
+        "size_bytes": 8932
+      }
+    ],
+    "probes": [
+      {
+        "type": "minset_remote_probe",
+        "path": "evidence/_acceptance/20260308T052442Z/audit/20260308T052442Z_minset_remote_probe.txt",
+        "sha256": "03fbbff291bb550e69feaf81f8db860fa70e79a54d972cbc76ccde3ca2b3f563",
+        "remote": "origin",
+        "remote_branch": "origin/main",
+        "minset_files_found": 7
+      },
+      {
+        "type": "minset_local_probe",
+        "path": "evidence/_acceptance/20260308T052442Z/audit/20260308T052442Z_minset_local_probe.txt",
+        "sha256": "a55e20022cbab8424e685adcdb16af5699dc1371460e796cd8606f4037e9ca18",
+        "minset_files_found": 7
+      },
+      {
+        "type": "versioning_policy_probe",
+        "path": "evidence/_acceptance/20260308T052442Z/audit/20260308T052442Z_versioning_policy_probe.txt",
+        "sha256": "47814856be6392db9fbf5738dc86ebde1d67801e434b091575769b68b0912178",
+        "evidence_excluded": true,
+        "minset_versioned": true
+      }
+    ],
+    "minset_directory": [
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/20260306T165046Z_acceptance_report.json",
+        "sha256": "104e1ec93d2ae165509af423d73baca11ba1c767bb649a8dce7feb40cd3c170f"
+      },
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/20260306T165046Z_acceptance_report_wrapped.json",
+        "sha256": "330490f8bf6ec3c68fbf2607b7d8db1c5418d1fdef15cd9f75cbcf11b6452e6e"
+      },
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/20260306T165046Z_evidence_upload.txt",
+        "sha256": "c1b4ddb72b46315126937bafed2c0ee7c2980bd0d5caf3086ba162a6ed8a8aa7"
+      },
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/20260306T165046Z_finalize_acceptance_report.json",
+        "sha256": "a7c12be303644b77ef6cb511e3164dc0ad16f83c6d0226b80e0e4bc79da03e0f"
+      },
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/README.md",
+        "sha256": "5532d1cb564920203886375530642b31a86fe60218aa07d0b2195c17210a9052"
+      },
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/acceptance_report.json",
+        "sha256": "104e1ec93d2ae165509af423d73baca11ba1c767bb649a8dce7feb40cd3c170f"
+      },
+      {
+        "type": "minset_file",
+        "path": "docs/acceptance/final/20260306T165046Z/supporting/acceptance_report.json",
+        "sha256": "104e1ec93d2ae165509af423d73baca11ba1c767bb649a8dce7feb40cd3c170f"
+      }
+    ]
+  },
+  "index_statistics": {
+    "total_artifacts": 15,
+    "triplet_count": 3,
+    "minset_summary_count": 1,
+    "probe_count": 3,
+    "minset_files_count": 7,
+    "all_files_hashed": true
+  }
+}
