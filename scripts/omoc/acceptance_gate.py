@@ -302,6 +302,25 @@ def main():
     }
     
     out_path = pathlib.Path(args.accept_out)
+    
+    # PATCH: Enforce TS-prefix on output filename per LOCKED_RULES [04]
+    # Extract RUN TS from output path (second component in parent dir if in evidence/_acceptance/<TS>/...)
+    out_basename = out_path.name
+    run_ts = None
+    try:
+        path_parts = out_path.parts
+        if len(path_parts) >= 2 and path_parts[-3] == "_acceptance":
+            run_ts = path_parts[-2]
+    except (IndexError, KeyError):
+        pass
+    
+    if not run_ts:
+        run_ts = accept_dir.name
+    
+    if not out_basename.startswith(f"{run_ts}_"):
+        out_path = out_path.parent / f"{run_ts}_{out_basename}"
+        print(f"[acceptance_gate.py] Auto-prefixing output: {run_ts}_{out_basename}", file=sys.stderr)
+    
     out_path.parent.mkdir(parents=True, exist_ok=True)
     out_path.write_text(json.dumps(report, indent=2) + "\n")
     
