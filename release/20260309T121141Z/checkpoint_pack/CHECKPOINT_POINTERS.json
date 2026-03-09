@@ -1,0 +1,14 @@
+{
+  "base_ts": "20260309T115405Z",
+  "primary_report": "evidence/_acceptance/20260309T115405Z/20260309T115405Z_acceptance_report.json",
+  "supporting": [
+    "evidence/_acceptance/20260309T115405Z/authority_chain_manifest.json",
+    "evidence/_acceptance/20260309T115405Z/authority_locator_index.tsv",
+    "evidence/_acceptance/20260309T115405Z/carry_forward_gate_check.json",
+    "evidence/_acceptance/20260309T115405Z/carry_forward_local_reports.tsv",
+    "evidence/_acceptance/20260309T115405Z/gate_transition.json",
+    "evidence/_acceptance/20260309T115405Z/lane_p_convergence_dossier.json",
+    "evidence/_acceptance/20260309T115405Z/show_toplevel.txt",
+    "evidence/_acceptance/20260309T115405Z/upload/20260309T115405Z_evidence_upload.txt"
+  ]
+}
