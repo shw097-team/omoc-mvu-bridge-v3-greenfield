@@ -1,0 +1,6 @@
+{
+  "ts": "20260309T121141Z",
+  "kind": "checkpoint_minset",
+  "raw_evidence_not_in_git": true,
+  "primary_pointer": "CHECKPOINT_POINTERS.json"
+}
