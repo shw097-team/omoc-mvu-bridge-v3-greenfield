@@ -1,0 +1,67 @@
+{
+  "trigger": "TUI_CARD",
+  "card_id": "15CA-ROSTER-RECONCILE-OC-OMO-ROLLout",
+  "mode": "EXECUTE_NOW_FAIL_CLOSED",
+  "timestamp": "20260330T013431Z",
+  "objective": "以 WT-FULL 為主施工終端，先做 canonical roster 對帳，再完成 OpenCode/Oh-My 隔離修正、TS-prefixed acceptance evidence 落盤、required checks/merge_group 對齊掃描、single global adjudicator",
+  "authority_files": [
+    "Spartoi-OMOC_SubP1-LITE+MVP_15CA實作前準備_RBWI合冊.md",
+    "Spartoi-OMOC_SubP1-LITE+MVP_中央工程正文r1.md",
+    "Spartoi-OMOC_系統需求正文r3.md",
+    "Spartoi-OMOC_SubP1-LITE+MVP_總控控制平面_v2.1.0-r2.md",
+    "Spartoi-OMOC_SubP1-LITE+MVP_藍圖_v1.3.0-r2.md",
+    "OMOC_WP-010+RB+WI_v4.0.1-r2.md",
+    "OMOC_WP-011+RB+WI_v4.0.1-r2.md",
+    "OMOC_WP-012+RB+WI_v4.0.1-r2.md",
+    "OMOC_WP-013+RB+WI_v4.0.1-r2.md",
+    "OMOC_WP-014+RB+WI_v4.0.1-r2.md",
+    "OMOC_施工RBWI_v4.0.1-r1.md",
+    "OMOC_施工skills_v4.0.1-r2.md",
+    "WORKTREE_ALLOCATION.tsv",
+    "ZONE_SUBSYSTEM_ROSTER.tsv",
+    "TEST_TRACKING_LIST.tsv"
+  ],
+  "root_strategy": {
+    "primary_terminal_root": "/workspaces/omoc-wt-full",
+    "readonly_roots_default": ["WT-SPINE", "bridge"],
+    "derive_canonical_roster_from_repo_sidecars": true,
+    "do_not_use_fixed_root_count": true
+  },
+  "naming_contract": {
+    "ts_format": "YYYYMMDDThhmmssZ",
+    "ts_value": "20260330T013431Z",
+    "acceptance_report_filename": "<TS>_acceptance_report.json",
+    "evidence_upload_filename": "<TS>_evidence_upload.txt"
+  },
+  "execution_phase": "ROUND_0_ASSUMPTION_CHECKS",
+  "required_outputs": [
+    "evidence/_acceptance/$TS/worktree_registry.tsv",
+    "evidence/_acceptance/$TS/canonical_roster.tsv",
+    "evidence/_acceptance/$TS/root_role_map.tsv",
+    "evidence/_acceptance/$TS/plugin_scope_manifest.json",
+    "evidence/_acceptance/$TS/session_store_map.tsv",
+    "evidence/_acceptance/$TS/config_winner_registry.tsv",
+    "evidence/_acceptance/$TS/upload_naming.tsv",
+    "evidence/_acceptance/$TS/acceptance_slot_map.tsv",
+    "evidence/_acceptance/$TS/multi_zone_preflight_report.json",
+    "evidence/_acceptance/$TS/anti_scope_scan.json",
+    "evidence/_acceptance/$TS/rulesets_snapshot.json",
+    "evidence/_acceptance/$TS/checks_observed_pr.json",
+    "evidence/_acceptance/$TS/checks_observed_merge_group.json",
+    "evidence/_acceptance/$TS/checks_diff.json",
+    "evidence/_acceptance/$TS/preflight_workflows_scan.json",
+    "evidence/_acceptance/$TS/<TS>_evidence_upload.txt",
+    "evidence/_acceptance/$TS/global/<TS>_acceptance_report.json"
+  ],
+  "stop_rules": [
+    "no_secrets_echo",
+    "no_fake_pass_without_repo_sidecar_plus_live_reconciliation",
+    "no_fixed_root_count_assumption",
+    "no_global_plugin_bleed",
+    "no_shared_session_history_cache",
+    "no_unknown_keys_silently_ignored",
+    "no_cross_root_write_overlap",
+    "no_unprefixed_acceptance_report_json"
+  ],
+  "global_adjudicator": "evidence/_acceptance/$TS/global/<TS>_acceptance_report.json"
+}

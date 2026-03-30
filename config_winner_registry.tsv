@@ -1,0 +1,25 @@
+root_path	opencode_json_present	opencode_jsonc_present	oh_my_opencode_jsonc_present	oh_my_openagent_jsonc_present	conflict_status	winner_status
+/workspaces/omoc-mvu-bridge-v3-greenfield	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-lane-f-gov	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-lane-f-spine	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-backtest	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-collab	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-corpus	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-distill	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-dsl	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-execute	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-govern	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-method	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-perform	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-select	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-ta	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-translate	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-ui	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-watch	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-ss-wrc	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-zone-5	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-zone-a	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-zone-b	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-15ca-worktrees/wt-zone-c	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-wt-full	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no
+/workspaces/omoc-wt-spine	yes	yes	yes	no	yes	opencode.jsonc(unparseable); doctor_pass=no

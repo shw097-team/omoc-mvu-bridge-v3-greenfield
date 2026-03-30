@@ -1,0 +1,23 @@
+{
+  "mode": "TUI_CARD",
+  "has_three_delimiter_sections": true,
+  "has_machine_contract_json": true,
+  "has_self_check_json": true,
+  "has_no_heredoc": true,
+  "blocks_count": 11,
+  "blocks_count_ok": true,
+  "max_lines_in_any_block": 3,
+  "lines_per_block_ok": true,
+  "wt_full_only": true,
+  "wt_spine_forbidden": true,
+  "ts_prefixed_acceptance_required": true,
+  "required_outputs_declared": true,
+  "global_primary_report_declared": true,
+  "required_outputs_generated": 22,
+  "zone_reports_generated": 4,
+  "subsystem_reports_generated": 15,
+  "total_evidence_files": 41,
+  "final_verdict": "TEMP_CLOSED",
+  "gates_pass": 5,
+  "gates_total": 7
+}
