@@ -1,13 +1,15 @@
 {
-  "ts": "20260331T160126Z",
+  "ts": "20260331T165212Z",
   "round": 3,
+  "re_entry_cycle": "proof_hold_deadline_tracking",
   "release_allowed": false,
-  "blockers": ["All 5 external owner proofs missing (see contracts/route_out_registry.json)"],
+  "blockers": ["All 5 external owner proofs missing (see contracts/route_out_registry.json); deadline not yet passed; maintaining hold"],
   "gate_logic": {
-    "if_all_5_proofs_found_valid": "release_allowed transitions to true; ROUND3_GATE_OPEN generated",
-    "if_any_proof_missing_or_invalid": "release_allowed remains false; ROUND3_GATE_BLOCKED generated; proofs may be resubmitted"
+    "if_all_5_proofs_found_valid_before_deadline": "release_allowed transitions to true; ROUND3_GATE_OPEN generated; proceed to distill_engine",
+    "if_any_proof_missing_or_invalid_before_deadline": "release_allowed remains false; ROUND3_GATE_BLOCKED generated; proofs may be resubmitted",
+    "if_any_proof_missing_and_deadline_passed": "release_allowed remains false; ROUND3_DEADLINE_MISSED generated; escalation required"
   },
-  "current_state": "ROUND3_GATE_BLOCKED (awaiting owner proof uploads)",
+  "current_state": "ROUND3_GATE_BLOCKED (awaiting owner proof uploads; deadline 2026-04-07T23:59:59Z; 7 days remaining)",
   "landing_paths": {
     "Package B": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/",
     "Package D": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/",
@@ -15,5 +17,5 @@
     "CA-DSL": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/",
     "Ops": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/"
   },
-  "fail_closed_policy": "Enforced; no release without all proofs; no auto-execution of distill_engine until gate opened"
+  "fail_closed_policy": "Enforced; no release without all proofs; no auto-execution of distill_engine until gate opened; deadline-aware escalation if proofs not received"
 }
