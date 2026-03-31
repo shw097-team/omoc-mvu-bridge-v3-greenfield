@@ -1,0 +1,10 @@
+file	20260309T115405Z_acceptance_report.json
+file	authority_chain_manifest.json
+file	authority_locator_index.tsv
+file	carry_forward_gate_check.json
+file	carry_forward_local_reports.tsv
+file	gate_transition.json
+file	lane_p_convergence_dossier.json
+file	show_toplevel.txt
+primary_acceptance	/workspaces/omoc-wt-full/evidence/_acceptance/20260309T115405Z/20260309T115405Z_acceptance_report.json
+verdict	PASS

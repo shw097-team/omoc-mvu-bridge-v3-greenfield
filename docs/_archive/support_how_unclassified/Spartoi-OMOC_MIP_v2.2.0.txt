@@ -1,0 +1,1957 @@
+﻿Spartoi-OMOC_MIP_v2.2.0 
+________________
+
+
+目錄（TOC）
+
+§0. Preflight & Governance (前置檢查與治理) [ANCHOR:MIP-V220-SEC0]
+* 0.1 Document Metadata (文件後設資料) [ANCHOR:MIP-V220-0-1-META]
+   * 定義文檔 ID (Spartoi_MIP_v2.2.0)、狀態 (DEFINITIVE)、發布日期與維護者角色 (Auditor)。
+   * 來源： MIP v2.0.0 §0.1
+* 0.2 Preflight Report (前置檢查報告：FOUND + Locator Proof) [ANCHOR:MIP-V220-0-2-PREFLIGHT]
+   * 列出所有輸入 SSOT 及其「可稽核定位點」(Locator Proof)，取代 v2.1.0 的自我宣告 PASS。
+   * 解決審查 A/B：A:MAJ-011, CR-MIP-005 (Locator Proof 不足)。
+   * 來源： MIP v2.0.0 §Preflight, 審查報告
+* 0.3 Authority Stack & Conflict Rules (權威堆疊與衝突裁決) [ANCHOR:MIP-V220-0-3-AUTHORITY]
+   * 確立 L1~L6 權威順位，修正 v2.1.0 Plan 層級定義不清問題，嚴格對齊 Blueprint v2.2。
+   * 來源： Blueprint v2.2 §Authority, MIP v2.1.0 §0.3, 審查報告
+* 0.4 Scope Lock (範疇鎖定：僅路由不越權) [ANCHOR:MIP-V220-0-4-SCOPE]
+   * 定義 In-Scope (索引/映射/外導) 與 Out-of-Scope (需求/架構/Schema/操作)。
+   * 來源： MIP v2.0.0 §2, MIP v2.1.0 §0.4
+* 0.5 Supersedence & Absorption Register (退役與吸收註冊表) [ANCHOR:MIP-V220-0-5-SUPERSEDE]
+   * 新增「上位背書證據 (Authority Backing)」欄位，解決 v2.1.0 自我授權問題。
+   * 來源： MIP v2.0.0 §1.2, 審查報告
+§1. Immutable 15 CA Registry (15子系統白名單) [ANCHOR:MIP-V220-SEC1]
+* 1.1 15 CA Master Table (可機械解析總表) [ANCHOR:MIP-V220-1-1-MASTER]
+   * 列出 Stable ID、Display Name (引用改名方案)、Macro Module、核心職責、強制 Gate 與 Key Evidence。
+   * 來源： 改名方案 §3.4, MIP v2.0.0 §2.1, ARCH v8.1 §4.1
+* 1.2 Subsystem Mapping & Routing (子系統路由映射) [ANCHOR:MIP-V220-1-2-MAPPING]
+   * 定義 15 CA 對應之 Pipeline (A/B/C/Cross) 歸屬。
+   * 來源： MIP v2.0.0 §4.2, 15CA 重構 §Pipeline Map
+* 1.3 Anti-Drift Rules (反漂移規則：禁增第16 CA) [ANCHOR:MIP-V220-1-3-ANTIDRIFT]
+   * 鎖定 Stable ID 不可變、禁止新增 CA-FIREWALL/CA-AGENT。
+   * 來源： MIP v2.0.0 §2.1, 15CA 重構 §Non-negotiables
+§2. Unified Data Backbone (統一資料主幹) [ANCHOR:MIP-V220-SEC2]
+* 2.1 Backbone Architecture Index (骨幹架構索引) [ANCHOR:MIP-V220-2-1-ARCH]
+   * 引用 Pipeline-A+B DB 方案，定義 Git/DVC/S3 分層儲存策略。
+   * 來源： Pipeline-A+B DB §3.4, ARCH v8.1 §5
+* 2.2 Global Reference Databases (全域參考資料庫) [ANCHOR:MIP-V220-2-2-GLOBALDB]
+   * 定義 ReferenceDB (日曆/代碼) 與 RunLedger (血緣) 之唯一性。
+   * 來源： MIP v2.0.0 §2.2, ARCH v8.1 §5.1.3
+* 2.3 RunLedger & Lineage (血緣台帳) [ANCHOR:MIP-V220-2-3-LINEAGE]
+   * 定義跨管線血緣 (Spec -> Strategy -> XS) 之追溯機制。
+   * 來源： MIP v2.0.0 §2.2, SRS v8.1 §5.2.5
+* 2.4 Evidence Store Structure (證據庫結構) [ANCHOR:MIP-V220-2-4-EVIDENCE]
+   * 定義 Evidence Triplet 落盤路徑與索引規範。
+   * 來源： MIP v2.1.0 §2.4, ARCH v8.1 §5.4
+§3. Pipeline Integration (管線整合總路由) [ANCHOR:MIP-V220-SEC3]
+* 3.1 Pipeline-A: Knowledge (知識蒸餾) [ANCHOR:MIP-V220-3-1-PIPE-A]
+   * 整合 CA-WRC/CORPUS/DISTILL/DSL，路由至 SpecPack 產出。
+   * 來源： Pipeline-A v2, MIP v2.0.0 §3.1
+* 3.2 Pipeline-B: Strategy (策略研發) [ANCHOR:MIP-V220-3-2-PIPE-B]
+   * 整合 CA-METHOD/BACKTEST/PERFORM，路由至 StrategyPack 產出。
+   * 來源： Pipeline-B v2, MIP v2.0.0 §3.2
+* 3.3 Pipeline-C: Execution (執行準備) [ANCHOR:MIP-V220-3-3-PIPE-C]
+   * 整合 CA-TA/SELECT/TRANSLATE，路由至 XSPack 產出。
+   * 來源： Pipeline-C v1, MIP v2.0.0 §2.2
+* 3.4 Cross-Cutting Subsystems (五子系統整合) [ANCHOR:MIP-V220-3-4-CROSS]
+   * 整合 CA-GOVERN/COLLAB/UI/EXECUTE/WATCH，定義 DB 共用規則與「薄層封裝」。
+   * 解決審查 B：CR-MIP-DB-EXT-001 (DB 擴充規則定位)。
+   * 來源： 五子系統方案, MIP v2.1.0 §3.4
+§4. Tooling & Adoption Policy (工具選型與採納政策) [ANCHOR:MIP-V220-SEC4]
+* 4.1 Evaluation Criteria (不造輪子原則) [ANCHOR:MIP-V220-4-1-CRITERIA]
+   * 定義成熟度、Fail-Closed 相容性等選型標準。
+   * 來源： Pipeline-A+B DB §1.1, 五子系統 §1
+* 4.2 Tooling Registry (工具註冊表：Support-Only) [ANCHOR:MIP-V220-4-2-REGISTRY]
+   * 整合 DuckDB, Marker, Backtesting.py, QuantStats 等工具之 Support 地位。
+   * 來源： MIP v2.1.0 §4.2, MIP v2.0.0 §7
+* 4.3 Integration & Constraints (整合與約束) [ANCHOR:MIP-V220-4-3-CONSTRAINTS]
+   * 定義 Supply Chain Hardening (Pinning/Scanning) 與 No-Paid-API 約束。
+   * 來源： Skills Supply Chain, ARCH v8.1 §3.5
+§5. Evidence Contract & Acceptance (證據契約與驗收) [ANCHOR:MIP-V220-SEC5]
+* 5.1 Evidence Triplet Standard (三件套標準) [ANCHOR:MIP-V220-5-1-TRIPLET]
+   * 強制 Verdict, Bundle, Index 結構，解決 Audit A CRIT-008。
+   * 來源： MIP v2.1.0 §5.1, SRS v8.1 §2.2
+* 5.2 Gate Dictionary & Policies (閘門字典與政策) [ANCHOR:MIP-V220-5-2-GATES]
+   * 列出 8 大核心 Gate 及其 Fail-Closed 行為 (BLOCK/RADAR)。
+   * 來源： SRS v8.1 §5.3.3, 15CA BP §7
+* 5.3 Fail-Closed & Degrade Matrix (失效關閉與降級矩陣) [ANCHOR:MIP-V220-5-3-FAILCLOSED]
+   * 定義異常時的預設阻斷與降級邏輯。
+   * 來源： SRS v8.1 §1.3.1, ARCH v8.1 §6.4
+§6. Route-Out Register (外導註冊表) [ANCHOR:MIP-V220-SEC6]
+* 6.1 Master Route-Out Table (主外導表) [ANCHOR:MIP-V220-6-1-MASTER]
+   * 提供至 SRS, ARCH, ICD, Fitness, Runbook 的精確錨點路由，解決 Audit A CRIT-005。
+   * 來源： MIP v2.1.0 §6.1, 15CA BP §12
+* 6.2 Pipeline & Component Route-Out (管線與組件外導) [ANCHOR:MIP-V220-6-2-PIPELINE]
+   * 針對各 Pipeline 實作方案的詳細路由，解決 Audit B CR-MIP-004。
+   * 來源： MIP v2.1.0 §6.2, ARCH v8.1 §4.2.6
+§7. Naming & Versioning Map (命名與版本映射) [ANCHOR:MIP-V220-SEC7]
+* 7.1 Doc Naming & Versioning (文件命名與版本) [ANCHOR:MIP-V220-7-1-DOCS]
+   * 定義文件 Short Code、版本規則與狀態枚舉 (Baseline/Superseded)。
+   * 來源： MIP v2.1.0 §7.1, README v2.2
+* 7.2 Legacy Token Crosswalk (舊詞彙對照) [ANCHOR:MIP-V220-7-2-LEGACY]
+   * 定義 DayFlow -> SF-xx 等舊詞彙映射。
+   * 來源： MIP v2.1.0 §7.2, SRS v8.1 §7.4
+§8. Registers (CR_OPEN & TEST_TRACK) [ANCHOR:MIP-V220-SEC8]
+* 8.1 CR_OPEN Register (阻斷清單) [ANCHOR:MIP-V220-8-1-CROPEN]
+   * 登記 Locator 不足、未決策項目，強制 BLOCK_RELEASE。
+   * 來源： MIP v2.1.0 §8.1, SRS v8.1 §6.3
+* 8.2 TEST_TRACK (驗證台帳) [ANCHOR:MIP-V220-8-2-TESTTRACK]
+   * 登記可變動事實 (Platform Behavior) 之驗證計畫。
+   * 來源： MIP v2.1.0 §8.2, OMOC-MVU TEST_TRACK
+§9. Web Evidence Appendix (外部證據附錄：Support-Only) [ANCHOR:MIP-V220-SEC9]
+* 9.1 Web Source Registry (外部來源註冊表) [ANCHOR:MIP-V220-9-1-REGISTRY]
+   * 列出 GitHub Docs, OWASP 等外部引用，標註 Support-Only 與快照需求。
+   * 來源： MIP v2.1.0 §9.1, ARCH v8.1 §12.1
+§10. Self-Check Report (自我檢查報告) [ANCHOR:MIP-V220-SEC10]
+* 10.1 Audit Fix Verification (審查修補驗證) [ANCHOR:MIP-V220-10-1-FIX-VERIFY]
+   * 逐條驗證 v2.1.0 審查報告之 Blockers (Supersedence, Preflight, Authority) 是否已解決。
+   * 來源： 審查報告, MIP v2.0.0 §13
+* 10.2 MIP Integrity Check (MIP 完整性檢查) [ANCHOR:MIP-V220-10-2-INTEGRITY]
+   * 驗證 15 CA, Pipeline A/B/C, Data Backbone 覆蓋率。
+   * 來源： MIP v2.0.0 §13
+________________
+
+
+§0. Preflight & Governance (前置檢查與治理)
+[ANCHOR:MIP-V220-SEC0]
+本章節確立 MIP 作為系統「總路由表」與「最高執行索引」的合法性與權威基礎。 依據 《Spartoi-OMOC_MIP_v2.1.0_審查報告》 之裁決，本版（v2.2.0）已全量修補「自我授權取代」、「權威堆疊漂移」與「定位證據不足」之結構性缺陷，並依據 L1-Blueprint 獲得正式授權。
+________________
+
+
+0.1 Document Metadata (文件後設資料)
+[ANCHOR:MIP-V220-0-1-META]
+依據 MIP v2.0.0 指南 §0.1 與 Blueprint v2.2.0-r1 §Supersedence，本文件具備以下後設資料以確保版本治理與可追溯性：
+欄位 (Field)
+	值 (Value)
+	說明/來源依據
+	Document ID
+	Spartoi_MIP_v2.2.0
+	唯一識別碼
+	Version
+	v2.2.0
+	Major.Minor.Patch (對齊 System v2.2)
+	Status
+	DEFINITIVE (定案)
+	最高權威狀態，取代所有 Draft/Guide
+	Role
+	Master Index & Router
+	總路由表、最高執行索引
+	Compliance
+	Fail-Closed, Anti-Drift
+	缺證據即阻斷、禁止規格漂移
+	Auditor
+	Evidence-Driven Synthesis Auditor
+	負責人：證據驅動審計員
+	Release Date
+	2026-02-12
+	發布日期
+	取代聲明 (Supersedence Declaration)： 本文件 100% 取代 以下文件，使用者應以本文件為唯一 MIP 依據。此取代行為已獲得 Spartoi-OMOC Blueprint v2.2.0-r1 (L1) 之上位背書，非自我授權。
+* Spartoi_MIP_v2.1.0 (及審查報告 A/B 指出之缺陷版本)
+* Master Integration Package (MIP) v2.0.0 指南
+________________
+
+
+0.2 Preflight Report (前置檢查報告：FOUND + Locator Proof)
+[ANCHOR:MIP-V220-0-2-PREFLIGHT]
+本節依據 審查報告 (A:MAJ-011, CR-MIP-005) 之阻斷級要求，針對所有 Normative Inputs 執行「定位證據（Locator Proof）」檢核。 Fail-Closed 規則：僅宣告 FOUND 而無明確 locator_proof (Anchor/Heading) 者，視為 MISSING/UNVERIFIED，直接觸發 BLOCK_RELEASE。
+0.2.1 Normative Inputs Manifest (規範性輸入清單)
+輸入文件 (Input)
+	版本
+	狀態
+	定位證據 (Locator Proof)
+	來源引用
+	Governance (L1)
+	
+
+	
+
+	
+
+	
+
+	Blueprint v2.2
+	v2.2.0-r1
+	FOUND
+	[ANCHOR:bp-two-minute-guide]
+	
+
+	Delivery Plan
+	v1
+	FOUND
+	## 0) 封面卡 (Phase 0-5)
+	
+
+	Core Specs (L1/L2)
+	
+
+	
+
+	
+
+	
+
+	P1_SRS
+	v8.1.0
+	FOUND
+	[ANCHOR:SRS-V810-4-0-COVER]
+	
+
+	P1_ARCH
+	v8.1.0
+	FOUND
+	[ANCHOR:ARCH-V810-SEC0]
+	
+
+	15CA 重構藍圖
+	v0.2.0-r1
+	FOUND
+	[ANCHOR:SOMOC-15CA-BP-00-COVER]
+	
+
+	Contracts (L3)
+	
+
+	
+
+	
+
+	
+
+	LBP-B (ICD)
+	v5.0.1
+	FOUND
+	[ANCHOR:ICD-V501-DOC-CONTROL]
+	
+
+	LBP-E (Fitness)
+	v3.0.1
+	FOUND
+	[ANCHOR:LBPE-V301-0-META]
+	
+
+	LBP-C (ADR)
+	v2.0.1
+	FOUND
+	[ANCHOR:LBP.C.ADR.DOC_META]
+	
+
+	LBP-D (C4)
+	v2.0.1
+	FOUND
+	[ANCHOR:LBP-D-C4-V2-0-1-META]
+	
+
+	Implementation
+	
+
+	
+
+	
+
+	
+
+	Runbook & WI
+	v1.4.0
+	FOUND
+	[ANCHOR:SPLMVP-RB-V140-COVER]
+	
+
+	OMOC-MVU 套件
+	v0.2.0-r1
+	FOUND
+	[ANCHOR:OMOCMVU-BP-SCOPE]
+	
+
+	Pipelines & DB
+	
+
+	
+
+	
+
+	
+
+	Pipeline-A 方案
+	v2
+	FOUND
+	## 0) 封面卡 (Pipeline-A_最短工期)
+	
+
+	Pipeline-B 方案
+	v2
+	FOUND
+	## 0) 封面卡 (Pipeline-B 組合方案)
+	
+
+	Pipeline-C 方案
+	v1
+	FOUND
+	## 0) 封面卡 (Pipeline-C最短工程)
+	
+
+	A+B DB 方案
+	v4
+	FOUND
+	## 0) 封面卡 (Pipeline-A+B 整合)
+	
+
+	五子系統方案
+	v1
+	FOUND
+	## 0) 封面卡 (五子系統組合方案)
+	
+
+	審查修補聲明： 針對 Audit B (CR-MIP-LOCATOR-001/002) 指出的「改名方案」與「子系統重構藍圖」定位不足問題，本版已透過引用 15CA 重構升級藍圖 (v0.2.0-r1) 作為上位集合文件（Superset）予以解決，不再單獨列出缺乏 Anchor 的原始草案。
+________________
+
+
+0.3 Authority Stack & Conflict Rules (權威堆疊與衝突裁決)
+[ANCHOR:MIP-V220-0-3-AUTHORITY]
+本節確立全系統唯一權威堆疊，解決 v2.1.0 權威漂移 問題。 所有下游文件（ARCH, ICD, Runbook）之衝突裁決，必須嚴格遵守此順位。此定義直接引用 Blueprint v2.2.0-r1 之授權。
+0.3.1 Normative Stack (權威層級表)
+層級
+	代號
+	文件 (SSOT)
+	核心職責
+	關鍵落點 (Key Anchor)
+	來源引用
+	L1
+	GOV
+	Blueprint v2.2
+	治理母法
+	[ANCHOR:bp-authority-stack]
+	
+
+	L1
+	REQ
+	SRS v8.1.0
+	需求與驗收契約
+	[ANCHOR:SRS-V810-AUTHORITY-STACK]
+	
+
+	L2
+	ARCH
+	ARCH v8.1.0
+	架構與邊界
+	[ANCHOR:ARCH-V810-0-3-AUTHORITY]
+	
+
+	L3
+	SPEC
+	LBP Suite
+	規格細節
+	(包含 ICD / Fitness / ADR / C4 / SIR)
+	
+
+	L5
+	EXEC
+	OMOC-MVU
+	執行平面契約
+	[ANCHOR:OMOCMVU-BP-AUTHORITY]
+	
+
+	L6
+	OPS
+	Runbook v1.4
+	施工與操作
+	[ANCHOR:SPLMVP-S2-AUTHORITY]
+	
+
+	0.3.2 Conflict Resolution Rules (衝突裁決規則)
+依據 Blueprint v2.2.0-r1 與 SRS v8.1.0：
+1. SSOT_WINS (上位覆蓋下位)：當 L(N) 與 L(N+1) 內容衝突時，以 L(N) 為準。
+2. Explicit Over Implicit (明文優於隱含)：具體的 Gate 定義優於模糊的原則描述。
+3. Fail-Closed (無法裁決即阻斷)：若依據上述規則仍無法裁決，必須標記為 BLOCK_RELEASE，並登錄至 CR_OPEN，嚴禁擅自選邊站。
+________________
+
+
+0.4 Scope Lock (範疇鎖定：僅路由不越權)
+[ANCHOR:MIP-V220-0-4-SCOPE]
+本文件嚴格遵守 MIP v2.0.0 指南 定義的職責邊界，防止 MIP 成為「大雜燴」。
+0.4.1 In-Scope (本文件職責)
+* 總路由表：15CA / Pipelines / Data Backbone / Evidence Contract / Gates 的最高索引。
+* 整合映射：定義子系統與 Pipeline 的對應關係、文件間的 Route-Out。
+* 退役註冊：維護文件版本的繼承與廢止狀態。
+0.4.2 Out-of-Scope (嚴禁越權)
+任何以下內容必須 Route-Out 至對應 SSOT：
+* ❌ 需求條文 → SRS
+* ❌ 架構細節 → ARCH
+* ❌ Schema 定義 → ICD
+* ❌ 操作步驟 → Runbook
+* ❌ 數值門檻 → Fitness
+________________
+
+
+0.5 Supersedence & Absorption Register (退役與吸收註冊表)
+[ANCHOR:MIP-V220-0-5-SUPERSEDE]
+本節解決 Audit B 指出的「自我授權」問題。所有狀態變更皆附帶 Authority Backing (上位背書證據)，證明其合法性。
+原文件 (Legacy/Input)
+	狀態 (Status)
+	內容去向 (New Home)
+	上位背書證據 (Authority Backing)
+	MIP v2.1.0 (含審查報告)
+	Superseded
+	MIP v2.2.0 (本文件)
+	Blueprint v2.2 [ANCHOR:bp-supersedence]
+	Refactoring BP v0.2.0
+	Absorbed
+	ARCH v8.1 §4
+	ARCH v8.1 [ANCHOR:ARCH-V810-SEC4]
+	OMOC-MVU Package
+	Distributed
+	Blueprint v2.2 (治理) / ARCH v8.1 (執行)
+	Blueprint v2.2 [ANCHOR:bp-supersedence]
+	SRS v7.0.0
+	Superseded
+	SRS v8.1.0
+	SRS v8.1 [ANCHOR:SRS-V810-4-0-COVER]
+	ARCH v6.0.0-r5
+	Superseded
+	ARCH v8.1.0
+	ARCH v8.1 [ANCHOR:ARCH-V810-0-1-META]
+	執行規則：
+* 狀態為 Absorbed 或 Superseded 的文件，不得再作為獨立執行依據，僅供歷史追溯。
+* 系統開發與驗收活動 必須 引用 New Home 中的規範。
+________________
+
+
+§1. Immutable 15 CA Registry (15子系統白名單)
+[ANCHOR:MIP-V220-SEC1]
+本章節確立 Spartoi-OMOC 系統中 不可變更 的 15 個核心子系統（Capability Areas, CAs）。此清單為 L2-ARCH 與 L1-SRS 的最高執行索引摘要，旨在解決《Spartoi-OMOC_MIP_v2.1.0_審查報告》中指出的「表格截斷」與「職責邊界模糊」問題。
+治理原則 (Governance Rules)：
+1. Stable ID Immutability：stable_id 為系統內部唯一主鍵，永久鎖定。
+2. No 16th Subsystem：嚴禁新增第 16 個子系統；新功能必須歸納至既有 CA 之下。
+3. One-Rule-One-Place：本表僅做索引映射，詳細實作邏輯外導至 ARCH 與 Pipeline 方案。
+________________
+
+
+1.1 15 CA Master Table (可機械解析總表)
+[ANCHOR:MIP-V220-1-1-MASTER]
+本表全量整合《15CA 重構升級藍圖 v0.2.0-r1》與《SRS v8.1.0》之定義，並修補 v2.1.0 審查報告指出的欄位缺失。
+Stable ID
+	Display Name
+	Macro Module
+	Core Responsibility (核心職責)
+	Mandatory Gate (強制閘門)
+	Key Evidence (關鍵證據)
+	SSOT Pointer (權威定位)
+	CA-WRC
+	Writer/Research Collector
+	K (Knowledge)
+	教材蒐集與封印 (SHA-256)，禁止內容解析。
+	GATE-WRC-TIER
+	input_manifest.json
+	[ANCHOR:ARCH-V810-4-1-WRC]
+	CA-CORPUS
+	Corpus Indexer
+	K (Knowledge)
+	多模態解析、結構化索引 (GraphRAG)，確保覆蓋率。
+	GATE-BP-003-EVIDENCE
+	corpus_snapshot.json
+	[ANCHOR:ARCH-V810-4-2-CORPUS]
+	CA-DISTILL
+	Distiller
+	K (Knowledge)
+	蒸餾基底偽代碼，執行 SGF 語意保真驗證。
+	GATE-SC-002-SUPPLYCHAIN
+	distill_bundle.json
+	[ANCHOR:ARCH-V810-4-3-DISTILL]
+	CA-DSL
+	DSL & Spec Generator
+	S (Spec)
+	生成市場中立 DSL，確保無硬編碼常數。
+	GATE-BP-004-RTM
+	dsl_schema.json
+	[ANCHOR:ARCH-V810-4-4-DSL]
+	CA-METHOD
+	Method Designer
+	S (Spec)
+	三源融合制定策略，執行 MSC 一致性驗證。
+	GATE-SAFE-002-RADARONLY
+	method_card_pack.json
+	[ANCHOR:ARCH-V810-4-5-METHOD]
+	CA-BACKTEST
+	Backtest Engine Adapter
+	B (Backtest)
+	執行回測，建立過擬合防線 (PBO/DSR)。
+	GATE-SAFE-003-EXECUTE_DISABLED
+	backtest_report.json
+	[ANCHOR:ARCH-V810-4-6-BACKTEST]
+	CA-TA
+	Technical Analysis
+	F (Features)
+	生成多時窗技術指標與特徵矩陣。
+	GATE-SAFE-002-RADARONLY
+	ta_pack.json
+	[ANCHOR:ARCH-V810-4-7-TA]
+	CA-SELECT
+	Selection/Ranking
+	F (Features)
+	執行漏斗篩選與排序，產出候選清單。
+	GATE-SAFE-002-RADARONLY
+	select_list.json
+	[ANCHOR:ARCH-V810-4-8-SELECT]
+	CA-TRANSLATE
+	XS Translator
+	O (Ops)
+	轉譯為 XS 腳本，執行 TVE 等價驗證，禁自動下單。
+	GATE-SAFE-003-EXECUTE_DISABLED
+	xs_script_pack.json
+	[ANCHOR:ARCH-V810-4-9-TRANSLATE]
+	CA-WATCH
+	Watchlist & Alerts
+	O (Ops)
+	執行監控與告警，僅產出訊號 (RADAR_ONLY)。
+	GATE-SAFE-002-RADARONLY
+	watch_log.json
+	[ANCHOR:ARCH-V810-4-10-WATCH]
+	CA-EXECUTE
+	Execution Adapter
+	O (Ops)
+	執行適配，負責指令遞交、HITL 確認與 Kill-Switch。
+	GATE-HITL-001-ENV_APPROVAL
+	execution_log.json
+	[ANCHOR:ARCH-V810-4-11-EXECUTE]
+	CA-PERFORM
+	Performance & Risk
+	B (Backtest)
+	雙軌績效分析 (Track A/B) 與閉環回饋。
+	GATE-BP-003-EVIDENCE
+	perf_report.json
+	[ANCHOR:ARCH-V810-4-12-PERFORM]
+	CA-COLLAB
+	Collaboration
+	G (Governance)
+	多代理編排、WT-NA 協作、雙模切換管理。
+	GATE-MQ-001-MERGE_GROUP
+	collab_session.json
+	[ANCHOR:ARCH-V810-4-13-COLLAB]
+	CA-UI
+	UI/Console
+	G (Governance)
+	單一操作入口，唯讀呈現證據，嚴禁交易按鈕。
+	GATE-UI-001-READONLY_POLICY
+	ui_startup_log.json
+	[ANCHOR:ARCH-V810-4-14-UI]
+	CA-GOVERN
+	Governance & Policy
+	G (Governance)
+	全域治理中樞，Gate 執行與版本控制 (SSOT)。
+	GATE-BP-001-TABLELINT
+	version_manifest.json
+	[ANCHOR:ARCH-V810-4-15-GOVERN]
+	* 來源依據：
+   * 15CA 定義：[SRC:Spartoi-OMOC(15 CA)重構升級藍圖v0.2.0-r1 §4.1]
+   * Gate 綁定：[SRC:Spartoi-OMOC Blueprint v2.2.0-r1 §4 Coverage Map]
+   * Evidence 契約：[SRC:Spartoi｜P1_LBP-B(ICD)_v5.0.1 §4.3]
+________________
+
+
+1.2 Subsystem Mapping & Routing (子系統路由映射)
+[ANCHOR:MIP-V220-1-2-MAPPING]
+本節定義 15 個子系統在 Pipeline A/B/C 及 Cross-Cutting (橫切面) 中的歸屬，作為自動化編排（Orchestration）的依據。
+1.2.1 Pipeline Mapping (管線映射)
+Pipeline ID
+	核心目標 (Goal)
+	包含子系統 (Included Subsystems)
+	數據流向 (Data Flow)
+	實作方案 Route-Out
+	Pipeline-A (Knowledge)
+	SpecPack (規格包)
+	CA-WRC → CA-CORPUS → CA-DISTILL → CA-DSL
+	Source → Raw → Index → Distill → Spec
+	[ANCHOR:MIP-V220-3-1-PIPE-A]
+	Pipeline-B (Strategy)
+	StrategyPack (策略包)
+	CA-METHOD → CA-BACKTEST → CA-PERFORM
+	Spec → Method → Result → Report
+	[ANCHOR:MIP-V220-3-2-PIPE-B]
+	Pipeline-C (Execution)
+	XSPack (執行包)
+	CA-TA → CA-SELECT → CA-TRANSLATE → CA-WATCH → CA-EXECUTE
+	Strategy → Signals → Candidates → Script → Alerts → Action
+	[ANCHOR:MIP-V220-3-3-PIPE-C]
+	1.2.2 Cross-Cutting & Governance (橫切與治理)
+以下子系統貫穿或監控所有 Pipeline，不屬於單一線性流程，需參考《五子系統組合方案》進行整合：
+* CA-GOVERN：全域治理中樞（Gate/Version）。
+
+* CA-COLLAB：多代理協作層（Agent Orchestrator）。
+
+* CA-UI：單一操作入口（Console）。
+
+* 來源依據：[SRC:SRS v8.1.0 §5.2, 15CA BP v0.2.0 §6]
+
+________________
+
+
+1.3 Anti-Drift Rules (反漂移規則：禁增第16 CA)
+[ANCHOR:MIP-V220-1-3-ANTIDRIFT]
+為防止架構腐化與邊界模糊，本系統執行以下嚴格的「反漂移（Anti-Drift）」規則。任何違反此規則的變更請求（CR）將被視為 BLOCK_RELEASE。
+   1. Fixed 15 CAs (數量鎖定)：
+
+      * 系統子系統數量 固定為 15 個。嚴禁新增第 16 個子系統。
+      * 已刪除/併入聲明：
+      * CA-FIREWALL：已於 v6.0.0 架構決策中正式廢除，功能併入 CA-GOVERN。
+      * CA-AGENT：已於 v6.0.0 架構決策中正式廢除，功能併入 CA-COLLAB。
+      2. Immutable Stable IDs (ID 不可變)：
+
+         * 表 1.1 中的 stable_id（如 CA-WRC）為系統內部唯一主鍵，永久不可變更。
+         * 允許：修改 Display Name（顯示名稱）以適應 UI 需求（需更新 ICD Alias Registry）。
+         * 禁止：修改 Stable ID 或 Macro Module 歸屬。
+         3. Functionality Containment (功能收斂)：
+
+            * 任何新功能必須歸納至既有的 15 個 CA 職責範圍內，不得因功能新增而創建新的頂層模組。
+            * 案例：新增「情緒分析」功能應歸入 CA-TA（作為特徵）或 CA-CORPUS（作為標註），而非建立 CA-SENTIMENT。
+            * 來源依據：[SRC:SRS v8.1.0 §1.2.1, 15CA BP v0.2.0 §0.4, MIP v2.0.0 Guide §2.1]
+________________
+
+
+§2. Unified Data Backbone (統一資料主幹) [ANCHOR:MIP-V220-SEC2]
+本章節依據 L1-SRS v8.1.0 §5.2 與 L2-ARCH v8.1.0 §5 建立全系統唯一的資料流動與儲存骨幹。針對 Audit Report B (CR-MIP-DB-EXT-001) 指出的「DB 擴充規則定位缺失」問題，本節明確定義 Pipeline-C 與五大跨域子系統（Cross-Cutting）的資料落點與共用規範。
+本骨幹採行「分層治理、分區隔離、全域追溯」原則，嚴禁建立私有資料孤島。
+
+________________
+2.1 Backbone Architecture Index (骨幹架構索引) [ANCHOR:MIP-V220-2-1-ARCH]
+依據 Pipeline-A+B 整合資料庫方案 與 ARCH v8.1.0 §5.1，資料主幹採用 Git/DVC/Object Storage 三層儲存策略。
+層級 (Layer)
+	技術選型 (Tech Stack)
+	核心職責 (Core Responsibility)
+	儲存內容 (Content)
+	SSOT 定位錨點
+	Layer 1
+	Git
+	規格與中繼資料 (Metadata & Specs)
+	SpecPack, StrategyPack (metadata), Configs, Source Code
+	[ANCHOR:ARCH-V810-5-1-ZONES][ANCHOR:PIPELINE-DB-L1-GIT]
+	Layer 2
+	DVC
+	資料指針與版控 (Data Pointers & Versioning)
+	Large File Pointers (.dvc), Dataset Hash, Model Weights
+	[ANCHOR:ARCH-V810-5-1-ZONES][ANCHOR:PIPELINE-DB-L2-DVC]
+	Layer 3
+	Object Storage
+	實體資料與湖泊 (Blob & Data Lake)
+	Raw Corpus (PDFs), Backtest Full Logs, Parquet Files
+	[ANCHOR:ARCH-V810-5-1-ZONES][ANCHOR:PIPELINE-DB-L3-OBJ]
+	Route-Out (實作細節外導):
+            * 目錄結構與規格: [Route-Out: Pipeline-A+B 整合資料庫方案 §3.4 目錄與規格]
+            * 雲端存放與連線: [Route-Out: Pipeline-A+B 整合資料庫方案 §3.5 雲端存放]
+2.2 Global Reference Databases (全域參考資料庫) [ANCHOR:MIP-V220-2-2-GLOBALDB]
+為滿足 SRS81-PIPE-DB-002 需求，系統強制維護兩個全域共用資料庫，所有 Pipeline 僅能「唯讀引用」ReferenceDB，並透過標準介面寫入 RunLedger。
+資料庫 (Database)
+	類型 (Type)
+	核心職責 (Core Responsibility)
+	關鍵內容 (Key Content)
+	SSOT 定位錨點
+	ReferenceDB
+	SQLite / DuckDB
+	市場靜態資料 (Static Market Data)
+	交易日曆 (Calendar), 股票代碼 (Instrument Master), 除權息 (Corporate Actions)
+	[ANCHOR:ARCH-V810-5-1-3-GLOBAL-DB][ANCHOR:PIPELINE-DB-REFDB]
+	RunLedger
+	Append-only Log
+	執行血緣與稽核 (Lineage & Audit)
+	Run ID, Artifact Hash, Input/Output Relations, Verdicts
+	[ANCHOR:ARCH-V810-5-1-3-GLOBAL-DB][ANCHOR:PIPELINE-DB-RUNLEDGER]
+	Route-Out (實作細節外導):
+            * Schema 定義: [Route-Out: LBP-B(ICD) v5.0.1 ICD-V501-SCHEMA-LOCATOR]
+            * 落點規劃: [Route-Out: Pipeline-A+B 整合資料庫方案 §3.3 資料庫清單]
+2.3 RunLedger & Lineage (血緣台帳) [ANCHOR:MIP-V220-2-3-LINEAGE]
+依據 SRS v8.1.0 §5.2.5 與 15CA 重構升級藍圖，必須建立跨管線的完整血緣追溯鏈（Lineage Chain）。
+            * Lineage Chain (血緣鏈路):
+            * L-A: Source (CA-WRC) $\rightarrow$ SpecPack (CA-DSL)
+            * L-B: SpecPack $\rightarrow$ StrategyPack (CA-PERFORM)
+            * L-C: StrategyPack $\rightarrow$ XSPack (CA-TRANSLATE) $\rightarrow$ ExecutionLog (CA-EXECUTE)
+            * Fail-Closed Rule:
+            * 所有產出的 manifest.json 必須包含 upstream_run_id 與 upstream_pack_hash。
+            * 若 RunLedger 無法寫入或血緣斷鏈，Gate 必須 (MUST) 觸發 BLOCK_RELEASE。
+Route-Out (實作細節外導):
+            * 血緣追溯需求: [Route-Out: SRS v8.1.0 §5.2.5 Cross-Pipeline Lineage]
+            * Pipeline 映射表: [Route-Out: 15CA 重構升級藍圖 v0.2.0-r1 §6 PIPELINE_TO_CA_MAP]
+2.4 Evidence Store Structure (證據庫結構) [ANCHOR:MIP-V220-2-4-EVIDENCE]
+依據 SRS v8.1.0 §2.2.1 與 Blueprint v2.2.0-r1 §4，所有證據必須符合「三件套（Triplet）」標準並落入統一結構。
+            * Evidence Triplet (證據三件套):
+            * Verdict: verdict.json (PASS/FAIL/RADAR_ONLY)
+            * Bundle: evidence_bundle.zip (Logs, Artifacts, Snapshots)
+            * Index: evidence_index.md (Human-readable, Hash links)
+            * Store Structure (儲存結構):
+            * 路徑慣例：evidence/{gate_id}/{run_id}/{artifact_id}/
+            * Audit Fix (CR-MIP-DB-EXT-001): Pipeline-C 與五子系統（Cross-Cutting）之產物，必須遵循此統一結構落盤，嚴禁建立私有證據目錄。
+Route-Out (實作細節外導):
+            * 證據契約定義: [Route-Out: 15CA 重構升級藍圖 v0.2.0-r1 §8 Evidence Contract Registry]
+            * 儲存實作: [Route-Out: Pipeline-A+B 整合資料庫方案 §3.4 目錄與規格]
+            * 落盤驗收: [Route-Out: SubP1-LITE+MVP Runbook v1.4.0 WI-EVIDENCE-PACK-001]
+2.5 Cross-Cutting DB Extension Rules (跨域資料庫擴充規則) [ANCHOR:MIP-V220-2-5-DB-EXT]
+[Audit Fix: B:CR-MIP-DB-EXT-001] 針對 Pipeline-C (Execution) 與五子系統（UI, GOVERN, COLLAB, WATCH, EXECUTE）的資料庫擴充與共用，執行以下 Fail-Closed 規範：
+            1. No Private DB: 嚴禁建立 ReferenceDB 與 RunLedger 以外的非標準資料庫。
+            2. Extension via Artifacts: 若需儲存特定領域資料（如 CA-WATCH 的監控日誌），必須 (MUST) 以 Artifact 形式（JSON/Parquet）存入 evidence/ 或 data/ 下的對應子目錄，並在 artifact_registry.yaml 註冊。
+            3. Shared Access: 跨子系統資料讀取（如 CA-UI 讀取 CA-PERFORM 報表），必須 (MUST) 透過 RunLedger 查詢 Artifact 路徑，禁止 硬編碼檔案路徑。
+Route-Out (實作細節外導):
+            * 五子系統整合方案: [Route-Out: 五子系統組合方案 §3.2]
+            * Artifact 註冊表: [Route-Out: ARCH v8.1.0 §5.4 Artifact Registry]
+________________
+
+
+§3. Pipeline Integration (管線整合總路由)
+[ANCHOR:MIP-V220-SEC3]
+本章節作為系統三大核心管線（Pipeline A/B/C）與五大跨域子系統（Cross-Cutting）的最高層級路由表。依據 SRS v8.1.0 §5.2 與 ARCH v8.1.0 §5.2 定義之架構原則，所有管線必須遵循「單向依賴（One-Way Dependency）」與「證據閉環（Evidence Loop）」，並透過 Unified Data Backbone 進行資料交接。 Fail-Closed 規則：若 Pipeline 實作方案（Plan）與 SSOT（SRS/ARCH）衝突，依據 MIP §0.3 Authority Stack，以 SSOT (SRS/ARCH) 為準。
+________________
+
+
+3.1 Pipeline-A: Knowledge (知識蒸餾管線)
+[ANCHOR:MIP-V220-3-1-PIPE-A]
+Pipeline-A 為系統的知識源頭，負責將非結構化教材轉化為結構化、可驗證的 SpecPack（規格包）。
+3.1.1 核心定義與路由 (Core Definition & Routing)
+項目 (Item)
+	內容/路由 (Content/Route)
+	來源引用 (Source)
+	目標 (Goal)
+	產出 SpecPack (含 input_manifest, corpus_snapshot, distill_bundle, dsl_schema)。
+	MIP v2.0.0 §3.1SRS v8.1 §5.2.2
+	包含子系統 (Subsystems)
+	CA-WRC $\rightarrow$ CA-CORPUS $\rightarrow$ CA-DISTILL $\rightarrow$ CA-DSL
+	15CA BP §6ARCH v8.1 §5.2.2
+	實作方案 (Implementation)
+	Route-Out: Pipeline-A_組合方案 v2.md @ ## 0) 封面卡
+	Pipeline-A v2Audit B Fix
+	功能需求 (Requirements)
+	Route-Out: Spartoi-OMOC_SRS_v8.1.0.md @ [ANCHOR:SRS-V810-REQ-PIPE-A]
+	SRS v8.1 §5.2.2
+	架構設計 (Architecture)
+	Route-Out: Spartoi-OMOC_ARCH_v8.1.0.md @ [ANCHOR:ARCH-PIPELINE-A-INT]
+	ARCH v8.1 §5.2.2
+	3.1.2 關鍵閘門與證據 (Key Gates & Evidence)
+            * GATE-WRC-TIER：來源白名單與層級檢核（Fail-Closed: BLOCK_RELEASE）。
+            * GATE-DISTILL-SGF：語意保真度（SGF）檢核（Fail-Closed: BLOCK_RELEASE）。
+            * GATE-DSL-PURITY：DSL 純度與市場常數隔離檢核（Fail-Closed: BLOCK_RELEASE）。
+            * 證據落點：data/pipeline-a/ (DVC tracked)。
+________________
+
+
+3.2 Pipeline-B: Strategy (策略研發管線)
+[ANCHOR:MIP-V220-3-2-PIPE-B]
+Pipeline-B 負責將規格包（SpecPack）轉化為可回測、已驗證的 StrategyPack（策略包），並建立過擬合防線。
+3.2.1 核心定義與路由 (Core Definition & Routing)
+項目 (Item)
+	內容/路由 (Content/Route)
+	來源引用 (Source)
+	目標 (Goal)
+	產出 StrategyPack (含 MethodCard, backtest_report, perf_summary)。
+	MIP v2.0.0 §3.2SRS v8.1 §5.2.3
+	包含子系統 (Subsystems)
+	CA-METHOD $\rightarrow$ CA-BACKTEST $\rightarrow$ CA-PERFORM
+	15CA BP §6ARCH v8.1 §5.2.3
+	實作方案 (Implementation)
+	Route-Out: Pipeline-B 組合方案 v2.md @ ## 0) 封面卡
+	Pipeline-B v2Audit B Fix
+	功能需求 (Requirements)
+	Route-Out: Spartoi-OMOC_SRS_v8.1.0.md @ [ANCHOR:SRS-V810-REQ-PIPE-B]
+	SRS v8.1 §5.2.3
+	架構設計 (Architecture)
+	Route-Out: Spartoi-OMOC_ARCH_v8.1.0.md @ [ANCHOR:ARCH-PIPELINE-B-INT]
+	ARCH v8.1 §5.2.3
+	3.2.2 關鍵閘門與證據 (Key Gates & Evidence)
+            * GATE-METHOD-MSC：方法語意一致性（MSC）檢核（Fail-Closed: RADAR_ONLY/BLOCK）。
+            * GATE-BT-H：回測衛生與過擬合（PBO/DSR）檢核（Fail-Closed: RADAR_ONLY）。
+            * GATE-PERFORM-TCA：績效與交易成本分析檢核。
+            * 證據落點：data/pipeline-b/ (Git/DVC split)。
+________________
+
+
+3.3 Pipeline-C: Execution (執行準備管線)
+[ANCHOR:MIP-V220-3-3-PIPE-C]
+Pipeline-C 負責將策略包（StrategyPack）轉譯為執行包（XSPack），並執行嚴格的安全檢查與轉譯驗證。
+3.3.1 核心定義與路由 (Core Definition & Routing)
+項目 (Item)
+	內容/路由 (Content/Route)
+	來源引用 (Source)
+	目標 (Goal)
+	產出 XSPack (含 xs_script, watchlist, alerts) 與 WatchLog。
+	MIP v2.0.0 §3.3SRS v8.1 §5.2.4
+	包含子系統 (Subsystems)
+	CA-TA $\rightarrow$ CA-SELECT $\rightarrow$ CA-TRANSLATE $\rightarrow$ CA-WATCH
+	15CA BP §6ARCH v8.1 §5.2.4
+	實作方案 (Implementation)
+	Route-Out: Pipeline-C組合方案.md @ ## 0) 封面卡
+	Pipeline-C v1Audit B Fix
+	功能需求 (Requirements)
+	Route-Out: Spartoi-OMOC_SRS_v8.1.0.md @ [ANCHOR:SRS-V810-REQ-PIPE-C]
+	SRS v8.1 §5.2.4
+	架構設計 (Architecture)
+	Route-Out: Spartoi-OMOC_ARCH_v8.1.0.md @ [ANCHOR:ARCH-PIPELINE-C-INT]
+	ARCH v8.1 §5.2.4
+	3.3.2 關鍵閘門與證據 (Key Gates & Evidence)
+            * GATE-TRANSLATE-TVE：轉譯等價性（TVE）檢核（Fail-Closed: BLOCK_RELEASE）。
+            * GATE-SELECT-NDCG：選股排序品質檢核（Fail-Closed: RADAR_ONLY）。
+            * GATE-SAFE-002-RADARONLY：確保無下單副作用（Fail-Closed: BLOCK_RELEASE）。
+            * 證據落點：data/pipeline-c/ (Artifact Store)。
+________________
+
+
+3.4 Cross-Cutting Subsystems (五子系統整合)
+[ANCHOR:MIP-V220-3-4-CROSS]
+本節解決 Audit Report B (CR-MIP-DB-EXT-001) 指出的 DB 共用規則不明問題，並定義貫穿全域的五個子系統（CA-GOVERN, CA-COLLAB, CA-UI, CA-EXECUTE, CA-WATCH）的整合規範。
+3.4.1 核心定義與路由 (Core Definition & Routing)
+項目 (Item)
+	內容/路由 (Content/Route)
+	來源引用 (Source)
+	目標 (Goal)
+	提供治理、協作、操作入口與最終執行適配。
+	15CA BP §6.2
+	包含子系統 (Subsystems)
+	CA-GOVERN, CA-COLLAB, CA-UI, CA-EXECUTE, CA-WATCH
+	ARCH v8.1 §9.2
+	實作方案 (Implementation)
+	Route-Out: 五子系統組合方案.md @ ## 0) 封面卡
+	五子系統方案Audit B Fix
+	功能需求 (Requirements)
+	Route-Out: Spartoi-OMOC_SRS_v8.1.0.md @ [ANCHOR:SRS-V810-4-6-FR] (依子系統查閱)
+	SRS v8.1 §3
+	3.4.2 資料主幹共用與擴充規則 (DB Sharing & Extension Rules)
+依據 Pipeline-A+B 整合資料庫方案 與 ARCH v8.1 §5，跨域子系統必須遵守以下資料存取規範：
+            * ReferenceDB (唯讀參考)：所有 Pipeline 與 Cross-Cutting 子系統 MUST 以 唯讀 (Read-Only) 方式存取 ReferenceDB（交易日曆、代碼表），嚴禁私自修改。
+            * 來源：ARCH v8.1 §5.1.3, Pipeline-A+B DB 方案 §3.3
+            * RunLedger (血緣寫入)：所有產出 Evidence 的子系統（如 CA-WATCH 產出 WatchLog），MUST 將產物 Hash 與 Lineage 寫入 RunLedger，確保全域可追溯。
+            * 來源：ARCH v8.1 §5.3.3, Pipeline-A+B DB 方案 §3.3
+            * Evidence Store (分區存放)：
+            * CA-GOVERN：寫入 evidence/govern/ (Version Manifest)。
+            * CA-COLLAB：寫入 evidence/collab/ (Session Logs)。
+            * CA-UI：寫入 evidence/ui/ (Startup Logs)。
+            * CA-EXECUTE：寫入 evidence/execute/ (Execution Logs)。
+            * CA-WATCH：寫入 evidence/watch/ (Watch Logs)。
+            * 來源：ARCH v8.1 §9.4.2, 15CA BP §8
+3.4.3 關鍵職責與閘門 (Key Responsibilities & Gates)
+            * CA-GOVERN：Gate Orchestrator。執行 GATE-GOVERN-VERSION。
+            * CA-COLLAB：Agent Orchestrator。執行 GATE-MQ-001-MERGE_GROUP。
+            * CA-UI：Read-Only Console。執行 GATE-UI-001-READONLY_POLICY。
+            * CA-EXECUTE：Execution Adapter (HITL)。執行 GATE-HITL-001-ENV_APPROVAL 與 GATE-SAFE-003-EXECUTE_DISABLED。
+________________
+
+
+§4. Tooling & Adoption Policy (工具選型與採納政策)
+[ANCHOR:MIP-V220-SEC4]
+本章節定義系統對外部工具、函式庫與框架的採納標準與註冊清單。依據 Spartoi-OMOC Blueprint v2.2.0-r1 的「不造輪子政策（No-Wheel Policy）」 與 Audit Report A (A:CRIT-009) 的「外部證據隔離原則」，本章確立工具僅作為「引擎（Engine）」角色，不得凌駕於 SSOT 的「契約（Contract）」之上。
+________________
+
+
+4.1 Evaluation Criteria (不造輪子原則)
+[ANCHOR:MIP-V220-4-1-CRITERIA]
+依據 Blueprint v2.2.0-r1 [bp-no-wheel-policy] 與 Pipeline 組合方案，所有工具採納必須通過以下 Fail-Closed 評估標準。
+4.1.1 The "Engine vs. Contract" Rule (引擎與契約分離原則)
+            * 原則：工具僅是達成目的的手段（Engine），系統的 SSOT 是輸入/輸出的資料契約（Contract/Schema）。
+            * 約束：
+            * 可替換性 (Replaceability)：若更換工具（如從 Marker 換成 Docling），只要產出的 Evidence Triplet 符合 ICD 定義的 Schema，視為合法變更，無需修改上游架構。
+            * 不可綁架 (No Lock-in)：嚴禁使用將業務邏輯鎖死在特定框架內（如 Zipline 的 bundle）且無法導出標準數據的工具。任何工具輸出必須能被轉換為 manifest.json 或 verdict.json 等標準格式。
+4.1.2 Adoption Hierarchy (採納層級)
+依據 MIP v2.0.0 指南 與 Audit Report A，工具分為以下層級：
+層級 (Tier)
+	定義 (Definition)
+	範例 (Examples)
+	允許行為
+	來源引用
+	Normative (規範級)
+	系統運作的基礎設施，更換等同於重構。
+	GitHub Actions, Python 3.13, Docker, DVC
+	寫入 RUNBOOK 作為硬依賴。
+	,
+	Supported (支援級)
+	當前選定的最佳實踐引擎，已在 Pipeline 方案中驗證。
+	Marker, DuckDB, Backtesting.py, XGBoost
+	在 RUNBOOK 中作為預設選項，但允許透過 Adapter 替換。
+	,
+	Experimental (實驗級)
+	正在評估中的新工具，尚未進入主線。
+	FinRL, Qlib, Docling
+	僅限於 RADAR_ONLY 模式，產物不得進入主 SSOT。
+	,
+	Prohibited (禁用級)
+	違反系統核心原則（如付費 API、黑箱、不可回溯）。
+	Pandas-TA (付費化風險), 封閉式回測平台
+	BLOCK_RELEASE。
+	,
+	________________
+
+
+4.2 Tooling Registry (工具註冊表：Support-Only)
+[ANCHOR:MIP-V220-4-2-REGISTRY]
+
+本節彙整 Pipeline A/B/C 組合方案 與 OMOC-MVU 所選定的 Supported 工具。此清單為「當前快照」，若需變更應透過 CR_OPEN 流程。 注意：本表僅列出工具本身，具體安裝與使用指令請 Route-Out 至 Runbook v1.4.0。
+
+
+4.2.1 Pipeline-A: Knowledge Tools (知識處理)
+            * 整合來源：Pipeline-A 組合方案 v2,
+Domain
+        Tool (Engine)
+        Role (角色)
+        Selection Rationale (選型理由)
+        Evidence Hook (產物)
+        引用來源
+        PDF Extraction
+        Marker
+        PDF 轉 Markdown 引擎
+        速度快、格式保留度高，優於傳統 OCR。
+        wrc_snapshot.json
+        ,
+        Alt. Extraction
+        Docling
+        備援解析引擎
+        針對複雜表格解析能力較強，作爲 Marker 的備援。
+        corpus_snapshot.json
+        ,
+        Synthetic Data
+        Distilabel
+        蒸餾/合成數據管線
+        用於生成 Golden Set 與 SGF 驗證數據。
+        distill_bundle.json
+        ,
+        Workflow
+        Prefect
+        流程編排引擎
+        Python 原生，提供重試與可觀測性。
+        run_log.json
+        
+
+
+4.2.2 Pipeline-B: Strategy Tools (策略研發)
+            * 整合來源：Pipeline-B 組合方案 v2,
+Domain
+        Tool (Engine)
+        Role (角色)
+        Selection Rationale (選型理由)
+        Evidence Hook (產物)
+        引用來源
+        Backtesting
+        Backtesting.py
+        MVP 回測引擎
+        輕量、快速、易於封裝，適合快速迭代。
+        backtest_report.json
+        ,
+        Alt. Backtest
+        VectorBT
+        擴展回測引擎
+        向量化計算，適合大規模參數掃描。
+        backtest_report.json
+        ,
+        Reporting
+        QuantStats
+        績效報表引擎
+        產生標準化的 Tear Sheet HTML 與指標。
+        perf_summary.json
+        ,
+        Templating
+        Copier
+        專案模板工具
+        確保 MethodCard 與回測環境的結構一致性。
+        method_card.json
+        ,
+
+
+4.2.3 Pipeline-C: Execution Tools (執行準備)
+            * 整合來源：Pipeline-C 組合方案,
+Domain
+        Tool (Engine)
+        Role (角色)
+        Selection Rationale (選型理由)
+        Evidence Hook (產物)
+        引用來源
+        Database
+        DuckDB
+        本地 OLAP 引擎
+        單檔部署、高效讀取 Parquet、支援 SQL。
+        select_list.json
+        ,
+        Tech Analysis
+        TA-Lib
+        技術指標計算
+        工業標準庫，效能高且定義穩定。
+        ta_pack.json
+        ,
+        Ranking
+        XGBoost
+        排序模型 (LTR)
+        支援 rank:ndcg，文件齊全，適合選股。
+        select_list.json
+        ,
+        Parsing
+        Lark
+        語法驗證器
+        用於驗證轉譯後的 XS 腳本語法正確性。
+        xs_script_pack.json
+        
+
+
+4.2.4 Governance & Dev Tools (治理與開發)
+            * 整合來源：OMOC-MVU, Pipeline-A+B DB
+Domain
+        Tool (Engine)
+        Role (角色)
+        Selection Rationale (選型理由)
+        Evidence Hook (產物)
+        引用來源
+        Version Control
+        DVC
+        大檔與數據版控
+        Git 管指針，Object Storage 管實體，符合 SSOT。
+        .dvc files
+        ,
+
+
+        Supply Chain
+        pinact
+        Action SHA Pinning
+        鎖定 GitHub Actions 版本至 SHA-1，防供應鏈攻擊。
+        pinact.stdout
+        
+
+
+        Security
+        zizmor
+        Workflow 靜態分析
+        掃描 GitHub Actions 的安全漏洞與權限配置。
+        zizmor.report
+        
+
+
+        Provenance
+        Scorecard
+        開源專案健康度
+        量化依賴項目的安全分數。
+        scorecard.json
+        
+
+
+4.2.5 L5 EXEC（Local VS + Docker）推薦落地（Index-Only / 不寫 HOW）
+        [ANCHOR:MIP-V220-4-2-L5EXEC-LOCAL-LANDING]
+        本條目屬於「索引層路由」，用途是把 L5 EXEC 的“本地化落地指引”掛回 OMOC-MVU v4.0；它不是新增一個 Engine，也不改寫本節既有工具表。任何安裝、操作、Bash、UI 步驟都不應寫在 MIP。
+        * Target Doc：OMOC-MVU「Local Docker 低磨合轉接層」方案（Unified Upgrade v4.0）
+        * Target Identifier（Locator Proof）：Cover Card 內的 `internal_alias | **OMOCMVU-LDBRIDGE-GREENFIELD**` 與 `version | **v4.0.0+20260213**`
+        * Route-Out Scope（只做路由，不做教學）：
+          * ✅ Local-First Execution Plane：本地 VS + Docker/Dev Containers（開發者容器）作為預設執行面。
+          * ✅ opencode / Oh My OpenCode：多代理執行面之“工具與契約接縫”定位（僅限索引與路由語義）。
+          * ❌ 任何安裝/設定/驗收/除錯步驟（含 Bash 與 UI 操作）→ 一律 Route-Out 至 Runbook & WI（L6 OPS）。
+        * Authority Note：本條目只提供「推薦落地索引」，不改寫 §0.3 Authority Stack；若與上位文件衝突，依 L1→L6 衝突裁決規則 Fail-Closed。
+
+
+________________
+
+
+4.3 Integration & Constraints (整合與約束)
+[ANCHOR:MIP-V220-4-3-CONSTRAINTS]
+本節定義將上述工具整合至系統時，必須遵守的硬性約束。違反此處約束的實作，將在 Preflight 或 Gate 階段被 BLOCK_RELEASE。
+4.3.1 Supply Chain Hardening (供應鏈硬化)
+依據 SRS v8.1 §2.3.4 與 OMOC-MVU Skills Supply Chain，所有外部依賴必須「鎖定」：
+            * Immutable Pinning：所有 GitHub Actions 引用 (uses:) 必須鎖定至 Full-Length Commit SHA (40-hex)，嚴禁使用浮動標籤（如 @v1, @latest）。
+            * Gate Hook: GATE-SC-001-PINACT。
+            * Dependency Lock：Python 套件必須使用 requirements.lock 或 poetry.lock 鎖定具體版本與 Hash。
+            * Security Scan：所有 Workflow 變更必須通過 zizmor 掃描，高風險漏洞零容忍。
+            * Gate Hook: GATE-SC-002-SUPPLYCHAIN。
+4.3.2 No-Paid-API Constraint (非付費 API 約束)
+依據 LBP-C(ADR) ADR-029 與 SRS v8.1 §2.3.5，核心流程必須遵守：
+            * WebTools-NA：優先使用 Web 介面與剪貼簿（WT-NA）進行協作，禁止在核心管線（Pipeline A/B/C）中依賴按量計費的 LLM API（如 OpenAI API）。
+            * Local Fallback：關鍵工具（如 Embedding、RAG Indexing）必須支援本地執行模式（如使用 Qdrant Local, DuckDB），確保在斷網或無 API 額度時仍可運作。
+4.3.3 Adapter Pattern Requirement (適配器模式要求)
+依據 Evidence Contract：
+            * Wrapper Required：若工具原生輸出不符合 ICD 定義的 Schema（如 Backtesting.py 的 HTML 報告），必須編寫 Adapter (Wrapper) 將其轉換為標準 JSON 格式（如 backtest_report.json），並附帶原始報告作為 Artifact。
+            * Determinism：工具執行必須具備可重現性（Reproducibility），必須在輸入中固定 Random Seed。
+________________
+
+
+§5. Evidence Contract & Acceptance (證據契約與驗收)
+[ANCHOR:MIP-V220-SEC5]
+本章節定義 Spartoi-OMOC 系統中所有「規範性工件（Normative Artifacts）」的驗收標準。依據 L1-Blueprint v2.2.0-r1 與 L1-SRS v8.1.0，本系統採行 證據驅動（Evidence-Driven） 治理：所有 Pipeline 執行、Gate 檢核或人工介入（HITL），必須 產出原子化的「證據三件套（Evidence Triplet）」，缺一即視為 FAIL，觸發阻斷機制。
+________________
+
+
+5.1 Evidence Triplet Standard (三件套標準)
+[ANCHOR:MIP-V220-5-1-TRIPLET]
+所有驗收或交付動作，必須 產出以下三個不可分割的檔案。此定義為全系統最高介面契約，任何子系統不得違反。
+組件 (Component)
+	檔名規範 (Naming)
+	核心職責 (Responsibility)
+	Schema 來源 (SSOT)
+	1. Verdict (裁決檔)
+	verdict.json
+	機器可讀的最終判定。包含 overall_verdict (PASS/FAIL/RADAR_ONLY)、policy_applied、以及 Bundle 的加密雜湊（SHA-256）。
+	ICD v5.0 SCHEMA-EVIDENCE-VERDICT
+	2. Bundle (實體包)
+	evidence_bundle.zip (或 .tar.zst)
+	原始產物實體。包含 Log、Report、Snapshot、Diff 等不可變更檔案。
+	ICD v5.0 SCHEMA-EVIDENCE-BUNDLE
+	3. Index (索引檔)
+	evidence_index.md
+	人類可讀的導航索引。列出 Bundle 內容清單、Hash 值、以及指向 SRS/Gate 的 trace_refs。
+	ICD v5.0 SCHEMA-EVIDENCE-INDEX
+	防竄改規則 (Anti-Tampering Rules)：
+            1. Hash Binding：verdict.json 必須包含 bundle_hash，且必須與 evidence_bundle.zip 的實際 SHA-256 一致。
+            2. Traceability：evidence_index.md 必須包含 upstream_run_id 與 upstream_pack_hash，形成完整的血緣依賴鏈。
+            * 來源依據：
+            * 定義：[SRC:MIP v2.0.0 指南 §4.1]
+            * 契約：[SRC:Spartoi-OMOC Blueprint v2.2.0-r1 §Evidence]
+            * 需求：[SRC:SRS v8.1.0 §2.2.1]
+________________
+
+
+5.2 Gate Dictionary & Policies (閘門字典與政策)
+[ANCHOR:MIP-V220-5-2-GATES]
+本節彙整全系統 8 大核心閘門模板 與其 Fail-Closed 政策。依據 15CA 重構升級藍圖 §4 與 SRS v8.1 §2.1.4，所有子系統必須掛載對應的 Gate。
+5.2.1 Fail-Closed Policy Definitions (失效關閉政策定義)
+Policy (政策)
+	行為 (Behavior)
+	適用場景 (Scenario)
+	來源依據
+	BLOCK_RELEASE
+	阻斷發布。流程立即中止，禁止進入下游 Pipeline 或合併代碼。
+	安全合規、Schema 錯誤、證據缺失。
+	[SRC:SRS v8.1 §2.1.2]
+	RADAR_ONLY
+	僅記錄。流程繼續，但產物被標記為 risk_warning，禁止用於自動化決策。
+	績效未達標但無安全風險、非關鍵品質指標。
+	[SRC:SRS v8.1 §2.1.2]
+	EXECUTE_DISABLED
+	禁止執行。系統進入安全模式，封鎖所有寫入與交易指令。
+	HITL 未授權、Kill Switch 觸發、權限異常。
+	[SRC:SRS v8.1 §2.1.2]
+	5.2.2 Core Gate Dictionary (核心閘門索引)
+本表為 Gate ID 的唯一索引，詳細實作邏輯 Route-Out 至 15CA Blueprint。
+Gate ID
+	名稱/用途
+	擁有者
+	預設 Policy
+	關鍵證據 (Artifact)
+	GATE-BP-001-TABLELINT
+	Table Integrity (防表格截斷)
+	CA-GOVERN
+	BLOCK_RELEASE
+	lint_report.json
+	GATE-BP-002-ANCHORREG
+	Anchor Validity (錨點有效性)
+	CA-GOVERN
+	BLOCK_RELEASE
+	anchor_scan.json
+	GATE-BP-003-EVIDENCE
+	Evidence Integrity (三件套完整性)
+	CA-GOVERN
+	BLOCK_RELEASE
+	verdict.json
+	GATE-SC-002-SUPPLYCHAIN
+	Supply Chain Scan (Zizmor/Pinning)
+	CA-GOVERN
+	BLOCK_RELEASE
+	zizmor_audit.json
+	GATE-WRC-TIER
+	Source Tiering (來源分級)
+	CA-WRC
+	RADAR_ONLY
+	wrc_manifest.json
+	GATE-DISTILL-SGF
+	SGF Fidelity (語意保真度)
+	CA-DISTILL
+	BLOCK_RELEASE
+	sgf_report.json
+	GATE-METHOD-MSC
+	MSC Conformance (方法一致性)
+	CA-METHOD
+	RADAR_ONLY
+	msc_report.json
+	GATE-HITL-001-ENV_APPROVAL
+	Environment Approval (人機介入)
+	CA-EXECUTE
+	EXECUTE_DISABLED
+	approval_log.json
+	            * 來源依據：[SRC:Spartoi-OMOC(15 CA)重構升級藍圖v0.2.0-r1 §7 Gate Registry], [SRC:SRS v8.1.0 §5.3.3]
+________________
+
+
+5.3 Fail-Closed & Degrade Matrix (失效關閉與降級矩陣)
+[ANCHOR:MIP-V220-5-3-FAILCLOSED]
+依據 Blueprint v2.2.0-r1 Fail-Closed Verdict Rules，當驗證失敗、資訊不足或依賴缺失時，系統必須進入確定的失效狀態。
+5.3.1 Verdict Definitions (裁決定義)
+狀態 (Verdict)
+	定義 (Definition)
+	觸發條件 (Trigger)
+	系統行為 (System Behavior)
+	PASS
+	通過
+	所有 Required Gate 通過，且 Evidence Triplet 完整。
+	放行進入下一階段。
+	FAIL
+	失敗
+	任一 BLOCK_RELEASE Gate 失敗，或 Evidence 缺失。
+	立即中止 (Abort)。禁止進入下游。
+	UNAVAILABLE
+	無法判定
+	依賴服務離線、Schema 缺失、Locator 失效。
+	視同 FAIL。依據 Blueprint 規則，Schema unavailable 即為 UNAVAILABLE，且阻斷發布。
+	5.3.2 Degrade Matrix (降級矩陣路由)
+具體的降級觸發條件與行為定義，Route-Out 至下位 SSOT：
+            * 降級矩陣定義：[Route-Out] Spartoi-OMOC_ARCH_v8.1.0 [ANCHOR:ARCH-V810-6-4-FAILCLOSED]
+
+            * CR_OPEN 處置：[Route-Out] Spartoi-OMOC_SRS_v8.1.0 [ANCHOR:SRS-V810-6-3-CROPEN-LEDGER]
+
+            * 來源依據：[SRC:Spartoi-OMOC Blueprint v2.2.0-r1 §Fail-Closed], [SRC:SRS v8.1.0 §5.1]
+
+________________
+
+
+§6. Route-Out Register (外導註冊表)
+[ANCHOR:MIP-V220-SEC6]
+本章節依據 One-Rule-One-Place (單一法則落點) 原則，建立 MIP 作為「總路由表」的核心機制。MIP 本身不定義詳細規格、不撰寫操作步驟、不列舉 Schema 欄位，而是提供通往 SSOT (Single Source of Truth) 的精確路由指針。
+治理規則 (Governance Rules)：
+               1. Mandatory Routing (強制外導)：凡涉及「如何做 (HOW)」、「規格細節 (SPEC)」、「數值門檻 (LIMIT)」之內容，必須 透過本註冊表轉址至 L1~L6 之權威文件。
+               2. Precise Anchoring (精確錨點)：解決 Audit Report A (CRIT-005) 與 Audit Report B (CR-MIP-004) 指出的「空指標/弱定位」問題，所有外導必須包含目標文件 ID 與目標錨點（Anchor）。
+               3. Fail-Closed (死鏈即阻斷)：若 Route-Out 指向的目標不存在或版本不符，視為架構定義不完整，觸發 BLOCK_RELEASE。
+________________
+
+
+6.1 Master Route-Out Table (主外導表)
+[ANCHOR:MIP-V220-6-1-MASTER]
+本表定義全系統核心領域（Domain）至權威文件（SSOT）的最高級路由。任何開發、測試或驗收活動，均需由此表出發尋找依據。
+領域範疇 (Domain)
+	內容類型 (Content Type)
+	目標文件 (Target SSOT)
+	版本 (Version)
+	目標錨點 (Target Locator)
+	來源依據
+	Governance
+	治理母法、三平面架構、DoD
+	Blueprint v2.2
+	v2.2.0-r1
+	[ANCHOR:bp-two-minute-guide]
+	[SRC:Blueprint v2.2]
+	Requirements
+	功能需求 (FR)、Gate Policy
+	SRS v8.1
+	v8.1.0
+	[ANCHOR:SRS-V810-4-6-FR]
+	[SRC:SRS v8.1 §7.1]
+	Architecture
+	系統拓樸、15 CA 邊界、資料流
+	ARCH v8.1
+	v8.1.0
+	[ANCHOR:ARCH-V810-SEC4]
+	[SRC:ARCH v8.1 §9.5]
+	Interface
+	JSON Schema、API 契約
+	LBP-B (ICD)
+	v5.0.1
+	[ANCHOR:ICD-V501-CONTRACT-RECORDS]
+	[SRC:ICD v5.0 §5]
+	Validation
+	驗收門檻、Fitness Metrics
+	LBP-E (Fitness)
+	v3.0.1
+	[ANCHOR:LBPE-V301-4-CATALOG]
+	[SRC:Fitness v3.0 §4]
+	Operations
+	操作步驟、CLI 指令
+	Runbook
+	v1.4.0
+	[ANCHOR:SPLMVP-S4-RUNBOOK]
+	[SRC:Runbook v1.4 §4]
+	Decisions
+	架構決策理由 (Why A not B)
+	LBP-C (ADR)
+	v2.0.1
+	[ANCHOR:LBP.C.ADR.DECISION_COVERAGE]
+	[SRC:ADR v2.0 §6]
+	Data
+	資料庫 Schema、DVC 目錄
+	Pipeline-A+B DB 方案
+	v4
+	## 3.4 目錄與規格
+	[SRC:Pipeline-A+B DB §3.4]
+	Audit Fix (CR-MIP-004)：
+               * 已確認上述所有 Target Locator 在對應來源文件中真實存在（FOUND）。
+               * 已將 Pipeline-A+B DB 方案 納入 Master Table，解決資料層定位不明問題。
+________________
+
+
+6.2 Pipeline & Component Route-Out (管線與組件外導)
+[ANCHOR:MIP-V220-6-2-PIPELINE]
+本節針對實作層面（Implementation Plans），將三大管線、五大跨域子系統及關鍵組件的「落地細節」進行路由。此處解決 Audit Report B 對於 Pipeline 方案與子系統重構藍圖定位不清的指控。
+6.2.1 Pipeline Implementation Routing (管線實作路由)
+Pipeline ID
+	實作方案文件 (Implementation Plan)
+	定位點 (Locator)
+	包含內容 (Scope)
+	來源依據
+	Pipeline-A
+	Pipeline-A_組合方案 v2
+	## 0) 封面卡
+	WRC/CORPUS/DISTILL/DSL 工具選型 (Marker/Distilabel)、執行腳本
+	[SRC:Pipeline-A v2]
+	Pipeline-B
+	Pipeline-B 組合方案 v2
+	## 0) 封面卡
+	METHOD/BACKTEST/PERFORM 回測引擎 (Backtesting.py)、報表生成
+	[SRC:Pipeline-B v2]
+	Pipeline-C
+	Pipeline-C組合方案 v1
+	## 0) 封面卡
+	TA/SELECT/TRANSLATE 特徵工程、TVE 驗證實作
+	[SRC:Pipeline-C v1]
+	Cross-Cut
+	五子系統組合方案 v1
+	## 0) 封面卡
+	CA-GOVERN/COLLAB/UI/EXECUTE/WATCH 的薄層封裝與整合
+	[SRC:五子系統組合方案]
+	6.2.2 Key Component Deep-Dive (關鍵組件深層路由)
+針對系統中高複雜度、跨越多個文件的組件，提供聚合路由：
+組件/主題 (Component/Topic)
+	目標文件 (Target Doc)
+	目標錨點 (Target Anchor)
+	說明
+	來源依據
+	Evidence Contract
+	OMOC-MVU 套件包
+	[ANCHOR:OMOCMVU-REF-EVID-CONTRACT]
+	證據三件套 (Verdict/Index/Bundle) 的實作規範
+	[SRC:OMOC-MVU Ref]
+	Skills Supply Chain
+	OMOC-MVU 套件包
+	[ANCHOR:OMOCMVU-REF-SKILLS-SC-FLOW]
+	外部工具引入流程 (Pinact/Zizmor)
+	[SRC:OMOC-MVU Ref]
+	Router Skill (L0)
+	OMOC-MVU 套件包
+	[ANCHOR:OMOCMVU-REF-ROUTER-SKILL-ROOT]
+	L0 Chef 的任務分派與模型調度邏輯
+	[SRC:OMOC-MVU Ref]
+	Gate Templates
+	15CA 重構升級藍圖
+	[ANCHOR:SOMOC-15CA-BP-07-GATES]
+	8 大 Gate 模板的詳細參數與檢查邏輯
+	[SRC:15CA BP §7]
+	Market Profile
+	ARCH v8.1
+	[ANCHOR:ARCH-TWMS-AXIS]
+	台股微結構常數定義 (SSOT)
+	[SRC:ARCH v8.1 §8.7]
+	T0/T1 Logic
+	Runbook v1.4
+	[ANCHOR:SPLMVP-T0T1-ROUTE]
+	當沖與隔日沖的操作分流細節
+	[SRC:Runbook v1.4 §5.2.4]
+	Subsystem Refactoring
+	子系統重構藍圖
+	## 1) 背景與前提
+	(Audit Fix: CR-MIP-LOCATOR-002) 15CA 重構的原始意圖與方向
+	[SRC:子系統重構藍圖]
+	Naming Map
+	改名方案
+	## 0) 方案總覽
+	(Audit Fix: CR-MIP-LOCATOR-001) 顯示名稱與宏模組的映射表
+	[SRC:改名方案]
+	________________
+
+
+§7. Naming & Versioning Map (命名與版本映射) [ANCHOR:MIP-V220-SEC7]
+本章節確立 Spartoi-OMOC 系統中所有規範性文件（Normative Documents）的標準命名、當前生效版本、以及舊詞彙（Legacy Tokens）的強制映射規則。 治理原則：
+               1. Unique Identity：每個文件擁有唯一的 Internal Short Code 與 Document ID。
+               2. Explicit State：文件狀態由 doc_state_enum 嚴格定義，禁止模糊狀態。
+               3. Legacy Containment：舊詞彙僅允許存在於本章節的對照表中，嚴禁出現在其他規範性條文中。
+________________
+
+
+7.1 Doc Naming & Versioning (文件命名與版本) [ANCHOR:MIP-V220-7-1-DOCS]
+[Audit Fix: A-Patch-03] 本節修復了舊版表格斷裂問題，並新增 doc_state_enum 與 SSOT Locator 欄位，確保自動化工具可解析文件狀態與位置。
+7.1.1 Document State Definitions (文件狀態定義)
+狀態值 (doc_state_enum)
+	定義 (Definition)
+	執行力 (Enforcement)
+	BASELINE
+	當前生效的最高權威版本。
+	MUST 執行，衝突時以此為準。
+	SUPERSEDES
+	取代了舊版本的新文件。
+	MUST 執行。
+	SUPERSEDED
+	被新版本取代的舊文件。
+	MUST NOT 執行，僅供歷史參考。
+	ABSORBED
+	內容已被全量併入上位 SSOT，本體不再獨立更新。
+	MUST NOT 獨立引用，需引用上位 SSOT。
+	DISTRIBUTED
+	內容被拆分至多個上位 SSOT。
+	MUST NOT 獨立引用，需引用各上位 SSOT。
+	ROUTE-OUT
+	外部或細節文件，由主文件指針引用。
+	依據 Route-Out 上下文執行。
+	               * 來源依據：[SRC:MIP v2.1.0 §7.1.1, README v4.0.1 §R6]
+7.1.2 Master Document Table (文件總表)
+Category
+	External Name (外部名稱)
+	Internal Short Code
+	Version
+	Status
+	SSOT Locator (Backing Anchor)
+	GOV (L1)
+	Spartoi-OMOC Blueprint
+	BP
+	v2.2.0-r1
+	BASELINE
+	[ANCHOR:BP-DOC-META]
+	REQ (L1)
+	Spartoi-OMOC_SRS
+	SRS
+	v8.1.0
+	BASELINE
+	[ANCHOR:SRS-V810-4-0-COVER]
+	ARCH (L2)
+	Spartoi-OMOC_ARCH
+	ARCH
+	v8.1.0
+	BASELINE
+	[ANCHOR:ARCH-V810-0-1-META]
+	INDEX
+	Spartoi-OMOC_MIP
+	MIP
+	v2.2.0
+	BASELINE
+	[ANCHOR:MIP-V220-0-1-META]
+	SPEC (L3)
+	LBP-B (Interface Control)
+	ICD
+	v5.0.1
+	BASELINE
+	[ANCHOR:ICD-V501-DOC-CONTROL]
+	TEST (L3)
+	LBP-E (Fitness)
+	Fitness
+	v3.0.1
+	BASELINE
+	[ANCHOR:LBPE-V301-0-META]
+	OPS (L6)
+	SubP1-LITE+MVP Runbook
+	Runbook
+	v1.4.0
+	BASELINE
+	[ANCHOR:SPLMVP-RB-V140-COVER]
+	PLAN
+	15CA 重構升級藍圖
+	RefactorBP
+	v0.2.0-r1
+	ABSORBED
+	ARCH v8.1 [ANCHOR:ARCH-V810-SEC4]
+	PLAN
+	OMOC-MVU 套件包
+	MVU-Pkg
+	v0.2.0-r1
+	DISTRIBUTED
+	BP v2.2 [ANCHOR:BP-TRIPLANE]
+	LEGACY
+	SRS v7.0.0
+	SRS-Legacy
+	v7.0.0
+	SUPERSEDED
+	SRS v8.1 [ANCHOR:SRS-V810-4-0-COVER]
+	LEGACY
+	ARCH v6.0.0-r5
+	ARCH-Legacy
+	v6.0.0
+	SUPERSEDED
+	ARCH v8.1 [ANCHOR:ARCH-V810-0-1-META]
+	LEGACY
+	MIP v2.1.0
+	MIP-Legacy
+	v2.1.0
+	SUPERSEDED
+	MIP v2.2 [ANCHOR:MIP-V220-0-1-META]
+	               * 來源依據：[SRC:MIP v2.1.0 §7.1.2, MIP v2.0.0 §10, 各 SSOT 封面卡]
+________________
+
+
+7.2 Legacy Token Crosswalk (舊詞彙對照) [ANCHOR:MIP-V220-7-2-LEGACY]
+本節定義舊版文件與程式碼中可能殘存的「遺產詞彙（Legacy Token）」及其在本系統中的標準對應。 Fail-Closed 規則：任何新產出的代碼或文檔 必須 (MUST) 使用「Current Equivalent」，嚴禁使用 Legacy Token。若自動化掃描發現 Legacy Token 出現在非 Crosswalk 區域，視為 BLOCK_RELEASE。
+7.2.1 Core Terminology Mapping (核心術語映射)
+Legacy Token (Forbidden)
+	Legacy Context
+	Current Equivalent (SSOT)
+	Rationale / Migration Note
+	DayFlow / DF-xx
+	v1.x - v4.x 流程主鍵
+	SF-xx (Spartoi Flow)
+	流程主鍵統一為 SF-00 ~ SF-31。
+	ICT-xx (作為主鍵)
+	v5.x 流程主鍵
+	SF-xx
+	ICT 模組編號 (#1~#107) 僅用於技術模組索引，不得作為流程主鍵。
+	Stage-xx
+	v6.x 階段編號
+	SF-xx
+	Stage ID 漂移修正，統一回歸 SF-xx。
+	層 / Layer
+	v3.x 架構描述
+	Plane (平面) / Tier (層級)
+	避免歧義：治理架構用 Plane (Control/Execution)，權限分級用 Tier (0/1/2)。
+	九大項目
+	v1.x 子系統分類
+	15 CA Subsystems
+	系統邊界已重構並鎖定為 15 個 Capability Areas。
+	CA-FIREWALL
+	v4.x 子系統
+	CA-GOVERN (Gate)
+	舊防火牆子系統已刪除，功能併入治理中樞與 Gate 機制。
+	CA-AGENT
+	v5.x 子系統
+	CA-COLLAB (Mode)
+	Agent 不再是單一子系統，而是協作模式，歸入 CA-COLLAB 管理。
+	Candidate
+	v6.x 需求狀態
+	CR_OPEN
+	所有「候選」條文強制轉為 CR_OPEN 待決項目，並綁定 Fail-Closed Gate。
+	threshold_xxx
+	v5.x 硬編碼
+	Evidence / RunConfig
+	門檻數值不再散落在代碼常數，統一由 run_config.json 或 Evidence Index 引用。
+	               * 來源依據：[SRC:MIP v2.1.0 §7.2.1, SRS v8.1 §7.4.2, Runbook v1.4 附錄H]
+7.2.2 Subsystem Renaming Trace (子系統改名追溯)
+針對 Audit B (CR-MIP-LOCATOR-001) 指出的改名方案定位問題，以及 v2.1.0 的修補要求，在此明確列出關鍵的子系統名稱變更歷史，作為「改名方案」的正式落地紀錄。
+Stable ID (Immutable)
+	Old Display Name (Legacy)
+	Current Display Name (v2.2)
+	備註
+	CA-WRC
+	教材蒐集器
+	Writer/Research Collector
+	強調「封印」而非單純蒐集。
+	CA-DSL
+	偽代碼生成器
+	DSL & Spec Generator
+	強調「規格化」與「原語中立性」。
+	CA-METHOD
+	策略工廠
+	Method Designer
+	強調「設計」與「三源融合」。
+	CA-TRANSLATE
+	腳本轉譯器
+	XS Translator
+	明確轉譯目標為 XS 語言。
+	CA-WATCH
+	盯盤機器人
+	Watchlist & Alerts
+	強調「清單管理」與「告警」，非自動操作。
+	CA-EXECUTE
+	下單機
+	Execution Adapter
+	強調「適配器」角色，需 HITL 確認。
+	CA-GOVERN
+	防火牆 / 總控
+	Governance & Policy
+	確立「治理中樞」地位。
+	               * 來源依據：[SRC:MIP v2.1.0 §7.2.2, 15CA 重構升級藍圖 v0.2.0-r1 §2.4, 改名方案]
+________________
+
+
+§8. Registers (CR_OPEN & TEST_TRACK)
+[ANCHOR:MIP-V220-SEC8]
+本章節依據 SRS v8.1.0 §6.3 與 Spartoi-OMOC Blueprint v2.2.0-r1 之治理規範，維護兩份關鍵註冊表。此處是系統「未決事項」的唯一真相源，任何未解決的阻斷項（Blocker）或待驗證項（Test Item）皆須在此列管，嚴禁散落在程式碼註解或非規範文件中。
+________________
+
+
+8.1 CR_OPEN Register (阻斷清單)
+[ANCHOR:MIP-V220-8-1-CROPEN]
+治理規則 (Governance Rules)：
+               1. Block Release：凡列於本表之項目，代表系統存在「規格缺口」或「證據不足」，在狀態轉為 CLOSED 之前，相關聯的發布版本或功能必須強制 BLOCK_RELEASE（阻斷發布）。
+               2. Explicit Fallback：每個 CR 項目必須定義 fail_closed_default（如 RADAR_ONLY），在缺口補齊前，系統必須以此降級模式運作。
+               3. No Candidate：舊版「Candidate」狀態已廢除，所有未定案需求一律升級為 CR_OPEN 並視為阻斷項。
+8.1.1 Active Blocking Issues (當前阻斷事項)
+               * 整合來源：Audit Report B, SRS v8.1, ARCH v8.1
+CR_ID
+	缺口描述 (Problem)
+	影響範圍 (Impact)
+	預設阻斷行為 (Fail-Closed Default)
+	權責方 (Owner)
+	來源引用
+	CR-MIP-LOCATOR-001
+	改名方案定位強度不足《子系統顯示名改名方案》缺穩定錨點，導致 RTM 無法鎖定。
+	High命名映射可能斷鏈。
+	BLOCK_RELEASE(MIP 建置失敗)
+	Doc Engineer
+	[SRC:Audit B §5.1]
+	CR-MIP-LOCATOR-002
+	重構藍圖定位強度不足《子系統重構藍圖》缺穩定錨點，導致 15 CA 定義追溯脆弱。
+	High架構意圖追溯斷裂。
+	BLOCK_RELEASE(MIP 建置失敗)
+	Architect
+	[SRC:Audit B §5.1]
+	CR-MIP-DB-EXT-001
+	DB 擴充規則定位缺失Pipeline-C/五子系統的 DB 共用規則在《Pipeline-A+B DB 方案》中無錨點。
+	High可能產生私有 DB 破壞主幹。
+	BLOCK_RELEASE(Pipeline-C 禁止上線)
+	Data Engineer
+	[SRC:Audit B §5.1]
+	CR-MIP-EVID-JSON
+	證據索引檔名不一致SRS 規定 .json 但 Runbook 混用 .md，導致自動化讀取失敗。
+	MediumGateRunner 驗證失敗。
+	BLOCK_RELEASE(Evidence 無效)
+	QA Engineer
+	[SRC:Audit B §5.1]
+	CR-SRS-TRACE-001
+	SRS 條文定位缺失SRS v8.1 部分條文缺精確錨點，導致 RTM 無法逐條映射。
+	High需求覆蓋率無法計算。
+	BLOCK_RELEASE(無法宣稱合規)
+	QA Engineer
+	[SRC:ARCH v8.1 §11.1]
+	CR-ICD-IO-001
+	ICD 介面契約定位缺失ICD v5.0 部分 Schema 缺精確錨點。
+	High跨子系統自動互操作風險。
+	BLOCK_RELEASE(禁止自動串接)
+	Architect
+	[SRC:ARCH v8.1 §11.1]
+	CR-FITNESS-TH-001
+	Fitness 門檻數值定位缺失具體數值（如 WinRate > 50%）在 Fitness 文件中不可定位。
+	Medium驗收標準模糊。
+	RADAR_ONLY(僅記錄不阻斷)
+	Quant Dev
+	[SRC:ARCH v8.1 §11.1]
+	CR-PIPE-DETAIL-001
+	Pipeline 方案細節定位缺失A/B/C 方案無內文錨點，無法精確引用實作步驟。
+	Medium實作一致性風險。
+	RADAR_ONLY(需人工覆核)
+	DevOps
+	[SRC:ARCH v8.1 §11.1]
+	CR-EXEC-INVAR-001
+	執行層不變量定位缺失CA-WATCH/EXECUTE 的 Radar/HITL 屬性無定位。
+	Critical安全邊界可能失效。
+	EXECUTE_DISABLED(禁止實盤能力)
+	Security
+	[SRC:ARCH v8.1 §11.1]
+	CR-AGENT-MODE-001
+	Agent 雙模切換邏輯缺定位NON_AGENT/AGENT_ASSIST 切換規則不明確。
+	HighAgent 行為不可控。
+	RADAR_ONLY(Agent 僅能提案)
+	AI Ops
+	[SRC:ARCH v8.1 §11.1]
+	CR-T0T1-SPLIT-001
+	T0/T1 分流邏輯缺定位雙軌分流判定與資料隔離規則不明確。
+	High隔日沖風險。
+	BLOCK_RELEASE(阻斷交易)
+	Strategy Dev
+	[SRC:ARCH v8.1 §11.1]
+	________________
+
+
+8.2 TEST_TRACK (驗證台帳)
+[ANCHOR:MIP-V220-8-2-TESTTRACK]
+本表依據 Spartoi-OMOC Blueprint v2.2.0-r1 與 OMOC-MVU 規範，管理所有「可變動事實（Variable Facts）」與「待驗證假設」。 治理規則：
+               1. TEMP_CLOSED：所有已解決但依賴外部變動因素的 CR，轉入此狀態。
+               2. Continuous Verification：必須定義驗證方法（如腳本、截圖），並定期執行。
+               3. Revoke Condition：一旦驗證失敗（如 GitHub 改版），必須有明確的回退或修補路徑。
+8.2.1 Platform & Tooling Tracks (平台與工具追蹤)
+               * 整合來源：OMOC-MVU, Blueprint v2.2, ARCH v8.1
+TT_ID
+	主題 (Topic)
+	變動風險來源 (Why Variable)
+	驗證方法 (Verification Method)
+	撤銷/回退條件 (Revoke Condition)
+	來源引用
+	TT-GH-MQ-AVAIL
+	Merge Queue 可用性
+	GitHub 限制 MQ 僅能在 Org/Public Repo 使用，個人帳號可能受限。
+	Manual Check: Repo Settings 確認 "Merge Queue" 選項存在。
+	若無法啟用，改用傳統 Required Checks 並更新 Runbook。
+	[SRC:OMOC-MVU]
+	TT-GH-RULESETS
+	Rulesets 行為
+	GitHub Rulesets 介面與 JSON 設定結構頻繁更新。
+	API Check: gh api 匯出設定比對關鍵欄位。
+	若 Ruleset 無法阻擋未授權 Push，暫時鎖定分支。
+	[SRC:OMOC-MVU]
+	TT-COPILOT-MODELS
+	Copilot 模型清單
+	支援模型（如 GPT-4o）與退役時間會變動。
+	Snapshot: 每週快照官方 "Supported models" 頁面。
+	若使用中模型退役，必須更新 Router Skill 配置。
+	[SRC:OMOC-MVU]
+	TT-COPILOT-BILLING
+	Copilot 計費倍數
+	Premium requests 倍數可能調整。
+	Snapshot: 每月額度與倍數截圖入 Evidence。
+	倍數變更時，調整「鎖模/省額度」策略。
+	[SRC:OMOC-MVU]
+	TT-OC-CONFIG
+	OpenCode 設定鍵名
+	OpenCode 迭代快，鍵名（如 permission）可能變更。
+	Doctor Check: 執行 scripts/opencode_doctor.sh。
+	若檢查失敗，必須修正設定檔否則禁止啟動。
+	[SRC:OMOC-MVU]
+	TT-MCP-SPEC
+	MCP 安全規範
+	規範尚在 Draft 階段，安全建議可能更新。
+	Spec Watch: 監控 MCP GitHub Repo 變更。
+	若新增強制安全要求，必須更新 Peripheral Contract。
+	[SRC:OMOC-MVU]
+	TT-OWASP-LLM
+	OWASP Top 10
+	威脅模型與建議隨時間演進。
+	Review: 每年檢視 OWASP Top 10 版本。
+	新版本發布時，重新映射防禦控制項。
+	[SRC:OMOC-MVU]
+	TT-LOCATOR-001
+	SSOT 定位證明
+	上游文件改版可能導致錨點失效。
+	Link Check: 掃描所有 [SRC:...] 與 evidence_ptr。
+	若發現死鏈，標記該文件為不可信 (BLOCK_RELEASE)。
+	[SRC:ARCH v8.1]
+	TT-TRACE-001
+	SRS 追溯完整性
+	SRS 條文增刪可能導致 RTM 斷鏈。
+	Coverage Check: 檢查 RTM 覆蓋率。
+	若有 SRS 條文懸空，標記需求未落地 (BLOCK_RELEASE)。
+	[SRC:ARCH v8.1]
+	TT-PLANE-001
+	三平面互斥驗證
+	防止 Execution Plane 越權修改 Control Plane。
+	Policy Check: 檢查 Agent 權限設定。
+	若發現越權，阻斷發布 (BLOCK_RELEASE)。
+	[SRC:ARCH v8.1]
+	TT-ICD-001
+	介面契約一致性
+	代碼實作可能偏離 ICD Schema。
+	Schema Check: 掃描代碼引用。
+	若使用未定義結構，阻斷互操作 (BLOCK_RELEASE)。
+	[SRC:ARCH v8.1]
+	TT-FIT-001
+	驗收門檻掛點
+	Fitness 指標可能未被 Gate 執行。
+	Gate Check: 確認 Metrics 與 Gate 對應。
+	若門檻無守門員，降級為僅觀測 (RADAR_ONLY)。
+	[SRC:ARCH v8.1]
+	執行要求：
+               * 所有 TEST_TRACK 項目必須在每次 Release Cycle 中執行驗證。
+               * 驗證結果必須產出 Evidence 並寫入 RunLedger。
+________________
+
+
+§9. Web Evidence Appendix (外部證據附錄：Support-Only)
+[ANCHOR:MIP-V220-SEC9]
+本章節列出 Spartoi-OMOC 系統設計與驗收過程中所引用的所有外部權威資料（External Authorities）。所有條目均依據 Spartoi-OMOC Blueprint v2.2.0-r1 與 SRS v8.1.0 之治理規範進行列管。
+治理規則 (Governance Rules)：
+               1. Support-Only (僅作支援)：依據 [SRS81-GOV-EVID-006] 與 Audit A Patch-05，本表列出之內容僅用於「佐證設計合理性」、「提供實作參考」或「定義評估方法論」。若外部資料與本系統之 SSOT（SRS/ARCH/ICD）發生衝突，一律以 SSOT 為準。嚴禁將外部網址直接作為驗收標準（Acceptance Criteria）。
+               2. Snapshot Required (快照強制)：為防止外部連結失效或內容漂移（Content Drift），所有被引用為關鍵證據的外部資料，必須 在 Test Tracking (TT) 中建立對應的快照（Snapshot）或雜湊（Hash）紀錄。
+               3. Route-Out Mandatory (強制外導)：開發者不得直接實作外部連結的內容，必須透過本系統的 Route-Out 機制，將其轉化為內部的 Fitness Metric 或 Gate Check。
+________________
+
+
+9.1 Web Source Registry (外部來源註冊表)
+[ANCHOR:MIP-V220-9-1-REGISTRY]
+本表全量整合 SRS v8.1 §7.2.2、ARCH v8.1 §12.1、15CA BP §14、Blueprint v2.2 §5 及 OMOC-MVU Package 之外部引用，並依據 Audit A Patch-05 規範欄位格式。
+Source Provider
+	Title / Subject (標題/主題)
+	Accessed (存取日)
+	Adopted Point (本系統採納點)
+	Scope Limit (適用邊界限制)
+	Why Not Normative (不升格理由)
+	引用來源 (Source Ref)
+	GitHub Docs
+	Managing a merge queue
+	2026-02-11
+	佐證 merge_group 事件是用於 Merge Queue 的必要觸發條件。
+	僅限於 Control Plane 的 CI/CD 觸發機制實作。
+	這是第三方平台行為，非本系統之業務邏輯，且可能隨平台改版而變動。
+	[SRC:SRS v8.1 §7.2.2], [SRC:ARCH v8.1 §12.1]
+	GitHub Docs
+	Using environments for deployment
+	2026-02-11
+	佐證 Environment Protection Rules (Required Reviewers) 可作為 HITL 強制機制。
+	僅限於 CA-EXECUTE 與 CA-GOVERN 的審核實作。
+	同上，屬於實作層的工具依賴。
+	[SRC:SRS v8.1 §7.2.2], [SRC:15CA BP APPX-WEB]
+	GitHub Docs
+	Artifact attestations
+	2026-02-11
+	佐證使用 Attestations 建立不可篡改的建置來源證明 (Provenance)。
+	僅限於 Evidence Contract 的防偽實作。
+	同上，且需依賴 GitHub 託管之 Sigstore。
+	[SRC:15CA BP APPX-WEB], [SRC:OMOC-MVU Ref]
+	GitHub Docs
+	Security hardening for GitHub Actions
+	2026-02-11
+	建議使用 Commit SHA pinning 第三方 Actions。
+	僅限於 .github/workflows 的依賴管理。
+	這是最佳實務建議，本系統需將其轉化為 GATE-SC-001 硬性規則才生效。
+	[SRC:ARCH v8.1 §12.1], [SRC:Skills Supply Chain]
+	GitHub Docs
+	Supported AI models in GitHub Copilot
+	2026-02-07
+	作為 L0 Chef Router Skill 的模型白名單與退役時間參考。
+	僅限於 CA-COLLAB 的模型調度策略。
+	模型清單與計費倍數屬於「可變動事實」，需透過 TT-COPILOT-MODELS 追蹤。
+	[SRC:ARCH v8.1 §12.1], [SRC:OMOC-MVU HMD]
+	OpenCode Docs
+	Configuration: Permissions
+	2026-02-06
+	佐證權限設定鍵名為 permission (非 permissions) 且具優先順序。
+	僅限於 Execution Plane 的 Agent 設定檔解析。
+	這是外部工具的配置規格，非本系統之需求。
+	[SRC:Blueprint v2.2 §5], [SRC:ARCH v8.1 §12.1]
+	Model Context Protocol
+	MCP Specification
+	2026-02-06
+	定義 MCP Server/Client 的通訊標準與安全建議 (Sandbox/Consent)。
+	僅限於 Peripheral Plane 的擴充協議介面。
+	規範尚在 Draft 階段，介面可能變動，需透過 TT-MCP-SPEC 鎖定版本。
+	[SRC:Blueprint v2.2 §5], [SRC:ARCH v8.1 §12.1]
+	OWASP
+	LLM05: Supply Chain Vulnerabilities
+	2026-02-06
+	定義 LLM 供應鏈風險，支持對 Skills/Actions 的嚴格管控。
+	用於定義威脅模型與 GATE-SC-002 的必要性。
+	這是通用安全指南，需轉化為本系統的具體 Gate 規則。
+	[SRC:Blueprint v2.2 §5], [SRC:ARCH v8.1 §12.1]
+	OWASP
+	LLM08: Excessive Agency
+	2026-02-06
+	定義過度代理風險，支持 Agent 最小權限與 HITL 機制。
+	用於定義 CA-COLLAB 的角色邊界。
+	同上。
+	[SRC:Blueprint v2.2 §5], [SRC:ARCH v8.1 §12.1]
+	Diátaxis.fr
+	The Diátaxis Framework
+	2026-02-06
+	用於指導本系統文件結構（Tutorial/How-to/Reference/Explanation）。
+	僅影響文件組織架構，不涉及系統邏輯。
+	這是文件工程方法論，非系統功能需求。
+	[SRC:Blueprint v2.2 §5], [SRC:SRS v8.1 §7.2.2]
+	TruLens / arXiv
+	RAG Triad
+	2026-02-06
+	定義 RAG 品質的三個核心維度 (Context, Groundedness, Answer)。
+	用於 CA-CORPUS 與 CA-DISTILL 的品質評估指標。
+	這是學術評估框架，需透過 GATE-SEG-L 實作具體算法。
+	[SRC:Blueprint v2.2 §5], [SRC:ARCH v8.1 §12.1]
+	Microsoft
+	GraphRAG
+	2026-02-06
+	佐證利用知識圖譜增強 RAG 檢索的技術路徑。
+	僅作為 CA-CORPUS 索引技術的選型參考。
+	技術實作細節，非強制綁定特定工具。
+	[SRC:Blueprint v2.2 §5], [SRC:SRS v8.1 §7.2.2]
+	SLSA
+	SLSA Provenance spec
+	2026-02-11
+	佐證 provenance/attestation 的概念與字段。
+	支持 evidence/attestation 建模。
+	通用標準，需透過本系統 Evidence Contract 落實。
+	[SRC:15CA BP APPX-WEB]
+	Wikipedia
+	NDCG (Normalized Discounted Cumulative Gain)
+	2026-02-11
+	定義排名品質評估指標 NDCG 的數學計算方式。
+	用於 CA-SELECT 的 GATE-SELECT-NDCG 算法定義。
+	數學定義通用，但 Relevance 分數定義需由本系統 ICD 規範。
+	[SRC:ARCH v8.1 §12.1], [SRC:SRS v8.1 §7.2.2]
+	TWSE
+	Trading Mechanics (交易制度)
+	2026-02-11
+	佐證台股 T0 交易時間窗 (09:00-13:30) 與收盤集合競價規則。
+	用於定義 CA-EXECUTE 的 INV-TIME-* 硬規則。
+	交易所規則可能調整，需定期透過 TT-OPS-003 進行 Test Tracking。
+	[SRC:ARCH v8.1 §12.1], [SRC:SRS v8.1 §7.2.2]
+	證據效力聲明 (Audit Statement)： 本表所列之外部連結，已經過 Preflight 檢查確認於 2026-02-11 當下有效。若未來外部內容發生變更（如 GitHub API 廢棄、OWASP 版本更新），本文件 不自動隨之更新。必須透過 CR_OPEN 流程評估影響後，由 Auditor 發布新版文件，方可採納變更。
+________________
+
+
+§10. Self-Check Report (自我檢查報告)
+[ANCHOR:MIP-V220-SEC10]
+本章節執行 MIP v2.2.0 的「發布前自我驗收（Pre-release Verification）」。依據 Authority Stack 與 Fail-Closed 原則，若本節任一檢核項目結果為 FAIL，則本文件視為無效（INVALID），不得作為系統執行的最高索引。
+驗收權威來源 (Validation Authorities)：
+               * L1-GOV: 《Spartoi-OMOC Blueprint v2.2.0-r1》 (治理硬規則)
+               * L1-REQ: 《Spartoi-OMOC_SRS_v8.1.0》 (需求契約)
+               * Audit: 《Spartoi-OMOC_MIP_v2.1.0_審查報告》 (阻斷項修補標準)
+________________
+
+
+10.1 Audit Fix Verification (審查修補驗證)
+[ANCHOR:MIP-V220-10-1-FIX-VERIFY]
+針對 《Spartoi-OMOC_MIP_v2.1.0_審查報告》 指出的阻斷級缺陷（Blockers），逐條驗證 v2.2.0 的修補狀況。
+審查項目 (Audit Issue ID)
+	缺陷描述 (Defect Description)
+	修補驗收 (Fix Verification)
+	結果 (Verdict)
+	證據落點 (Evidence Anchor)
+	BLK-001
+	**自我授權取代 (Self-Authorized Supersedence)**v2.1.0 宣告取代 v2.0.0 但缺乏上位文件授權。
+	§0.5 Supersedence Register 新增 Authority Backing 欄位，明確引用 Blueprint v2.2 [ANCHOR:bp-supersedence] 作為授權依據。
+	PASS
+	[ANCHOR:MIP-V220-0-5-SUPERSEDE]
+	BLK-002
+	**權威堆疊漂移 (Authority Drift)**v2.1.0 自創權威層級，與 MIP 指南及 Blueprint 定義不符。
+	§0.3 Authority Stack 已嚴格對齊 Blueprint v2.2 與 SRS v8.1 定義，移除未授權的層級描述。
+	PASS
+	[ANCHOR:MIP-V220-0-3-AUTHORITY]
+	BLK-003
+	**Preflight 自我宣告 (Self-Declared PASS)**僅標示 FOUND 而無可稽核的定位點。
+	§0.2 Preflight Report 已為所有輸入文件補齊 Locator Proof (具體 Anchor 或 Heading)，確保存在性可驗證。
+	PASS
+	[ANCHOR:MIP-V220-0-2-PREFLIGHT]
+	BLK-004
+	**Plan 層級定位不清 (Plan Ambiguity)**實作方案與 SSOT 位階混淆。
+	§0.3 明確定義 Plan 為 L2 層級，但在衝突時 SSOT (SRS/ARCH) 優先。§6.2 專區處理 Pipeline Plan 路由。
+	PASS
+	[ANCHOR:MIP-V220-0-3-AUTHORITY][ANCHOR:MIP-V220-6-2-PIPELINE]
+	BLK-005
+	**Locator 缺失 (Missing Locators)**改名方案與重構藍圖無 Anchor。
+	透過引用《15CA 重構升級藍圖 v0.2.0-r1》作為集合文件，並使用其標準 Anchor 解決個別草案定位問題。
+	PASS
+	[ANCHOR:MIP-V220-0-2-PREFLIGHT]
+	               * 來源依據：[SRC:Spartoi-OMOC_MIP_v2.1.0_審查報告], [SRC:Spartoi-OMOC_MIP_v2.0.0 §13]
+________________
+
+
+10.2 MIP Integrity Check (MIP 完整性檢查)
+[ANCHOR:MIP-V220-10-2-INTEGRITY]
+檢核 MIP 作為「總路由表」的結構完整性，確保無「孤兒組件（Orphaned Components）」或「斷鏈（Broken Links）」。
+10.2.1 核心覆蓋率 (Core Coverage)
+檢查對象 (Target)
+	檢查規則 (Rule)
+	驗證結果 (Result)
+	證據/說明 (Note)
+	15 CA Subsystems
+	必須全量列出 15 個 Stable ID，且無 CA-FIREWALL/CA-AGENT。
+	PASS
+	見 §1.1 Master Table，已對齊 ARCH v8.1。
+	Pipelines (A/B/C)
+	必須定義三大管線的目標、組件與實作方案路由。
+	PASS
+	見 §3 Pipeline Integration，已對齊 SRS v8.1。
+	Data Backbone
+	必須定義 ReferenceDB, RunLedger 與 Evidence Store。
+	PASS
+	見 §2 Unified Data Backbone，已對齊 DB 方案。
+	Cross-Cutting
+	必須定義五子系統的整合與 DB 共用規則。
+	PASS
+	見 §3.4 Cross-Cutting，已修補 Audit B 缺失。
+	Tooling
+	必須包含 Support-Only 工具清單與約束。
+	PASS
+	見 §4 Tooling Registry，已對齊 Pipeline 方案。
+	Evidence Contract
+	必須定義三件套 (Verdict/Bundle/Index) 與 Gate 映射。
+	PASS
+	見 §5 Evidence Contract，已對齊 OMOC-MVU。
+	10.2.2 路由有效性 (Routing Validity)
+路由區域 (Zone)
+	檢查規則 (Rule)
+	驗證結果 (Result)
+	證據/說明 (Note)
+	SSOT Routing
+	§6.1 必須包含至 L1~L6 所有權威文件的精確錨點。
+	PASS
+	所有 Locator 皆已在 Preflight 驗證為 FOUND。
+	Plan Routing
+	§6.2 必須包含至 Pipeline A/B/C 與五子系統方案的路由。
+	PASS
+	已指向各方案的封面卡或特定章節。
+	Out-of-Scope
+	本文件正文不得包含 SRS 條文、ARCH 圖表或 Code。
+	PASS
+	全文僅做 Index 與 Routing，符合 Scope Lock。
+	               * 來源依據：[SRC:MIP v2.0.0 §13], [SRC:Spartoi-OMOC Blueprint v2.2.0-r1 Coverage Map]
+________________
+
+
+END

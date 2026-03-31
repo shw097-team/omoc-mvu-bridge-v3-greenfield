@@ -1,0 +1,79 @@
+filename	source	target	confidence	reason
+20260307T144505Z_acceptance_report.json	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: acceptance_report
+20260308T052442Z_FULL_OMOC_COMPLETION_EVIDENCE.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: COMPLETION_EVIDENCE
+20260308T052442Z_FULL_OMOC_COMPLETION_INDEX.json	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: COMPLETION_INDEX
+20260309T115405Z_acceptance_report.json	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: acceptance_report
+20260309T115405Z_evidence_upload.txt	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: evidence_upload
+OMOC_RIP-A_v1.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC_RIP-B_v1.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC_RIP-C_v1.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC_RIP-D_v1.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC_RIP-E_v1.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC_RIP-F_v1.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC_WP-001+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-002+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-003+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-004+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-005+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-006+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-007+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-008+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_WP-009+RB+WI_v4.0.1-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC_總體RIP修補方案.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: 修補方案
+SPINE_COMPLETION_MASTER_EVIDENCE.json	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: SPINE_COMPLETION
+SPINE_COMPLETION_MASTER_EVIDENCE.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: SPINE_COMPLETION
+Spartoi-OMOC_ARCH_v8.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: _ARCH_|_SRS_|Architecture
+Spartoi-OMOC_LBP-A(SIR) v8.1.1-r1.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC_LBP-B(ICD)v8.1.1-r2.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC_LBP-C(ADR) v8.1.1-r2.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC_LBP-D(C4) v8.1.1-r2.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC_LBP-E(Fitness) v8.1.1-r2.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC_MIP_v2.2.0.txt	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: MIP_v
+Spartoi-OMOC_README_RDM v2.2.0.md	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: README_RDM
+Spartoi-OMOC_SRS_v8.1.0.md	QUARANTINE	docs/ssot/	UNAMBIGUOUS	Pattern match: _ARCH_|_SRS_|Architecture
+Spartoi-OMOC_SubP1-LITE+MVP Spine_Walking Skeleton Pack v0_v2.1.0-r1.md	QUARANTINE	ARCHIVE	ARCHIVE	Mixed scope: Spine walking skeleton (implementation detail)
+Spartoi-OMOC_dev RB + WI_v8.1.1-dev-r2.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+Spartoi-OMOC_ops RB + WI _v8.1.1-ops-r1.md	QUARANTINE	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+authority_chain_manifest.json	QUARANTINE	ARCHIVE	ARCHIVE	Metadata/evidence file: authority_chain
+20260307T144505Z_acceptance_report.json	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: acceptance_report
+20260308T052442Z_FULL_OMOC_COMPLETION_EVIDENCE.md	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: COMPLETION_EVIDENCE
+20260308T052442Z_FULL_OMOC_COMPLETION_INDEX.json	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: COMPLETION_INDEX
+20260309T115405Z_acceptance_report.json	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: acceptance_report
+20260309T115405Z_evidence_upload.txt	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: evidence_upload
+OMOC RIP__OMOC_RIP-A_v1.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC RIP__OMOC_RIP-B_v1.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC RIP__OMOC_RIP-C_v1.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC RIP__OMOC_RIP-E_v1.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC RIP__OMOC_RIP-F_v1.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: OMOC_RIP-
+OMOC WP__OMOC_WP-001+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-002+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-003+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-005+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-007+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-008+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-009+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-010+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-011+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-012+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-013+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC WP__OMOC_WP-014+RB+WI_v4.0.1-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+OMOC__OMOC_實作+WP總表_v4.0.1-r2.md.HOW.md	STAGED	ARCHIVE	AMBIGUOUS	No clear classification rule match
+SPINE_COMPLETION_MASTER_EVIDENCE.json	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: SPINE_COMPLETION
+SPINE_COMPLETION_MASTER_EVIDENCE.md	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: SPINE_COMPLETION
+Spartoi-OMOC_Master_Spine_Full_Monolith.md	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: Master_Spine
+Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南__Spartoi-OMOC_SubP1-LITE+MVP_Control Plane Pack_v2.2.0.md.HOW.md	STAGED	docs/packages/B_control_plane/	UNAMBIGUOUS	Pattern match: Control.*Plane.*Pack|Control Plane
+Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南__Spartoi-OMOC_SubP1-LITE+MVP_Execution Pack_v1.2.0.md.HOW.md	STAGED	docs/packages/C_execution/	UNAMBIGUOUS	Pattern match: Execution.*Pack(?!.*Subsystem)
+Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南__Spartoi-OMOC_SubP1-LITE+MVP_Governance_Index Pack_v1.2.0.md.HOW.md	STAGED	docs/packages/A_governance_index/	UNAMBIGUOUS	Pattern match: Governance.*Pack|Governance_Index
+Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南__Spartoi-OMOC_SubP1-LITE+MVP_Subsystem Delivery Pack_v1.2.0.md.HOW.md	STAGED	docs/packages/E_subsystem_delivery/	UNAMBIGUOUS	Pattern match: Subsystem.*Delivery.*Pack|Delivery Pack
+Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南__Spartoi-OMOC_SubP1-LITE+MVP_前端文檔到實作驗收_工程指南.md.HOW.md	STAGED	docs/guides/	UNAMBIGUOUS	Pattern match: 工程指南|Engineering Guide
+Spartoi-OMOC_SubP1-LITE+MVP__Spartoi-OMOC_MVP Spine_ Walking Skeleton Pack v0_最小實作包_v2.2.0-r1.md.HOW.md	STAGED	ARCHIVE	ARCHIVE	Mixed scope: Spine walking skeleton (implementation detail)
+Spartoi-OMOC_SubP1-LITE+MVP__Spartoi-OMOC_SubP1-LITE+MVP Spine_Walking Skeleton Pack v0_v2.1.0-r1.md.HOW.md	STAGED	ARCHIVE	ARCHIVE	Mixed scope: Spine walking skeleton (implementation detail)
+Spartoi-OMOC__Spartoi-OMOC Blueprint v2.2.0-r1.md.HOW.md	STAGED	ARCHIVE	AMBIGUOUS	No clear classification rule match
+Spartoi-OMOC__Spartoi-OMOC_ARCH_v8.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: _ARCH_|_SRS_|Architecture
+Spartoi-OMOC__Spartoi-OMOC_LBP-A(SIR) v8.1.1-r1.md.HOW.md	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC__Spartoi-OMOC_LBP-B(ICD)v8.1.1-r2.md.HOW.md	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC__Spartoi-OMOC_LBP-D(C4) v8.1.1-r2.md.HOW.md	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: LBP-
+Spartoi-OMOC__Spartoi-OMOC_SRS_v8.1.0.md.HOW.md	STAGED	docs/ssot/	UNAMBIGUOUS	Pattern match: _ARCH_|_SRS_|Architecture
+Spartoi-OMOC__Spartoi-OMOC_dev RB + WI_v8.1.1-dev-r2.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+Spartoi-OMOC__Spartoi-OMOC_ops RB + WI _v8.1.1-ops-r1.md.HOW.md	STAGED	docs/runbook/	UNAMBIGUOUS	Pattern match: RB\s*\+\s*WI|RUNBOOK
+authority_chain_manifest.json	STAGED	ARCHIVE	ARCHIVE	Metadata/evidence file: authority_chain
