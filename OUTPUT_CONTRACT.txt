@@ -1,0 +1,39 @@
+List of expected artifacts created by CA-DISTILL bootstrap (subset required):
+
+- docs/subsystems/CA-DISTILL/sourcepack/meta.json
+- docs/subsystems/CA-DISTILL/sourcepack/CA-CORE.md
+- docs/subsystems/CA-DISTILL/sourcepack/CA-MC4.md
+- docs/subsystems/CA-DISTILL/sourcepack/CA-WP.md
+- docs/subsystems/CA-DISTILL/runtime/distill_bundle.json
+- docs/subsystems/CA-DISTILL/runtime/distill_pack.json
+- docs/subsystems/CA-DISTILL/runtime/package_validation.json
+- contracts/route_out_registry.json
+- contracts/release_blocker_contract.json
+- registries/exact_locator_registry.tsv
+- registries/artifact_family_registry.tsv
+- registries/canonical_crosswalk.json
+- registries/owner_evidence_acquisition_plan.tsv
+- registries/test_tracking_list.tsv
+- matrices/interface_closure_matrix.tsv
+- matrices/crosswalk_matrix.tsv
+- matrices/opsflow_binding_table.tsv
+- matrices/review_fix_integration_matrix.tsv
+- matrices/self_audit_matrix.tsv
+- schemas/distill_bundle.schema.json
+- schemas/distill_pack.schema.json
+- schemas/dsl_handoff_payload.schema.json
+- samples/distill_bundle_sample.json
+- samples/distill_pack_sample.json
+- scripts/ca_distill_validate.py
+- evidence/_acceptance/20260331T143933Z/20260331T143933Z_acceptance_report.json
+- upload/20260331T143933Z_evidence_upload.txt
+- handoff/handoff_latest.md
+- handoff/dsl_handoff_payload.json
+- handoff/dsl_handoff_block_reason.json
+- perf/omoc_perf_report.md
+- perf/omoc_perf_report.json
+- perf/rca_tree.json
+- perf/upgrade_plan.tsv
+- runpack.yaml
+
+All artifacts timestamp: 20260331T143933Z

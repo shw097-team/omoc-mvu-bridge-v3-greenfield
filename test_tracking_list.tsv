@@ -1,0 +1,16 @@
+ID	Task	Type	Status	Blocking_Issue	Owner	Description	Resolution_Path	Priority
+TT-001	CA-DISTILL subsystem bootstrap	INFRASTRUCTURE	BLOCKED	CD-001	PROJECT_OWNER	Initialize docs/subsystems/CA-DISTILL/ with canonical artifact locations	Escalate to project owner for initialization strategy	CRITICAL
+TT-002	Schema validation framework	INFRASTRUCTURE	BLOCKED	CD-002	PROJECT_OWNER	Create schemas/distill_bundle.schema.json and distill_pack.schema.json	Owner provides schema definitions	CRITICAL
+TT-003	Sourcepack structure	INFRASTRUCTURE	BLOCKED	CD-003	PROJECT_OWNER	Define CA-CORE.md, CA-MC4.md, CA-WP.md, meta.json structure	Owner provides sourcepack template	CRITICAL
+TT-004	Contract/registry boundaries	INFRASTRUCTURE	BLOCKED	CD-004	PROJECT_OWNER	Create contracts/ and registries/ infrastructure	Owner defines contract schema	CRITICAL
+TT-005	Integration matrices	INFRASTRUCTURE	BLOCKED	CD-005	PROJECT_OWNER	Create matrices/ with required crosswalk/closure/opsflow tables	Owner defines matrix structure	CRITICAL
+TT-006	Package B evidence	EVIDENCE	BLOCKED	CD-006	PACKAGE_B_OWNER	Locate and acquire Package B proof artifacts	Escalate to Package B owner; provide evidence acquisition template	HIGH
+TT-007	Package D evidence	EVIDENCE	BLOCKED	CD-007	PACKAGE_D_OWNER	Locate and acquire Package D proof artifacts	Escalate to Package D owner; provide evidence acquisition template	HIGH
+TT-008	Package E evidence	EVIDENCE	BLOCKED	CD-008	PACKAGE_E_OWNER	Locate and acquire Package E proof artifacts	Escalate to Package E owner; provide evidence acquisition template	HIGH
+TT-009	CA-DSL consumer acceptance	EVIDENCE	BLOCKED	CD-009	CA_DSL_TEAM	Locate and acquire CA-DSL acceptance evidence	Escalate to CA-DSL team; provide evidence acquisition template	HIGH
+TT-010	Ops rollback verification	EVIDENCE	BLOCKED	CD-010	OPS_TEAM	Locate and acquire Ops rollback drill results	Escalate to Ops team; provide evidence acquisition template	HIGH
+TT-011	Split document acquisition	DOCUMENTATION	PARTIAL	CD-011	PROJECT_OWNER	Acquire individual split files (not merged 合冊 versions)	Owner provides split file sources or confirms merged versions acceptable	MEDIUM
+TT-012	Preflight validation complete	CHECKLIST	PASS	NONE	SISYPHUS	Preflight scan completed; baseline_freeze.md + multi_zone_preflight_report.json generated	N/A	LOW
+TT-013	Route-out registry created	CHECKLIST	PASS	NONE	SISYPHUS	contracts/route_out_registry.json generated with blocking issues	N/A	LOW
+TT-014	Acceptance report pending	ACCEPTANCE	PENDING	TT-001:TT-011	IMPLEMENTATION_TEAM	Cannot generate acceptance report until infrastructure & evidence acquired	Resume once prerequisites met; use new session with updated context	CRITICAL
+TT-015	Implementation resumption	CHECKPOINT	PENDING	TT-001:TT-011	PROJECT_OWNER	Decision point: proceed with distill engine (blind_abstract → cross_review → targeted_integrate) once infrastructure is initialized	Reactivate with new session_id after owner approval	CRITICAL

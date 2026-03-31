@@ -1,20 +1,23 @@
 {
-  "ts": "20260331T170503Z",
+  "ts": "20260331T173534Z",
   "round": 3,
-  "cycle": "comprehensive_one_shot_split_flow_revalidation",
+  "cycle": "comprehensive_one_shot_split_flow_revalidation + candidate_proof_audit",
   "entries": {
-    "Package B": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 comprehensive one-shot search (20260331T170503Z): proof not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/","search_ts":"20260331T170503Z"},
-    "Package D": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 comprehensive one-shot search (20260331T170503Z): proof not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/","search_ts":"20260331T170503Z"},
-    "Package E": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 comprehensive one-shot search (20260331T170503Z): proof not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/","search_ts":"20260331T170503Z"},
-    "CA-DSL acceptance": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 comprehensive one-shot search (20260331T170503Z): DSL acceptance not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/","search_ts":"20260331T170503Z"},
-    "Ops rollback evidence": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 comprehensive one-shot search (20260331T170503Z): ops rollback results not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/","search_ts":"20260331T170503Z"}
+    "Package B": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","note":"PHASE 1 (20260331T170503Z): exhaustive search—not found. PHASE 2 (20260331T173534Z): candidate-proof audit—no direct proof candidates discovered. Landing directory exists (infrastructure) but empty. Request specification documented (adjacency). Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/","upgrade_eligible":false},
+    "Package D": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","note":"PHASE 1 (20260331T170503Z): exhaustive search—not found. PHASE 2 (20260331T173534Z): candidate-proof audit—no direct proof candidates discovered. Landing directory exists (infrastructure) but empty. Request specification documented (adjacency). Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/","upgrade_eligible":false},
+    "Package E": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","note":"PHASE 1 (20260331T170503Z): exhaustive search—not found. PHASE 2 (20260331T173534Z): candidate-proof audit—no direct proof candidates discovered. Landing directory exists (infrastructure) but empty. Request specification documented (adjacency). Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/","upgrade_eligible":false},
+    "CA-DSL acceptance": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","note":"PHASE 1 (20260331T170503Z): exhaustive search—not found. PHASE 2 (20260331T173534Z): candidate-proof audit—no direct acceptance proof discovered. Handoff payload exists but BLOCKED_STATE (owner_contact missing, dependent proofs absent). Cannot serve as acceptance until blockers resolved. Landing directory exists (infrastructure) but empty. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/","upgrade_eligible":false},
+    "Ops rollback evidence": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","note":"PHASE 1 (20260331T170503Z): exhaustive search—not found. PHASE 2 (20260331T173534Z): precondition audit—no rollback drill results discovered. Preconditions documented (infrastructure) but drill not executed. Landing directory exists (infrastructure) but empty. Awaiting Ops team submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/","upgrade_eligible":false}
   },
   "route_out_completeness": "FAIL",
   "proofs_found": 0,
   "proofs_found_valid": 0,
   "proofs_found_invalid": 0,
   "proofs_missing": 5,
+  "audit_status": "PHASE_2_COMPLETE",
+  "upgrade_candidates_found": 0,
   "flow_path": "FLOW-2_KEEP_BLOCKED",
   "deadline_status": "NOT_YET_PASSED",
-  "action": "Awaiting owner proof uploads; ready to re-search and revalidate upon detection; release remains blocked; FLOW-2 maintained"
+  "deadline_date": "2026-04-07T23:59:59Z",
+  "action": "Awaiting owner proof uploads; all 5 landing directories ready; validation hooks operational; ready to re-search and revalidate upon detection; release remains blocked; FLOW-2 maintained; infrastructure complete"
 }
