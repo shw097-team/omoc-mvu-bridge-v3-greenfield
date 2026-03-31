@@ -1,0 +1,6 @@
+{
+  "zones_checked": ["zone-a","zone-b"],
+  "connectivity": "ok",
+  "artifact_store": "available",
+  "timestamp": "20260331T143933Z"
+}

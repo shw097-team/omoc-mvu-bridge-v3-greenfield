@@ -1,0 +1,6 @@
+request_id	title	target_path	status
+REQ-PKG-B	Package B proof	contracts/external/package_b/	OPEN
+REQ-PKG-D	Package D proof	contracts/external/package_d/	OPEN
+REQ-PKG-E	Package E proof	contracts/external/package_e/	OPEN
+REQ-CA-DSL	CA-DSL acceptance	contracts/external/ca_dsl/	OPEN
+REQ-OPS-RB	Ops rollback	contracts/external/ops_rollback/	OPEN

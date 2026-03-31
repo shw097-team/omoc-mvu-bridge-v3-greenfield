@@ -1,0 +1,11 @@
+{
+  "ts": "20260331T153135Z",
+  "blocked": true,
+  "reasons": [
+    "Package B proof: MISSING",
+    "Package D proof: MISSING",
+    "Package E proof: MISSING",
+    "CA-DSL acceptance: MISSING",
+    "Ops rollback evidence: MISSING"
+  ]
+}

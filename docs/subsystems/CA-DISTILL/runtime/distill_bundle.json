@@ -1,0 +1,11 @@
+{
+  "artifact_kind": "distill_bundle",
+  "name": "ca-distill-bootstrap",
+  "version": "0.1.0-boot",
+  "ts": "20260331T143933Z",
+  "claims": ["bootstrap materialization"],
+  "function_specs": [],
+  "evidence_cards": [
+    {"id":"ec-boot-1","status":"BOOTSTRAP_TBD","note":"External proofs to be routed"}
+  ]
+}

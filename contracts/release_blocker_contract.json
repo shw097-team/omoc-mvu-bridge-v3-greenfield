@@ -1,0 +1,5 @@
+{
+  "ts": "20260331T143933Z",
+  "release_allowed": false,
+  "blockers": ["Missing external owner proofs (see contracts/route_out_registry.json)"]
+}

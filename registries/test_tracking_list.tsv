@@ -1,0 +1,5 @@
+test_id	description	status
+T001	schema validation for distill_bundle.json	PASS
+T002	sample vs schema	PASS
+T003	route-out completeness	FAIL (5 missing external proofs)
+T004	ROUND 2 proof search	COMPLETE

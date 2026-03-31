@@ -1,0 +1,4 @@
+audit_point	check	status
+schema_compliance	exists	PASS
+naming_drift	samples naming convention	FIXED (aliases retained)
+proof_search	external proofs presence	MISSING (see evidence/PROOF_SEARCH_LOG_20260331T153135Z.json)

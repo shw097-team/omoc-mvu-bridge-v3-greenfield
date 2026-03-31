@@ -1,0 +1,8 @@
+{
+  "ts": "20260331T153135Z",
+  "root_cause": "External owner proofs not provided in repository",
+  "analysis": [
+    "Owners did not upload required proofs during ROUND 1 or ROUND 2",
+    "Repository contains references but not actual artifacts"
+  ]
+}

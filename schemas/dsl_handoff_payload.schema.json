@@ -1,0 +1,13 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "dsl_handoff_payload",
+  "type": "object",
+  "required": ["bundle_ref","pack_ref","handoff_ts","owner_contact"],
+  "properties": {
+    "bundle_ref": {"type":"string"},
+    "pack_ref": {"type":"string"},
+    "handoff_ts": {"type":"string"},
+    "owner_contact": {"type":"string"},
+    "notes": {"type":"string"}
+  }
+}

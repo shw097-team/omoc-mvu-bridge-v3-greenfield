@@ -1,0 +1,6 @@
+{
+  "pack_name": "ca-distill-pack-boot",
+  "ts": "20260331T143933Z",
+  "bundle_ref": "docs/subsystems/CA-DISTILL/runtime/distill_bundle.json",
+  "internal_notes": "bootstrap companion pack"
+}

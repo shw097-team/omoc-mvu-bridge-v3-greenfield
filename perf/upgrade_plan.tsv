@@ -1,0 +1,4 @@
+step	action	next_owner	eta
+1	Contact owners with generated request packs	Release Manager	ASAP
+2	Owners upload proofs to specified contract locations	Owners	TBD
+3	Re-run validator and finalize release decision	Integrations	After proofs

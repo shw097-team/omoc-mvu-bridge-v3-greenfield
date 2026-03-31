@@ -1,0 +1,46 @@
+{
+  "ts": "20260331T153135Z",
+  "checks": [
+    {
+      "file_exists": {
+        "path": "/workspaces/omoc-wt-ca-distill-20260331T141005Z/docs/subsystems/CA-DISTILL/runtime/distill_bundle.json",
+        "exists": true
+      }
+    },
+    {
+      "file_exists": {
+        "path": "/workspaces/omoc-wt-ca-distill-20260331T141005Z/docs/subsystems/CA-DISTILL/runtime/distill_pack.json",
+        "exists": true
+      }
+    },
+    {
+      "schema_validation": "bundle: PASS"
+    },
+    {
+      "schema_validation": "pack: PASS"
+    },
+    {
+      "exact_locator_missing": []
+    },
+    {
+      "route_out_missing": [
+        {
+          "Package B": "MISSING"
+        },
+        {
+          "Package D": "MISSING"
+        },
+        {
+          "Package E": "MISSING"
+        },
+        {
+          "CA-DSL acceptance": "MISSING"
+        },
+        {
+          "Ops rollback evidence": "MISSING"
+        }
+      ]
+    }
+  ],
+  "execution_pass": false
+}

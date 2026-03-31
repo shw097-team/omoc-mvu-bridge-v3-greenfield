@@ -1,0 +1,7 @@
+{
+  "name": "CA-DISTILL sourcepack",
+  "version": "0.1.0-boot",
+  "ts": "20260331T143933Z",
+  "files_required": ["meta.json","CA-CORE.md","CA-MC4.md","CA-WP.md"],
+  "notes": "Materialized by bootstrap. Missing external owner inputs marked MISSING/TBD where applicable."
+}

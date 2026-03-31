@@ -1,0 +1,10 @@
+{
+  "ts": "20260331T153135Z",
+  "entries": {
+    "Package B": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; proof not found in ROUND 2 revalidation"},
+    "Package D": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; proof not found in ROUND 2 revalidation"},
+    "Package E": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; proof not found in ROUND 2 revalidation"},
+    "CA-DSL acceptance": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; DSL acceptance not found in ROUND 2 revalidation"},
+    "Ops rollback evidence": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; ops rollback results not found in ROUND 2 revalidation"}
+  }
+}
