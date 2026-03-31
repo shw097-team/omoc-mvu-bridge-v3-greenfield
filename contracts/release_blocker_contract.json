@@ -1,5 +1,19 @@
 {
-  "ts": "20260331T143933Z",
+  "ts": "20260331T160126Z",
+  "round": 3,
   "release_allowed": false,
-  "blockers": ["Missing external owner proofs (see contracts/route_out_registry.json)"]
+  "blockers": ["All 5 external owner proofs missing (see contracts/route_out_registry.json)"],
+  "gate_logic": {
+    "if_all_5_proofs_found_valid": "release_allowed transitions to true; ROUND3_GATE_OPEN generated",
+    "if_any_proof_missing_or_invalid": "release_allowed remains false; ROUND3_GATE_BLOCKED generated; proofs may be resubmitted"
+  },
+  "current_state": "ROUND3_GATE_BLOCKED (awaiting owner proof uploads)",
+  "landing_paths": {
+    "Package B": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/",
+    "Package D": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/",
+    "Package E": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/",
+    "CA-DSL": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/",
+    "Ops": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/"
+  },
+  "fail_closed_policy": "Enforced; no release without all proofs; no auto-execution of distill_engine until gate opened"
 }

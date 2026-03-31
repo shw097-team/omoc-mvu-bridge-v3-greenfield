@@ -1,0 +1,69 @@
+{
+  "ts": "20260331T160126Z",
+  "contract_type": "external_proof_intake",
+  "purpose": "Define intake rules, validation criteria, and status tracking for 5 external owner proofs",
+  "proof_categories": [
+    "Package B",
+    "Package D",
+    "Package E",
+    "CA-DSL consumer acceptance",
+    "Ops rollback evidence"
+  ],
+  "landing_paths": {
+    "Package B": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/",
+    "Package D": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/",
+    "Package E": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/",
+    "CA-DSL consumer acceptance": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/",
+    "Ops rollback evidence": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/"
+  },
+  "intake_rules": {
+    "file_presence": "File must exist at landing_path; must be readable; size > 0",
+    "owner_identity": "Proof must contain owner metadata (company name, team, or signer); not placeholder-only",
+    "acceptable_shape": "JSON: valid syntax + required fields; PDF: readable + legible; no template-only content",
+    "no_contamination": "NOT frontstage-only (design, docs); NOT support-only (preparation); NOT stale; IS direct owner proof",
+    "not_duplicate": "Not previously submitted version; not superseded; not placeholder re-upload",
+    "final_and_valid": "Not draft; not conditional; not pending approval; unconditional and binding"
+  },
+  "validation_checklist": [
+    "File exists at expected landing_path",
+    "File is readable (no corruption)",
+    "Owner identity clearly stated (metadata present)",
+    "Evidence shape matches acceptable_shape from request pack",
+    "No frontstage/support/template contamination",
+    "Not duplicate or stale version",
+    "Proof is final, valid, unconditional, binding",
+    "Proof passes validator revalidation_hook: python3 scripts/ca_distill_validate.py"
+  ],
+  "status_tracking": {
+    "SEARCHED_NOT_FOUND": "Proof not found in repo; awaiting owner upload",
+    "FOUND_VALID": "Proof file exists; intake validation PASS; route-out ready",
+    "INVALID": "Proof file exists; intake validation FAIL (shape, contamination, or identity issue)",
+    "DUPLICATE": "Proof file exists; but is duplicate or superseded version of previous submission",
+    "BLOCKING": "Proof status prevents route-out completion; holds release gate"
+  },
+  "gate_rules": {
+    "all_5_found_valid": "If all 5 proofs FOUND_VALID → route-out PASS → release_verdict transition to PASS → ROUND3_GATE_OPEN",
+    "any_missing_or_invalid": "If any proof SEARCHED_NOT_FOUND or INVALID → route-out FAIL → release remains BLOCK_RELEASE → ROUND3_GATE_BLOCKED",
+    "no_auto_engine_execution": "Proofs found/valid → enable ROUND 3 gate; do NOT auto-execute distill_engine in this round"
+  },
+  "documentation_locations": {
+    "inbox_readme": "docs/subsystems/CA-DISTILL/evidence/external_proofs/PROOF_INBOX_README.md",
+    "this_contract": "contracts/external_proof_intake_contract.json",
+    "inbox_index": "registries/external_proof_inbox_index.tsv",
+    "proof_search_log": "evidence/PROOF_SEARCH_LOG_${TS}.json",
+    "proof_validation_log": "evidence/PROOF_VALIDATION_LOG_${TS}.json",
+    "proof_receipt_log": "evidence/PROOF_RECEIPT_LOG_${TS}.json",
+    "route_out_registry": "contracts/route_out_registry.json",
+    "release_blocker": "contracts/release_blocker_contract.json"
+  },
+  "revalidation_hook": "python3 scripts/ca_distill_validate.py",
+  "next_steps": [
+    "Owners submit proofs to landing_paths",
+    "Validator auto-detects proofs and runs intake_checklist",
+    "Validator updates route_out_registry with status (FOUND_VALID, INVALID, DUPLICATE)",
+    "If all 5 FOUND_VALID: generate ROUND3_GATE_OPEN_${TS}.json",
+    "If any missing/invalid: generate ROUND3_GATE_BLOCKED_${TS}.json; maintain release_blocker",
+    "CA-DISTILL Lead coordinates next steps (proceed to ROUND 4+ or extend deadline)"
+  ],
+  "enforcement": "fail_closed: proofs not present = NO release; no auto-execution of distill_engine without all proofs"
+}

@@ -1,10 +1,15 @@
 {
-  "ts": "20260331T153135Z",
+  "ts": "20260331T160126Z",
+  "round": 3,
   "entries": {
-    "Package B": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; proof not found in ROUND 2 revalidation"},
-    "Package D": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; proof not found in ROUND 2 revalidation"},
-    "Package E": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; proof not found in ROUND 2 revalidation"},
-    "CA-DSL acceptance": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; DSL acceptance not found in ROUND 2 revalidation"},
-    "Ops rollback evidence": {"status":"SEARCHED_NOT_FOUND","note":"Searched repo; ops rollback results not found in ROUND 2 revalidation"}
-  }
+    "Package B": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 search: proof not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/","search_ts":"20260331T160126Z"},
+    "Package D": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 search: proof not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/","search_ts":"20260331T160126Z"},
+    "Package E": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 search: proof not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/","search_ts":"20260331T160126Z"},
+    "CA-DSL acceptance": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 search: DSL acceptance not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/","search_ts":"20260331T160126Z"},
+    "Ops rollback evidence": {"status":"SEARCHED_NOT_FOUND","note":"ROUND 3 search: ops rollback results not found in repo. Awaiting owner submission to docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/","search_ts":"20260331T160126Z"}
+  },
+  "route_out_completeness": "FAIL",
+  "proofs_found": 0,
+  "proofs_missing": 5,
+  "action": "Awaiting owner proof uploads; ready to re-search and revalidate upon detection"
 }

@@ -1,0 +1,6 @@
+category	landing_path	request_pack	status	submission_received	validation_result	action_required	notes
+Package B	docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/	handoff/external_proof_requests/package_b_request.md	AWAITING_SUBMISSION	false	PENDING	Owner must submit proof file	No submission received as of 2026-03-31T16:01:26Z
+Package D	docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/	handoff/external_proof_requests/package_d_request.md	AWAITING_SUBMISSION	false	PENDING	Owner must submit proof file	No submission received as of 2026-03-31T16:01:26Z
+Package E	docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/	handoff/external_proof_requests/package_e_request.md	AWAITING_SUBMISSION	false	PENDING	Owner must submit proof file	No submission received as of 2026-03-31T16:01:26Z
+CA-DSL consumer acceptance	docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/	handoff/external_proof_requests/ca_dsl_acceptance_request.md	AWAITING_SUBMISSION	false	PENDING	Owner must submit proof file	No submission received as of 2026-03-31T16:01:26Z
+Ops rollback evidence	docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/	handoff/external_proof_requests/ops_rollback_request.md	AWAITING_SUBMISSION	false	PENDING	Owner must submit proof file	No submission received as of 2026-03-31T16:01:26Z
