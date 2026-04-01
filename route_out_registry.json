@@ -1,0 +1,9 @@
+{
+  "ts": "20260331T142618Z",
+  "evidence_path": "evidence/_acceptance/20260331T142618Z",
+  "upload_path": "upload/20260331T142618Z",
+  "output_channels": [
+    "20260331T142618Z_acceptance_report.json",
+    "20260331T142618Z_evidence_upload.txt"
+  ]
+}

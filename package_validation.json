@@ -1,0 +1,8 @@
+{
+  "timestamp": "20260331T162326Z",
+  "subsystem": "CA-DSL",
+  "validation_status": "READY",
+  "sources_count": 21,
+  "owner_docs_count": 3,
+  "generated_by": "block6_runtime_materialization"
+}
