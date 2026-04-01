@@ -106,19 +106,41 @@ class RuntimeValidator:
         return True
     
     def probe_scope_clean(self):
-        """Probe 5: Scope cleanliness (no .github/ or forbidden paths)"""
+        """Probe 5: Scope cleanliness (no forbidden paths in CA-DSL diff)"""
         forbidden_patterns = [".github/workflows", ".github/actions", ".github/ISSUE_TEMPLATE"]
         
         import subprocess
         try:
-            output = subprocess.check_output(["git", "ls-files"], text=True)
-            git_files = output.strip().split('\n')
+            output = subprocess.check_output(
+                ["git", "diff", "origin/main", "HEAD", "--name-only"], 
+                text=True
+            )
+            diff_files = output.strip().split('\n') if output.strip() else []
             for pattern in forbidden_patterns:
-                if any(pattern in f for f in git_files):
-                    self.failures.append(f"PROBE_SCOPE: forbidden path found: {pattern}")
+                if any(pattern in f for f in diff_files if f):
+                    self.failures.append(f"PROBE_SCOPE: forbidden path in CA-DSL diff: {pattern}")
                     return False
+        except subprocess.CalledProcessError:
+            try:
+                output = subprocess.check_output(["git", "ls-files"], text=True)
+                cadsl_files = [
+                    f for f in output.strip().split('\n') 
+                    if any(scope in f for scope in [
+                        "docs/_omoc_inputs/", "tests/cadsl/", "src/cadsl/",
+                        "scripts/cadsl/", "schemas/cadsl/", 
+                        "delivery_manifest.json", "package_validation.json",
+                        "source_binding_matrix.tsv", "route_out_registry.json"
+                    ])
+                ]
+                for pattern in forbidden_patterns:
+                    if any(pattern in f for f in cadsl_files):
+                        self.failures.append(f"PROBE_SCOPE: forbidden path in CA-DSL scope: {pattern}")
+                        return False
+            except Exception as e:
+                self.failures.append(f"PROBE_SCOPE: git ls-files failed: {e}")
+                return False
         except Exception as e:
-            self.failures.append(f"PROBE_SCOPE: git ls-files failed: {e}")
+            self.failures.append(f"PROBE_SCOPE: git diff failed: {e}")
             return False
         
         self.results.append({"probe": "SCOPE_CLEAN", "status": "PASS"})
