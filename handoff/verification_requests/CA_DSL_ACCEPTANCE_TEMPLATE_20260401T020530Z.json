@@ -1,0 +1,8 @@
+{
+  "name": "ca_dsl_acceptance.json",
+  "accepted_by": "CA-DSL consumer team representative name",
+  "owner_contact": "CA-DSL team owner contact info",
+  "ts": "20260401T020530Z",
+  "scope": "What CA-DISTILL interface/capability was accepted (e.g., CA-DISTILL v1.0 interface)",
+  "notes": "Optional: acceptance conditions or caveats"
+}

@@ -1,0 +1,54 @@
+{
+  "ts": "20260401T020530Z",
+  "round": 3,
+  "phase": 5,
+  "gate_decision": "GATE_BLOCKED",
+  "flow_path": "FLOW-2_KEEP_BLOCKED_PENDING_VERIFICATION",
+  "reason": "Owner verification receipts not received. No proofs upgraded to FOUND_VALID in Phase 5 receipt cycle.",
+  "proof_counts": {
+    "FOUND_VALID": 0,
+    "CANDIDATE_PROOF_PRESENT": 3,
+    "SEARCHED_NOT_FOUND_CONFIRMED": 2,
+    "total": 5,
+    "gate_requirement": "all 5 must be FOUND_VALID"
+  },
+  "proof_details": {
+    "Package B": {
+      "status": "CANDIDATE_PROOF_PRESENT",
+      "phase5_action": "Owner verification receipt AWAITING",
+      "reason": "Mechanical check PASS (5/6 criteria), requires owner confirmation of recency/scope"
+    },
+    "Package D": {
+      "status": "CANDIDATE_PROOF_PRESENT",
+      "phase5_action": "Owner verification receipt AWAITING",
+      "reason": "Mechanical check PASS (5/6 criteria per artifact), requires owner confirmation of recency/scope/dual-mapping"
+    },
+    "Package E": {
+      "status": "CANDIDATE_PROOF_PRESENT (locator_only)",
+      "phase5_action": "Full artifact AWAITING",
+      "reason": "Locator exists but full release_guard artifact not found on CA-WRC ref"
+    },
+    "CA-DSL": {
+      "status": "SEARCHED_NOT_FOUND_CONFIRMED",
+      "phase5_action": "Consumer acceptance artifact AWAITING",
+      "reason": "No direct consumer acceptance artifact discovered on any ref"
+    },
+    "Ops": {
+      "status": "SEARCHED_NOT_FOUND_CONFIRMED",
+      "phase5_action": "Rollback drill artifact AWAITING",
+      "reason": "No direct rollback drill evidence discovered on any ref"
+    }
+  },
+  "distill_engine_execution": "NOT_PERMITTED (gate blocked)",
+  "release_allowed": false,
+  "deadline": "2026-04-07T23:59:59Z",
+  "time_remaining": "~10,068 minutes (7 days)",
+  "next_actions": [
+    "Continue awaiting receipts/artifacts from owners and teams",
+    "Upon receipt: PHASE5_RETRY with artifact import + upgrade verification",
+    "If all 5 reach FOUND_VALID: Gate opens → distill_engine executes → ROUND4_EXECUTION_COMPLETE",
+    "If deadline passes: FLOW-3 escalation (ROUND3_DEADLINE_MISSED)"
+  ],
+  "fail_closed_policy": "✅ ENFORCED - No release without all 5 proofs FOUND_VALID",
+  "gate_lock_reason": "Insufficient evidence in receipt cycle. Candidates under owner review; missing proofs awaiting team submission."
+}

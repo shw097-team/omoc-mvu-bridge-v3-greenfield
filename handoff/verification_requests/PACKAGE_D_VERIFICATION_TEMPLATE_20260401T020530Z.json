@@ -1,0 +1,11 @@
+{
+  "owner_or_team": "Package D Lead or Factory+Runtime owner name",
+  "ts": "20260401T020530Z",
+  "recency_ok": true,
+  "scope_ok": true,
+  "dual_artifact_mapping": {
+    "lane_f_acceptance": "Factory validator component proof",
+    "wp014_integration": "Runtime integration component proof"
+  },
+  "comments": "Optional verification notes"
+}

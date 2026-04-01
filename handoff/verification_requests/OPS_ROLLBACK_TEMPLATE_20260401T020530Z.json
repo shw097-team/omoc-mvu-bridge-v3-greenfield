@@ -1,0 +1,9 @@
+{
+  "name": "rollback_drill_ops_team_20260401.json",
+  "owner": "Ops team owner or lead name",
+  "executor": "Ops team member name who executed drill",
+  "ts": "20260401T020530Z",
+  "result": "PASS",
+  "scope": "What system/component was rolled back (e.g., CA-DISTILL v1.0 from staging)",
+  "notes": "Optional: drill observations, recovery time, or findings"
+}
