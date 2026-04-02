@@ -1,0 +1,6 @@
+gate	status	proof_id	materialization_ts	verdict	blocker_status	resolution
+final_gate	OPEN	proof_b_valid	prior	PASS	none	CARRY_FORWARD
+final_gate	OPEN	proof_d_valid	prior	PASS	none	CARRY_FORWARD
+final_gate	OPEN	consumer_acceptance_valid	prior	PASS	none	CARRY_FORWARD
+final_gate	OPEN	proof_e_valid	prior	PASS	none	CARRY_FORWARD
+final_gate	OPEN	rollback_valid	2026-04-02T12:11:11Z	PASS	RESOLVED	NEWLY_MATERIALIZED

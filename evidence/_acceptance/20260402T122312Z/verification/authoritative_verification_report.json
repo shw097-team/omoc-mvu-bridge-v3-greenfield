@@ -1,0 +1,31 @@
+{
+  "verification_timestamp": "20260402T122312Z",
+  "verified_round": "20260402T121111Z",
+  "verification_mode": "AUTHORITATIVE_VERIFICATION_AND_CONDITIONAL_FINALIZATION",
+  "authoritative_acceptance_report": "evidence/_acceptance/20260402T121111Z/20260402T121111Z_acceptance_report.json",
+  "alias_acceptance_report": "evidence/_acceptance/20260402T121111Z/acceptance_report.json",
+  "byte_identity_verified": true,
+  "verdict": "PASS",
+  "found_valid_count": 5,
+  "required_valid_count": 5,
+  "blockers": [],
+  "gate_open": true,
+  "release_ready": true,
+  "single_adjudicator": true,
+  "final_lints_all_green": true,
+  "execution_complete": true,
+  "execution_path": "VERIFIED_COMPLETE",
+  "no_rerun_required": true,
+  "status": "READY_FOR_RELEASE",
+  "verification_checks": {
+    "A_canonical_files_exist": true,
+    "B_primary_alias_byte_identical": true,
+    "C_acceptance_report_fields_verified": true,
+    "D_rollback_direct_proof_verified": true,
+    "E_supporting_artifacts_verified": true,
+    "F_all_final_lints_green": true
+  },
+  "adjudication_summary": "All 5 required proofs materialized and valid. Rollback DIRECT_PROOF successfully generated and verified. Zero blockers remain. Release gate is open.",
+  "final_adjudicator": "sisyphus-verification-gate",
+  "verification_confidence": "CONFIRMED"
+}

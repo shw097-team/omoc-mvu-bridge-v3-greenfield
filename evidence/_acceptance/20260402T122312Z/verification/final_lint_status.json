@@ -1,0 +1,17 @@
+{
+  "verification_timestamp": "20260402T122312Z",
+  "lint_matrix": {
+    "TS_COHERENCE_LINT": "PASS",
+    "UPLOAD_TXT_NAMING_LINT": "PASS",
+    "ERP_COVERAGE_LINT": "PASS",
+    "WORKTREE_ROOT_LOCATOR_LINT": "PASS",
+    "HANDOFF_POINTER_MINSET_LINT": "PASS",
+    "EVIDENCE_EXPORT_LINT": "PASS",
+    "PACK_ROSTER_LINT": "PASS",
+    "BUILDER_VERSION_COHERENCE_LINT": "PASS"
+  },
+  "all_green": true,
+  "total_checks": 8,
+  "passed_checks": 8,
+  "failed_checks": 0
+}

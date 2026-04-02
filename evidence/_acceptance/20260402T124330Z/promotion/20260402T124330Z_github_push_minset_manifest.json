@@ -1,0 +1,146 @@
+{
+  "promotion_timestamp": "20260402T124330Z",
+  "promotion_mode": "GITHUB_MINSET_PROMOTION_ONLY",
+  "authoritative_round": "20260402T121111Z",
+  "verification_round": "20260402T122312Z",
+  "branch": "ca-distill/20260331T141005Z-full-impl",
+  "worktree": "/workspaces/omoc-wt-ca-distill-20260331T141005Z",
+  "canonical_artifacts": [
+    {
+      "path": "evidence/_acceptance/20260402T121111Z/20260402T121111Z_acceptance_report.json",
+      "type": "PRIMARY_ACCEPTANCE_REPORT",
+      "bytes": 1820,
+      "role": "canonical adjudication verdict"
+    },
+    {
+      "path": "evidence/_acceptance/20260402T121111Z/acceptance_report.json",
+      "type": "ALIAS_ACCEPTANCE_REPORT",
+      "bytes": 1820,
+      "role": "byte-identical alias",
+      "byte_identity_verified": true
+    },
+    {
+      "path": "evidence/_acceptance/20260402T121111Z/ca_distill/proof_inventory_refresh.json",
+      "type": "PROOF_INVENTORY",
+      "role": "proof materialization record"
+    },
+    {
+      "path": "evidence/_acceptance/20260402T121111Z/lane_p_convergence/lane_p_convergence_dossier.json",
+      "type": "CONVERGENCE_DOSSIER",
+      "role": "lane P convergence evidence"
+    },
+    {
+      "path": "evidence/_acceptance/20260402T121111Z/tt_export.json",
+      "type": "TT_EXPORT",
+      "role": "time-tracking export"
+    },
+    {
+      "path": "evidence/_acceptance/20260402T121111Z/closure_matrix.tsv",
+      "type": "CLOSURE_MATRIX",
+      "role": "closure and completion matrix"
+    }
+  ],
+  "rollback_canonical_proofs": [
+    {
+      "path": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/rollback_pack_20260402T121111Z.json",
+      "type": "ROLLBACK_PACK",
+      "role": "rollback operational pack"
+    },
+    {
+      "path": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/rollback_checks_20260402T121111Z.json",
+      "type": "ROLLBACK_CHECKS",
+      "role": "rollback verification checks"
+    },
+    {
+      "path": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/post_rollback_verify_20260402T121111Z.json",
+      "type": "ROLLBACK_VERIFY",
+      "role": "post-rollback verification result"
+    }
+  ],
+  "verification_artifacts": [
+    {
+      "path": "evidence/_acceptance/20260402T122312Z/verification/authoritative_verification_report.json",
+      "type": "VERIFICATION_REPORT",
+      "role": "authoritative verification outcome"
+    },
+    {
+      "path": "evidence/_acceptance/20260402T122312Z/verification/final_lint_status.json",
+      "type": "LINT_STATUS",
+      "role": "8/8 final lint matrix results"
+    }
+  ],
+  "external_provenance_pointers": [
+    {
+      "source": "/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/_acceptance/20260402T121111Z/ops_exec/rollback_handoff_manifest.json",
+      "description": "ops-exec rollback handoff manifest",
+      "push_to_git": false,
+      "reason": "readonly provenance, not pushed"
+    },
+    {
+      "source": "/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/release/release_20260402T121111Z/release_pack.json",
+      "description": "ops-exec release pack",
+      "push_to_git": false,
+      "reason": "readonly provenance, not pushed"
+    },
+    {
+      "source": "/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/release/release_20260402T121111Z/release_checks.json",
+      "description": "ops-exec release checks",
+      "push_to_git": false,
+      "reason": "readonly provenance, not pushed"
+    },
+    {
+      "source": "/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/rollback/rollback_20260402T121111Z/rollback_pack.json",
+      "description": "ops-exec rollback pack",
+      "push_to_git": false,
+      "reason": "readonly provenance, not pushed"
+    },
+    {
+      "source": "/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/rollback/rollback_20260402T121111Z/rollback_checks.json",
+      "description": "ops-exec rollback checks",
+      "push_to_git": false,
+      "reason": "readonly provenance, not pushed"
+    },
+    {
+      "source": "/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/rollback/rollback_20260402T121111Z/post_rollback_verify.json",
+      "description": "ops-exec post-rollback verification",
+      "push_to_git": false,
+      "reason": "readonly provenance, not pushed"
+    }
+  ],
+  "push_configuration": {
+    "raw_evidence_push": false,
+    "local_evidence_push": false,
+    "archive_bundle_push": false,
+    "promotion_scope": "MINSET_ONLY",
+    "explicit_allowlist_only": true,
+    "forbidden_patterns_blocked": true
+  },
+  "git_rules": {
+    "forbid_git_add_dot": true,
+    "forbid_git_add_A": true,
+    "forbid_commit_am": true,
+    "forbid_force_push": true,
+    "forbid_push_main": true
+  },
+  "forbidden_exclusions": [
+    "evidence/release/**",
+    "evidence/rollback/**",
+    "evidence/_backup/**",
+    "evidence/_quarantine/**",
+    "evidence/install/**",
+    "evidence/opencode_diag/**",
+    "evidence/preflight/**",
+    "evidence/skills_pack_validation/**",
+    "evidence/step01/**",
+    "evidence/step-opencode-fix/**",
+    "evidence/step-opencode-repair/**",
+    "*.zip",
+    "*.tgz",
+    "*.tar",
+    "single_evidence_bundle*",
+    "raw/**",
+    "local/**",
+    "archive/**"
+  ],
+  "manifest_generated": "2026-04-02T12:43:30Z"
+}

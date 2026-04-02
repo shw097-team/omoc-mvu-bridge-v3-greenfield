@@ -1,0 +1,54 @@
+{
+  "health_signals": {
+    "ops_exec_worktree": {
+      "status": "HEALTHY",
+      "branch": "ops/release-exec-20260402T120042Z",
+      "commits_ahead_of_main": 1,
+      "uncommitted_changes": 0,
+      "verify_method": "git status --porcelain"
+    },
+    "ca_distill_worktree": {
+      "status": "HEALTHY",
+      "branch": "ca-distill/20260331T141005Z-full-impl",
+      "accessible": true,
+      "verify_method": "git branch --show-current"
+    },
+    "evidence_directories": {
+      "status": "COMPLETE",
+      "ops_exec_release_artifacts": 3,
+      "ops_exec_rollback_artifacts": 2,
+      "ca_distill_evidence_dirs": "PREPARED",
+      "verify_method": "find evidence -type f"
+    }
+  },
+  "check_runs_or_equivalent": [
+    {
+      "check_name": "ops_exec_branch_validation",
+      "result": "PASS",
+      "confidence": "CONFIRMED"
+    },
+    {
+      "check_name": "ca_distill_accessibility",
+      "result": "PASS",
+      "confidence": "CONFIRMED"
+    },
+    {
+      "check_name": "artifact_materialization",
+      "result": "PASS",
+      "confidence": "CONFIRMED"
+    },
+    {
+      "check_name": "rollback_drill_completion",
+      "result": "PASS",
+      "confidence": "CONFIRMED"
+    },
+    {
+      "check_name": "execution_plane_state_integrity",
+      "result": "PASS",
+      "confidence": "CONFIRMED"
+    }
+  ],
+  "post_rollback_status": "VERIFIED_OPERATIONAL",
+  "system_readiness": "READY_FOR_PROOF_HANDOFF",
+  "generated_at": "2026-04-02T12:11:11Z"
+}
