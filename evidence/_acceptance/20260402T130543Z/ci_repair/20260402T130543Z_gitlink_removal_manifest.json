@@ -1,0 +1,16 @@
+{
+  "removal_timestamp": "2026-04-02T13:05:43Z",
+  "operation": "git rm --cached",
+  "removed_gitlinks": [
+    ".readonly_refs/20260331T180308Z/spine_prev"
+  ],
+  "removed_count": 1,
+  "kept_gitlinks": [],
+  "kept_count": 0,
+  "local_files_preserved": true,
+  "local_readonly_snapshot_intact": true,
+  "reason": "github_checkout_fails_on_orphan_gitlink",
+  "root_cause": "tracked gitlink residue without .gitmodules entry blocks GitHub Actions checkout",
+  "recovery_strategy": "remove from index only (keep local readonly snapshot)",
+  "policy_change": "readonly_refs marked local-only via gitignore"
+}

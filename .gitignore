@@ -14,3 +14,4 @@ audit_intake_*/
 /evidence/_acceptance/
 /upload/
 /docs/spine/clean_spec_exports/
+/.readonly_refs/
