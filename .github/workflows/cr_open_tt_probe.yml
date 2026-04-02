@@ -1,0 +1,37 @@
+name: cr_open_tt_probe
+
+on:
+  workflow_dispatch:
+    inputs:
+      drift_probe:
+        description: "Set true to enable explicit DRIFT_PROBE (web probing must be org-approved)."
+        required: false
+        default: "false"
+  schedule:
+    - cron: "23 1 * * 1"
+
+jobs:
+  probe:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+      - name: Run probe (repo-local default)
+        shell: bash
+        run: |
+          set -euo pipefail
+          if [ "${{ inputs.drift_probe }}" = "true" ]; then
+            DRIFT_PROBE=1 ./scripts/cr_open_tt_probe.sh
+          else
+            ./scripts/cr_open_tt_probe.sh
+          fi
+      - name: Upload evidence artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: CR_OPEN_TT_evidence
+          path: |
+            evidence/CR_OPEN_TT_evidence.PASS.txt
+            evidence/_meta/CR_OPEN_TT_evidence.PASS.sha256
