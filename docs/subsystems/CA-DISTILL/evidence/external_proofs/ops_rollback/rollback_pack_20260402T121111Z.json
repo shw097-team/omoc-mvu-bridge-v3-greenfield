@@ -1,0 +1,17 @@
+{
+  "rollback_id": "rollback_20260402T121111Z",
+  "owner_or_executor": "sisyphus-ops-exec",
+  "timestamp": "2026-04-02T12:11:11Z",
+  "target_release_or_version": "release_20260402T121111Z",
+  "rollback_reason": "VALIDATION_DRILL_OPS_EXECUTION_PLANE",
+  "rollback_method": "stateless-execution-plane-reset",
+  "artifact_identity": "rollback_20260402T121111Z",
+  "source_release_pack": "evidence/release/release_20260402T121111Z/release_pack.json",
+  "source_release_checks": "evidence/release/release_20260402T121111Z/release_checks.json",
+  "execution_details": {
+    "reset_action": "validate-execution-plane-state-integrity",
+    "target_systems": ["ops-exec-worktree", "ca-distill-integration"],
+    "rollback_scope": "ops_execution_plane_materialization",
+    "drill_type": "full-validation-cycle"
+  }
+}

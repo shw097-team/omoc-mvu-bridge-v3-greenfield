@@ -1,0 +1,102 @@
+# GitHub Minset Promotion Manifest
+
+**Promotion Timestamp**: 2026-04-02T12:43:30Z  
+**Authoritative Round**: 20260402T121111Z  
+**Verification Round**: 20260402T122312Z  
+**Branch**: `ca-distill/20260331T141005Z-full-impl`  
+**Mode**: MINSET_ONLY (pointer-only, no raw evidence)
+
+## Promotion Scope
+
+This promotion includes **ONLY** the minimal canonical and verification artifacts necessary to establish proof of release readiness. NO raw evidence, local bundles, or archive files are included.
+
+## Canonical Artifacts (6 files)
+
+| Path | Type | Role |
+|------|------|------|
+| `evidence/_acceptance/20260402T121111Z/20260402T121111Z_acceptance_report.json` | PRIMARY_ACCEPTANCE_REPORT | Canonical adjudication verdict (PASS) |
+| `evidence/_acceptance/20260402T121111Z/acceptance_report.json` | ALIAS_ACCEPTANCE_REPORT | Byte-identical alias of primary |
+| `evidence/_acceptance/20260402T121111Z/ca_distill/proof_inventory_refresh.json` | PROOF_INVENTORY | Proof materialization record |
+| `evidence/_acceptance/20260402T121111Z/lane_p_convergence/lane_p_convergence_dossier.json` | CONVERGENCE_DOSSIER | Lane P convergence evidence |
+| `evidence/_acceptance/20260402T121111Z/tt_export.json` | TT_EXPORT | Time-tracking export |
+| `evidence/_acceptance/20260402T121111Z/closure_matrix.tsv` | CLOSURE_MATRIX | Closure and completion matrix |
+
+## Rollback Canonical Proofs (3 files)
+
+| Path | Type | Role |
+|------|------|------|
+| `docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/rollback_pack_20260402T121111Z.json` | ROLLBACK_PACK | Rollback operational pack |
+| `docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/rollback_checks_20260402T121111Z.json` | ROLLBACK_CHECKS | Rollback verification checks |
+| `docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/post_rollback_verify_20260402T121111Z.json` | ROLLBACK_VERIFY | Post-rollback verification result |
+
+## Verification Artifacts (2 files)
+
+| Path | Type | Role |
+|------|------|------|
+| `evidence/_acceptance/20260402T122312Z/verification/authoritative_verification_report.json` | VERIFICATION_REPORT | Authoritative verification outcome |
+| `evidence/_acceptance/20260402T122312Z/verification/final_lint_status.json` | LINT_STATUS | 8/8 final lint matrix (all GREEN) |
+
+## Promotion Artifacts (3 files - self-referential)
+
+| Path | Type | Role |
+|------|------|------|
+| `evidence/_acceptance/20260402T124330Z/promotion/20260402T124330Z_github_push_minset_manifest.json` | PUSH_MANIFEST | This promotion manifest (JSON) |
+| `evidence/_acceptance/20260402T124330Z/promotion/20260402T124330Z_github_push_minset_manifest.md` | PUSH_MANIFEST | This promotion manifest (Markdown) |
+| `evidence/_acceptance/20260402T124330Z/promotion/20260402T124330Z_git_push_allowlist.txt` | ALLOWLIST | Explicit git allowlist (14 files) |
+
+**Total canonical + verification + promotion artifacts**: 14 files
+
+## External Provenance Pointers (NOT pushed, informational only)
+
+- `/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/_acceptance/20260402T121111Z/ops_exec/rollback_handoff_manifest.json`
+- `/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/release/release_20260402T121111Z/release_pack.json`
+- `/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/release/release_20260402T121111Z/release_checks.json`
+- `/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/rollback/rollback_20260402T121111Z/rollback_pack.json`
+- `/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/rollback/rollback_20260402T121111Z/rollback_checks.json`
+- `/workspaces/omoc-wt-ops-exec-20260402T120042Z/evidence/rollback/rollback_20260402T121111Z/post_rollback_verify.json`
+
+These pointers establish provenance chain but are NOT included in the push.
+
+## Forbidden Exclusions (NOT included)
+
+✓ evidence/release/** (excluded)  
+✓ evidence/rollback/** (excluded)  
+✓ evidence/_backup/** (excluded)  
+✓ evidence/_quarantine/** (excluded)  
+✓ evidence/install/** (excluded)  
+✓ evidence/opencode_diag/** (excluded)  
+✓ evidence/preflight/** (excluded)  
+✓ evidence/skills_pack_validation/** (excluded)  
+✓ evidence/step01/** (excluded)  
+✓ evidence/step-opencode-fix/** (excluded)  
+✓ evidence/step-opencode-repair/** (excluded)  
+✓ *.zip (excluded)  
+✓ *.tgz (excluded)  
+✓ *.tar (excluded)  
+✓ single_evidence_bundle* (excluded)  
+✓ raw/** (excluded)  
+✓ local/** (excluded)  
+✓ archive/** (excluded)  
+
+## Git Rules (ENFORCED)
+
+| Rule | Status |
+|------|--------|
+| Explicit allowlist only | ✓ ENFORCED |
+| `git add .` forbidden | ✓ BLOCKED |
+| `git add -A` forbidden | ✓ BLOCKED |
+| `git commit -am` forbidden | ✓ BLOCKED |
+| Force push forbidden | ✓ BLOCKED |
+| Push to main forbidden | ✓ BLOCKED |
+
+## Promotion Verification
+
+- **Byte-identity preserved**: YES (primary ≡ alias)
+- **All artifacts present**: YES
+- **Forbidden files excluded**: YES
+- **Explicit staging**: YES (allowlist-only)
+- **Ready to push**: YES
+
+---
+
+*Manifest generated by sisyphus-promotion-gate at 2026-04-02T12:43:30Z*

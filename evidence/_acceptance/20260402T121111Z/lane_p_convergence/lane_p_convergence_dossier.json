@@ -1,0 +1,36 @@
+{
+  "dossier_timestamp": "2026-04-02T12:13:45Z",
+  "dossier_phase": "I1_CONVERGENCE_DOSSIER",
+  "proofs_converged": [
+    {
+      "proof_id": "proof_b_valid",
+      "status": "CARRY_FORWARD",
+      "confidence": "HIGH"
+    },
+    {
+      "proof_id": "proof_d_valid",
+      "status": "CARRY_FORWARD",
+      "confidence": "HIGH"
+    },
+    {
+      "proof_id": "consumer_acceptance_valid",
+      "status": "CARRY_FORWARD",
+      "confidence": "HIGH"
+    },
+    {
+      "proof_id": "proof_e_valid",
+      "status": "CARRY_FORWARD",
+      "confidence": "HIGH"
+    },
+    {
+      "proof_id": "rollback_valid",
+      "status": "NEWLY_MATERIALIZED",
+      "confidence": "HIGH",
+      "materialization_ts": "2026-04-02T12:11:11Z"
+    }
+  ],
+  "convergence_state": "COMPLETE",
+  "all_proofs_valid": true,
+  "no_blockers": true,
+  "ready_for_final_adjudication": true
+}

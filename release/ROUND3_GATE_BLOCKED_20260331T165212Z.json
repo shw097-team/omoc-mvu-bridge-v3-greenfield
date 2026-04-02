@@ -1,0 +1,37 @@
+{
+  "ts": "20260331T165212Z",
+  "round": 3,
+  "gate_decision": "BLOCKED",
+  "reason": "All 5 external owner proofs missing",
+  "flow_path": "PROOFS_MISSING_BEFORE_DEADLINE",
+  "deadline_status": "NOT_YET_PASSED",
+  "days_remaining": 7,
+  "deadline_utc": "2026-04-07T23:59:59Z",
+  "release_allowed": false,
+  "distill_engine_execution_allowed": false,
+  "proofs_required": [
+    "Package B",
+    "Package D",
+    "Package E",
+    "CA-DSL consumer acceptance",
+    "Ops rollback evidence"
+  ],
+  "proofs_found": 0,
+  "proofs_missing": 5,
+  "landing_paths": {
+    "package_b": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/",
+    "package_d": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/",
+    "package_e": "docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/",
+    "ca_dsl_acceptance": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/",
+    "ops_rollback_evidence": "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/"
+  },
+  "gate_open_conditions": [
+    "All 5 proof files present in landing directories",
+    "All 5 proofs pass intake validation",
+    "All 5 proofs marked FOUND_VALID",
+    "route-out completeness PASS"
+  ],
+  "action_on_gate_open": "Generate ROUND3_GATE_OPEN_*.json; proceed to distill_engine execution (blind_abstract → cross_review → targeted_integrate)",
+  "deadline_missed_action": "If any proof missing after 2026-04-07T23:59:59Z: generate ROUND3_DEADLINE_MISSED_*.json; escalate and decide window closure",
+  "current_action": "HOLD_RELEASE; AWAITING_OWNER_PROOF_SUBMISSION; REFRESH_ESCALATION_DOCS"
+}

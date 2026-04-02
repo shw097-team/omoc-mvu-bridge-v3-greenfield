@@ -1,0 +1,50 @@
+{
+  "ts": "20260331T160126Z",
+  "round": 3,
+  "deadline_status": "ACTIVE",
+  "original_deadline": "2026-04-07T23:59:59Z",
+  "deadline_origin": "7 days from ROUND 2 completion (2026-03-31)",
+  "days_remaining": 7,
+  "proofs_received": 0,
+  "proofs_due": 5,
+  "status_per_category": [
+    {
+      "category": "Package B",
+      "owner": "Package_B_Owner",
+      "status": "NOT_SUBMITTED",
+      "action": "Submit package_b_proof.json to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_b/"
+    },
+    {
+      "category": "Package D",
+      "owner": "Package_D_Owner",
+      "status": "NOT_SUBMITTED",
+      "action": "Submit package_d_proof.json to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_d/"
+    },
+    {
+      "category": "Package E",
+      "owner": "Package_E_Owner",
+      "status": "NOT_SUBMITTED",
+      "action": "Submit package_e_proof.json to docs/subsystems/CA-DISTILL/evidence/external_proofs/package_e/"
+    },
+    {
+      "category": "CA-DSL consumer acceptance",
+      "owner": "CA_DSL_Team",
+      "status": "NOT_SUBMITTED",
+      "action": "Submit ca_dsl_acceptance.json to docs/subsystems/CA-DISTILL/evidence/external_proofs/ca_dsl_acceptance/"
+    },
+    {
+      "category": "Ops rollback evidence",
+      "owner": "OPS_Team",
+      "status": "NOT_SUBMITTED",
+      "action": "Submit ops_rollback_drill.json to docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/"
+    }
+  ],
+  "timeline": {
+    "deadline": "2026-04-07T23:59:59Z",
+    "reminder_sent": "2026-03-31 (PENDING - to be sent by CA-DISTILL Lead)",
+    "final_reminder": "2026-04-05 (2 days before deadline)",
+    "actions_if_complete": "ROUND 3 revalidation → ROUND3_GATE_OPEN → ROUND 4+ proceed",
+    "actions_if_incomplete": "ROUND 3 deadline missed → escalate to subsystem owners → extend or close proof collection"
+  },
+  "next_checkpoint": "2026-04-05 (2 days before deadline) - send final reminder to all 5 owners"
+}

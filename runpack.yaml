@@ -1,0 +1,5 @@
+name: ca-distill-bootstrap
+ts: 20260331T143933Z
+bundle: docs/subsystems/CA-DISTILL/runtime/distill_bundle.json
+pack: docs/subsystems/CA-DISTILL/runtime/distill_pack.json
+validation: docs/subsystems/CA-DISTILL/runtime/package_validation.json

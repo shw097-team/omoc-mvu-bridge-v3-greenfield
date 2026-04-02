@@ -1,0 +1,24 @@
+{
+  "ts": "20260331T180308Z",
+  "round": 3,
+  "cycle": "comprehensive_one_shot_split_flow_revalidation + candidate_proof_audit + crossline_readonly_proof_harvest",
+  "entries": {
+    "Package B": {"status":"CANDIDATE_PROOF_PRESENT","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","phase_3_ts":"20260331T180308Z","crossline_source":"origin/feat/spine-prep:WP-013/WP-014 acceptance","artifact":"wp013_wp014_acceptance_20260306T121505Z.json","sha256":"57fbe591f84b0187db2ecbfeada0877f2ded3cb721b167ac57dac7e5f980e280","note":"PHASE 3 (20260331T180308Z): crossline readonly harvest—CANDIDATE_PROOF_PRESENT found. WP-013/WP-014 acceptance imported from SPINE. Meets 5/5 direct proof criteria but timestamp (20260306) requires recency verification. Upgrade to FOUND_VALID pending owner confirmation.","upgrade_eligible":true,"upgrade_condition":"Recency/scope verification with Package B owner"},
+    "Package D": {"status":"CANDIDATE_PROOF_PRESENT","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","phase_3_ts":"20260331T180308Z","crossline_sources":["origin/feat/spine-prep:lane-f acceptance","origin/feat/spine-prep:WP-013/WP-014 acceptance"],"artifacts":["lane_f_acceptance_20260303T151939Z.json","wp013_wp014_acceptance_20260306T121505Z.json"],"sha256":"a7138b2f8c3cd39a830af6c6dd23ba2166fc4abd4df5ea9edbf9e537dcea4365","note":"PHASE 3 (20260331T180308Z): crossline readonly harvest—CANDIDATE_PROOF_PRESENT found. Lane-F acceptance (PASS) + WP-014 integration imported from SPINE. Both artifacts meet 5/5 direct proof criteria; timestamps (20260303-20260306) require recency verification. Upgrade to FOUND_VALID pending owner confirmation.","upgrade_eligible":true,"upgrade_condition":"Recency/scope verification with Package D owner"},
+    "Package E": {"status":"CANDIDATE_PROOF_PRESENT","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","phase_3_ts":"20260331T180308Z","crossline_source":"origin/lp/ca-wrc/bootstrap:release_guard_trigger","locator":"ca_wrc_release_guard_locator.json","sha256":"b6164689744e34eec83b646f1fa711f70e08b1725072aca0fa42590b4cf9ab98","note":"PHASE 3 (20260331T180308Z): crossline readonly harvest—CANDIDATE_PROOF_PRESENT (locator only). Release_guard_trigger found on CA-WRC; locator reference created. Full artifact needed for direct proof upgrade. Meets 2/5 criteria; artifact shape insufficient.","upgrade_eligible":false,"upgrade_condition":"Need full release_guard artifact from CA-WRC"},
+    "CA-DSL acceptance": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","phase_3_ts":"20260331T180308Z","note":"PHASE 3 (20260331T180308Z): crossline readonly harvest—no CA-DSL explicit ref or acceptance artifact found. Bounded ref discovery: origin/main, origin/feat/spine-prep, origin/lp/ca-wrc/bootstrap searched; no CA-DSL acceptance discovered.","upgrade_eligible":false,"upgrade_condition":"No candidate found on bounded crossline refs"},
+    "Ops rollback evidence": {"status":"SEARCHED_NOT_FOUND_CONFIRMED","phase_1_ts":"20260331T170503Z","phase_2_ts":"20260331T173534Z","phase_3_ts":"20260331T180308Z","note":"PHASE 3 (20260331T180308Z): crossline readonly harvest—no Ops rollback drill results found. Bounded ref discovery: origin/main, origin/feat/spine-prep, origin/lp/ca-wrc/bootstrap searched; no rollback drill artifacts discovered.","upgrade_eligible":false,"upgrade_condition":"No candidate found on bounded crossline refs"}
+  },
+  "route_out_completeness": "FAIL",
+  "proofs_found": 0,
+  "proofs_found_valid": 0,
+  "proofs_found_invalid": 0,
+  "proofs_missing": 2,
+  "proofs_candidate_present": 3,
+  "audit_status": "PHASE_3_COMPLETE",
+  "upgrade_candidates_found": 3,
+  "flow_path": "FLOW-2_KEEP_BLOCKED_PENDING_OWNER_VERIFICATION",
+  "deadline_status": "NOT_YET_PASSED",
+  "deadline_date": "2026-04-07T23:59:59Z",
+  "action": "3 CANDIDATE_PROOF_PRESENT artifacts imported to landing directories. Require owner verification (recency/scope) to upgrade to FOUND_VALID. If upgraded: potential gate open. If verification fails: maintain FLOW-2 blocking. CA-DSL + Ops remain SEARCHED_NOT_FOUND_CONFIRMED."
+}

@@ -1,0 +1,15 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "distill_bundle",
+  "type": "object",
+  "required": ["artifact_kind","name","version","ts","claims","function_specs","evidence_cards"],
+  "properties": {
+    "artifact_kind": {"type":"string"},
+    "name": {"type":"string"},
+    "version": {"type":"string"},
+    "ts": {"type":"string"},
+    "claims": {"type":"array","items":{"type":"string"}},
+    "function_specs": {"type":"array","items":{"type":"object"}},
+    "evidence_cards": {"type":"array","items":{"type":"object"}}
+  }
+}

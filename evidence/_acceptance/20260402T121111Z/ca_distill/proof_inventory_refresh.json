@@ -1,0 +1,52 @@
+{
+  "scan_timestamp": "2026-04-02T12:12:45Z",
+  "valid_proofs": [
+    {
+      "proof_id": "proof_b_valid",
+      "status": "CARRY_FORWARD",
+      "materialization": "EXISTING"
+    },
+    {
+      "proof_id": "proof_d_valid",
+      "status": "CARRY_FORWARD",
+      "materialization": "EXISTING"
+    },
+    {
+      "proof_id": "consumer_acceptance_valid",
+      "status": "CARRY_FORWARD",
+      "materialization": "EXISTING"
+    },
+    {
+      "proof_id": "proof_e_valid",
+      "status": "CARRY_FORWARD",
+      "materialization": "EXISTING"
+    },
+    {
+      "proof_id": "rollback_valid",
+      "status": "NEWLY_MATERIALIZED",
+      "materialization": "COMPLETE",
+      "source": "ops_rollback/rollback_pack_20260402T121111Z.json",
+      "verdict": "FOUND_VALID"
+    }
+  ],
+  "missing_proofs": [],
+  "invalid_candidates": [],
+  "newly_materialized": [
+    {
+      "proof_id": "rollback_valid",
+      "timestamp": "2026-04-02T12:11:11Z",
+      "source_branch": "ops/release-exec-20260402T120042Z",
+      "artifact_sources": [
+        "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/rollback_pack_20260402T121111Z.json",
+        "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/rollback_checks_20260402T121111Z.json",
+        "docs/subsystems/CA-DISTILL/evidence/external_proofs/ops_rollback/post_rollback_verify_20260402T121111Z.json"
+      ]
+    }
+  ],
+  "found_valid_count": 5,
+  "required_valid_count": 5,
+  "gate_status": "OPEN",
+  "gate_reason": "ALL_PROOFS_MATERIALIZED_AND_VALID",
+  "blockers": [],
+  "rollback_proof_materialization": "COMPLETE_AND_VERIFIED"
+}

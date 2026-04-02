@@ -1,0 +1,34 @@
+{
+  "scan_timestamp": "2026-04-02T13:05:43Z",
+  "workflows_found": 6,
+  "workflow_files": [
+    ".github/workflows/doc-validate.yml",
+    ".github/workflows/cr_open_tt_probe.yml",
+    ".github/workflows/dispatch_shim.yml",
+    ".github/workflows/ci-omoc-gate.yml",
+    ".github/workflows/omoc-gate.yml",
+    ".github/workflows/ci.yml"
+  ],
+  "required_check_audit": {
+    "status": "pending_detailed_workflow_parse",
+    "next_step": "extract job names and check triggers (pull_request, merge_group, push)"
+  },
+  "expected_contexts": [
+    "Note: These would be extracted from GitHub branch protection rules",
+    "Usually named after workflow job names, e.g., 'build', 'test', 'validate'"
+  ],
+  "checkout_blocker": {
+    "status": "RESOLVED",
+    "reason": "orphan gitlink removed from index"
+  },
+  "merge_group_support": {
+    "status": "pending_parse",
+    "note": "GitHub Actions merge_group trigger is used for queued merges"
+  },
+  "skip_hazards_to_check": [
+    "paths / paths-ignore filters that might prevent checks on certain PRs",
+    "if conditions that might skip jobs unexpectedly",
+    "needs conditions that might create dependency failures",
+    "concurrency settings that might cancel related workflows"
+  ]
+}

@@ -1,0 +1,152 @@
+{
+  "schema": "omoc.acceptance_report.v1",
+  "ts": "20260307T144505Z",
+  "phase": "SPINE_COMPLETION_MASTER_EVIDENCE_GENERATION",
+  "macro_goal": "Generate master evidence dossier synthesizing sealed batch 20260307T125325Z (PASS verdict, blockers: 0) and checkpoint pack 20260307T133504Z (pushed 8 files to git); confirm 100% completion within SPINE acceptance scope; ensure distributed evidence architecture with explicit cross-references; create baseline for potential next phase",
+  "verdict": "PASS",
+  "exit_code": 0,
+  "generated_at": "2026-03-07T14:45:05.000000Z",
+  "generated_by": "Sisyphus SPINE completion master evidence adjudicator",
+  "role_mode": "SPINE",
+  "mode": "TUI_CARD",
+  "authority_baseline": {
+    "ts": "20260307T005101Z",
+    "source": "evidence/_acceptance/20260307T005101Z/acceptance_report.json",
+    "verdict": "PASS",
+    "status": "LOCKED_IMMUTABLE"
+  },
+  "sealed_batch_reference": {
+    "batch_id": "20260307T125325Z",
+    "verdict": "PASS",
+    "blockers_open": 0,
+    "blockers_resolved": 4,
+    "primary_report": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "sha256": "cc606b9ff1d5661fb4cf5316bc3a3e8a560824638a2003dc64ca4cd7881c561b"
+  },
+  "checkpoint_pack_reference": {
+    "batch_id": "20260307T133504Z",
+    "type": "lightweight_handoff_pack",
+    "files_pushed": 8,
+    "git_commit": "9bf419228f335b67809c21d810078a8f65247c39",
+    "git_branch": "feat/spine-prep",
+    "push_status": "SUCCESS"
+  },
+  "master_dossier": {
+    "root": "release/20260307T144505Z/completion_dossier/",
+    "documents": [
+      "SPINE_COMPLETION_MASTER_EVIDENCE.md",
+      "SPINE_COMPLETION_MASTER_EVIDENCE.json",
+      "SPINE_COMPLETION_MASTER_POINTERS.json",
+      "SPINE_COMPLETION_MASTER_HASH_ROSTER.json",
+      "SPINE_COMPLETION_MASTER_README.md",
+      "SPINE_COMPLETION_MASTER_DECISION_SUMMARY.md",
+      "machine_contract.json",
+      "self_check.json"
+    ]
+  },
+  "completion_scope": {
+    "within_spine_acceptance_scope": [
+      "All 4 blockers resolved (exit_code=0 each)",
+      "All evidence verified and cross-referenced",
+      "All batches classified (deliverable: 14, non-deliverable: 4)",
+      "All contradictions resolved (0 remaining)",
+      "All Q1-Q4 questions answered YES",
+      "Hash parity verified",
+      "Distributed architecture validated",
+      "Immutability enforced",
+      "Source batches protected"
+    ],
+    "outside_spine_scope_not_completed": [
+      "Raw evidence NOT pushed to git (local only, by design)",
+      "No external promotion/archive/communication",
+      "No Phase 9 implementation",
+      "No new batch generation beyond current TS"
+    ]
+  },
+  "evidence_architecture_summary": {
+    "model": "distributed",
+    "primary_pointer": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "companion_index": "evidence/_audit/20260307T125325Z/cross_reference_index.json",
+    "explicit_cross_references": true,
+    "key_artifacts_mapped": 12,
+    "total_traceable_artifacts": 35
+  },
+  "blocker_resolution_summary": {
+    "total_blockers": 4,
+    "resolved": 4,
+    "open": 0,
+    "resolutions": [
+      "TT-012 (AUTHORITY): Authority coverage 11% → 100%",
+      "EVIDENCE-SCHEMA-MISMATCH (ADJUDICATOR): Batch reclassified non-deliverable",
+      "SALVAGE_CANDIDATE (AMBIGUITY): 12 duplicates removed, 6 quarantined",
+      "MISSING_MANIFEST (AMBIGUITY): Transient scan archived"
+    ]
+  },
+  "q1_q4_final_answers": {
+    "Q1": {
+      "question": "是否100%完成SPINE實作+驗收，在接納範圍內?",
+      "answer": "YES",
+      "evidence": "All 4 blockers resolved, 20/20 integrity tests passed, distributed architecture validated, checkpoint pack successfully pushed"
+    },
+    "Q2": {
+      "question": "是否已推完整證據到git?",
+      "answer": "NO (by design)",
+      "evidence": "Checkpoint pack (8 pointer files) pushed. Raw evidence remains local/immutable. Git tracks pointer documents only."
+    },
+    "Q3": {
+      "question": "Checkpoint pack是否已經merged/pushed?",
+      "answer": "YES",
+      "evidence": "Commit 9bf4192 pushed to feat/spine-prep; 8 files committed and pushed successfully"
+    },
+    "Q4": {
+      "question": "主報告是否包含指向同伴索引和關鍵驗證器物的明確證據叉參照?",
+      "answer": "YES",
+      "evidence": "Primary report lines 122-201 contain explicit evidence_artifacts section with companion_index path and 12 key_artifacts mapped"
+    }
+  },
+  "immutability_enforcement": {
+    "locked_batches": [
+      {
+        "batch_id": "20260307T005101Z",
+        "status": "LOCKED_IMMUTABLE",
+        "reason": "Authority baseline",
+        "verification": "NOT_OVERWRITTEN"
+      },
+      {
+        "batch_id": "20260307T125325Z",
+        "status": "LOCKED_IMMUTABLE",
+        "reason": "Sealed source",
+        "verification": "NOT_OVERWRITTEN"
+      },
+      {
+        "batch_id": "20260307T133504Z",
+        "status": "LOCKED (pointer pack)",
+        "reason": "Checkpoint pack",
+        "verification": "NOT_OVERWRITTEN"
+      }
+    ]
+  },
+  "next_action": {
+    "status": "AWAITING_EXPLICIT_USER_INSTRUCTION",
+    "possible_directions": [
+      "Phase 9 implementation",
+      "Batch promotion and deployment",
+      "Archive to external storage",
+      "Communication and delivery",
+      "New phase start"
+    ],
+    "immutability_until": "Explicit user instruction"
+  },
+  "final_verdict_justification": {
+    "all_conditions_met": true,
+    "master_dossier_complete": true,
+    "all_pointers_exact": true,
+    "hashes_verified": true,
+    "acceptance_naming_valid": true,
+    "sealed_vs_checkpoint_scopes_separated": true,
+    "no_contradictions": true,
+    "no_excluded_files_pushed": true,
+    "immutability_enforced": true,
+    "verdict": "PASS"
+  }
+}

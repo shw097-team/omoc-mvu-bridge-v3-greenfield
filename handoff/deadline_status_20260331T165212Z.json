@@ -1,0 +1,25 @@
+{
+  "ts": "20260331T165212Z",
+  "cycle": "ROUND3_proof_hold_deadline_tracking",
+  "deadline_utc": "2026-04-07T23:59:59Z",
+  "current_utc": "2026-03-31T16:52:12Z",
+  "days_remaining": 7,
+  "deadline_passed": false,
+  "flow_path": "PROOFS_MISSING_BEFORE_DEADLINE",
+  "action_required": "keep_blocked_and_refresh_escalation",
+  "proof_status": {
+    "package_b": "MISSING",
+    "package_d": "MISSING",
+    "package_e": "MISSING",
+    "ca_dsl_acceptance": "MISSING",
+    "ops_rollback_evidence": "MISSING"
+  },
+  "proofs_found": 0,
+  "proofs_missing": 5,
+  "gate_status": "BLOCKED",
+  "release_allowed": false,
+  "engine_execution_allowed": false,
+  "escalation_status": "REFRESHED",
+  "reminder_status": "REFRESHED",
+  "notes": "No deadline passed. Release blocker remains active. Owner submissions awaited. Infrastructure ready for proof receipt."
+}

@@ -1,0 +1,23 @@
+WORKFLOW SCAN RESULTS
+Generated: 2026-04-02T13:05:43Z
+
+WORKFLOW FILES FOUND:
+1. .github/workflows/doc-validate.yml
+2. .github/workflows/cr_open_tt_probe.yml
+3. .github/workflows/dispatch_shim.yml
+4. .github/workflows/ci-omoc-gate.yml
+5. .github/workflows/omoc-gate.yml
+6. .github/workflows/ci.yml
+
+WORKFLOW AUDIT POINTS:
+- Check if workflows listen to: pull_request / merge_group
+- Check if job names match expected required check contexts
+- Scan for skip conditions (paths, paths-ignore, if, needs, concurrency)
+- Verify no orphan gitlink checkout blocks
+- Verify required_status_checks in branch protection rules alignment
+
+ACTION ITEMS:
+[ ] Extract required check names from branch protection rules
+[ ] Compare job names across all workflows
+[ ] Identify any missing pull_request / merge_group triggers
+[ ] Document skip hazards and mitigation

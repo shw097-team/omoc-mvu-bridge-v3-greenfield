@@ -1,0 +1,45 @@
+{
+  "timestamp": "20260331T141542Z",
+  "branch": "ca-distill/20260331T141005Z-full-impl",
+  "working_directory": "/workspaces/omoc-wt-ca-distill-20260331T141005Z",
+  "git_status": {
+    "clean": true,
+    "untracked_files": 3,
+    "untracked_paths": [
+      "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_MC4+_合冊.md",
+      "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_WP-M_合冊.md",
+      "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_WP-RB-WI_合冊.md"
+    ]
+  },
+  "baseline_scope_lock": {
+    "allow": [
+      "docs/subsystems/CA-DISTILL/**",
+      "subsystems/CA-DISTILL/**",
+      "contracts/**",
+      "registries/**",
+      "matrices/**",
+      "schemas/**",
+      "samples/**",
+      "scripts/ca_distill*",
+      "evidence/**",
+      "upload/**",
+      "handoff/**",
+      "release/**",
+      "perf/**",
+      "runpack.yaml"
+    ],
+    "deny": [
+      ".github/**",
+      "docs/subsystems/CA-WRC/**",
+      "docs/subsystems/CA-CORPUS/**",
+      "docs/subsystems/CA-DSL/**",
+      "docs/subsystems/CA-GOVERN/**",
+      "docs/subsystems/CA-COLLAB/**",
+      "docs/subsystems/CA-UI/**",
+      "spine/**",
+      "full/**"
+    ]
+  },
+  "preflight_status": "FAIL-CLOSED",
+  "reason": "MISSING_INFRASTRUCTURE"
+}

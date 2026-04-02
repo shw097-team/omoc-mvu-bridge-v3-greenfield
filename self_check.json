@@ -1,0 +1,15 @@
+{
+  "trigger_seen": true,
+  "three_delimiter_sections_present": true,
+  "round0_assumption_checks_present": true,
+  "short_command_blocks_only": true,
+  "no_heredoc": true,
+  "split_doc_filenames_only": true,
+  "no_compendium_name_used_in_commands": true,
+  "ts_prefixed_acceptance_report_required": true,
+  "roster_reconciliation_before_upgrade": true,
+  "wt_full_primary_terminal_enforced": true,
+  "wt_spine_readonly_enforced": true,
+  "single_global_adjudicator_enforced": true,
+  "fail_closed_enforced": true
+}

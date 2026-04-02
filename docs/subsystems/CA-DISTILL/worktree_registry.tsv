@@ -1,0 +1,13 @@
+path	status	note
+docs/subsystems/CA-DISTILL/	managed	CA-DISTILL subsystem root
+contracts/	managed	contracts for CA-DISTILL
+registries/	managed	registries for CA-DISTILL
+matrices/	managed	matrices for CA-DISTILL
+schemas/	managed	schemas for CA-DISTILL
+samples/	managed	representative samples
+scripts/	managed	validator scripts (ca_distill_*)
+evidence/	managed	acceptance evidence output
+upload/	managed	upload summary
+handoff/	managed	handoff payloads and summaries
+perf/	managed	performance reports
+runpack.yaml	managed	runpack descriptor

@@ -1,0 +1,27 @@
+{
+  "schema": "omoc.acceptance_report.v1",
+  "ts": "20260309T115405Z",
+  "phase": "15CA_SPLIT_SSOT_AUTHORITY_FINAL_PASS",
+  "role_mode": "FULL",
+  "lane": "WT-FULL",
+  "verdict": "PASS",
+  "gates": {
+    "AUTHORITY_CHAIN_VERIFIED": "PASS",
+    "REQCHECK_CANONICAL": "PASS",
+    "TOOLING_RUNTIME_VERIFICATION": "PASS",
+    "RUN_CHECK_URL_EXPORT": "PASS",
+    "WORKTREE_BOOTSTRAP": "PASS",
+    "LANE_F_LOCAL_2": "PASS",
+    "ZONE_LOCAL_4": "PASS",
+    "SUBSYSTEM_LOCAL_15": "PASS"
+  },
+  "primary_report": "20260309T115405Z_acceptance_report.json",
+  "unprefixed_acceptance_forbidden": true,
+  "supersedes": [
+    "20260309T061554Z",
+    "20260309T075722Z",
+    "20260309T081714Z",
+    "20260309T101955Z",
+    "20260309T104515Z"
+  ]
+}

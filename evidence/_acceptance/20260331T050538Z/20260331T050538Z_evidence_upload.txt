@@ -1,0 +1,10 @@
+Timestamp: 20260331T050538Z
+Task: SUPPORT_HOW_TRIAGE_CLOSURE
+Files:
+  - evidence/_acceptance/20260331T050538Z/support_how_triage_inventory.tsv
+  - evidence/_acceptance/20260331T050538Z/support_how_triage_results.tsv
+  - evidence/_acceptance/20260331T050538Z/support_how_archive_manifest.tsv
+  - evidence/_acceptance/20260331T050538Z/support_how_promotion_delta.tsv
+  - evidence/_acceptance/20260331T050538Z/support_how_unresolved.tsv
+  - evidence/_acceptance/20260331T050538Z/closure_report.md
+  - evidence/_acceptance/20260331T050538Z/global/20260331T050538Z_acceptance_report.json

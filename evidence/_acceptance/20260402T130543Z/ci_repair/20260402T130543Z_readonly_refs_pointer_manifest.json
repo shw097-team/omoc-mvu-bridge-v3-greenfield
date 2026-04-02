@@ -1,0 +1,22 @@
+{
+  "pointer_timestamp": "2026-04-02T13:05:43Z",
+  "affected_paths": [
+    ".readonly_refs/20260331T180308Z/spine_prev"
+  ],
+  "affected_count": 1,
+  "local_only_reason": "sealed local reference snapshots for CI pipeline support",
+  "replacement_strategy": "pointer_only_not_tracked",
+  "gitignore_rule": "/.readonly_refs/",
+  "index_removal_status": "removed",
+  "local_files_status": "preserved",
+  "canonical_artifacts_unaffected": true,
+  "promotion_impact": "none",
+  "verification_artifacts_unaffected": true,
+  "evidence_acceptance_artifacts": {
+    "canonical_round_20260402T121111Z": "UNAFFECTED - canonical artifacts remain in evidence/_acceptance/",
+    "verification_round_20260402T122312Z": "UNAFFECTED - verification artifacts remain in evidence/_acceptance/",
+    "promotion_round_20260402T124330Z": "UNAFFECTED - promotion artifacts remain in evidence/_acceptance/"
+  },
+  "policy": "readonly_refs must never enter GitHub history",
+  "enforcement": "gitignore + ci_repair gate verification"
+}

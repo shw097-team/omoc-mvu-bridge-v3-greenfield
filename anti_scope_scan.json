@@ -1,0 +1,36 @@
+{
+  "timestamp": "20260331T141542Z",
+  "task": "CA-DISTILL one-shot implementation + acceptance + route-out + TT",
+  "branch": "ca-distill/20260331T141005Z-full-impl",
+  "scan_type": "anti_scope_scan",
+  "violations_detected": 0,
+  "scope_enforced": true,
+  "allow_list": [
+    "docs/subsystems/CA-DISTILL/**",
+    "subsystems/CA-DISTILL/**",
+    "contracts/**",
+    "registries/**",
+    "matrices/**",
+    "schemas/**",
+    "samples/**",
+    "scripts/ca_distill*",
+    "evidence/**",
+    "upload/**",
+    "handoff/**",
+    "release/**",
+    "perf/**",
+    "runpack.yaml"
+  ],
+  "deny_list": [
+    ".github/**",
+    "docs/subsystems/CA-WRC/**",
+    "docs/subsystems/CA-CORPUS/**",
+    "docs/subsystems/CA-DSL/**",
+    "docs/subsystems/CA-GOVERN/**",
+    "docs/subsystems/CA-COLLAB/**",
+    "docs/subsystems/CA-UI/**",
+    "spine/**",
+    "full/**"
+  ],
+  "status": "CLEAN"
+}

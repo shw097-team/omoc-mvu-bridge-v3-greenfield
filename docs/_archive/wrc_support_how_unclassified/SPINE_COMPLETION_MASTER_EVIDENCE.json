@@ -1,0 +1,197 @@
+{
+  "schema": "spine_completion_master_evidence.v1",
+  "ts": "20260307T144505Z",
+  "generated_at": "2026-03-07T14:45:05.000000Z",
+  "verdict": "PASS",
+  "status": "SEALED_LOCAL_IMMUTABLE",
+  "readiness": "READY_FOR_EXPLICIT_NEXT_INSTRUCTION",
+  "mode": "TUI_CARD",
+  "role_mode": "SPINE",
+  "objective": "GENERATE_SPINE_COMPLETION_MASTER_EVIDENCE",
+  "authority_baseline": {
+    "batch_id": "20260307T005101Z",
+    "source": "evidence/_acceptance/20260307T005101Z/acceptance_report.json",
+    "status": "LOCKED_IMMUTABLE",
+    "protection": "Authority batch — cannot be modified"
+  },
+  "sealed_batch": {
+    "batch_id": "20260307T125325Z",
+    "primary_report": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "compat_report": "evidence/_acceptance/20260307T125325Z/acceptance_report.json",
+    "sha256_primary": "cc606b9ff1d5661fb4cf5316bc3a3e8a560824638a2003dc64ca4cd7881c561b",
+    "sha256_compat": "cc606b9ff1d5661fb4cf5316bc3a3e8a560824638a2003dc64ca4cd7881c561b",
+    "parity_status": "VERIFIED_IDENTICAL",
+    "status": "SEALED_LOCAL_IMMUTABLE",
+    "blockers_open": 0,
+    "blockers_resolved": 4
+  },
+  "checkpoint_batch": {
+    "batch_id": "20260307T133504Z",
+    "type": "lightweight_handoff_pack",
+    "location": "release/20260307T133504Z/checkpoint_pack/",
+    "files_count": 8,
+    "git_pushed": true,
+    "git_commit": "9bf419228f335b67809c21d810078a8f65247c39",
+    "git_commit_short": "9bf4192",
+    "git_branch": "feat/spine-prep",
+    "git_push_status": "SUCCESS"
+  },
+  "evidence_architecture": {
+    "model": "distributed",
+    "primary_pointer": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "companion_index": "evidence/_audit/20260307T125325Z/cross_reference_index.json",
+    "explicit_cross_references": true,
+    "key_artifacts_count": 12,
+    "total_traceable_artifacts": 35
+  },
+  "blocker_resolution_summary": {
+    "total_blockers": 4,
+    "resolved": 4,
+    "open": 0,
+    "blockers": [
+      {
+        "id": "20260307T092540Z_TT-012",
+        "type": "AUTHORITY",
+        "priority": "P0",
+        "issue": "Authority coverage 11%",
+        "resolution": "OPTION_1_CURRENT_NORMATIVE_ONLY",
+        "status": "RESOLVED",
+        "evidence_path": "evidence/_audit/20260307T092540Z/tt_012_resolution.json"
+      },
+      {
+        "id": "20260307T092540Z_EVIDENCE-SCHEMA-MISMATCH",
+        "type": "ADJUDICATOR",
+        "priority": "P1",
+        "issue": "Batch 20260307T044146Z TT-only; 7 gates FAIL",
+        "resolution": "OPTION_4_RECLASSIFY_AS_TT_ONLY_NON_DELIVERABLE",
+        "status": "RESOLVED",
+        "evidence_path": "evidence/_audit/20260307T092540Z/evidence_schema_mismatch_resolution.json"
+      },
+      {
+        "id": "20260307T072409Z_SALVAGE_CANDIDATE",
+        "type": "AMBIGUITY_BLOCKER",
+        "priority": "P1",
+        "issue": "17 extra artifacts requiring classification",
+        "resolution": "REMOVE_11_HIGH_CONFIDENCE_DUPLICATES_AND_QUARANTINE_UNREFERENCED_REMAINING_6",
+        "status": "RESOLVED",
+        "evidence_path": "evidence/_audit/20260307T092540Z/salvage_candidate_resolution.json"
+      },
+      {
+        "id": "20260307T093012Z_MISSING_MANIFEST",
+        "type": "AMBIGUITY_BLOCKER",
+        "priority": "P2",
+        "issue": "Only scan file; no triplet/gates/upload manifest",
+        "resolution": "CONFIRM_TRANSIENT_SCAN_AND_ARCHIVE",
+        "status": "RESOLVED",
+        "evidence_path": "evidence/_audit/20260307T092540Z/missing_manifest_resolution.json"
+      }
+    ]
+  },
+  "acceptance_scope": {
+    "pushed": false,
+    "location": "evidence/_acceptance/20260307T125325Z/",
+    "architecture": "distributed, local-only",
+    "primary_report": "20260307T125325Z_acceptance_report.json",
+    "compat_report": "acceptance_report.json",
+    "hash_parity": "VERIFIED"
+  },
+  "checkpoint_scope": {
+    "pushed": true,
+    "location": "release/20260307T133504Z/checkpoint_pack/",
+    "files_pushed": 8,
+    "files": [
+      "HANDOFF_FINAL.md",
+      "COMPLETION_SUMMARY.md",
+      "ARCHIVE_MANIFEST.json",
+      "DELIVERY_MANIFEST.json",
+      "CHECKPOINT_POINTERS.json",
+      "CHECKPOINT_README.md",
+      "machine_contract.json",
+      "self_check.json"
+    ]
+  },
+  "q1_q4_answers": {
+    "q1": {
+      "question": "前項指令執行結果，是否每一項全部達到PASS的要求和門檻?",
+      "answer": "YES",
+      "evidence": "All 4 blockers resolved (exit_code=0), 20/20 integrity tests passed"
+    },
+    "q2": {
+      "question": "你是否有100%依照指令，逐項達成對全部證據的全部要求?",
+      "answer": "YES",
+      "evidence": "Explicit cross-references in primary report, distributed architecture validated, Q1-Q4 consistent"
+    },
+    "q3": {
+      "question": "你產出的全部證據的「格式、規格」是否有任何錯誤、問題?是否100%合規?",
+      "answer": "YES",
+      "evidence": "All JSON schema-compliant, TS-prefixed naming correct, hash parity verified, exact paths consistent"
+    },
+    "q4": {
+      "question": "儘管分散式，你是否已經確保了主要報告本身有包含指向同伴索引和關鍵驗證器物的明確證據工作物叉參照部分？",
+      "answer": "YES",
+      "evidence": "Primary report lines 122-201 contain evidence_artifacts section with companion_index and 12 key_artifacts with exact paths"
+    }
+  },
+  "completion_criteria": {
+    "all_blockers_resolved": true,
+    "zero_contradictions": true,
+    "q1_q4_all_yes": true,
+    "hash_parity_verified": true,
+    "evidence_artifacts_mapped": true,
+    "distributed_architecture_validated": true,
+    "checkpoint_pushed": true,
+    "immutability_enforced": true,
+    "source_batches_protected": true
+  },
+  "what_is_complete": {
+    "within_acceptance_scope": [
+      "All 4 blockers resolved (exit_code=0 each)",
+      "All evidence verified and cross-referenced",
+      "All batches classified (deliverable: 14, non-deliverable: 4)",
+      "All contradictions resolved (0 remaining)",
+      "All Q1-Q4 questions answered YES",
+      "Hash parity verified (cc606b9f...)",
+      "Distributed architecture validated",
+      "Immutability enforced",
+      "Source batches protected"
+    ],
+    "outside_scope_not_completed": [
+      "Raw evidence NOT pushed to git (local only)",
+      "No external promotion/archive/communication",
+      "No Phase 9 implementation",
+      "No new batch generation beyond current TS"
+    ]
+  },
+  "what_was_not_pushed": {
+    "evidence_acceptance": "evidence/_acceptance/** (local only, immutable)",
+    "evidence_audit": "evidence/_audit/** (local only, audit trail)",
+    "upload_artifacts": "upload/** (excluded per spec)",
+    "clean_exports": "docs/spine/clean_spec_exports/** (excluded)",
+    "tool_exports": "release/**/TT_EXPORT.json (excluded)",
+    "verification_files": "release/**/FINAL_CLOSEOUT_VERIFICATION.json (excluded)",
+    "reason": "Raw evidence remains immutable and distributed; checkpoint pack serves as read-only reference pointer"
+  },
+  "immutability_locks": {
+    "authority_batch_20260307T005101Z": "LOCKED_IMMUTABLE",
+    "sealed_batch_20260307T125325Z": "LOCKED_IMMUTABLE",
+    "sealed_release_20260307T125325Z": "LOCKED_IMMUTABLE",
+    "checkpoint_pack_20260307T133504Z": "LOCKED (pointer pack, immutable until explicit next instruction)"
+  },
+  "next_phase_baseline": {
+    "authority_pointer": "evidence/_acceptance/20260307T005101Z/acceptance_report.json",
+    "sealed_source_pointer": "evidence/_acceptance/20260307T125325Z/20260307T125325Z_acceptance_report.json",
+    "checkpoint_pack_pointer": "release/20260307T133504Z/checkpoint_pack/",
+    "git_commit_pointer": "9bf4192 (feat/spine-prep)",
+    "for_new_phase": "Start from sealed batch 20260307T125325Z (verdict: PASS, blockers: 0), generate new TS for new acceptance cycle"
+  },
+  "final_verdict_justification": {
+    "all_conditions_met": true,
+    "zero_contradictions": true,
+    "master_dossier_generated": true,
+    "all_pointers_exact": true,
+    "hashes_verified": true,
+    "acceptance_vs_checkpoint_scope_separated": true,
+    "no_contradictions_remain": true,
+    "verdict": "PASS"
+  }
+}

@@ -1,0 +1,21 @@
+{
+  "timestamp": "20260331T143933Z",
+  "branch": "ca-distill/20260331T141005Z-full-impl",
+  "root": "/",
+  "scope_locked_to": [
+    "docs/subsystems/CA-DISTILL/**",
+    "contracts/**",
+    "registries/**",
+    "matrices/**",
+    "schemas/**",
+    "samples/**",
+    "scripts/ca_distill*",
+    "evidence/**",
+    "upload/**",
+    "handoff/**",
+    "release/**",
+    "perf/**",
+    "runpack.yaml"
+  ],
+  "notes": "Bootstrap snapshot for CA-DISTILL. External owner proofs marked MISSING where appropriate."
+}

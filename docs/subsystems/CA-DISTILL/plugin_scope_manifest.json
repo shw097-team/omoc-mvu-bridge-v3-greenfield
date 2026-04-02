@@ -1,0 +1,5 @@
+{
+  "allowed_plugins": ["omoc-core","ca-distill-validator"],
+  "disabled_plugins": [],
+  "timestamp": "20260331T143933Z"
+}

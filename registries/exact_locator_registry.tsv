@@ -1,0 +1,3 @@
+locator	path	source
+distill_bundle.json	docs/subsystems/CA-DISTILL/runtime/distill_bundle.json	CA-DISTILL bootstrap
+distill_pack.json	docs/subsystems/CA-DISTILL/runtime/distill_pack.json	CA-DISTILL bootstrap

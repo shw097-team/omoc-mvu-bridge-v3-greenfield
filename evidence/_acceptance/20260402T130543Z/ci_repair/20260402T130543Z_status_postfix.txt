@@ -1,0 +1,4 @@
+ M .gitignore
+D  .readonly_refs/20260331T180308Z/spine_prev
+?? ca-distill/
+?? scripts/omoc/preflight_scope_lock.sh

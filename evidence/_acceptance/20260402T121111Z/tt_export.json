@@ -1,0 +1,38 @@
+{
+  "export_timestamp": "2026-04-02T12:14:30Z",
+  "export_phase": "J0_GLOBAL_ADJUDICATION",
+  "trace_info": {
+    "adjudication_round": "20260402T121111Z",
+    "prior_round": "20260402T061157Z"
+  },
+  "proofs_traced": [
+    {
+      "proof_id": "proof_b_valid",
+      "materialization": "PRIOR_ROUND",
+      "carries_forward": true
+    },
+    {
+      "proof_id": "proof_d_valid",
+      "materialization": "PRIOR_ROUND",
+      "carries_forward": true
+    },
+    {
+      "proof_id": "consumer_acceptance_valid",
+      "materialization": "PRIOR_ROUND",
+      "carries_forward": true
+    },
+    {
+      "proof_id": "proof_e_valid",
+      "materialization": "PRIOR_ROUND",
+      "carries_forward": true
+    },
+    {
+      "proof_id": "rollback_valid",
+      "materialization": "CURRENT_ROUND",
+      "timestamp": "2026-04-02T12:11:11Z",
+      "source": "ops_rollback/rollback_pack_20260402T121111Z.json"
+    }
+  ],
+  "test_verdict": "PASS",
+  "all_proofs_valid": true
+}

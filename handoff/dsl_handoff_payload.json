@@ -1,0 +1,7 @@
+{
+  "bundle_ref": "docs/subsystems/CA-DISTILL/runtime/distill_bundle.json",
+  "pack_ref": "docs/subsystems/CA-DISTILL/runtime/distill_pack.json",
+  "handoff_ts": "20260331T143933Z",
+  "owner_contact": "MISSING",
+  "notes": "Handoff blocked until external owner contact provided"
+}

@@ -1,0 +1,4 @@
+{
+  "distill_bundle": "docs/subsystems/CA-DISTILL/runtime/distill_bundle.json",
+  "distill_pack": "docs/subsystems/CA-DISTILL/runtime/distill_pack.json"
+}

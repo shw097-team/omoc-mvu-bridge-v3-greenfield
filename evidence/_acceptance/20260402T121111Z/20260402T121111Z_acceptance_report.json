@@ -1,0 +1,46 @@
+{
+  "adjudication_timestamp": "2026-04-02T12:14:15Z",
+  "adjudication_round": "J0_GLOBAL_ADJUDICATION",
+  "canonical_ts": "20260402T121111Z",
+  "adjudicator": "sisyphus-final-gate",
+  "adjudication_scope": "OPS_EXECUTION_PLANE_MATERIALIZATION_AND_FINAL_GATE_REENTRY",
+  "proof_summary": {
+    "found_valid_count": 5,
+    "required_valid_count": 5,
+    "complete": true
+  },
+  "carry_forward_proofs": [
+    "proof_b_valid",
+    "proof_d_valid",
+    "consumer_acceptance_valid",
+    "proof_e_valid"
+  ],
+  "newly_materialized_proofs": [
+    "rollback_valid"
+  ],
+  "blocker_status": {
+    "prior_blockers": ["rollback_valid"],
+    "current_blockers": [],
+    "blockers_resolved": 1,
+    "blockers_remaining": 0
+  },
+  "gate_decision": {
+    "gate_open": true,
+    "gate_reason": "ALL_PROOFS_MATERIALIZED_AND_VALID",
+    "release_ready": true,
+    "release_reason": "FULL_PROOF_CONVERGENCE_ACHIEVED"
+  },
+  "verdict": "PASS",
+  "verdict_justification": "All 5 required proofs materialized and valid. Rollback DIRECT_PROOF successfully generated and verified. Zero blockers remain. Release gate is open.",
+  "single_adjudicator": true,
+  "adjudication_confidence": "CONFIRMED",
+  "final_status": "READY_FOR_RELEASE",
+  "evidence_artifacts": {
+    "ops_exec_branch": "ops/release-exec-20260402T120042Z",
+    "ca_distill_branch": "ca-distill/20260331T141005Z-full-impl",
+    "release_pack": "evidence/release/release_20260402T121111Z/release_pack.json",
+    "rollback_pack": "evidence/rollback/rollback_20260402T121111Z/rollback_pack.json",
+    "proof_inventory": "evidence/_acceptance/20260402T121111Z/ca_distill/proof_inventory_refresh.json",
+    "convergence_dossier": "evidence/_acceptance/20260402T121111Z/lane_p_convergence/lane_p_convergence_dossier.json"
+  }
+}

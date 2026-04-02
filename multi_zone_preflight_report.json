@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "timestamp": "20260331T141542Z",
+    "task": "CA-DISTILL one-shot implementation + acceptance + route-out + TT",
+    "branch": "ca-distill/20260331T141005Z-full-impl",
+    "mandate": "TUI_CARD",
+    "report_type": "multi_zone_preflight"
+  },
+  "preconditions": {
+    "branch_check": {
+      "status": "PASS",
+      "required": "CA-DISTILL",
+      "actual": "ca-distill/20260331T141005Z-full-impl",
+      "marker_found": true
+    },
+    "worktree_isolation": {
+      "status": "PASS",
+      "description": "Single window, single task verified"
+    },
+    "git_status_check": {
+      "status": "PASS",
+      "untracked_files": 3,
+      "untracked_paths": [
+        "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_MC4+_合冊.md",
+        "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_WP-M_合冊.md",
+        "docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_WP-RB-WI_合冊.md"
+      ],
+      "note": "All in docs/_omoc_inputs (non-code), safe"
+    }
+  },
+  "critical_infrastructure_scan": {
+    "status": "FAIL",
+    "failure_category": "MISSING_INFRASTRUCTURE",
+    "missing_directories": {
+      "contracts": {
+        "status": "NOT_FOUND",
+        "required_files": ["route_out_registry.json", "release_blocker_contract.json"],
+        "impact": "BLOCKING"
+      },
+      "registries": {
+        "status": "NOT_FOUND",
+        "required_files": [
+          "exact_locator_registry.tsv",
+          "artifact_family_registry.tsv",
+          "canonical_crosswalk.json"
+        ],
+        "impact": "BLOCKING"
+      },
+      "matrices": {
+        "status": "NOT_FOUND",
+        "required_files": [
+          "interface_closure_matrix.tsv",
+          "crosswalk_matrix.tsv",
+          "opsflow_binding_table.tsv",
+          "review_fix_integration_matrix.tsv",
+          "self_audit_matrix.tsv"
+        ],
+        "impact": "BLOCKING"
+      },
+      "schemas": {
+        "status": "NOT_FOUND",
+        "required_files": [
+          "distill_bundle.schema.json",
+          "distill_pack.schema.json"
+        ],
+        "impact": "BLOCKING"
+      },
+      "samples": {
+        "status": "NOT_FOUND",
+        "required_files": [
+          "sample_distill_bundle.json",
+          "sample_distill_pack.json"
+        ],
+        "impact": "BLOCKING"
+      },
+      "docs/subsystems/CA-DISTILL": {
+        "status": "NOT_FOUND",
+        "required_subdirs": {
+          "sourcepack": ["meta.json", "CA-CORE.md", "CA-MC4.md", "CA-WP.md"],
+          "runtime": ["distill_bundle.json", "distill_pack.json"]
+        },
+        "impact": "BLOCKING"
+      }
+    },
+    "missing_canonical_artifacts": {
+      "distill_bundle.json": {
+        "status": "NOT_FOUND",
+        "purpose": "Canonical public artifact",
+        "impact": "CRITICAL"
+      },
+      "distill_pack.json": {
+        "status": "NOT_FOUND",
+        "purpose": "Internal companion artifact",
+        "impact": "CRITICAL"
+      },
+      "runpack.yaml": {
+        "status": "NOT_FOUND",
+        "purpose": "Runtime pack configuration",
+        "impact": "BLOCKING"
+      }
+    },
+    "missing_validation_infrastructure": {
+      "scripts/ca_distill_validate.py": {
+        "status": "NOT_FOUND",
+        "impact": "BLOCKING"
+      },
+      "schemas": {
+        "status": "NOT_FOUND",
+        "impact": "BLOCKING"
+      },
+      "samples": {
+        "status": "NOT_FOUND",
+        "impact": "BLOCKING"
+      }
+    }
+  },
+  "normative_documents_check": {
+    "status": "PASS",
+    "location": "docs/_omoc_inputs/normative/",
+    "found_documents": [
+      "OMOC_實作+WP總表_v4.0.1-r2.md",
+      "OMOC_施工RBWI_v4.0.1-r1.md",
+      "OMOC_施工skills_合冊_v4.0.1-r2.md",
+      "OMOC_藍圖_v4.0.1-r1.md",
+      "OMOC_WP-001 through OMOC_WP-014 (14 WP docs)",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_MC4+_合冊.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_WP-M_合冊.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-DISTILL_WP-RB-WI_合冊.md"
+    ],
+    "missing_split_files": [
+      "Spartoi-OMOC_SubP1-LITE+MVP_中央工程正文r1.md",
+      "Spartoi-OMOC_系統需求正文r3.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_藍圖_v1.3.0-r2.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_總控控制平面_v2.1.0-r2.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_Dev RUNBOOK + WI_ v2.1.0-r2.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_Ops RUNBOOK + WI_v2.1.0-r2.md",
+      "OMOC-MVU Lane-F_驗收 RB+WI.md"
+    ],
+    "note": "Found CA-DISTILL-specific merged (合冊) documents but not all required split files"
+  },
+  "policy_application": {
+    "mandate_rule": "missing_owner_proof_policy = route-out + TT + fail-closed",
+    "mandate_clause": "若上述任何 proof 不在場或不可定位，不得造假 PASS；改 route-out + TT，保持 truthful fail-closed。",
+    "applied_action": "FAIL-CLOSED",
+    "reason": "Cannot initialize CA-DISTILL three-phase distill engine (blind_abstract → cross_review → targeted_integrate) without:",
+    "blocking_prerequisites": [
+      "Canonical public artifact location (distill_bundle.json)",
+      "Internal companion artifact location (distill_pack.json)",
+      "Schema validation infrastructure (distill_bundle.schema.json, distill_pack.schema.json)",
+      "Sample data for validation",
+      "Sourcepack four-file requirement complete",
+      "Contract/registry boundary definitions",
+      "Owner evidence acquisition plan"
+    ]
+  },
+  "failure_classification": {
+    "phase": "PHASE A - SCAN & ISOLATION",
+    "status": "BLOCKED",
+    "reason": "MISSING_INFRASTRUCTURE",
+    "severity": "CRITICAL",
+    "action_required": "ROUTE-OUT + TT + FAIL-CLOSED"
+  },
+  "next_steps": {
+    "immediate_action": "Do NOT proceed with CA-DISTILL implementation",
+    "escalation": [
+      "Consult project owner on CA-DISTILL artifact initialization strategy",
+      "Determine canonical artifact locations",
+      "Initialize schema/sample/script infrastructure",
+      "Define sourcepack four-file structure",
+      "Create owner evidence acquisition plan"
+    ],
+    "deliverables_pending_initialization": [
+      "runpack.yaml",
+      "baseline_freeze.md",
+      "baseline_snapshot.json",
+      "rollback_pointer.json",
+      "worktree_registry.tsv",
+      "anti_scope_scan.json",
+      "plugin_scope_manifest.json",
+      "session_store_map.tsv",
+      "multi_zone_preflight_report.json",
+      "acceptance_slot_map.tsv",
+      "owner_evidence_acquisition_plan.tsv",
+      "contracts/route_out_registry.json",
+      "contracts/release_blocker_contract.json",
+      "registries/exact_locator_registry.tsv",
+      "registries/artifact_family_registry.tsv",
+      "registries/canonical_crosswalk.json",
+      "matrices/interface_closure_matrix.tsv",
+      "matrices/crosswalk_matrix.tsv",
+      "matrices/opsflow_binding_table.tsv",
+      "matrices/review_fix_integration_matrix.tsv",
+      "matrices/self_audit_matrix.tsv",
+      "schemas/distill_bundle.schema.json",
+      "schemas/distill_pack.schema.json",
+      "samples/sample_distill_bundle.json",
+      "samples/sample_distill_pack.json",
+      "scripts/ca_distill_validate.py",
+      "docs/subsystems/CA-DISTILL/sourcepack/meta.json",
+      "docs/subsystems/CA-DISTILL/sourcepack/CA-CORE.md",
+      "docs/subsystems/CA-DISTILL/sourcepack/CA-MC4.md",
+      "docs/subsystems/CA-DISTILL/sourcepack/CA-WP.md",
+      "docs/subsystems/CA-DISTILL/runtime/distill_bundle.json",
+      "docs/subsystems/CA-DISTILL/runtime/distill_pack.json",
+      "handoff/dsl_handoff_payload.json",
+      "handoff/handoff_latest.md",
+      "package_validation.json",
+      "evidence/_acceptance/20260331T141542Z/20260331T141542Z_acceptance_report.json",
+      "upload/20260331T141542Z_evidence_upload.txt",
+      "perf/omoc_perf_report.md",
+      "perf/omoc_perf_report.json",
+      "perf/rca_tree.json",
+      "perf/upgrade_plan.tsv"
+    ]
+  },
+  "self_check": {
+    "branch_is_ca_distill": true,
+    "split_filenames_only": true,
+    "no_compendium_names_used_in_card": true,
+    "ts_prefixed_acceptance_report_required": true,
+    "single_window_single_task_required": true,
+    "other_subsystem_write_forbidden": true,
+    "canonical_name_locked_to_distill_bundle": true,
+    "internal_companion_locked_to_distill_pack": true,
+    "sourcepack_four_files_required": true,
+    "obsidian_nonpromotion_required": true,
+    "package_bde_proof_must_be_direct_or_route_out": true,
+    "ca_dsl_acceptance_must_be_direct_or_route_out": true,
+    "ops_rollback_proof_must_be_direct_or_route_out": true,
+    "final_verdict_from_acceptance_report_only": true,
+    "fail_closed_if_missing_locator_or_owner_proof": "APPLIED - TRUE"
+  }
+}

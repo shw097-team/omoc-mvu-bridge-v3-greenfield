@@ -1,0 +1,9 @@
+{
+  "name": "release_guard_ca_wrc_v1.json",
+  "owner": "CA-WRC team owner name",
+  "executor": "Release guard executor name",
+  "ts": "20260401T020530Z",
+  "result": "PASS",
+  "scope": "What was covered by release guard (e.g., CA-DISTILL v1.0 interface verification)",
+  "summary": "Optional: detailed description of release guard coverage and findings"
+}

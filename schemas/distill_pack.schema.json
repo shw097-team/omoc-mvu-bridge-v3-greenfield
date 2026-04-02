@@ -1,0 +1,12 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "distill_pack",
+  "type": "object",
+  "required": ["pack_name","ts","bundle_ref","internal_notes"],
+  "properties": {
+    "pack_name": {"type":"string"},
+    "ts": {"type":"string"},
+    "bundle_ref": {"type":"string"},
+    "internal_notes": {"type":"string"}
+  }
+}

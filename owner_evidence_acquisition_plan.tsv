@@ -1,0 +1,13 @@
+ID	Type	Description	Owner	Status	Evidence_Ref	Notes	Priority
+CD-001	INFRASTRUCTURE	CA-DISTILL subsystem initialization	PROJECT_OWNER	BLOCKED	N/A	Requires decision on canonical artifact locations (distill_bundle.json, distill_pack.json)	CRITICAL
+CD-002	INFRASTRUCTURE	Schema validation framework	PROJECT_OWNER	BLOCKED	N/A	Requires distill_bundle.schema.json, distill_pack.schema.json definitions	CRITICAL
+CD-003	INFRASTRUCTURE	Sourcepack four-file requirement	PROJECT_OWNER	BLOCKED	N/A	Requires CA-CORE.md, CA-MC4.md, CA-WP.md, meta.json structure definition	CRITICAL
+CD-004	INFRASTRUCTURE	Contract/registry framework	PROJECT_OWNER	BLOCKED	N/A	Requires contracts/ and registries/ boundary definitions	CRITICAL
+CD-005	INFRASTRUCTURE	Integration matrix framework	PROJECT_OWNER	BLOCKED	N/A	Requires matrices/ structure and crosswalk definitions	CRITICAL
+CD-006	EVIDENCE	Package B proof	PACKAGE_B_OWNER	NOT_LOCATED	N/A	Required for final acceptance verdict	HIGH
+CD-007	EVIDENCE	Package D proof	PACKAGE_D_OWNER	NOT_LOCATED	N/A	Required for final acceptance verdict	HIGH
+CD-008	EVIDENCE	Package E proof	PACKAGE_E_OWNER	NOT_LOCATED	N/A	Required for final acceptance verdict	HIGH
+CD-009	EVIDENCE	CA-DSL consumer acceptance	CA_DSL_TEAM	NOT_LOCATED	N/A	Required for CA-DSL integration verification	HIGH
+CD-010	EVIDENCE	Ops rollback drill results	OPS_TEAM	NOT_LOCATED	N/A	Required for operational readiness verification	HIGH
+CD-011	DOCUMENTATION	Normative split files	PROJECT_OWNER	PARTIAL	docs/_omoc_inputs/normative/	Found merged (合冊) documents; missing individual split files	MEDIUM
+CD-012	ACCEPTANCE	Final acceptance report	IMPLEMENTATION_TEAM	PENDING	evidence/_acceptance/20260331T141542Z/20260331T141542Z_acceptance_report.json	Cannot produce without infrastructure & evidence	CRITICAL

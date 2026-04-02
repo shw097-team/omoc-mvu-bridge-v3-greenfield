@@ -1,0 +1,59 @@
+{
+  "verdict": "PASS",
+  "checks": [
+    {
+      "check_id": "rollback_pack_materialized",
+      "description": "rollback_pack.json exists with all required fields",
+      "status": "PASS",
+      "details": {
+        "rollback_id": "rollback_20260402T121111Z",
+        "owner_or_executor": "sisyphus-ops-exec",
+        "timestamp": "2026-04-02T12:11:11Z",
+        "source_release_pack": "evidence/release/release_20260402T121111Z/release_pack.json",
+        "artifact_identity": "rollback_20260402T121111Z"
+      }
+    },
+    {
+      "check_id": "ops_exec_branch_valid",
+      "description": "ops-exec worktree on correct branch and clean",
+      "status": "PASS",
+      "details": {
+        "branch": "ops/release-exec-20260402T120042Z",
+        "dirty_files": 0,
+        "status": "CLEAN"
+      }
+    },
+    {
+      "check_id": "ca_distill_branch_valid",
+      "description": "CA-DISTILL worktree on correct branch and accessible",
+      "status": "PASS",
+      "details": {
+        "branch": "ca-distill/20260331T141005Z-full-impl",
+        "status": "VERIFIED"
+      }
+    },
+    {
+      "check_id": "execution_plane_state",
+      "description": "Execution plane artifacts materialized and validated",
+      "status": "PASS",
+      "details": {
+        "release_artifacts": 3,
+        "rollback_artifacts": 1,
+        "materialization": "COMPLETE"
+      }
+    },
+    {
+      "check_id": "rollback_drill_execution",
+      "description": "Stateless rollback validation drill executed successfully",
+      "status": "PASS",
+      "details": {
+        "drill_type": "full-validation-cycle",
+        "state_integrity": "VERIFIED",
+        "worktree_consistency": "CONFIRMED"
+      }
+    }
+  ],
+  "result_or_status": "ROLLBACK_VALIDATION_COMPLETE",
+  "completion_semantics": "Rollback drill executed and execution plane state validated",
+  "generated_at": "2026-04-02T12:11:11Z"
+}

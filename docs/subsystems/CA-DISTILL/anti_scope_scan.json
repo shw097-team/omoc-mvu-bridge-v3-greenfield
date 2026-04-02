@@ -1,0 +1,9 @@
+{
+  "forbidden_paths": [
+    ".github/**",
+    "docs/subsystems/CA-WRC/**",
+    "**/secrets/**"
+  ],
+  "scan_result": "no forbidden modifications in this run",
+  "timestamp": "20260331T143933Z"
+}

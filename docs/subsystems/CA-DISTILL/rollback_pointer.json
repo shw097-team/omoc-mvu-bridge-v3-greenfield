@@ -1,0 +1,5 @@
+{
+  "rollback_to": "20260331T141005Z-round0",
+  "reason": "Preserve Round 0 artifacts. Do not overwrite. New artifacts use TS 20260331T143933Z",
+  "locked": true
+}

@@ -1,0 +1,58 @@
+{
+  "ts": "20260309T115405Z",
+  "objective": "15CA_SPLIT_SSOT_AUTHORITY_FINAL_PASS",
+  "rows": [
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_前端文檔到實作驗收_工程指南.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_前端文檔到實作驗收_工程指南.md",
+      "sha256": "d4c2cfa9abd3fa476a4b955955357e637c2b22330af6c37c65150580104c631e",
+      "size": 42044
+    },
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_Governance_Index Pack_v1.2.0.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Governance_Index Pack_v1.2.0.md",
+      "sha256": "44a34a64c1a77ee4c2b1fecae8bfdc4d9217e503f85bbaa0c9b616a91706965f",
+      "size": 100431
+    },
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_Control Plane Pack_v2.2.0.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Control Plane Pack_v2.2.0.md",
+      "sha256": "bb91995e7c4c3aa0a3242dc4a4d4def0c10ea035640d8981b6cf4476e05ccc77",
+      "size": 65160
+    },
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_Execution Pack_v1.2.0.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Execution Pack_v1.2.0.md",
+      "sha256": "53d28a66a965a775cc6e7fd34db8d37aeb6271c080943d05f5b429dd571465d5",
+      "size": 21088
+    },
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_Factory Pack_v1.2.0.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Factory Pack_v1.2.0.md",
+      "sha256": "29e93646d4ae1bea99084c49a86ec5c99471a319fdbdb9359c198b6b286fa294",
+      "size": 41726
+    },
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_Subsystem Delivery Pack_v1.2.0.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-mvu-bridge-v3-greenfield/docs/_omoc_inputs/normative/Spartoi-OMOC_SubP1-LITE+MVP_Pack A-E+工程指南/Spartoi-OMOC_SubP1-LITE+MVP_Subsystem Delivery Pack_v1.2.0.md",
+      "sha256": "75c817b2536074b7adfcd812f66e3752e755d7c62f40eb6dbe28e10683439707",
+      "size": 21647
+    },
+    {
+      "file": "Spartoi-OMOC_SubP1-LITE+MVP_15CA實作前準備_RBWI合冊.md",
+      "status": "FOUND",
+      "path": "/workspaces/omoc-wt-full/Spartoi-OMOC_SubP1-LITE+MVP_15CA實作前準備_RBWI合冊.md",
+      "sha256": "368aa8093df406e0df48a879c7fd35033b8f78ae0e5ff3c5d80783d5e6ea7e31",
+      "size": 48087
+    }
+  ],
+  "all_found": true,
+  "found_count": 7,
+  "missing_count": 0
+}
