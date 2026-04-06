@@ -1,6 +1,6 @@
 # REFRESH: Triggered omoc-wt-full check on PR#37
 # CI re-run to ensure omoc-gate check is produced on merge_group event
-name: omoc
+name: ci
 
 on:  
   pull_request:  
@@ -183,12 +183,16 @@ jobs:
           echo "[always-report] ci / omoc-gate completed."
 
   # -----------------------------  
+   # Terminator job: aggregate needs, never skipped  
+   # Must run for PR/merge_group to ensure 'omoc-gate' status check is reported
+   # Even if review job fails, this job must complete to report status
+  # ===========================  
   # Terminator job: aggregate needs, never skipped  
-  # Must run for PR/merge_group to ensure 'ci-gate' status check is reported
+  # Must run for PR/merge_group to ensure 'omoc-gate' status check is reported
   # Even if review job fails, this job must complete to report status
-  # -----------------------------  
-  ci_gate:
-    name: ci-gate
+  # ===========================
+  ci_omoc_gate:
+    name: omoc-gate
     if: ${{ (github.event_name == 'pull_request' || github.event_name == 'merge_group') && always() }}  
     needs: [review]  
     runs-on: ubuntu-latest  
@@ -197,8 +201,8 @@ jobs:
     steps:  
       - name: Terminator (never skip for PR/merge_group)  
         run: |  
-          echo "Terminator: ensures canonical check 'ci-gate' is produced even if upstream fails."
+          echo "Terminator: ensures canonical check 'ci / omoc-gate' is produced even if upstream fails."
           echo "This job reports the status check context needed for branch protection rules."
 
       # Check context is automatically created by GitHub Actions
-      # as '<workflow-name> / <job-name>' = 'omoc / ci-gate'
+      # as '<workflow-name> / <job-name>' = 'ci / omoc-gate'

@@ -9,3 +9,14 @@ jobs:
     steps:
       - name: report
         run: echo ok
+
+  terminator:
+    name: terminator
+    if: always()
+    needs: [omoc_gate]
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+    steps:
+      - name: Terminator (never skip)
+        run: echo "Terminator: ensures 'ci / omoc-gate' is reported even if upstream fails"

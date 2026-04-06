@@ -1,6 +1,11 @@
-input_id	input_name	origin	current_location	target_integration	status	role	priority
-INP-001	CA-DISTILL-bundle	repo_contracts	MISSING	CA-DISTILL	MISSING	artifact	high
-INP-002	CA-METHOD-bundle	repo_contracts	MISSING	CA-METHOD	MISSING	closure_dependency	high
-INP-003	TT-PKG-D-001-contract	repo_contracts	MISSING	TT-PKG-D-001	MISSING	proof_contract	critical
-INP-004	ops-exec-config	repo_ops	MISSING	ops-exec	MISSING	ops_config	medium
-INP-005	FULL-infra-manifest	repo_infra	MISSING	FULL	MISSING	infrastructure	high
+input	role	coverage_strength	status	note
+OTCM_v2_全線修補RBWI.md	PATCH_BASELINE	DIRECT_ABSORBED	Found	Used as v2.2 patch baseline
+OTCM_v2_全線修補RBWI_AUDIT.md	AUDIT_BASELINE	DIRECT_ABSORBED	Found	All findings closed or preserved fail-closed
+OTCM_v2_全線修補藍圖v2.1.md	BLUEPRINT_BASELINE	DIRECT_ABSORBED	Found	RBWI must fully land v2.1 blueprint
+全線修補藍圖筆記-1.md	DESIGN_ADDENDUM	DIRECT_ABSORBED	Found	CA-METHOD proof/scope fail-closed
+全線修補藍圖筆記-2.md	DESIGN_ADDENDUM	DIRECT_ABSORBED	Found	historical PASS admissibility split
+全線修補藍圖筆記-3.md	DESIGN_ADDENDUM	DIRECT_ABSORBED	Found	Tri-Plane governance recurring-risk framing
+全線修補藍圖筆記-4.md	DESIGN_ADDENDUM	DIRECT_ABSORBED	Found	OTCM core and matrix/export/reconcile design
+全線修補藍圖筆記-5.md	DESIGN_ADDENDUM	DIRECT_ABSORBED	Found	CA-PERFORM/Pipeline-C/Sys5 expansion
+single conversation export artifact	CONVERSATION_CARRIER	MISSING	Missing	No 100% replay-ready claim allowed
+live repo tree	EXECUTION_SUBSTRATE	MISSING	Missing	Patch-ready bundle only

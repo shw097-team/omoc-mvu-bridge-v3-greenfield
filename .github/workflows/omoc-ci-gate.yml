@@ -1,0 +1,104 @@
+name: omoc / ci-gate
+
+on:
+  pull_request:
+    branches: ["main"]
+  merge_group:
+    types: [checks_requested]
+  workflow_dispatch:
+
+permissions: read-all
+
+concurrency:
+  group: omoc-ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  omoc-ci-gate:
+    name: omoc / ci-gate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      actions: read
+      pull-requests: read
+      checks: write
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compatibility probe
+        id: compat
+        run: |
+          python3 scripts/compat_probe.py --github-output "$GITHUB_OUTPUT" --out evidence/_audit/${{ github.run_id }}/compat_probe.json
+
+      - name: Checkout (modern)
+        if: steps.compat.outputs.compatibility_mode == 'github_com_modern'
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Checkout (legacy or GHES)
+        if: steps.compat.outputs.compatibility_mode != 'github_com_modern'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install jq
+        run: sudo apt-get update && sudo apt-get install -y jq
+
+      - name: Install actionlint
+        env:
+          ACTIONLINT_VERSION: "1.7.11"
+        run: |
+          curl -fsSL -o /tmp/actionlint.tgz "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz"
+          tar -xzf /tmp/actionlint.tgz -C /tmp
+          sudo install /tmp/actionlint /usr/local/bin/actionlint
+
+      - name: Run actionlint
+        run: actionlint -color
+
+      - name: Owner truth preflight
+        run: |
+          python3 scripts/owner_truth_preflight.py \
+            --matrix governance/owner_truth/owner_truth_matrix.tsv \
+            --out evidence/_audit/${{ github.run_id }}/owner_truth_preflight.json
+
+      - name: Authoritative reconcile (ci)
+        run: |
+          python3 scripts/authoritative_reconcile.py \
+            --root . \
+            --mode ci \
+            --out evidence/_acceptance/${{ github.run_id }}/authoritative_reconcile.json
+
+      - name: Run anti-hallucination lints
+        run: |
+          python3 scripts/lint_runner.py \
+            --root . \
+            --out-dir evidence/_audit/${{ github.run_id }}/lint
+
+      - name: Build evidence bundle
+        run: |
+          mkdir -p evidence/_backup/${{ github.run_id }}
+          tar -czf evidence/_backup/${{ github.run_id }}/evidence_bundle.tgz evidence
+
+      - name: Upload evidence (modern/legacy github.com)
+        if: steps.compat.outputs.upload_artifact_version == 'v4'
+        uses: actions/upload-artifact@v4
+        with:
+          name: omoc-evidence-${{ github.run_id }}
+          path: |
+            evidence/_audit/${{ github.run_id }}/
+            evidence/_acceptance/${{ github.run_id }}/
+            evidence/_backup/${{ github.run_id }}/evidence_bundle.tgz
+
+      - name: Upload evidence (GHES)
+        if: steps.compat.outputs.upload_artifact_version == 'v3-node20'
+        uses: actions/upload-artifact@v3-node20
+        with:
+          name: omoc-evidence-${{ github.run_id }}
+          path: |
+            evidence/_audit/${{ github.run_id }}/
+            evidence/_acceptance/${{ github.run_id }}/
+            evidence/_backup/${{ github.run_id }}/evidence_bundle.tgz

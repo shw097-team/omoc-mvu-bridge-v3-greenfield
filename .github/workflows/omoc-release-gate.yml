@@ -1,0 +1,98 @@
+name: omoc / release-gate
+
+on:
+  workflow_dispatch:
+  push:
+    tags:
+      - "release-*"
+
+permissions: read-all
+
+jobs:
+  release-gate:
+    name: omoc / release-gate
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      attestations: write
+      id-token: write
+      packages: write
+    steps:
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Compatibility probe
+        id: compat
+        run: |
+          python3 scripts/compat_probe.py --github-output "$GITHUB_OUTPUT" --out evidence/_acceptance/${{ github.run_id }}/compat_probe.json
+
+      - name: Checkout (modern)
+        if: steps.compat.outputs.compatibility_mode == 'github_com_modern'
+        uses: actions/checkout@v5
+        with:
+          fetch-depth: 0
+
+      - name: Checkout (legacy or GHES)
+        if: steps.compat.outputs.compatibility_mode != 'github_com_modern'
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Authoritative reconcile (release)
+        run: |
+          python3 scripts/authoritative_reconcile.py \
+            --root . \
+            --mode release \
+            --out evidence/_acceptance/${{ github.run_id }}/authoritative_reconcile.json
+
+      - name: Validate Package B export bundle
+        run: |
+          BUNDLE="$(find governance/owner_truth/exports -type f -name '*_package_b_owner_export.json' | head -n1)"
+          python3 scripts/validate_owner_export_bundle.py --bundle "$BUNDLE" --out evidence/_acceptance/${{ github.run_id }}/validate_package_b.json
+
+      - name: Validate Package C export bundle
+        run: |
+          BUNDLE="$(find governance/owner_truth/exports -type f -name '*_package_c_owner_export.json' | head -n1)"
+          python3 scripts/validate_owner_export_bundle.py --bundle "$BUNDLE" --out evidence/_acceptance/${{ github.run_id }}/validate_package_c.json
+
+      - name: Validate Package D export bundle
+        run: |
+          BUNDLE="$(find governance/owner_truth/exports -type f -name '*_package_d_owner_export.json' | head -n1)"
+          python3 scripts/validate_owner_export_bundle.py --bundle "$BUNDLE" --out evidence/_acceptance/${{ github.run_id }}/validate_package_d.json
+
+      - name: Validate Package E export bundle
+        run: |
+          BUNDLE="$(find governance/owner_truth/exports -type f -name '*_package_e_owner_export.json' | head -n1)"
+          python3 scripts/validate_owner_export_bundle.py --bundle "$BUNDLE" --out evidence/_acceptance/${{ github.run_id }}/validate_package_e.json
+
+      - name: Verify Stage 8 RC pack current pointers
+        run: |
+          test -f release/current/rc_pack/RC_PACK.md
+          test -f release/current/rc_pack/HANDOFF_MANIFEST.json
+          test -f release/current/rc_pack/TT_EXPORT.json
+
+      - name: Upload release evidence (modern/legacy github.com)
+        if: steps.compat.outputs.upload_artifact_version == 'v4'
+        uses: actions/upload-artifact@v4
+        with:
+          name: omoc-release-gate-${{ github.run_id }}
+          path: |
+            evidence/_acceptance/${{ github.run_id }}/
+            release/current/rc_pack/
+
+      - name: Upload release evidence (GHES)
+        if: steps.compat.outputs.upload_artifact_version == 'v3-node20'
+        uses: actions/upload-artifact@v3-node20
+        with:
+          name: omoc-release-gate-${{ github.run_id }}
+          path: |
+            evidence/_acceptance/${{ github.run_id }}/
+            release/current/rc_pack/
+
+      - name: Optional artifact attestation
+        if: steps.compat.outputs.attest_version == 'v4'
+        uses: actions/attest@v4
+        with:
+          subject-path: "release/current/rc_pack/HANDOFF_MANIFEST.json"

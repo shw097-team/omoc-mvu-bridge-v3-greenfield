@@ -1,13 +1,18 @@
-subsystem	package	owner_truth_status	notes
-Package B	subsystem-B	MISSING	owner bundles not mounted
-Package C	subsystem-C	MISSING	owner bundles not mounted
-Package D	subsystem-D	OPEN_OWNER_TRUTH	TT-PKG-D-001 marked OPEN_OWNER_TRUTH; proof pending
-Package E	subsystem-E	MISSING	owner bundles not mounted
-
-CA-METHOD	Package D	OPEN_OWNER_TRUTH	closure-only; Package D proof pending: TT-PKG-D-001 status=PENDING
-CA-BACKTEST	Package X	MISSING	owner bundles not mounted
-CA-PERFORM	Package Y	MISSING	owner bundles not mounted
-Pipeline-C	Pipeline-C	MISSING	owner bundles not mounted
-Sys5	Sys5	MISSING	owner bundles not mounted
-
-CA-DISTILL	Package Z	FROZEN_REUSE_ONLY	frozen reuse only; rerun disallowed
+subsystem_id	required_owner_truth_id	owner_package	artifact_name	exact_locator	direct_verification_method	current_status	can_import_as_direct_proof	fallback_scope_adjudication
+CA-METHOD	TT-PKG-D-001	Package-D	package_d_owner_proof	docs/_inputs/otcm/governance/owner_truth/exports/20260406T000000Z_package_d_owner_export.json	owner export bundle verification	SCOPED_OUT_APPROVED	yes	APPROVED_EARLIER_EXPORT_20260406T000000Z
+CA-BACKTEST	TT-CABT-001	Package-B	package_b_schema_truth	task_handoff_report_cabt_20260403.md#owner-truth-matrix	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-BACKTEST	TT-CABT-002	Package-D	ruleset_truth	task_handoff_report_cabt_20260403.md#owner-truth-matrix	GitHub ruleset evidence	FOUND_VALID	yes	n/a
+CA-BACKTEST	TT-CABT-004	Package-E	validator_schema_truth	task_handoff_report_cabt_20260403.md#owner-truth-matrix	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-PERFORM	CR-001	Package-C	xq_alignment_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-PERFORM_WP-RB-WI_合冊.md#cr-open-register	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-PERFORM	CR-002	Package-C	mandatory_reconcile_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-PERFORM_WP-RB-WI_合冊.md#cr-open-register	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-PERFORM	CR-003	Package-D	required_checks_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-PERFORM_WP-RB-WI_合冊.md#cr-open-register	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-PERFORM	CR-004	Package-E	release_guard_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-PERFORM_WP-RB-WI_合冊.md#cr-open-register	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-PERFORM	CR-005	Package-B	ui_payload_schema_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-PERFORM_WP-RB-WI_合冊.md#cr-open-register	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-PERFORM	CR-006	Package-E	ai_sidecar_boundary_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-PERFORM_WP-RB-WI_合冊.md#cr-open-register	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+PIPELINE-C	THRESHOLD-GRANT	Package-B/E	threshold_ref_grant	Spartoi-OMOC_SubP1-LITE+MVP_正文合冊.md#10.2 gap register	owner export bundle verification	CONFIGURE_REQUIRED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+PIPELINE-C	TRANSLATE-PARITY	Package-B/E	translate_parity_profile	Spartoi-OMOC_SubP1-LITE+MVP_正文合冊.md#10.2 gap register	owner export bundle verification	CONFIGURE_REQUIRED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-WATCH	WATCH-RUNTIME	Package-C	watch_runtime_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-WATCH_MC4合冊.md#cover-card	owner export bundle verification	RADAR_ONLY_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-EXECUTE	EXECUTE-RUNTIME	Package-C	execute_runtime_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-EXECUTE_MC4合冊.md#caexe-mc4-0000-cover	owner export bundle verification	EXECUTE_DISABLED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-UI	UI-SCHEMA	Package-B	ui_affordance_schema	Spartoi-OMOC_SubP1-LITE+MVP_CA-UI_MC4合冊.md#somoc-caui-01-identity	owner export bundle verification	READ_ONLY_UI_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-GOVERN	GOVERN-PROOF	Package-E	govpack_control_plane_proof	Spartoi-OMOC_SubP1-LITE+MVP_CA-GOVERN_MC4合冊.md#cover-router	owner export bundle verification	PASS_WITH_TT_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z
+CA-COLLAB	COLLAB-GATES	Package-E	agent_quality_integrity_truth	Spartoi-OMOC_SubP1-LITE+MVP_CA-COLLAB_MC4合冊.md#cacollab-mc4-0-delivery	owner export bundle verification	TEMP_CLOSED_APPROVED	yes	APPROVED_POLICY_FALLBACK_20260406T132235Z

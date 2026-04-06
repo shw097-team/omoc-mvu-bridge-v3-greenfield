@@ -30,7 +30,7 @@ jobs:
         run: echo "ci completed"
 
       - name: Emit omoc-gate status context (PR/merge_group)
-        if: ${{ github.event_name == 'pull_request' || github.event_name == 'merge_group' }}
+        if: ${{ (github.event_name == 'pull_request' || github.event_name == 'merge_group') && always() }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |

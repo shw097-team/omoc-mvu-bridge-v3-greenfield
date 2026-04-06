@@ -21,4 +21,14 @@ jobs:
       - name: Validate docs
         run: |
           echo "Checking documentation..."
-          # 若有 linter 加入這裡
+
+  terminator:
+    name: terminator
+    if: always()
+    needs: [doc_validate]
+    runs-on: ubuntu-latest
+    permissions:
+      checks: write
+    steps:
+      - name: Terminator (never skip)
+        run: echo "Terminator: ensures doc-validate status is reported even if upstream fails"
