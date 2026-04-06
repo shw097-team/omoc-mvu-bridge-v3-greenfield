@@ -1,0 +1,13 @@
+subsystem	package	owner_truth_status	notes
+Package B	subsystem-B	MISSING	owner bundles not mounted
+Package C	subsystem-C	MISSING	owner bundles not mounted
+Package D	subsystem-D	OPEN_OWNER_TRUTH	TT-PKG-D-001 marked OPEN_OWNER_TRUTH; proof pending
+Package E	subsystem-E	MISSING	owner bundles not mounted
+
+CA-METHOD	Package D	OPEN_OWNER_TRUTH	closure-only; Package D proof pending: TT-PKG-D-001 status=PENDING
+CA-BACKTEST	Package X	MISSING	owner bundles not mounted
+CA-PERFORM	Package Y	MISSING	owner bundles not mounted
+Pipeline-C	Pipeline-C	MISSING	owner bundles not mounted
+Sys5	Sys5	MISSING	owner bundles not mounted
+
+CA-DISTILL	Package Z	FROZEN_REUSE_ONLY	frozen reuse only; rerun disallowed

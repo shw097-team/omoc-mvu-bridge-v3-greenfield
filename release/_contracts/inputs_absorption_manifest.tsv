@@ -1,0 +1,6 @@
+input_id	input_name	origin	current_location	target_integration	status	role	priority
+INP-001	CA-DISTILL-bundle	repo_contracts	MISSING	CA-DISTILL	MISSING	artifact	high
+INP-002	CA-METHOD-bundle	repo_contracts	MISSING	CA-METHOD	MISSING	closure_dependency	high
+INP-003	TT-PKG-D-001-contract	repo_contracts	MISSING	TT-PKG-D-001	MISSING	proof_contract	critical
+INP-004	ops-exec-config	repo_ops	MISSING	ops-exec	MISSING	ops_config	medium
+INP-005	FULL-infra-manifest	repo_infra	MISSING	FULL	MISSING	infrastructure	high

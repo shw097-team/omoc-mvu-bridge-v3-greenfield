@@ -1,0 +1,26 @@
+{
+  "ts": "20260406T113227Z",
+  "scope": "OTCM v2 FULL-line deployment",
+  "notes": "Foundational freeze decision for deployment round. Created as new TS-prefixed evidence; do not overwrite previous records.",
+  "decisions": {
+    "FULL": {
+      "rerun_allowed": true,
+      "reason": "infrastructure_setup_phase: FULL permitted to rerun for infra/setup tasks"
+    },
+    "CA-DISTILL": {
+      "rerun_allowed": false,
+      "reason": "frozen_reuse_only: CA-DISTILL is frozen and only reusable artifacts allowed, no rerun"
+    },
+    "CA-METHOD": {
+      "rerun_allowed": false,
+      "reason": "closure_only_pending_d_proof: closure execution only; TT-PKG-D-001 proof pending"
+    },
+    "ops-exec": {
+      "rerun_allowed": false,
+      "reason": "conditional_only: ops execution conditional, rerun disallowed in this freeze"
+    }
+  },
+  "owner_bundles": "none_available_marked_missing",
+  "created_by": "Sisyphus-Junior",
+  "created_at": "2026-04-06T11:32:27Z"
+}
