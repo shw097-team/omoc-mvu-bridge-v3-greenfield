@@ -1,9 +1,0 @@
-## cp3/doc-validate-20260214T115939Z...origin/main
- M .devcontainer/devcontainer.json
-?? **System
-?? **Trigger**:
-?? AGENTS.md
-?? agent.md
-?? evidence/
-?? scripts/accept/
-?? "\346\230\240\345\260\204\347\202\272"

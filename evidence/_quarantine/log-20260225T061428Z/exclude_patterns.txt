@@ -1,6 +1,0 @@
-evidence/step-opencode-repair/20260214T123304Z/runlogs/gh_token.flag.txt
-evidence/opencode_diag/20260214T120658Z/env.gh_token.flag.txt
-*_evidence_upload.txt
-*.bak
-_acceptance/config_dump.txt.bak*
-!evidence/_acceptance//*

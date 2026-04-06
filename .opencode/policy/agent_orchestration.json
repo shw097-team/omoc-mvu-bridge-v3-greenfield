@@ -1,9 +1,0 @@
-{
-  "project": "omoc-mvu-bridge-v3",
-  "agents": {
-    "primary_builder": { "role": "construction", "allow_write": [".github/workflows", "scripts"] },
-    "safety_auditor": { "role": "compliance", "allow_write": ["evidence/"] }
-  },
-  "handoff_protocol": "git_commit_metadata",
-  "optimization_level": "MAX_PARALLEL"
-}

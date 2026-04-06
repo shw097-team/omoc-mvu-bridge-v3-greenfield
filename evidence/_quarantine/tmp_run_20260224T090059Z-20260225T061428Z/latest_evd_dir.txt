@@ -1,1 +1,0 @@
-LATEST_EVDIR=/workspaces/omoc-mvu-bridge-v3-greenfield/evidence/_acceptance/tmp_run_20260224T090059Z

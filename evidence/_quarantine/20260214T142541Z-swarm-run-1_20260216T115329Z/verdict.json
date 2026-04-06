@@ -1,5 +1,0 @@
-{
-  "verdict": "PASS",
-  "reason": "All required resources present and docker ps succeeded",
-  "fail_closed": false
-}
