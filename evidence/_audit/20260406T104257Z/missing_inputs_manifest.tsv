@@ -1,0 +1,30 @@
+subsystem_id	item_type	item_name	current_location	target_location	file_status	role	priority	action_required	estimated_size_kb
+OTCM_INPUTS	CRITICAL_MD	OTCM_v2_全線修補RBWI_AUDIT.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	RBWI audit closure baseline	CRITICAL	Locate and mount	350
+OTCM_INPUTS	CRITICAL_MD	OTCM_v2_全線修補藍圖v2.1.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	Blueprint v2.1 baseline + WI definitions	CRITICAL	Locate and mount	450
+OTCM_INPUTS	CRITICAL_MD	OTCM_v2_全線修補藍圖_AUDIT.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	Blueprint v2.1 audit gate	CRITICAL	Locate and mount	200
+OTCM_INPUTS	DESIGN_ADDENDA	全線修補藍圖筆記-1.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	CA-METHOD owner-proof design	LOW	Locate and mount	100
+OTCM_INPUTS	DESIGN_ADDENDA	全線修補藍圖筆記-2.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	Truth-class/admissibility split design	LOW	Locate and mount	80
+OTCM_INPUTS	DESIGN_ADDENDA	全線修補藍圖筆記-3.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	Tri-Plane governance design	LOW	Locate and mount	90
+OTCM_INPUTS	DESIGN_ADDENDA	全線修補藍圖筆記-4.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	OTCM matrix/export/reconcile design	LOW	Locate and mount	110
+OTCM_INPUTS	DESIGN_ADDENDA	全線修補藍圖筆記-5.md	MISSING	docs/_inputs/otcm/	NOT_FOUND	CAPF/Pipeline-C/Sys5 extension design	LOW	Locate and mount	85
+OTCM_REPO_PREP	REPO_DIR	governance/owner_truth/	NOT_CREATED	/repo/governance/owner_truth/	MISSING	Owner truth center of gravity	CRITICAL	Create and populate from inputs	10
+OTCM_REPO_PREP	REPO_DIR	governance/owner_truth/exports/	NOT_CREATED	/repo/governance/owner_truth/exports/	MISSING	TS-prefixed owner export bundle storage	HIGH	Create (populated during WI-OTCM-010)	5
+OTCM_REPO_PREP	REPO_DIR	templates/	NOT_CREATED	/repo/templates/	MISSING	Stage-8 template set	HIGH	Create and populate from inputs	5
+OTCM_REPO_PREP	REPO_DIR	release/_contracts/	NOT_CREATED	/repo/release/_contracts/	MISSING	Contract registry	HIGH	Create and populate from inputs	50
+OTCM_REPO_PREP	REPO_DIR	release/current/rc_pack/	NOT_CREATED	/repo/release/current/rc_pack/	MISSING	Stage-8 output location	HIGH	Create (populated during WI-OTCM-013)	5
+OTCM_SCRIPTS	PYTHON	owner_truth_preflight.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-009 implementation	CRITICAL	Copy from docs/_inputs/otcm/scripts/	150
+OTCM_SCRIPTS	PYTHON	authoritative_reconcile.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-012 implementation	CRITICAL	Copy from docs/_inputs/otcm/scripts/	200
+OTCM_SCRIPTS	PYTHON	compat_probe.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-003 implementation	HIGH	Copy from docs/_inputs/otcm/scripts/	80
+OTCM_SCRIPTS	PYTHON	export_owner_truth_bundle.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-010 implementation	CRITICAL	Copy from docs/_inputs/otcm/scripts/	250
+OTCM_SCRIPTS	PYTHON	validate_owner_export_bundle.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-011 implementation	CRITICAL	Copy from docs/_inputs/otcm/scripts/	180
+OTCM_SCRIPTS	PYTHON	lint_runner.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-014 implementation	HIGH	Copy from docs/_inputs/otcm/scripts/	220
+OTCM_SCRIPTS	PYTHON	assemble_stage8_rc_pack.py	MISSING	/repo/scripts/	NOT_FOUND	WI-OTCM-013 implementation	CRITICAL	Copy from docs/_inputs/otcm/scripts/	160
+OTCM_WORKFLOWS	YAML	omoc-ci-gate.yml	MISSING	/.github/workflows/	NOT_FOUND	PR + merge_group canonical check	CRITICAL	Copy from docs/_inputs/otcm/examples/	80
+OTCM_WORKFLOWS	YAML	omoc-release-gate.yml	MISSING	/.github/workflows/	NOT_FOUND	Release gate implementation	CRITICAL	Copy from docs/_inputs/otcm/examples/	60
+OWNER_PROOFS	BUNDLE	20260406T104257Z_package_b_owner_export.json	NOT_AVAILABLE	/repo/governance/owner_truth/exports/	MISSING	Package B owner truth proof	CRITICAL	Require from Package B owner	200
+OWNER_PROOFS	BUNDLE	20260406T104257Z_package_c_owner_export.json	NOT_AVAILABLE	/repo/governance/owner_truth/exports/	MISSING	Package C owner truth proof	CRITICAL	Require from Package C owner	300
+OWNER_PROOFS	BUNDLE	20260406T104257Z_package_d_owner_export.json	NOT_AVAILABLE	/repo/governance/owner_truth/exports/	MISSING	Package D owner truth proof	CRITICAL	Require from Package D owner	250
+OWNER_PROOFS	BUNDLE	20260406T104257Z_package_e_owner_export.json	NOT_AVAILABLE	/repo/governance/owner_truth/exports/	MISSING	Package E owner truth proof	CRITICAL	Require from Package E owner	200
+CR_BLOCKERS	ARTIFACT	single conversation export artifact	NOT_MOUNTED	external	MISSING	Full conv trace for coverage validation	CRITICAL_BLOCKER	Mount as CR-OTCM-001 evidence	variable
+CR_BLOCKERS	ARTIFACT	live repo tree snapshot	NOT_MOUNTED	external	MISSING	Worktree root locator validation	CRITICAL_BLOCKER	Mount as CR-OTCM-002 evidence	variable
+CR_BLOCKERS	ARTIFACT	actual owner-side production bundles	NOT_MOUNTED	external	MISSING	Production Package B/C/D/E proofs	CRITICAL_BLOCKER	Mount as CR-OTCM-003 evidence	variable
