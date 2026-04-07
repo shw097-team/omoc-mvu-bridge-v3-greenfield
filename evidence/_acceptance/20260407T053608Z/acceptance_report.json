@@ -1,9 +1,0 @@
-{
-  "acceptance_id": "acceptance_20260407T053608Z",
-  "timestamp": "20260407T053608Z",
-  "status": "ACCEPTED",
-  "reconciliation_status": "PASS",
-  "lint_status": "PASS",
-  "owner_proof_status": "COMPLETE",
-  "performance_status": "PASS"
-}
