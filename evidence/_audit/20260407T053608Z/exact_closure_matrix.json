@@ -1,0 +1,49 @@
+{
+  "closure_matrix_id": "closure_20260407T053608Z",
+  "timestamp": "20260407T053608Z",
+  "matrix_rows": [
+    {
+      "item": "Mount Readiness",
+      "previous_status": "TEMP_CLOSED",
+      "current_status": "RESOLVED",
+      "closure_proof": "mount_readiness_probe.json",
+      "tt_ref": "none"
+    },
+    {
+      "item": "Package B Export",
+      "previous_status": "MISSING",
+      "current_status": "FOUND",
+      "closure_proof": "20260406T000000Z_package_b_owner_export.json_validate.json",
+      "tt_ref": "none"
+    },
+    {
+      "item": "Package D Export",
+      "previous_status": "MISSING",
+      "current_status": "FOUND",
+      "closure_proof": "20260406T000000Z_package_d_owner_export.json_validate.json",
+      "tt_ref": "none"
+    },
+    {
+      "item": "Package E Export",
+      "previous_status": "MISSING",
+      "current_status": "FOUND",
+      "closure_proof": "20260406T000000Z_package_e_owner_export.json_validate.json",
+      "tt_ref": "none"
+    },
+    {
+      "item": "CA_METHOD",
+      "previous_status": "UNKNOWN",
+      "current_status": "PASS",
+      "closure_proof": "owner_truth_preflight.json",
+      "tt_ref": "none"
+    },
+    {
+      "item": "CA_BACKTEST",
+      "previous_status": "UNKNOWN",
+      "current_status": "PASS",
+      "closure_proof": "owner_truth_preflight.json",
+      "tt_ref": "none"
+    }
+  ],
+  "all_closed": true
+}
