@@ -1,19 +1,27 @@
 #!/bin/bash
-# OMOC Check Manifest Collector (compat shim)
-# Collects CI check status and context information for governance validation
+# Compat shim: omoc_collect_checks_manifest.sh
+# Collects CI check manifest for governance validation
 
 set -euo pipefail
 
-MANIFEST_OUT="${1:-.omoc_checks_manifest.json}"
-
-# Stub manifest - collect from GitHub Actions environment if available
-cat > "$MANIFEST_OUT" <<'JSON'
+echo "Collecting checks manifest..."
+cat > checks_manifest.json <<'MANIFEST'
 {
-  "timestamp": "'"$(date -u +%Y%m%dT%H%M%SZ)"'",
-  "checks": [],
-  "contexts": [],
-  "note": "Manifest collector initialized. Details populated by CI gateway."
+  "schema": "omoc.checks_manifest.v1",
+  "timestamp": "'$(date -u +%Y%m%dT%H%M%SZ)'",
+  "expected": [],
+  "observed": [],
+  "diff": [],
+  "verdict": "PENDING",
+  "note": "Manifest collector compat shim - details populated by CI gateway"
 }
-JSON
+MANIFEST
+cat > evidence_index.md <<'INDEX'
+# Evidence Index
 
-echo "✓ Manifest written to $MANIFEST_OUT"
+- checks_manifest.json: CI check status
+- verdict.json: Adjudication verdict (if available)
+
+INDEX
+
+echo "✓ Checks manifest created"
