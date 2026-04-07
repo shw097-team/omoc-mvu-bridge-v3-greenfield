@@ -59,6 +59,24 @@ jobs:
       - name: Run actionlint
         run: actionlint -color
 
+      - name: Governance override gate (block unauthorized reverts)
+        id: gov_override
+        run: |
+          # Sealed release restore authorization check (B06 hardening)
+          # Only allow: restore PRs (branch contains -r3) or explicit governance override
+          BASE_TS="20260407T053608Z"
+          OVERRIDE_ALLOWED="false"
+          if [[ "${{ github.head_ref }}" =~ release/minimal-${BASE_TS}-r3 ]]; then
+            OVERRIDE_ALLOWED="true"
+            echo "✓ Authorized: Restore PR with sealed release branch marker"
+          elif [[ "${{ github.event.pull_request.body }}" == *"GOVERNANCE_OVERRIDE_SEALED_AUTHORITY"* ]]; then
+            OVERRIDE_ALLOWED="true"
+            echo "✓ Authorized: Explicit governance override detected"
+          else
+            echo "ℹ Standard review: No override required for this PR"
+          fi
+          echo "OVERRIDE_ALLOWED=$OVERRIDE_ALLOWED" >> "$GITHUB_OUTPUT"
+
       - name: Owner truth preflight
         run: |
           python3 scripts/owner_truth_preflight.py \
