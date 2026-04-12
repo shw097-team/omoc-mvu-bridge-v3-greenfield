@@ -1,0 +1,16 @@
+{
+  "baseline_ts": "20260412T150512Z",
+  "baseline_verdict": "PASS",
+  "tt6_closure": {
+    "TT-CABT-001": true,
+    "TT-CABT-002": true,
+    "TT-CABT-003": true,
+    "TT-CABT-004": true,
+    "TT-CABT-005": true,
+    "TT-CABT-006": true
+  },
+  "tt6_closed_count": 6,
+  "split_sync_complete": true,
+  "open_tts": [],
+  "evidence_upload_present": true
+}

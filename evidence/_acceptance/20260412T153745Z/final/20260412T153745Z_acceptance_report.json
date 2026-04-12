@@ -1,0 +1,86 @@
+{
+  "report_type": "ACCEPTANCE_REPORT",
+  "timestamp": "2026-04-12T15:40:47.293410+00:00",
+  "workflow": "CABT_V8_COMPENDIUM_FINALIZATION",
+  "batch_timestamp": "20260412T153745Z",
+  "authoritative_report": true,
+  "single_adjudicator": true,
+  "final_verdict": "PASS",
+  "verdict_rationale": "All 8 adjudication criteria met: baseline PASS, 6/6 TTs closed, split sync complete, compendium sync complete, 8/8 lint passing, zero open TTs, loop converged at round 1.",
+  "criteria_checklist": {
+    "baseline_pass": true,
+    "tt6_closure": true,
+    "split_sync_complete": true,
+    "compendium_sync_complete": true,
+    "lint_gate_all_passing": true,
+    "open_tts_zero": true,
+    "loop_converged": true
+  },
+  "cards_executed": {
+    "R0_resolve": "COMPLETE",
+    "C1_absorb": "COMPLETE",
+    "C2_materialize": "COMPLETE",
+    "C3_sync": "COMPLETE",
+    "C4_lint": "COMPLETE",
+    "L0_loop": "COMPLETE",
+    "P0_perf": "COMPLETE",
+    "F0_adjudicate": "COMPLETE"
+  },
+  "handoff_status": {
+    "problemset_resolved": true,
+    "problemset_definition": "CABT V7 PASS baseline + three named compendia materialized + synced to authoritative batch",
+    "handoff_ready": true
+  },
+  "artifacts": {
+    "authoritative_baseline": "evidence/_acceptance/20260412T150512Z/final/20260412T150512Z_acceptance_report.json",
+    "materialized_compendia": [
+      "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_MC4+_合冊.md",
+      "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-M_合冊.md",
+      "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-RB-WI_合冊.md"
+    ],
+    "evidence_batch": "evidence/_acceptance/20260412T153745Z/",
+    "perf_report": "evidence/_acceptance/20260412T153745Z/perf/omoc_perf_report.json",
+    "rca_analysis": "evidence/_acceptance/20260412T153745Z/perf/rca_tree.json",
+    "loop_state": "evidence/_acceptance/20260412T153745Z/loop/loop_state.json",
+    "tt6_closure_decisions": "evidence/_acceptance/20260412T150512Z/closure/tt6_closure_decisions.json",
+    "evidence_upload_manifest": "evidence/_acceptance/20260412T153745Z/final/20260412T153745Z_evidence_upload.txt"
+  },
+  "quality_gates": {
+    "type_coherence_lint": true,
+    "upload_naming_lint": true,
+    "erp_coverage_lint": true,
+    "worktree_locator_lint": true,
+    "handoff_pointer_lint": true,
+    "evidence_export_lint": true,
+    "pack_roster_lint": true,
+    "builder_coherence_lint": true
+  },
+  "tt6_summary": {
+    "total_tts": 6,
+    "closed": 6,
+    "open": 0,
+    "closure_rate_percent": 100
+  },
+  "split_sync_info": {
+    "split_sources_input": 7,
+    "materialized_outputs": 3,
+    "sync_complete": true
+  },
+  "loop_summary": {
+    "terminal_round": 1,
+    "convergence_criteria": "baseline_pass AND compendium_sync_complete",
+    "converged": true
+  },
+  "downstream_actions": [
+    "Archive evidence batch evidence/_acceptance/20260412T153745Z/",
+    "Release materialized compendia to production repository",
+    "Update reference documentation with new compendium locations",
+    "Notify stakeholders of CABT V8 completion"
+  ],
+  "sign_off": {
+    "adjudicator": "CABT_V8_SINGLE_ADJUDICATOR",
+    "adjudication_complete": true,
+    "no_human_review_required": true,
+    "ready_for_release": true
+  }
+}
