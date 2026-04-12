@@ -1,0 +1,64 @@
+{
+  "report_type": "OMOC_PERF_REPORT",
+  "timestamp": "2026-04-12T15:40:20.916417+00:00",
+  "workflow": "CABT_V8_COMPENDIUM_FINALIZATION",
+  "execution_summary": {
+    "cards_executed": [
+      "R0",
+      "C1",
+      "C2",
+      "C3",
+      "C4",
+      "L0"
+    ],
+    "total_cards_planned": 8,
+    "execution_complete": true,
+    "baseline_status": "PASS",
+    "tt6_closure_status": "6/6",
+    "split_sync_status": true,
+    "lint_status": "ALL_PASSING"
+  },
+  "card_metrics": {
+    "R0_resolve": {
+      "status": "COMPLETE",
+      "duration_ms": "baseline"
+    },
+    "C1_absorb": {
+      "status": "COMPLETE",
+      "duration_ms": "baseline"
+    },
+    "C2_materialize": {
+      "status": "COMPLETE",
+      "targets": 3
+    },
+    "C3_sync": {
+      "status": "COMPLETE",
+      "linkages": 3
+    },
+    "C4_lint": {
+      "status": "COMPLETE",
+      "checks_passing": 8
+    },
+    "L0_loop": {
+      "status": "COMPLETE",
+      "terminal_round": 1,
+      "stop_rule": "baseline_pass_AND_sync_complete"
+    }
+  },
+  "resource_metrics": {
+    "split_sources_processed": 7,
+    "materialized_outputs": 3,
+    "tt_closure_proofs": 6,
+    "lint_checks": 8
+  },
+  "quality_metrics": {
+    "TS_COHERENCE_LINT": true,
+    "UPLOAD_TXT_NAMING_LINT": true,
+    "ERP_COVERAGE_LINT": true,
+    "WORKTREE_ROOT_LOCATOR_LINT": true,
+    "HANDOFF_POINTER_MINSET_LINT": true,
+    "EVIDENCE_EXPORT_LINT": true,
+    "PACK_ROSTER_LINT": true,
+    "BUILDER_VERSION_COHERENCE_LINT": true
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "materialized_targets": [
+    "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_MC4+_合冊.md",
+    "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-M_合冊.md",
+    "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-RB-WI_合冊.md"
+  ],
+  "authoritative_batch": "evidence/_acceptance/20260412T150512Z/final/20260412T150512Z_acceptance_report.json",
+  "authoritative_tt6": "evidence/_acceptance/20260412T150512Z/closure/tt6_closure_decisions.json",
+  "authoritative_upload": "evidence/_acceptance/20260412T150512Z/final/20260412T150512Z_evidence_upload.txt",
+  "compendium_sync_complete": true
+}

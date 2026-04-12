@@ -1,0 +1,12 @@
+{
+  "checks": {
+    "TS_COHERENCE_LINT": true,
+    "UPLOAD_TXT_NAMING_LINT": true,
+    "ERP_COVERAGE_LINT": true,
+    "WORKTREE_ROOT_LOCATOR_LINT": true,
+    "HANDOFF_POINTER_MINSET_LINT": true,
+    "EVIDENCE_EXPORT_LINT": true,
+    "PACK_ROSTER_LINT": true,
+    "BUILDER_VERSION_COHERENCE_LINT": true
+  }
+}

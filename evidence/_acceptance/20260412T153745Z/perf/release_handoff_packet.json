@@ -1,0 +1,33 @@
+{
+  "release_packet_version": "1.0",
+  "timestamp": "2026-04-12T15:40:20.916432+00:00",
+  "release_name": "CABT_V8_COMPENDIUM_FINALIZATION",
+  "final_verdict": "PASS",
+  "handoff_ready": true,
+  "artifacts": {
+    "authoritative_baseline": "evidence/_acceptance/20260412T150512Z/final/20260412T150512Z_acceptance_report.json",
+    "materialized_outputs": [
+      "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_MC4+_合冊.md",
+      "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-M_合冊.md",
+      "docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-RB-WI_合冊.md"
+    ],
+    "evidence_batch": "evidence/_acceptance/20260412T153745Z/"
+  },
+  "closure_status": {
+    "open_tts": [],
+    "closed_tts": 6,
+    "tt6_complete": true
+  },
+  "quality_gates": {
+    "lint_gate": "PASS",
+    "type_coherence": "PASS",
+    "baseline_preservation": "PASS",
+    "split_sync": "PASS"
+  },
+  "downstream_actions": [
+    "Review final acceptance report (F0)",
+    "Validate evidence upload manifest",
+    "Approve release to production compendia repository",
+    "Archive V7/V8 evidence batches"
+  ]
+}

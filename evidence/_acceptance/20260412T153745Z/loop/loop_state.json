@@ -1,0 +1,16 @@
+{
+  "rounds": [
+    {
+      "round": 1,
+      "baseline_pass": true,
+      "compendium_sync_complete": true,
+      "timestamp": "2026-04-12T15:39:24.946864Z"
+    }
+  ],
+  "terminal_round": 1,
+  "stop_rule": "baseline_pass_and_compendium_sync_complete OR max_rounds_reached",
+  "baseline_pass_final": true,
+  "compendium_sync_final": true,
+  "iteration_complete": true,
+  "timestamp": "2026-04-12T15:39:24.946966Z"
+}
