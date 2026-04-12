@@ -1,0 +1,18 @@
+{
+  "ts": "20260406T000000Z",
+  "owner_package": "Package-B",
+  "owner_root": "/owner/b",
+  "source_acceptance_report": "evidence/_acceptance/20260406T000000Z/20260406T000000Z_acceptance_report.json",
+  "owner_verdict": "PASS",
+  "schema_registry_ref": "pkgb/schema.tsv",
+  "validator_schema_ref": "pkgb/validator.json",
+  "gate_registry_ref": "pkgb/gates.tsv",
+  "manifest_fields_ref": "pkgb/manifest_fields.json",
+  "proof_rows": [
+    {
+      "id": "proof-001",
+      "status": "PASS"
+    }
+  ],
+  "payload_sha256": "a54203a14bf27ea8ffc65d4437063cbf08a7dacf2d2ffc49d5e3f528703bdac0"
+}
