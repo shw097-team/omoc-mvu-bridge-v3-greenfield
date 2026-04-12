@@ -1,0 +1,12 @@
+{
+  "TT-CABT-001": true,
+  "TT-CABT-002": true,
+  "TT-CABT-003": true,
+  "TT-CABT-004": true,
+  "TT-CABT-005": true,
+  "TT-CABT-006": true,
+  "tt6_closed_count": 6,
+  "tt6_total": 6,
+  "tt6_all_closed": true,
+  "reason": "All 6 TTs CLOSED. TT-006 (Pipeline-B recovery) resolved with artifact found in docs/_omoc_inputs/ and verified."
+}
