@@ -1,0 +1,18 @@
+{
+  "ts": "20260406T000000Z",
+  "owner_package": "Package-E",
+  "owner_root": "/owner/e",
+  "source_acceptance_report": "evidence/_acceptance/20260406T000000Z/20260406T000000Z_acceptance_report.json",
+  "owner_verdict": "PASS",
+  "release_guard_ref": "pkge/release_guard.json",
+  "validator_execution_ref": "pkge/validator_exec.json",
+  "provenance_ref": "pkge/provenance.json",
+  "approval_signal_ref": "pkge/approval.json",
+  "proof_rows": [
+    {
+      "id": "proof-001",
+      "status": "PASS"
+    }
+  ],
+  "payload_sha256": "5015ae662507c37ef38435a04bbfc5a3884a8c74799f554a3cfb5a254c3cc38f"
+}

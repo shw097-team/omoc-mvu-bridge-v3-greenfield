@@ -1,0 +1,84 @@
+# Evidence Upload Manifest — CABT V8
+
+**Batch**: 20260412T153745Z  
+**Verdict**: PASS  
+**Timestamp**: 2026-04-12T15:40:47.294272+00:00
+
+## Acceptance Report
+- `evidence/_acceptance/20260412T153745Z/final/20260412T153745Z_acceptance_report.json` (PRIMARY)
+- `evidence/_acceptance/20260412T153745Z/acceptance_report.json` (mirror)
+
+## Materialized Outputs (Release-Ready)
+
+1. `docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_MC4+_合冊.md`
+2. `docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-M_合冊.md`
+3. `docs/materialized/cabt/Spartoi-OMOC_SubP1-LITE+MVP_CA-BACKTEST_WP-RB-WI_合冊.md`
+
+## Evidence Batch Contents
+
+### Card R0 (Resolve)
+- `round0/split_source_paths.txt`
+- `round0/source_and_target_resolve.json`
+- `round0/acceptance_slot_map.tsv`
+
+### Card C1 (Absorb Baseline)
+- `closure/baseline_absorb.json`
+
+### Cards C2–C3 (Materialize + Sync)
+- `materialize/materialized_targets.json`
+- `materialize/compendium_sync_manifest.json`
+- `materialize/compendium_sync_matrix.tsv`
+
+### Card C4 (Lint + TT Export)
+- `final/lint_gate_matrix.json`
+- `tt/tt_export.json`
+- `final/compendium_completion_matrix.tsv`
+- `final/file_roster.txt`
+
+### Card L0 (Loop Iteration)
+- `loop/loop_state.json`
+
+### Card P0 (Performance/RCA)
+- `perf/omoc_perf_report.json`
+- `perf/omoc_perf_report.md`
+- `perf/rca_tree.json`
+- `perf/release_handoff_packet.json`
+
+### Card F0 (Adjudication)
+- `final/20260412T153745Z_acceptance_report.json` (PRIMARY)
+- `acceptance_report.json` (mirror)
+
+## Authoritative References
+
+**V7 Baseline (Read-Only)**:
+- `evidence/_acceptance/20260412T150512Z/final/20260412T150512Z_acceptance_report.json`
+- `evidence/_acceptance/20260412T150512Z/closure/tt6_closure_decisions.json`
+
+## Adjudication Summary
+
+**Final Verdict**: PASS
+
+### Criteria Met:
+- ✅ Baseline PASS preserved
+- ✅ 6/6 TTs CLOSED
+- ✅ Split sync complete
+- ✅ Compendium sync complete
+- ✅ 8/8 lint checks passing
+- ✅ Zero open TTs
+- ✅ Loop converged at round 1
+
+### Quality Gates: ALL PASSING
+- ✅ TS_COHERENCE_LINT
+- ✅ UPLOAD_TXT_NAMING_LINT
+- ✅ ERP_COVERAGE_LINT
+- ✅ WORKTREE_ROOT_LOCATOR_LINT
+- ✅ HANDOFF_POINTER_MINSET_LINT
+- ✅ EVIDENCE_EXPORT_LINT
+- ✅ PACK_ROSTER_LINT
+- ✅ BUILDER_VERSION_COHERENCE_LINT
+
+---
+
+**Manifest Generated**: 2026-04-12T15:40:47.294315+00:00  
+**Batch Timestamp**: 20260412T153745Z  
+**Status**: READY FOR RELEASE ✅

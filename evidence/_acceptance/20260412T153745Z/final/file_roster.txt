@@ -1,0 +1,8 @@
+evidence/_acceptance/20260412T153745Z/closure/baseline_absorb.json
+evidence/_acceptance/20260412T153745Z/final/file_roster.txt
+evidence/_acceptance/20260412T153745Z/materialize/compendium_sync_manifest.json
+evidence/_acceptance/20260412T153745Z/materialize/compendium_sync_matrix.tsv
+evidence/_acceptance/20260412T153745Z/materialize/materialized_targets.json
+evidence/_acceptance/20260412T153745Z/round0/acceptance_slot_map.tsv
+evidence/_acceptance/20260412T153745Z/round0/source_and_target_resolve.json
+evidence/_acceptance/20260412T153745Z/round0/split_source_paths.txt
