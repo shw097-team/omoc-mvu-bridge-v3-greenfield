@@ -1,0 +1,64 @@
+{
+  "github_merge_proof": {
+    "timestamp_utc": "20260413T132109Z",
+    "proof_id": "20260413T132109Z_GITHUB_MERGE_PROOF",
+    
+    "pr_number_old": 60,
+    "pr_state_old": "CLOSED",
+    "pr_url_old": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/60",
+    "pr_reason_close_old": "Superseded by PR #61 (rebase strategy resolution)",
+    "pr_status_old": "CONFLICTING (diverged git history)",
+    
+    "pr_number": 61,
+    "pr_state": "MERGED",
+    "pr_url": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/61",
+    "pr_base_branch": "main",
+    "pr_head_branch": "lp/ca-method/promote-rebased-20260413T124642Z",
+    "pr_title": "CA-METHOD promote rebased + conflict resolution (20260413T124642Z)",
+    "pr_created_at": "2026-04-13T12:47:31Z",
+    "pr_merged_at": "2026-04-13T12:54:22Z",
+    "merge_commit": {
+      "oid": "95c74e59a0d64a87a213d7247fb662bd92ee502c",
+      "message": "Merge pull request #61 from shw097-team/lp/ca-method/promote-rebased-20260413T124642Z into main"
+    },
+    
+    "merged_to_main": true,
+    "merged_status": "CONFIRMED",
+    
+    "promote_mode": "MINSET_ONLY",
+    "raw_evidence_push_mode": "CHECKPOINT_PACK_ONLY",
+    "content_delivered": [
+      "3 CA-METHOD canonical books",
+      "2 owner binding artifacts",
+      "3 RC pack files",
+      "1 checkpoint pack artifact",
+      "4 acceptance evidence files",
+      "4 contract/state JSON files",
+      "1 acceptance gate script"
+    ],
+    "total_artifacts_delivered": 19,
+    
+    "old_pr_superseded": true,
+    "conflict_resolution_strategy": "FALLBACK_CLEAN_REBASE",
+    "conflict_root_cause": "Diverged git history (11 commits on main vs 0 on promote branch, no common recent ancestor)",
+    "conflict_resolution_outcome": "SUCCESS",
+    "conflict_files_resolved": 3,
+    "conflict_files_list": [
+      "machine_contract.json",
+      "scripts/omoc/acceptance_gate.py",
+      "self-check.json"
+    ],
+    
+    "verification_summary": {
+      "pr_mergeable_status_restored": true,
+      "conflicts_eliminated": true,
+      "sealed_ca_method_truth_preserved": true,
+      "all_delivered_files_exist": true,
+      "doc_proof_status": "PASS",
+      "target_books_found": 3,
+      "open_gaps": 0
+    },
+    
+    "notes": "Original PR #60 created with conflicting status due to diverged git history between promote branch and main. Root cause: 11 commits on main were not in promote branch (merge base 11 commits back). Resolution: Created new clean branch from origin/main, replayed only CA_METHOD minset/checkpoint payload (19 files). New PR #61 achieved MERGEABLE status, passed all checks, and merged successfully at 95c74e5. Old conflicting branch deleted from origin. Sealed CA_METHOD truth (20260413T101936Z) remains INTACT and untouched."
+  }
+}
