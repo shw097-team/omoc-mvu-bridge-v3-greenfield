@@ -1,0 +1,169 @@
+20260413T132109Z_POST_MERGE_FINAL_EVIDENCE_EXPORT
+CA-METHOD End-to-End Completion Post-Merge Consolidation
+Generated: 2026-04-13T13:21:09Z
+
+═══════════════════════════════════════════════════════════════════════════════
+
+FINAL VERDICT: PASS (Post-Merge Consolidation)
+Latest TS: 20260413T132109Z
+Merged PR: #61 (at 2026-04-13T12:54:22Z)
+Merge Commit: 95c74e59a0d64a87a213d7247fb662bd92ee502c
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ ALL THREE FINAL CLAIMS PROVEN
+
+Claim 1: CLAIM_BOOKS_100
+Status: PROVEN
+Evidence: 3 canonical CA-METHOD books on main (merged 95c74e5)
+  - Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md
+  - Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md
+  - Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md
+Doc Proof: Sealed final round 20260413T101936Z
+  - Books Found: 3/3 ✅
+  - Requirements Mapped: 29/29 ✅
+  - Open Gaps: 0 ✅
+  - Coverage: 100% ✅
+
+Claim 2: CLAIM_HANDOFFS_100
+Status: PROVEN
+Evidence: All issues resolved across full CA_METHOD workflow
+  - Repo-local blockers: 4/4 CLOSED ✅
+  - Task handoff issues: ALL RESOLVED ✅
+  - Promote checkpoint: CREATED ✅
+  - Conflict resolution: COMPLETE ✅
+  - PR merge to main: COMPLETE ✅
+
+Claim 3: CLAIM_GITHUB_PUSH_MERGED
+Status: PROVEN
+Evidence: PR #61 MERGED to main
+  - PR Number: 61
+  - PR State: MERGED ✅
+  - Base Branch: main
+  - Head Branch: lp/ca-method/promote-rebased-20260413T124642Z
+  - Merged At: 2026-04-13T12:54:22Z ✅
+  - Merge Commit: 95c74e59a0d64a87a213d7247fb662bd92ee502c ✅
+  - Content Delivered: 19 CA-METHOD artifacts ✅
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📊 COMPLETION METRICS
+
+Repo-Local CA-METHOD Closeout:      ✅ COMPLETE (20260413T074508Z)
+Document Proof Completion:          ✅ COMPLETE (20260413T101936Z)
+GitHub Promote Checkpoint:          ✅ COMPLETE (20260413T121612Z)
+PR Conflict Resolution:             ✅ COMPLETE (20260413T124642Z)
+Post-Merge Final Evidence:          ✅ COMPLETE (20260413T132109Z)
+
+Overall Status: 100% COMPLETE
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🔒 SEALED TRUTH INTEGRITY
+
+Baseline (20260413T074508Z):        ✅ PRESERVED INTACT
+Final CA-METHOD (20260413T101936Z): ✅ PRESERVED INTACT
+Promote Round (20260413T121612Z):   ✅ PRESERVED INTACT
+Rebase Round (20260413T124642Z):    ✅ PRESERVED INTACT
+
+No reopening of blockers. No modification of sealed artifacts.
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📦 DELIVERED CONTENT ON MAIN (19 artifacts)
+
+Canonical CA-METHOD Books (3):
+  ✅ docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md
+  ✅ docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md
+  ✅ docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md
+
+Owner Artifacts (2):
+  ✅ docs/_omoc_inputs/owner/owner_binding_input.json
+  ✅ docs/_omoc_inputs/owner/parity_authorization_decision.json
+
+RC Pack (3):
+  ✅ release/20260413T121612Z/rc_pack/HANDOFF_MANIFEST.json
+  ✅ release/20260413T121612Z/rc_pack/RC_PACK.md
+  ✅ release/20260413T121612Z/rc_pack/TT_EXPORT.json
+
+Checkpoint Pack (1):
+  ✅ release/20260413T121612Z/checkpoint_pack/20260413T121612Z_artifact_manifest.json
+
+Contract & State Files (4):
+  ✅ closure_matrix.tsv
+  ✅ tt_export.json
+  ✅ machine_contract.json
+  ✅ self-check.json
+
+Scripts (1):
+  ✅ scripts/omoc/acceptance_gate.py
+
+Local Adjudication (1):
+  ✅ docs/acceptance/CA_METHOD_local_adjudication.json
+
+═══════════════════════════════════════════════════════════════════════════════
+
+📋 FINAL EVIDENCE PACK (TS: 20260413T132109Z)
+
+Location: release/20260413T132109Z/final_evidence_pack/
+
+Files:
+  ✅ 20260413T132109Z_final_claim_matrix.tsv
+     → All 3 final claims with proof status and evidence paths
+  
+  ✅ 20260413T132109Z_handoff_resolution_matrix.tsv
+     → All 10 issues/blockers mapped to final resolution
+  
+  ✅ 20260413T132109Z_github_merge_proof.json
+     → PR #61 merge confirmation (state: MERGED, commit: 95c74e5)
+  
+  ✅ 20260413T132109Z_evidence_index.md
+     → Comprehensive index of all CA-METHOD evidence artifacts
+  
+  ✅ 20260413T132109Z_artifact_manifest.json
+     → Complete enumeration of all proof input/output files
+
+═══════════════════════════════════════════════════════════════════════════════
+
+✅ ACCEPTANCE REPORTS (TS: 20260413T132109Z)
+
+  ✅ evidence/_acceptance/20260413T132109Z/20260413T132109Z_acceptance_report.json
+     → Latest post-merge acceptance report (single adjudicator)
+  
+  ✅ evidence/_acceptance/20260413T132109Z/acceptance_report.json
+     → Canonical copy (same content as TS-prefixed)
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🎯 VERIFICATION CHECKLIST
+
+✅ PR #61 state: MERGED
+✅ Merge commit present: 95c74e59a0d64a87a213d7247fb662bd92ee502c
+✅ Base branch: main
+✅ All 3 CA-METHOD books present on main
+✅ Doc proof artifacts sealed: 20260413T101936Z (3/3 books, 29/29 req, 0 gaps)
+✅ All 19 delivered artifacts present
+✅ No generated-not-owner contamination
+✅ Sealed CA-METHOD final truth (20260413T101936Z) INTACT
+✅ No blockers reopened
+✅ Final evidence pack complete
+✅ Acceptance reports generated (TS + canonical)
+✅ Evidence export created
+
+═══════════════════════════════════════════════════════════════════════════════
+
+🏁 DEPLOYMENT STATUS
+
+✅ READY FOR DEPLOYMENT
+
+All CA-METHOD objectives achieved:
+  1. Repo-local blocker closure (4/4 closed)
+  2. Document proof completion (3/3 books, 0 gaps)
+  3. GitHub promote checkpoint package
+  4. PR conflict resolution and merge to main
+  5. Post-merge final evidence consolidation
+
+Evidence chain fully consolidated and verified.
+Single adjudicator verdict: PASS (20260413T132109Z)
+
+═══════════════════════════════════════════════════════════════════════════════
