@@ -1,0 +1,99 @@
+{
+  "acceptance_report": {
+    "timestamp_utc": "20260413T133810Z",
+    "report_type": "superseding_round_acceptance",
+    "superseding_reason": "Record PR #62 (final evidence archival) merge to main",
+    "previous_round": "20260413T132109Z",
+    "single_adjudicator": true,
+    "adjudicator_role": "CA-METHOD post-merge final evidence consolidation",
+    "final_verdict": "PASS",
+    "100_percent_complete": true,
+    "full_implementation_acceptance_complete": true,
+    "all_sealed_prior_truth_preserved": true,
+    "final_claims_proven": [
+      "CLAIM_BOOKS_100",
+      "CLAIM_HANDOFFS_100",
+      "CLAIM_GITHUB_PUSH_MERGED"
+    ],
+    "final_claims_open": [],
+    "tt_or_cr_open": [],
+    "merged_to_main": true,
+    "merged_pr_numbers": [61, 62],
+    "main_head_commit_after_pr_61": "95c74e59a0d64a87a213d7247fb662bd92ee502c",
+    "main_head_commit_after_pr_62": "59e64be7f22ca6f372463b3a5325c292e8d1af96",
+    "pr_61_merge_details": {
+      "pr_number": 61,
+      "title": "promote-rebased: CA-METHOD minset on origin/main base (20260413T124642Z)",
+      "state": "MERGED",
+      "merged_at": "2026-04-13T12:54:22Z",
+      "merged_by": "shw097",
+      "commit_oid": "95c74e59a0d64a87a213d7247fb662bd92ee502c",
+      "content_delivered": 19,
+      "content_description": "3 canonical CA-METHOD books, 2 owner binding artifacts, 3 RC pack files, 1 checkpoint pack artifact, 4 acceptance evidence files, 4 contract/state JSON files, 1 acceptance gate script, 1 local adjudication record"
+    },
+    "pr_62_merge_details": {
+      "pr_number": 62,
+      "title": "docs: CA-METHOD final evidence consolidation (20260413T132109Z)",
+      "state": "MERGED",
+      "merged_at": "2026-04-13T13:38:10Z",
+      "merged_by": "shw097",
+      "commit_oid": "59e64be7f22ca6f372463b3a5325c292e8d1af96",
+      "content_delivered": 8,
+      "content_description": "Final evidence pack (5 files: claim matrix, handoff resolution matrix, GitHub merge proof, evidence index, artifact manifest) + acceptance reports (2 files) + upload manifest"
+    },
+    "evidence_pack_status": "COMPLETE",
+    "evidence_files": [
+      "release/20260413T133810Z/final_evidence_pack/20260413T133810Z_final_claim_matrix.tsv",
+      "release/20260413T133810Z/final_evidence_pack/20260413T133810Z_handoff_resolution_matrix.tsv",
+      "release/20260413T133810Z/final_evidence_pack/20260413T133810Z_github_merge_proof.json",
+      "release/20260413T133810Z/final_evidence_pack/20260413T133810Z_evidence_index.md",
+      "release/20260413T133810Z/final_evidence_pack/20260413T133810Z_artifact_manifest.json",
+      "evidence/_acceptance/20260413T133810Z/20260413T133810Z_acceptance_report.json",
+      "evidence/_acceptance/20260413T133810Z/acceptance_report.json",
+      "upload/20260413T133810Z_evidence_upload.txt"
+    ],
+    "delivered_content_summary": {
+      "total_on_main": 27,
+      "pr_61_content": 19,
+      "pr_62_content": 8,
+      "deployment_status": "READY FOR DEPLOYMENT"
+    },
+    "sealed_prior_truth_status": {
+      "baseline_round_20260413T074508Z": "VERIFIED INTACT",
+      "ca_method_final_truth_20260413T101936Z": "VERIFIED INTACT - doc_proof_files: 6, requirements_mapped: 29, gaps: 0",
+      "promote_checkpoint_20260413T121612Z": "VERIFIED INTACT",
+      "conflict_resolution_20260413T125500Z": "VERIFIED INTACT",
+      "pr_61_rebase_20260413T124642Z": "VERIFIED INTACT",
+      "final_consolidation_20260413T132109Z": "VERIFIED INTACT",
+      "all_prior_rounds_preserved": true
+    },
+    "final_handoff_resolution_status": "PASS",
+    "final_doc_proof_status": "PASS",
+    "final_github_promote_status": "PASS",
+    "verification_status": {
+      "all_json_files_validated": true,
+      "all_tsv_txt_files_present": true,
+      "no_syntax_errors": true,
+      "json_validation_method": "python3 json.load",
+      "validation_result": "ALL_PASS"
+    },
+    "final_verdict_prerequisites": {
+      "CLAIM_BOOKS_100_proven": true,
+      "CLAIM_HANDOFFS_100_proven": true,
+      "CLAIM_GITHUB_PUSH_MERGED_proven": true,
+      "final_handoff_resolution_status_pass": true,
+      "final_doc_proof_status_pass": true,
+      "final_github_promote_status_pass": true,
+      "100_percent_complete": true,
+      "full_implementation_acceptance_complete": true,
+      "tt_or_cr_open_empty": true,
+      "merged_to_main": true,
+      "final_evidence_pack_status_complete": true,
+      "all_three_evidence_files_exist_on_disk": true
+    },
+    "deployment_readiness": {
+      "ready": true,
+      "next_action": "No further action required. All evidence sealed and archived on main branch (commit 59e64be)."
+    }
+  }
+}
