@@ -1,0 +1,55 @@
+{
+  "machine_contract": {
+    "timestamp_utc": "20260413T074508Z",
+    "contract_version": "1.0",
+    "repo_root": "/workspaces/omoc-15ca-worktrees/wt-ca-method-closeout-20260413T071013Z",
+    "branch": "lp/ca-method/closeout-20260413t071013z",
+    "target_blocker": "BLK-ROUND1-004",
+    "target_blocker_status": "CLOSED",
+    "frozen_blockers": ["BLK-ROUND1-001", "BLK-ROUND1-002", "BLK-ROUND1-003"],
+    "owner_mode": "self-authoring",
+    "no_external_owner_wait": true,
+    "repo_local_closeout": true,
+    "max_rounds": 6,
+    "rounds_used": 2,
+    "current_round": 2,
+    "final_round": true,
+    "scope_lock": {
+      "allowed_write_focus": [
+        "docs/_omoc_inputs/owner/**",
+        "evidence/_owner_inputs/**",
+        "evidence/_acceptance/<TS>/**",
+        "docs/acceptance/CA_METHOD_local_adjudication.json",
+        "closure_matrix.tsv",
+        "tt_export.json",
+        "handoff/handoff_latest.md",
+        "machine_contract.json",
+        "self-check.json",
+        "release/<TS>/**",
+        "upload/<TS>_evidence_upload.txt"
+      ],
+      "forbidden_modifications": [
+        "unrelated_subsystems",
+        "historical_sealed_closeout_artifacts",
+        "BLK-ROUND1-001",
+        "BLK-ROUND1-002",
+        "BLK-ROUND1-003"
+      ]
+    },
+    "generated_not_owner_quarantine": "active",
+    "template_files_detected": ["docs/_omoc_inputs/owner/parity_authorization_decision.template.json"],
+    "template_files_status": "isolated_not_in_active_path",
+    "controlled_auto_iteration": true,
+    "success_criteria": {
+      "final_verdict": "PASS",
+      "blockers": [],
+      "all_gates_pass": true,
+      "all_lints_pass": true,
+      "100_percent_complete": true,
+      "full_implementation_acceptance_complete": true
+    },
+    "success_criteria_met": true,
+    "final_status": "SEALED",
+    "ready_for_deployment": true
+  }
+}

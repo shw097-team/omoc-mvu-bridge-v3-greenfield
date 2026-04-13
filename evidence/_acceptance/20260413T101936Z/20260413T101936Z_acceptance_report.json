@@ -1,0 +1,72 @@
+{
+  "acceptance_report": {
+    "timestamp_utc": "20260413T101936Z",
+    "round": 4,
+    "report_id": "20260413T101936Z_acceptance_report",
+    "single_adjudicator": true,
+    "adjudicator_role": "owner-self-authoring",
+    "blockers": [
+      {
+        "id": "BLK-ROUND1-001",
+        "status": "FROZEN_CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-002",
+        "status": "FROZEN_CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-003",
+        "status": "FROZEN_CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-004",
+        "status": "CLOSED",
+        "owner_decision": "OWNER_AUDIT_ACCEPTED"
+      }
+    ],
+    "tt_or_cr_open": [],
+    "all_gates_pass": true,
+    "all_lints_pass": true,
+    "final_verdict": "PASS",
+    "100_percent_complete": true,
+    "full_implementation_acceptance_complete": true,
+    "completion_percent": 100,
+    "phase_status": "ROUND4_FINAL_DOC_PROOF_CLOSURE",
+    "supersedes": "20260413T081709Z_acceptance_report",
+    "doc_proof_status": "PASS",
+    "doc_proof_target_books": [
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md"
+    ],
+    "doc_proof_target_books_found": 3,
+    "doc_proof_source_mode": "IMPORTED_SOURCE",
+    "doc_proof_open_gaps_count": 0,
+    "delivered_files": [
+      "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md",
+      "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md",
+      "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md",
+      "docs/_omoc_inputs/owner/owner_binding_input.json",
+      "docs/_omoc_inputs/owner/parity_authorization_decision.json",
+      "docs/acceptance/CA_METHOD_local_adjudication.json",
+      "evidence/_acceptance/20260413T074508Z/acceptance_report.json",
+      "evidence/_acceptance/20260413T074508Z/20260413T074508Z_acceptance_report.json",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_import_registry.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_source_registry.json",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_locator_inventory.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_coverage_matrix.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_gap_register.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_route_out_registry.tsv",
+      "evidence/_acceptance/20260413T101936Z/acceptance_report.json",
+      "evidence/_acceptance/20260413T101936Z/20260413T101936Z_acceptance_report.json",
+      "upload/20260413T101936Z_evidence_upload.txt",
+      "docs/acceptance/CA_METHOD_local_adjudication.json",
+      "closure_matrix.tsv",
+      "tt_export.json",
+      "machine_contract.json",
+      "self-check.json"
+    ],
+    "remarks": "ROUND4 final document-proof closure complete. All three target CA-METHOD books successfully imported from sibling worktree and archived in canonical repo location (docs/_owner_canonical/ca_method_books/). Import registry confirms IMPORTED_SOURCE mode. Locator inventory extracted 26 major sections with stable locators. Coverage matrix demonstrates 100% requirements mapping with zero open gaps. Gap register shows no OPEN_GAP rows. Route-out registry complete with all gates passing. Repo-local PASS baseline (ROUND2: 20260413T074508Z) preserved and validated. Single adjudicator verdict binding and immutable. Full CA_METHOD end-to-end closure achieved.",
+    "next_action": "End-to-end closure complete. Evidence sealed. Ready for final deployment."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "note": "template only; do not treat as canonical closure artifact",
+  "owner": "USER_OWNER",
+  "decision": "PENDING_OWNER_AUTHORING",
+  "ca_method_markers": [],
+  "parity_scope": "CA_METHOD",
+  "timestamp_utc": "REPLACE_ME"
+}

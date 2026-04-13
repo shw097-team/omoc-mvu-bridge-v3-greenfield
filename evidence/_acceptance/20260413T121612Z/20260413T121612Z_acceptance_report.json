@@ -1,0 +1,94 @@
+{
+  "acceptance_report": {
+    "timestamp_utc": "20260413T121612Z",
+    "round": "promote",
+    "report_id": "20260413T121612Z_acceptance_report",
+    "scope": "CA-METHOD GitHub promote checkpoint acceptance",
+    "single_adjudicator": true,
+    "adjudicator_role": "owner-self-authoring",
+    
+    "blockers": [
+      {
+        "id": "BLK-ROUND1-001",
+        "status": "FROZEN_CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-002",
+        "status": "FROZEN_CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-003",
+        "status": "FROZEN_CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-004",
+        "status": "CLOSED",
+        "owner_decision": "OWNER_AUDIT_ACCEPTED"
+      }
+    ],
+    
+    "tt_or_cr_open": [],
+    "all_gates_pass": true,
+    "all_lints_pass": true,
+    "final_verdict": "PASS",
+    "100_percent_complete": true,
+    "full_implementation_acceptance_complete": true,
+    "completion_percent": 100,
+    "phase_status": "PROMOTE_CHECKPOINT_READY",
+    
+    "supersedes": "20260413T101936Z_acceptance_report",
+    
+    "doc_proof_status": "PASS",
+    "doc_proof_target_books": [
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md",
+      "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md"
+    ],
+    "doc_proof_target_books_found": 3,
+    "doc_proof_source_mode": "IMPORTED_SOURCE",
+    "doc_proof_open_gaps_count": 0,
+    
+    "promote_info": {
+      "promote_branch": "lp/ca-method/promote-20260413T121612Z",
+      "promote_remote": "origin",
+      "promote_remote_url": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield.git",
+      "promote_pack_status": "READY"
+    },
+    
+    "raw_evidence_push_mode": "MINSET_ONLY",
+    
+    "delivered_files": [
+      "release/20260413T121612Z/rc_pack/RC_PACK.md",
+      "release/20260413T121612Z/rc_pack/HANDOFF_MANIFEST.json",
+      "release/20260413T121612Z/rc_pack/TT_EXPORT.json",
+      "release/20260413T121612Z/checkpoint_pack/20260413T121612Z_checkpoint_index.md",
+      "release/20260413T121612Z/checkpoint_pack/20260413T121612Z_artifact_manifest.json",
+      "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md",
+      "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md",
+      "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md",
+      "docs/_omoc_inputs/owner/owner_binding_input.json",
+      "docs/_omoc_inputs/owner/parity_authorization_decision.json",
+      "docs/acceptance/CA_METHOD_local_adjudication.json",
+      "closure_matrix.tsv",
+      "tt_export.json",
+      "machine_contract.json",
+      "self-check.json",
+      "evidence/_acceptance/20260413T101936Z/acceptance_report.json",
+      "evidence/_acceptance/20260413T101936Z/20260413T101936Z_acceptance_report.json",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_source_registry.json",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_locator_inventory.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_coverage_matrix.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_gap_register.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_route_out_registry.tsv",
+      "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_import_registry.tsv",
+      "upload/20260413T101936Z_evidence_upload.txt",
+      "evidence/_acceptance/20260413T121612Z/acceptance_report.json",
+      "evidence/_acceptance/20260413T121612Z/20260413T121612Z_acceptance_report.json",
+      "upload/20260413T121612Z_evidence_upload.txt"
+    ],
+    
+    "remarks": "CA-METHOD promote checkpoint ready for GitHub push. Sealed final adjudication round (20260413T101936Z) preserved intact. Compliant minset pack created with checkpoint and rc_pack artifacts. All required canonical books, owner artifacts, and acceptance records included. Raw evidence push mode set to MINSET_ONLY to prevent wholesale evidence export. Ready for origin push on promote branch: lp/ca-method/promote-20260413T121612Z",
+    
+    "next_action": "Stage compliant artifacts, commit, and push to origin."
+  }
+}

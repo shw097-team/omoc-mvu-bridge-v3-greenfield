@@ -1,0 +1,77 @@
+=== CA-METHOD PROMOTE CHECKPOINT EVIDENCE EXPORT ===
+Timestamp: 20260413T121612Z
+Export Date: 2026-04-13 12:16:12 UTC
+
+PROMOTE VERDICT: PASS
+Promote Pack Status: READY
+Raw Evidence Push Mode: MINSET_ONLY
+100% Complete: true
+
+SEALED CA-METHOD FINAL ROUND (20260413T101936Z)
+  Verdict: PASS
+  Doc Proof Status: PASS
+  Target Books Found: 3/3
+  Open Gaps: 0
+  Status: PRESERVED_INTACT
+  
+PROMOTE CHECKPOINT PACKAGE (20260413T121612Z)
+  Branch: lp/ca-method/promote-20260413T121612Z
+  Remote: origin
+  Remote URL: https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield.git
+  
+PACK CONTENTS
+  RC Pack Files:
+    - release/20260413T121612Z/rc_pack/RC_PACK.md
+    - release/20260413T121612Z/rc_pack/HANDOFF_MANIFEST.json
+    - release/20260413T121612Z/rc_pack/TT_EXPORT.json
+  
+  Checkpoint Pack Files:
+    - release/20260413T121612Z/checkpoint_pack/20260413T121612Z_checkpoint_index.md
+    - release/20260413T121612Z/checkpoint_pack/20260413T121612Z_artifact_manifest.json
+
+CANONICAL BOOKS (MINSET)
+  - docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md ✓
+  - docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md ✓
+  - docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md ✓
+
+OWNER ARTIFACTS (MINSET)
+  - docs/_omoc_inputs/owner/owner_binding_input.json ✓
+  - docs/_omoc_inputs/owner/parity_authorization_decision.json ✓
+
+ACCEPTANCE REPORTS (MINSET)
+  Final Round (20260413T101936Z):
+    - evidence/_acceptance/20260413T101936Z/acceptance_report.json
+    - evidence/_acceptance/20260413T101936Z/20260413T101936Z_acceptance_report.json
+  
+  Promote Round (20260413T121612Z):
+    - evidence/_acceptance/20260413T121612Z/acceptance_report.json
+    - evidence/_acceptance/20260413T121612Z/20260413T121612Z_acceptance_report.json
+
+DOC PROOF ARTIFACTS (POINTER REFERENCE)
+  Location: evidence/_acceptance/20260413T101936Z/doc_proof/
+  Files: 20260413T101936Z_source_registry.json, locator_inventory.tsv, 
+          coverage_matrix.tsv, gap_register.tsv, route_out_registry.tsv,
+          import_registry.tsv
+
+ADJUDICATION & EXPORTS (MINSET)
+  - docs/acceptance/CA_METHOD_local_adjudication.json
+  - closure_matrix.tsv
+  - tt_export.json
+  - machine_contract.json
+  - self-check.json
+
+EVIDENCE EXPORTS
+  Final Round Export:
+    - upload/20260413T101936Z_evidence_upload.txt
+  
+  Promote Round Export:
+    - upload/20260413T121612Z_evidence_upload.txt (this file)
+
+STATUS: PROMOTE_CHECKPOINT_READY
+Branch created and artifacts staged. Ready for commit and origin push.
+
+NEXT STEPS
+1. git add [compliant promote pack + canonical books + owner artifacts + reports]
+2. git commit -m "promote: CA-METHOD checkpoint 20260413T121612Z"
+3. git push origin lp/ca-method/promote-20260413T121612Z
+4. [Optional] gh pr create (if auth available)

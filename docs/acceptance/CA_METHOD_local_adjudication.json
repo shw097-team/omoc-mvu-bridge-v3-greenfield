@@ -1,0 +1,62 @@
+{
+  "ca_method_local_adjudication": {
+    "timestamp_utc": "20260413T074508Z",
+    "round": 2,
+    "adjudication_phase": "ROUND2_FINAL_ADJUDICATION",
+    "adjudicator": "owner-self-authoring",
+    "single_adjudicator": true,
+    "round_history": [
+      {
+        "round": 1,
+        "ts": "20260413T074313Z",
+        "phase": "BOOTSTRAP_COMPLETION"
+      },
+      {
+        "round": 2,
+        "ts": "20260413T074508Z",
+        "phase": "FINAL_ADJUDICATION"
+      }
+    ],
+    "blockers": [
+      {
+        "id": "BLK-ROUND1-001",
+        "status": "FROZEN_CLOSED",
+        "action": "no_reopen",
+        "final_verdict": "CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-002",
+        "status": "FROZEN_CLOSED",
+        "action": "no_reopen",
+        "final_verdict": "CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-003",
+        "status": "FROZEN_CLOSED",
+        "action": "no_reopen",
+        "final_verdict": "CLOSED"
+      },
+      {
+        "id": "BLK-ROUND1-004",
+        "status": "FINAL_ADJUDICATION",
+        "action": "CLOSE",
+        "final_verdict": "CLOSED",
+        "owner_decision": "OWNER_AUDIT_ACCEPTED"
+      }
+    ],
+    "adjudication_status": {
+      "all_gates_pass": true,
+      "all_lints_pass": true,
+      "owner_artifact_valid": true,
+      "owner_artifact_owner_authored": true,
+      "parity_clean": true,
+      "no_generated_not_owner": true,
+      "round_2_revalidation_pass": true,
+      "blocker_adjudication_complete": true
+    },
+    "final_verdict": "PASS",
+    "completion_status": "COMPLETE",
+    "all_blockers_closed": true,
+    "remarks": "ROUND2 final adjudication complete. All blockers adjudicated. BLK-ROUND1-004 CLOSED with OWNER_AUDIT_ACCEPTED. Owner-self-authoring decision binding. All gates pass. Parity clean. Ready for closure report generation."
+  }
+}
