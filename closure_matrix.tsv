@@ -1,0 +1,5 @@
+BLOCKER_ID	STATUS	ROUND_CLOSED	OWNER_DECISION	REMARKS	NEXT_ACTION
+BLK-ROUND1-001	FROZEN_CLOSED	0	N/A	Frozen from historical closeout. No reopen.	Complete
+BLK-ROUND1-002	FROZEN_CLOSED	0	N/A	Frozen from historical closeout. No reopen.	Complete
+BLK-ROUND1-003	FROZEN_CLOSED	0	N/A	Frozen from historical closeout. No reopen.	Complete
+BLK-ROUND1-004	CLOSED	2	OWNER_AUDIT_ACCEPTED	Closed in ROUND2 final adjudication. Owner-self-authoring decision binding.	Complete - Sealed

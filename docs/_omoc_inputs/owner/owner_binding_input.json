@@ -1,0 +1,19 @@
+{
+  "owner": "user-self-authoring-ca-method-closeout",
+  "decision": "OWNER_AUDIT_ACCEPTED",
+  "ca_method_markers": ["CA_METHOD"],
+  "parity_scope": "BLK-ROUND1-004",
+  "timestamp_utc": "20260413T074313Z",
+  "source_instruction_ref": "search-mode-controlled-auto-iteration",
+  "authorization_mode": "owner-self-authoring",
+  "basis_refs": [
+    "ROUND0_assumption_checks",
+    "ROUND1_bootstrap",
+    "lp/ca-method/closeout-20260413t071013z"
+  ],
+  "binding_mode": "direct_owner_decision",
+  "acceptance_round": 1,
+  "blockers_accepted": ["BLK-ROUND1-004"],
+  "blockers_frozen": ["BLK-ROUND1-001", "BLK-ROUND1-002", "BLK-ROUND1-003"],
+  "remarks": "Owner-self-authoring in controlled auto-iteration. Current window repo-local closeout. No external owner wait."
+}
