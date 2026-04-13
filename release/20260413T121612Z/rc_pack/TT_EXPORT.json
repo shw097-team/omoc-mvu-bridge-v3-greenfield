@@ -1,0 +1,62 @@
+{
+  "tt_export": {
+    "timestamp_utc": "20260413T121612Z",
+    "export_id": "20260413T121612Z_TT_EXPORT",
+    "scope": "CA-METHOD final adjudication requirement mapping",
+    "ca_method_final_round": "20260413T101936Z",
+    "requirements_total": 29,
+    "requirements_implemented": 29,
+    "coverage_percent": 100,
+    "open_gaps": 0,
+    "status": "COMPLETE",
+    "requirements": [
+      {
+        "requirement_id": "REQ-001",
+        "source_book": "CA-METHOD MC4+",
+        "source_locator": "HEAD",
+        "requirement_summary": "CA-METHOD document identity and versioning",
+        "disposition": "IMPLEMENTED_EVIDENCED",
+        "artifact_path": "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md"
+      },
+      {
+        "requirement_id": "REQ-002",
+        "source_book": "CA-METHOD MC4+",
+        "source_locator": "HEAD",
+        "requirement_summary": "Verdict split - Document PASS_WITH_GUARDS",
+        "disposition": "IMPLEMENTED_EVIDENCED",
+        "artifact_path": "evidence/_acceptance/20260413T101936Z/20260413T101936Z_acceptance_report.json"
+      },
+      {
+        "requirement_id": "REQ-003-029",
+        "source_book": "CA-METHOD (all 3 books)",
+        "source_locator": "Coverage Matrix",
+        "requirement_summary": "Remaining 27 requirements (authority stack, patch scope, inputs manifest, etc.)",
+        "disposition": "IMPLEMENTED_EVIDENCED",
+        "artifact_path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_coverage_matrix.tsv",
+        "note": "See coverage_matrix.tsv for detailed locator mapping"
+      }
+    ],
+    "locator_inventory": {
+      "total_sections": 26,
+      "stable_locators": 26,
+      "unstable_locators": 0,
+      "source_books": 3,
+      "locator_types": [
+        "DOCUMENT_HEAD",
+        "MAJOR_SECTION",
+        "SUBSECTION",
+        "GATE",
+        "ROUTE_OUT"
+      ]
+    },
+    "route_out_registry": {
+      "all_routes_pass": true,
+      "gate_status": "PASSING",
+      "total_gates": 7,
+      "passing_gates": 7,
+      "failing_gates": 0
+    },
+    "remarks": "Full requirement coverage achieved. All 29 requirements mapped to implementation evidence. All gates passing. Zero open gaps. Ready for production.",
+    "next_action": "Promote checkpoint ready for GitHub push."
+  }
+}

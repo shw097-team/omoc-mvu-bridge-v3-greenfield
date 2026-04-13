@@ -1,0 +1,46 @@
+{
+  "tt_export": {
+    "timestamp_utc": "20260413T074508Z",
+    "round": 2,
+    "export_phase": "ROUND2_FINAL_CLOSURE",
+    "final_verdict": "PASS",
+    "target_blockers": [
+      {
+        "ticket_id": "BLK-ROUND1-004",
+        "status": "CLOSED",
+        "owner_decision": "OWNER_AUDIT_ACCEPTED",
+        "round_closed": 2,
+        "final_status": "SEALED"
+      }
+    ],
+    "frozen_blockers": [
+      {
+        "ticket_id": "BLK-ROUND1-001",
+        "status": "FROZEN_CLOSED",
+        "no_reopen": true,
+        "final_status": "SEALED"
+      },
+      {
+        "ticket_id": "BLK-ROUND1-002",
+        "status": "FROZEN_CLOSED",
+        "no_reopen": true,
+        "final_status": "SEALED"
+      },
+      {
+        "ticket_id": "BLK-ROUND1-003",
+        "status": "FROZEN_CLOSED",
+        "no_reopen": true,
+        "final_status": "SEALED"
+      }
+    ],
+    "cr_open": [],
+    "tt_open": [],
+    "owner_mode": "self-authoring",
+    "acceptance_round": 2,
+    "completion_percent": 100,
+    "all_blockers_closed": true,
+    "all_gates_pass": true,
+    "all_lints_pass": true,
+    "ready_for_deployment": true
+  }
+}

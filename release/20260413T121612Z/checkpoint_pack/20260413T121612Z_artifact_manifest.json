@@ -1,0 +1,213 @@
+{
+  "artifact_manifest": {
+    "timestamp_utc": "20260413T121612Z",
+    "manifest_id": "20260413T121612Z_ARTIFACT_MANIFEST",
+    "scope": "CA-METHOD promote checkpoint artifact inventory",
+    "promote_branch": "lp/ca-method/promote-20260413T121612Z",
+    "sealed_final_round": "20260413T101936Z",
+    
+    "canonical_books": {
+      "count": 3,
+      "source_mode": "IMPORTED_SOURCE",
+      "artifacts": [
+        {
+          "filename": "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md",
+          "path": "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_MC4+_合冊.md",
+          "type": "CANONICAL_BOOK",
+          "include_in_promote": true,
+          "status": "IMPORTED_VERIFIED"
+        },
+        {
+          "filename": "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md",
+          "path": "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-M_合冊.md",
+          "type": "CANONICAL_BOOK",
+          "include_in_promote": true,
+          "status": "IMPORTED_VERIFIED"
+        },
+        {
+          "filename": "Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md",
+          "path": "docs/_owner_canonical/ca_method_books/Spartoi-OMOC_SubP1-LITE+MVP_CA-METHOD_WP-RB-WI_合冊.md",
+          "type": "CANONICAL_BOOK",
+          "include_in_promote": true,
+          "status": "IMPORTED_VERIFIED"
+        }
+      ]
+    },
+    
+    "owner_artifacts": {
+      "count": 2,
+      "source_mode": "OWNER_AUTHORED",
+      "artifacts": [
+        {
+          "filename": "owner_binding_input.json",
+          "path": "docs/_omoc_inputs/owner/owner_binding_input.json",
+          "type": "OWNER_BINDING",
+          "include_in_promote": true,
+          "status": "OWNER_SEALED"
+        },
+        {
+          "filename": "parity_authorization_decision.json",
+          "path": "docs/_omoc_inputs/owner/parity_authorization_decision.json",
+          "type": "OWNER_AUTHORIZATION",
+          "include_in_promote": true,
+          "status": "OWNER_SEALED"
+        }
+      ]
+    },
+    
+    "acceptance_reports": {
+      "count": 2,
+      "round": "20260413T101936Z",
+      "artifacts": [
+        {
+          "filename": "acceptance_report.json",
+          "path": "evidence/_acceptance/20260413T101936Z/acceptance_report.json",
+          "type": "CANONICAL_REPORT",
+          "include_in_promote": true,
+          "status": "VERIFIED"
+        },
+        {
+          "filename": "20260413T101936Z_acceptance_report.json",
+          "path": "evidence/_acceptance/20260413T101936Z/20260413T101936Z_acceptance_report.json",
+          "type": "TS_PREFIXED_REPORT",
+          "include_in_promote": true,
+          "status": "VERIFIED"
+        }
+      ]
+    },
+    
+    "doc_proof_set": {
+      "count": 6,
+      "round": "20260413T101936Z",
+      "artifacts": [
+        {
+          "filename": "20260413T101936Z_source_registry.json",
+          "path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_source_registry.json",
+          "type": "SOURCE_REGISTRY",
+          "include_in_promote": true,
+          "status": "VERIFIED"
+        },
+        {
+          "filename": "20260413T101936Z_locator_inventory.tsv",
+          "path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_locator_inventory.tsv",
+          "type": "LOCATOR_INVENTORY",
+          "include_in_promote": true,
+          "status": "VERIFIED",
+          "sections_extracted": 26
+        },
+        {
+          "filename": "20260413T101936Z_ca_method_book_coverage_matrix.tsv",
+          "path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_coverage_matrix.tsv",
+          "type": "COVERAGE_MATRIX",
+          "include_in_promote": true,
+          "status": "VERIFIED",
+          "requirements_total": 29,
+          "requirements_implemented": 29
+        },
+        {
+          "filename": "20260413T101936Z_ca_method_book_gap_register.tsv",
+          "path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_ca_method_book_gap_register.tsv",
+          "type": "GAP_REGISTER",
+          "include_in_promote": true,
+          "status": "VERIFIED",
+          "open_gaps": 0
+        },
+        {
+          "filename": "20260413T101936Z_route_out_registry.tsv",
+          "path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_route_out_registry.tsv",
+          "type": "ROUTE_OUT_REGISTRY",
+          "include_in_promote": true,
+          "status": "VERIFIED",
+          "all_gates_pass": true
+        },
+        {
+          "filename": "20260413T101936Z_import_registry.tsv",
+          "path": "evidence/_acceptance/20260413T101936Z/doc_proof/20260413T101936Z_import_registry.tsv",
+          "type": "IMPORT_REGISTRY",
+          "include_in_promote": true,
+          "status": "VERIFIED",
+          "books_imported": 3
+        }
+      ]
+    },
+    
+    "adjudication_records": {
+      "count": 2,
+      "artifacts": [
+        {
+          "filename": "CA_METHOD_local_adjudication.json",
+          "path": "docs/acceptance/CA_METHOD_local_adjudication.json",
+          "type": "LOCAL_ADJUDICATION",
+          "include_in_promote": true,
+          "status": "SEALED"
+        },
+        {
+          "filename": "closure_matrix.tsv",
+          "path": "closure_matrix.tsv",
+          "type": "CLOSURE_MATRIX",
+          "include_in_promote": true,
+          "status": "SEALED"
+        }
+      ]
+    },
+    
+    "exports": {
+      "count": 4,
+      "artifacts": [
+        {
+          "filename": "20260413T101936Z_evidence_upload.txt",
+          "path": "upload/20260413T101936Z_evidence_upload.txt",
+          "type": "EVIDENCE_EXPORT",
+          "include_in_promote": true,
+          "status": "EXPORTED"
+        },
+        {
+          "filename": "tt_export.json",
+          "path": "tt_export.json",
+          "type": "TT_EXPORT",
+          "include_in_promote": true,
+          "status": "EXPORTED"
+        },
+        {
+          "filename": "machine_contract.json",
+          "path": "machine_contract.json",
+          "type": "MACHINE_CONTRACT",
+          "include_in_promote": true,
+          "status": "EXPORTED"
+        },
+        {
+          "filename": "self-check.json",
+          "path": "self-check.json",
+          "type": "SELF_CHECK",
+          "include_in_promote": true,
+          "status": "EXPORTED"
+        }
+      ]
+    },
+    
+    "pack_contents": {
+      "rc_pack": [
+        "release/20260413T121612Z/rc_pack/RC_PACK.md",
+        "release/20260413T121612Z/rc_pack/HANDOFF_MANIFEST.json",
+        "release/20260413T121612Z/rc_pack/TT_EXPORT.json"
+      ],
+      "checkpoint_pack": [
+        "release/20260413T121612Z/checkpoint_pack/20260413T121612Z_checkpoint_index.md",
+        "release/20260413T121612Z/checkpoint_pack/20260413T121612Z_artifact_manifest.json"
+      ]
+    },
+    
+    "summary": {
+      "total_artifacts": 23,
+      "artifacts_for_promote": 23,
+      "raw_evidence_push_mode": "MINSET_ONLY",
+      "final_verdict": "PASS",
+      "doc_proof_status": "PASS",
+      "coverage_percent": 100,
+      "open_gaps": 0
+    },
+    
+    "remarks": "Complete artifact manifest for CA-METHOD promote checkpoint. All 23 artifacts ready for GitHub push. Minset-only mode prevents raw evidence wholesale push.",
+    "next_action": "Stage and commit artifacts to promote branch."
+  }
+}
