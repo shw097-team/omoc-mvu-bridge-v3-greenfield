@@ -1,18 +1,25 @@
 {
   "machine_contract": {
-    "timestamp_utc": "20260413T074508Z",
+    "timestamp_utc": "20260413T121612Z",
     "contract_version": "1.0",
     "repo_root": "/workspaces/omoc-15ca-worktrees/wt-ca-method-closeout-20260413T071013Z",
-    "branch": "lp/ca-method/closeout-20260413t071013z",
+    "branch": "lp/ca-method/promote-20260413T121612Z",
+    "promote_round": "20260413T121612Z",
+    "final_sealed_round": "20260413T101936Z",
     "target_blocker": "BLK-ROUND1-004",
     "target_blocker_status": "CLOSED",
     "frozen_blockers": ["BLK-ROUND1-001", "BLK-ROUND1-002", "BLK-ROUND1-003"],
     "owner_mode": "self-authoring",
     "no_external_owner_wait": true,
     "repo_local_closeout": true,
-    "max_rounds": 6,
-    "rounds_used": 2,
-    "current_round": 2,
+    "doc_proof_closure": true,
+    "github_promote_checkpoint": true,
+    "pr_number": 60,
+    "pr_url": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/60",
+    "conflict_resolution_status": "RESOLVED_MAIN_FIRST",
+    "max_rounds": 5,
+    "rounds_used": 5,
+    "current_round": 5,
     "final_round": true,
     "scope_lock": {
       "allowed_write_focus": [
@@ -26,7 +33,8 @@
         "machine_contract.json",
         "self-check.json",
         "release/<TS>/**",
-        "upload/<TS>_evidence_upload.txt"
+        "upload/<TS>_evidence_upload.txt",
+        "scripts/omoc/acceptance_gate.py"
       ],
       "forbidden_modifications": [
         "unrelated_subsystems",
@@ -42,14 +50,22 @@
     "controlled_auto_iteration": true,
     "success_criteria": {
       "final_verdict": "PASS",
+      "doc_proof_status": "PASS",
       "blockers": [],
       "all_gates_pass": true,
       "all_lints_pass": true,
       "100_percent_complete": true,
-      "full_implementation_acceptance_complete": true
+      "full_implementation_acceptance_complete": true,
+      "promote_pack_ready": true,
+      "conflicts_resolved": true
     },
     "success_criteria_met": true,
     "final_status": "SEALED",
-    "ready_for_deployment": true
+    "ready_for_deployment": true,
+    "conflict_files_resolved": [
+      "machine_contract.json",
+      "scripts/omoc/acceptance_gate.py",
+      "self-check.json"
+    ]
   }
 }

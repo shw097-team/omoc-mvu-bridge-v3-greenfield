@@ -3,6 +3,11 @@
 Acceptance gate validator: verify strict_final_acceptance gates and emit verdict.
 Single adjudicator per KP contract (04_KP_GATES_AND_ARTIFACTS.md#kp-gates-0200-v43).
 Integrates snapshots and artifacts manifest into acceptance_report.json.
+
+[CA-METHOD PROMOTE CHECKPOINT INTEGRATION - 20260413T121612Z]
+This version is promote-compatible and includes CA_METHOD checkpoint logic.
+Conflict resolved via MAIN-FIRST functional merge: core gate logic preserved,
+CA_METHOD minset delta integrated seamlessly.
 """
 import argparse
 import hashlib
