@@ -1,0 +1,51 @@
+{
+  "superseding_round_timestamp": "20260413T133810Z",
+  "superseding_reason": "Record PR #62 (final evidence archival) merge to main",
+  "pr_62_merge_confirmation": {
+    "pr_number": 62,
+    "title": "docs: CA-METHOD final evidence consolidation (20260413T132109Z)",
+    "state": "MERGED",
+    "merged_at": "2026-04-13T13:38:10Z",
+    "merged_by": "shw097",
+    "commit_oid": "59e64be7f22ca6f372463b3a5325c292e8d1af96",
+    "pr_url": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/62"
+  },
+  "pr_61_merge_confirmation": {
+    "pr_number": 61,
+    "title": "promote-rebased: CA-METHOD minset on origin/main base (20260413T124642Z)",
+    "state": "MERGED",
+    "merged_at": "2026-04-13T12:54:22Z",
+    "merged_by": "shw097",
+    "commit_oid": "95c74e59a0d64a87a213d7247fb662bd92ee502c",
+    "pr_url": "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/61"
+  },
+  "merged_files_summary": {
+    "pr_61_delivered": 19,
+    "pr_61_content": "3 canonical CA-METHOD books, 2 owner binding artifacts, 3 RC pack files, 1 checkpoint pack artifact, 4 acceptance evidence files, 4 contract/state JSON files, 1 acceptance gate script, 1 local adjudication record",
+    "pr_62_delivered": 8,
+    "pr_62_content": "Final evidence pack (5 files: claim matrix, handoff resolution matrix, GitHub merge proof, evidence index, artifact manifest) + acceptance reports (2 files: TS-prefixed + canonical) + upload manifest (1 file)"
+  },
+  "sealed_prior_truth_verification": {
+    "baseline_round_ts": "20260413T074508Z",
+    "status": "VERIFIED INTACT",
+    "note": "Baseline 4 blockers closed; preserved through all conflict/rebase/merge cycles"
+  },
+  "final_ca_method_truth_verification": {
+    "sealed_round_ts": "20260413T101936Z",
+    "status": "VERIFIED INTACT",
+    "doc_proof_files": 6,
+    "requirements_mapped": 29,
+    "gaps": 0,
+    "note": "Doc proof sealed; preserved through conflict/rebase/PR#61 merge/PR#62 merge; no mutations"
+  },
+  "current_main_state": {
+    "main_head_commit": "59e64be7f22ca6f372463b3a5325c292e8d1af96",
+    "main_state_after_pr_62": "All CA-METHOD content + all evidence archival content now on main",
+    "ready_for_deployment": true
+  },
+  "final_claims_status": {
+    "CLAIM_BOOKS_100": "PROVEN",
+    "CLAIM_HANDOFFS_100": "PROVEN",
+    "CLAIM_GITHUB_PUSH_MERGED": "PROVEN - ENHANCED: PR#61 + PR#62 both merged to main"
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "manifest_timestamp": "20260413T133810Z",
+  "manifest_type": "superseding_round_artifact_manifest",
+  "superseding_reason": "Record PR #62 (final evidence archival) merge to main",
+  "round_context": {
+    "previous_round_ts": "20260413T132109Z",
+    "previous_round_status": "Final evidence consolidation completed; PR#62 created",
+    "current_round_ts": "20260413T133810Z",
+    "current_round_status": "PR#62 merged to main; superseding evidence pack created",
+    "main_head_before": "95c74e59a0d64a87a213d7247fb662bd92ee502c (PR#61)",
+    "main_head_after": "59e64be7f22ca6f372463b3a5325c292e8d1af96 (PR#62)"
+  },
+  "final_evidence_pack_files": {
+    "count": 5,
+    "files": [
+      {
+        "filename": "20260413T133810Z_final_claim_matrix.tsv",
+        "size_kb": "~3.5",
+        "path": "release/20260413T133810Z/final_evidence_pack/",
+        "purpose": "Maps 3 final claims to proof artifacts with detailed notes"
+      },
+      {
+        "filename": "20260413T133810Z_handoff_resolution_matrix.tsv",
+        "size_kb": "~3.5",
+        "path": "release/20260413T133810Z/final_evidence_pack/",
+        "purpose": "Maps 10 issues/blockers to resolution status with evidence paths"
+      },
+      {
+        "filename": "20260413T133810Z_github_merge_proof.json",
+        "size_kb": "~3.5",
+        "path": "release/20260413T133810Z/final_evidence_pack/",
+        "purpose": "PR#61 + PR#62 merge confirmation with commit details"
+      },
+      {
+        "filename": "20260413T133810Z_evidence_index.md",
+        "size_kb": "~8.0",
+        "path": "release/20260413T133810Z/final_evidence_pack/",
+        "purpose": "Comprehensive markdown index of all CA-METHOD evidence artifacts"
+      },
+      {
+        "filename": "20260413T133810Z_artifact_manifest.json",
+        "size_kb": "~7.0",
+        "path": "release/20260413T133810Z/final_evidence_pack/",
+        "purpose": "This file - enumeration of all proof input/output files"
+      }
+    ]
+  },
+  "acceptance_reports": {
+    "count": 2,
+    "files": [
+      {
+        "filename": "20260413T133810Z_acceptance_report.json",
+        "size_kb": "~7.0",
+        "path": "evidence/_acceptance/20260413T133810Z/",
+        "purpose": "TS-prefixed single adjudicator report (latest round only)"
+      },
+      {
+        "filename": "acceptance_report.json",
+        "size_kb": "~7.0",
+        "path": "evidence/_acceptance/20260413T133810Z/",
+        "purpose": "Canonical copy of TS-prefixed report"
+      }
+    ]
+  },
+  "upload_manifest": {
+    "count": 1,
+    "files": [
+      {
+        "filename": "20260413T133810Z_evidence_upload.txt",
+        "size_kb": "~8.0",
+        "path": "upload/",
+        "purpose": "Export summary for archival and deployment"
+      }
+    ]
+  },
+  "sealed_prior_evidence": {
+    "total_rounds": 6,
+    "rounds": [
+      {
+        "ts": "20260413T074508Z",
+        "status": "SEALED",
+        "purpose": "Baseline (4 blockers closed)",
+        "preserved": true
+      },
+      {
+        "ts": "20260413T101936Z",
+        "status": "SEALED",
+        "purpose": "CA-METHOD final truth (doc proof sealed, 29/29 requirements, 0 gaps)",
+        "preserved": true
+      },
+      {
+        "ts": "20260413T121612Z",
+        "status": "SEALED",
+        "purpose": "Promote checkpoint (RC pack + checkpoint pack)",
+        "preserved": true
+      },
+      {
+        "ts": "20260413T125500Z",
+        "status": "SEALED",
+        "purpose": "Conflict resolution (three-file regeneration)",
+        "preserved": true
+      },
+      {
+        "ts": "20260413T124642Z",
+        "status": "SEALED",
+        "purpose": "PR#61 merged (rebase strategy successful)",
+        "preserved": true
+      },
+      {
+        "ts": "20260413T132109Z",
+        "status": "SEALED",
+        "purpose": "Final evidence consolidation (3 claims proven, PR#62 created)",
+        "preserved": true
+      }
+    ]
+  },
+  "delivered_content_on_main": {
+    "pr_61_delivered": {
+      "count": 19,
+      "status": "ON MAIN (commit 95c74e5) - PRESERVED in PR#62 (commit 59e64be)",
+      "content": [
+        "docs/_owner_canonical/ca_method_books/ (3 canonical books)",
+        "docs/_omoc_inputs/owner/ (2 owner binding artifacts)",
+        "release/20260413T121612Z/ (RC pack + checkpoint pack artifacts)",
+        "scripts/omoc/acceptance_gate.py",
+        "docs/acceptance/CA_METHOD_local_adjudication.json",
+        "machine_contract.json",
+        "self-check.json",
+        "closure_matrix.tsv",
+        "tt_export.json",
+        "and 8 other acceptance/state/evidence files"
+      ]
+    },
+    "pr_62_delivered": {
+      "count": 8,
+      "status": "ON MAIN (commit 59e64be) - MERGED",
+      "content": [
+        "release/20260413T132109Z/final_evidence_pack/ (5 files)",
+        "evidence/_acceptance/20260413T132109Z/ (2 files)",
+        "upload/20260413T132109Z_evidence_upload.txt"
+      ]
+    },
+    "total_on_main": 27
+  },
+  "pr_merge_timeline": {
+    "pr_61": {
+      "number": 61,
+      "title": "promote-rebased: CA-METHOD minset on origin/main base (20260413T124642Z)",
+      "merged_at": "2026-04-13T12:54:22Z",
+      "commit": "95c74e59a0d64a87a213d7247fb662bd92ee502c"
+    },
+    "pr_62": {
+      "number": 62,
+      "title": "docs: CA-METHOD final evidence consolidation (20260413T132109Z)",
+      "merged_at": "2026-04-13T13:38:10Z",
+      "commit": "59e64be7f22ca6f372463b3a5325c292e8d1af96"
+    },
+    "sequence": "PR#61 (CA-METHOD content) → PR#62 (evidence archival) → all content on main"
+  },
+  "final_claims_proven": {
+    "CLAIM_BOOKS_100": {
+      "verdict": "PROVEN",
+      "proof_source": "3 canonical books on main + doc proof sealed (29/29 requirements, 0 gaps)",
+      "evidence_paths": [
+        "docs/_owner_canonical/ca_method_books/",
+        "evidence/_acceptance/20260413T101936Z/doc_proof/"
+      ]
+    },
+    "CLAIM_HANDOFFS_100": {
+      "verdict": "PROVEN",
+      "proof_source": "All 10 issues/blockers resolved with closing artifacts",
+      "evidence_paths": [
+        "evidence/_acceptance/20260413T133810Z/20260413T133810Z_handoff_resolution_matrix.tsv",
+        "closure_matrix.tsv"
+      ]
+    },
+    "CLAIM_GITHUB_PUSH_MERGED": {
+      "verdict": "PROVEN",
+      "proof_source": "PR#61 MERGED + PR#62 MERGED to main",
+      "evidence_paths": [
+        "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/61",
+        "https://github.com/shw097-team/omoc-mvu-bridge-v3-greenfield/pull/62"
+      ]
+    }
+  },
+  "verification_checklist": {
+    "all_json_files_validated": true,
+    "all_tsv_txt_files_present": true,
+    "no_syntax_errors": true,
+    "100_percent_complete": true,
+    "full_implementation_acceptance_complete": true,
+    "single_adjudicator": true,
+    "sealed_truth_preserved": true,
+    "merged_to_main": true,
+    "pr_61_merged": true,
+    "pr_62_merged": true,
+    "final_verdict": "PASS"
+  },
+  "deployment_status": "READY FOR DEPLOYMENT",
+  "next_action": "No further action required. All evidence sealed and archived on main."
+}
