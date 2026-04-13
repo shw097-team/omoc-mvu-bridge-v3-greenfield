@@ -1,0 +1,276 @@
+file_path	artifact_type	classification	validity_for_closure	owner_field	decision_field	ca_method_markers	parity_scope	source_notes
+.github/workflows/ci-omoc-gate.yml	yml	UNKNOWN	NO					
+.github/workflows/ci.yml	yml	UNKNOWN	NO					
+.github/workflows/cr_open_tt_probe.yml	yml	UNKNOWN	NO					
+.github/workflows/dispatch_shim.yml	yml	UNKNOWN	NO					
+.github/workflows/doc-validate.yml	yml	UNKNOWN	NO					
+.github/workflows/omoc-gate.yml	yml	INDIRECT_ONLY	NO					
+.opencode/agents/10-oracle.md	md	UNKNOWN	NO					
+.opencode/agents/20-librarian.md	md	UNKNOWN	NO					
+.opencode/agents/30-explore.md	md	UNKNOWN	NO					
+.opencode/agents/40-sisyphus.md	md	UNKNOWN	NO					
+.opencode/agents/Coordinator.md	md	UNKNOWN	NO					
+.opencode/agents/Evidence-Collector.md	md	INDIRECT_ONLY	NO					
+.opencode/agents/Fixer.md	md	UNKNOWN	NO					
+.opencode/agents/Verifier.md	md	UNKNOWN	NO					
+.opencode/agents/sisyphus.md	md	UNKNOWN	NO					
+.opencode/opencode.json	json	UNKNOWN	NO					
+.opencode/policy/agent_orchestration.json	json	INDIRECT_ONLY	NO					
+.opencode/policy/omoc_policy.json	json	UNKNOWN	NO					
+.opencode/policy/skills_runtime_policy.yaml	yaml	UNKNOWN	NO					
+.opencode/skills/OMOC_SKILLS_PACK.md	md	INDIRECT_ONLY	NO					
+.opencode/skills/first_skill/SKILL.md	md	UNKNOWN	NO					
+.opencode/skills/index.md	md	UNKNOWN	NO					
+.opencode/skills/omoc-skillpack-bootstrap/SKILL.md	md	UNKNOWN	NO					
+.opencode/skills/skills_index.txt	txt	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-001+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-002+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-003+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO	"operator"				
+docs/_omoc_inputs/normative/OMOC_WP-004+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-005+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-006+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-007+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-008+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-009+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-010+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-011+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-012+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-013+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/normative/OMOC_WP-014+RB+WI_v4.0.1-r2.md	md	INDIRECT_ONLY	NO	TBD				
+docs/_omoc_inputs/rip/OMOC_RIP-A_v1.1.0.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/rip/OMOC_RIP-B_v1.1.0.md	md	INDIRECT_ONLY	NO		BLOCK			
+docs/_omoc_inputs/rip/OMOC_RIP-C_v1.1.0.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/rip/OMOC_RIP-D_v1.1.0.md	md	INDIRECT_ONLY	NO		instruction			
+docs/_omoc_inputs/rip/OMOC_RIP-E_v1.1.0.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/rip/OMOC_RIP-F_v1.1.0.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC RIP__OMOC_RIP-A_v1.1.0.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC RIP__OMOC_RIP-B_v1.1.0.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC RIP__OMOC_RIP-C_v1.1.0.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC RIP__OMOC_RIP-E_v1.1.0.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC RIP__OMOC_RIP-F_v1.1.0.md.HOW.md	md	UNKNOWN	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-001+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-002+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-003+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-005+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-007+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-008+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-009+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-010+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-011+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-012+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-013+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/OMOC WP__OMOC_WP-014+RB+WI_v4.0.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC_SubP1-LITE+MVP__Spartoi-OMOC_SubP1-LITE+MVP Spine_Walking Skeleton Pack v0_v2.1.0-r1.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC_SubP1-LITE+MVP__Spartoi-OMOC_SubP1-LITE+MVP_Dev RUNBOOK + WI_ v2.1.0-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC_SubP1-LITE+MVP__Spartoi-OMOC_SubP1-LITE+MVP_Ops RUNBOOK + WI_v2.1.0-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC Blueprint v2.2.0-r1.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_ARCH_v8.1.0.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_LBP-A(SIR) v8.1.1-r1.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_LBP-B(ICD)v8.1.1-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_LBP-D(C4) v8.1.1-r2.md.HOW.md	md	UNKNOWN	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_SRS_v8.1.0.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_dev RB + WI_v8.1.1-dev-r2.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/_omoc_inputs/support/how/Spartoi-OMOC__Spartoi-OMOC_ops RB + WI _v8.1.1-ops-r1.md.HOW.md	md	INDIRECT_ONLY	NO					
+docs/acceptance/final/20260306T165046Z/20260306T165046Z_acceptance_report.json	json	INDIRECT_ONLY	NO	owner:auditor				
+docs/acceptance/final/20260306T165046Z/20260306T165046Z_acceptance_report_wrapped.json	json	INDIRECT_ONLY	NO	owner:auditor				
+docs/acceptance/final/20260306T165046Z/20260306T165046Z_evidence_upload.txt	txt	UNKNOWN	NO					
+docs/acceptance/final/20260306T165046Z/20260306T165046Z_finalize_acceptance_report.json	json	UNKNOWN	NO					
+docs/acceptance/final/20260306T165046Z/README.md	md	UNKNOWN	NO					
+docs/acceptance/final/20260306T165046Z/acceptance_report.json	json	INDIRECT_ONLY	NO	owner:auditor				
+docs/acceptance/final/20260306T165046Z/supporting/acceptance_report.json	json	INDIRECT_ONLY	NO	owner:auditor				
+docs/acceptance/final/20260308T052442Z/20260308T052442Z_FULL_OMOC_COMPLETION_EVIDENCE.md	md	INDIRECT_ONLY	NO					
+docs/acceptance/final/20260308T052442Z/20260308T052442Z_FULL_OMOC_COMPLETION_INDEX.json	json	INDIRECT_ONLY	NO					
+docs/acceptance/handoff_latest.md	md	INDIRECT_ONLY	NO					
+docs/acceptance/lane-f/20260303T151939Z/acceptance_report.copy.json	json	UNKNOWN	NO					
+docs/acceptance/lane-f/20260303T151939Z/handoff.md	md	INDIRECT_ONLY	NO					
+docs/acceptance/wp-009-rbwi/20260305T172741Z/acceptance_manifest.copy.json	json	UNKNOWN	NO					
+docs/acceptance/wp-009-rbwi/20260305T172741Z/acceptance_report.copy.json	json	UNKNOWN	NO					
+docs/acceptance/wp-009-rbwi/20260305T172741Z/handoff.md	md	UNKNOWN	NO					
+docs/handoff/dual_lane_preflight_handoff_20260304T080056Z.md	md	UNKNOWN	NO					
+docs/handoff/dual_lane_preflight_handoff_20260305T045255Z.md	md	UNKNOWN	NO					
+docs/handoff/dual_lane_preflight_handoff_20260305T054305Z.md	md	UNKNOWN	NO					
+docs/probes/mq_probe_20260305T045255Z.md	md	UNKNOWN	NO					
+docs/skills_pack_src/README.md	md	UNKNOWN	NO					
+docs/ssot_promotion/20260305T174644Z/ssot_registry.json	json	UNKNOWN	NO					
+evidence/CR_OPEN_TT_ACCEPTANCE_REPORT.md	md	UNKNOWN	NO					
+evidence/CR_OPEN_TT_evidence.PASS.txt	txt	UNKNOWN	NO					
+evidence/RUNPACK_RP-CR_OPEN-TT-ONEPASS-FULL-CLOSE-20260303-R1_COMPLETION_REPORT.txt	txt	OLD_TEMP_CLOSED	NO					
+evidence/_acceptance_wrapper_ping.rc.txt	txt	UNKNOWN	NO					
+evidence/_acceptance_wrapper_ping.txt	txt	UNKNOWN	NO					
+evidence/_drift_guard/20260223T063000Z/TT-RIPB-ENDPOINTS-DISCOVER-001.json	json	INDIRECT_ONLY	NO		BLOCK			
+evidence/_drift_guard/20260223T063000Z/allowlist_enforce_rc.txt	txt	UNKNOWN	NO					
+evidence/_drift_guard/20260223T090000Z/audit_ready.json	json	INDIRECT_ONLY	NO					
+evidence/_drift_guard/20260223T093000Z/audit_ready.json	json	INDIRECT_ONLY	NO					
+evidence/_drift_guard/20260223T100000Z/audit_ready.json	json	INDIRECT_ONLY	NO					
+evidence/_pr_fix_reports/PR_10_MERGE_VERIFICATION_20260303T051200Z.txt	txt	INDIRECT_ONLY	NO					
+evidence/_quarantine/2026-02-14T00-00-00Z_20260216T115329Z/log.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/2026-02-15T05-12-27Z_20260216T115329Z/evidence_OMOC_v4_fix_3of4.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/2026-02-15T05-12-27Z_20260216T115329Z/ruleset_12793412.json	json	UNKNOWN	NO					
+evidence/_quarantine/2026-02-15T05-12-27Z_20260216T115329Z/ruleset_detail_status.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/2026-02-15T05-12-27Z_20260216T115329Z/rulesets_fetch_status.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/2026-02-15T05-12-27Z_20260216T115329Z/rulesets_raw.json	json	UNKNOWN	NO					
+evidence/_quarantine/2026-02-15T052900Z_20260216T115329Z/evidence_OMOC_v4_20260215T052900Z.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/accept_after.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/accept_before.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/checks_manifest.json	json	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/git_branch.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/git_branch_after.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/git_diff_names_after.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/git_diff_names_before.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/git_status_after.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/git_status_before.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/ls_acc_dir.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142541Z-swarm-run-1_20260216T115329Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/accept.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/checks_manifest.json	json	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/git_branch.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/git_diff_names.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/git_status.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260214T142734Z-swarm-run-2_20260216T115329Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/20260214T142755Z-swarm-run-summary_20260216T115329Z/summary.json	json	UNKNOWN	NO					
+evidence/_quarantine/20260224T025342Z/agent.md	md	UNKNOWN	NO					
+evidence/_quarantine/20260224T051113Z/agent.md	md	UNKNOWN	NO					
+evidence/_quarantine/20260224T051855Z/agent.md	md	UNKNOWN	NO					
+evidence/_quarantine/20260227-154124-20260228T143340Z/20260227-154124/bundle/single_evidence_bundle.txt	txt	INDIRECT_ONLY	NO					
+evidence/_quarantine/20260227-155711-20260228T143340Z/20260227-155711/TT-ARTIFACT_INTEGRITY_DIVERGENCE.md	md	INDIRECT_ONLY	NO					
+evidence/_quarantine/20260227-155711-20260228T143340Z/20260227-155711/bundle/single_evidence_bundle.txt	txt	INDIRECT_ONLY	NO					
+evidence/_quarantine/20260227-155711-20260228T143340Z/20260227-155711/bundle/web/github_oh_my_opencode_releases.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260227-155711-20260228T143340Z/20260227-155711/bundle/web/github_opencode_releases.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260227-155711-20260228T143340Z/20260227-155711/bundle/web/npm_oh_my_opencode.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/20260227-155711-20260228T143340Z/20260227-155711/bundle/web/opencode_docs_snapshot.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP1_G0_20260216T115329Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP1_G0_20260216T115329Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP2_G1_20260216T115329Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP2_G1_20260216T115329Z/logs/container_identity.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP2_G1_20260216T115329Z/logs/devcontainer.json	json	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP2_G1_20260216T115329Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/logs/opencode_help_head40.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/logs/opencode_install.stderr.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/logs/opencode_install.stdout.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/logs/opencode_path.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/logs/opencode_version.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP4_G2_20260216T115329Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP5_G2R_20260216T115329Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP5_G2R_20260216T115329Z/logs/diag_path.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP5_G2R_20260216T115329Z/logs/opencode_path_after_fix.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP5_G2R_20260216T115329Z/logs/opencode_version_after_fix.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP5_G2R_20260216T115329Z/logs/path_fix.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP5_G2R_20260216T115329Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP6_G3_20260216T071622Z/evidence_index.md	md	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP6_G3_20260216T071622Z/logs/opencode_run.stderr.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP6_G3_20260216T071622Z/logs/opencode_run.stdout.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/UTC_STEP6_G3_20260216T071622Z/verdict.json	json	UNKNOWN	NO					
+evidence/_quarantine/_opencode_logs_20260216T115329Z/_last.closeout.verify.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/bundle-20260228T143340Z/bundle/single_evidence_bundle.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/log-20260225T061428Z/exclude_patterns.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/log-20260225T061428Z/tar_members_head.txt	txt	INDIRECT_ONLY	NO					
+evidence/_quarantine/snapshots-20260228T143340Z/snapshots/sha256sum.real.txt	txt	INDIRECT_ONLY	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/evidence_file_hashes/manifest.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/latest_evd_dir.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/metadata.json	json	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/phase0_baseline.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/post_checks.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/samples_summary.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/single_body.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/tmp_run_20260224T090059Z-20260225T061428Z/single_evidence_bundle.txt	txt	UNKNOWN	NO					
+evidence/_quarantine/upload-20260228T143340Z/upload/WP-008_evidence_upload.txt	txt	INDIRECT_ONLY	NO					
+evidence/bundle_audit.json	json	INDIRECT_ONLY	NO					
+evidence/checks_manifest.json	json	UNKNOWN	NO					
+evidence/evidence_index.md	md	UNKNOWN	NO					
+evidence/install/20260222T161724Z/rc.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/config.found.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/env.fingerprint.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/env.gh_token.flag.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/env.opencode_port.flag.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/ohmy.found.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/ohmy.preview.oh-my-opencode.json.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.help.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.in_path.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.run.help.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.run.smoketest.rc.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.run.smoketest.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.serve.help.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/opencode.version.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/quick_rules.txt	txt	UNKNOWN	NO					
+evidence/opencode_diag/20260214T120658Z/scan.opencode.json.txt	txt	UNKNOWN	NO					
+evidence/preflight/20260222T161724Z/preflight.json	json	UNKNOWN	NO					
+evidence/single_evidence_bundle.txt	txt	INDIRECT_ONLY	NO					
+evidence/skills_pack_validation/20260222T161724Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260222T161724Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260222T161724Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260222T161724Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260222T161724Z/required_canonical.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260222T161724Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260222T161724Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T105147Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T105147Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T105147Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T105147Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T105147Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T105147Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T120445Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T120445Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T120445Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T120445Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T120445Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T120445Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T122328Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T122328Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T122328Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T122328Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T122328Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T122328Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T123939Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T123939Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T123939Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T123939Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T123939Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T123939Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135015Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135015Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135015Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135015Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135015Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135015Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135409Z/contract_snapshot.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135409Z/rc.txt	txt	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135409Z/report.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135409Z/report.md	md	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135409Z/required_files_diff.json	json	UNKNOWN	NO					
+evidence/skills_pack_validation/20260302T135409Z/secrets_hits.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/pwd.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/runlogs/gitlog.AGENTSmd.head.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/runlogs/gitlog.agentmd.head.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/runlogs/ohmy.json.size.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/runlogs/repo.agent_ohmy.find.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/snapshots/agent.md.head.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/snapshots/oh-my-opencode.json.head.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-fix/utc.now.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/backup.opencode_json.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/fix.opencode_json.rc.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/gh_token.flag.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/git.status.after.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/git.toplevel.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/jsonparse.opencode_json.rc.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/ls.agent.files.after.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/ls.agent.files.before.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/ls.ohmy.global.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/ls.opencode_json.after.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/ls.opencode_json.before.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/opencode.version.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/pwd.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/runlogs/restore.agentmd.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/snapshots/agent.md.head.txt	txt	UNKNOWN	NO					
+evidence/step-opencode-repair/20260214T123304Z/snapshots/oh-my-opencode.json.head.txt	txt	UNKNOWN	NO					
+evidence/step01/doc-validate.head.yml.txt	txt	UNKNOWN	NO					
+evidence/step01/files.sizes.txt	txt	UNKNOWN	NO					
+evidence/step01/find.acceptance.files.txt	txt	UNKNOWN	NO					
+evidence/step01/ls.acceptance.root.txt	txt	UNKNOWN	NO					
+evidence/step01/ls.workflows.txt	txt	UNKNOWN	NO					
+evidence/step01/lsfiles.doc_validate.txt	txt	UNKNOWN	NO					
+evidence/upload/WP-001_evidence_upload.txt	txt	UNKNOWN	NO					
+evidence/upload/_probe.txt	txt	UNKNOWN	NO					
+evidence/verdict.json	json	OLD_TEMP_CLOSED	NO					

@@ -1,0 +1,18 @@
+{
+  "decision_ts": "20260413T010401Z",
+  "total_candidates_reviewed": 275,
+  "classification_summary": {
+    "VALID_EXPLICIT": 0,
+    "NORMALIZABLE": 0,
+    "INDIRECT_ONLY": 72,
+    "TEMPLATE": 0,
+    "REQUEST_PACK": 0,
+    "OLD_TEMP_CLOSED": 2,
+    "CONTRADICTORY": 0,
+    "UNKNOWN": 201
+  },
+  "valid_for_closure_candidates": [],
+  "contradictions_found": [],
+  "uplift_decision": "KEEP_TEMP_CLOSED",
+  "uplift_reason": "Automated cross-lane scan: found 0 valid candidates"
+}
